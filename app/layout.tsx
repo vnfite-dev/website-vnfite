@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Topbar from "@/components/molecules/Topbar";
+import Navbar from "@/components/molecules/Navbar";
+import Banner from "@/components/molecules/Banner";
+import Footer from "@/components/molecules/Footer";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
@@ -54,9 +58,22 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<header className="bg-home-banner pb-[190px]">
+				<Topbar />
+				<div className="lg:container mx-auto mt-12">
+					<Navbar />
+					<div className="mt-[90px]">
+						<Banner />
+					</div>
+				</div>
+			</header>
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro antialiased`}>
 				{children}
 			</body>
+
+			<footer className="mt-32">
+				<Footer />
+			</footer>
 		</html>
 	);
 }
