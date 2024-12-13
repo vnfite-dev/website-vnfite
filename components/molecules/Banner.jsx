@@ -10,52 +10,58 @@ const Banner = () => {
 					<p className="text-gradient font-semibold green-underline">Dịch vụ khách hàng</p>
 				</div>
 
-				<div className="mt-10 font-ambrose text-5xl leading-[61px]">
-					<BoxReveal>
+				<div className="mt-10 font-ambrose text-5xl leading-[61px] relative">
+					<BoxReveal duration={0.5}>
 						<p className="uppercase ">
 							SÀN <span className="text-gradient">Giao dịch</span>
 						</p>
 					</BoxReveal>
 
-					<BoxReveal>
+					<BoxReveal duration={0.8}>
 						<p className="mt-6 font-sfpro font-semibold	">
 							<spam className="text-gradient">P2P</spam> hàng đầu Việt Nam
 						</p>
 					</BoxReveal>
 
-					<BoxReveal>
-						<p className="font-sfpro font-medium text-[16px] leading-5 mt-5 w-[65%]">
-							Cùng VNFITE - Làm chủ tương lai tài chính của bạn. Ứng dụng tài chính công nghệ nhanh,
-							tiện lợi, lãi suất thấp hàng đầu Việt Nam.{" "}
-						</p>
-					</BoxReveal>
-				</div>
-
-				<div className="mt-8 flex gap-4 items-center">
-					<div className="bg-[#D1A506] px-2 py-1 rounded-2xl flex">
-						{[...Array(5)].map((_, i) => {
-							return (
-								<Image
-									src={"/icons/home/star.svg"}
-									className="mr-2.5"
-									alt="star"
-									width={24}
-									height={24}
-									key={i}
-								/>
-							);
-						})}
-
-						<div className="font-semibold text-[12px] p-1.5 bg-gray-600 rounded-xl text-white leading-[14px]">
-							4.9
-						</div>
+					<div className="w-3/5">
+						<BoxReveal duration={0.6}>
+							<p className="font-sfpro font-medium text-[16px] leading-5 mt-5">
+								Cùng VNFITE - Làm chủ tương lai tài chính của bạn. Ứng dụng tài chính công nghệ nhanh,
+								tiện lợi, lãi suất thấp hàng đầu Việt Nam.{" "}
+							</p>
+						</BoxReveal>
 					</div>
-					<div className="text-[12px]">Hơn 100K khách hàng</div>
 				</div>
 
-				<div className="mt-4">
-					<p className="text-sm">Hơn 10.000 khoảng gọi vốn đang chờ bạn đầu tư.</p>
-				</div>
+				<BoxReveal duration={0.6}>
+					<div className="mt-8 flex gap-4 items-center">
+						<div className="bg-[#D1A506] px-2 py-1 rounded-2xl flex">
+							{[...Array(5)].map((_, i) => {
+								return (
+									<Image
+										src={"/icons/home/star.svg"}
+										className="mr-2.5"
+										alt="star"
+										width={24}
+										height={24}
+										key={i}
+									/>
+								);
+							})}
+
+							<div className="font-semibold text-[12px] p-1.5 bg-gray-600 rounded-xl text-white leading-[14px]">
+								4.9
+							</div>
+						</div>
+						<div className="text-[12px]">Hơn 100K khách hàng</div>
+					</div>
+				</BoxReveal>
+
+				<BoxReveal duration={0.6}>
+					<div className="mt-4">
+						<p className="text-sm">Hơn 10.000 khoảng gọi vốn đang chờ bạn đầu tư.</p>
+					</div>
+				</BoxReveal>
 
 				<div className="mt-12">
 					<Button className="bg-grad text-[16px] font-semibold rounded-[32px] px-10 py-3.5">
@@ -70,11 +76,10 @@ const Banner = () => {
 					<div className="bg-grad p-[1px] rounded-[33px]">
 						<div className="relative w-[216px] h-[216px]">
 							<Image
-								className="rounded-[32px]"
+								className="rounded-[32px] object-cover"
 								src="/images/home/banner-leftgirl.png"
 								alt="banner-girl"
-								fill={true}
-								objectFit="cover"
+								fill
 							/>
 						</div>
 					</div>

@@ -36,7 +36,7 @@ export const BoxReveal = ({ children, width = "fit-content", boxColor, duration 
 				}}
 				initial="hidden"
 				animate={mainControls}
-				transition={{ duration: duration ? duration : 0.5, delay: 0.25 }}
+				transition={{ duration: duration ? duration : 0.5, delay: duration ? duration - 0.2 : 0 }}
 			>
 				{children}
 			</motion.div>
@@ -56,7 +56,8 @@ export const BoxReveal = ({ children, width = "fit-content", boxColor, duration 
 					left: 0,
 					right: 0,
 					zIndex: 20,
-					background: boxColor ? boxColor : "#CF1313",
+					// opacity: ,
+					background: boxColor ? boxColor : "#F75150",
 				}}
 			/>
 		</div>

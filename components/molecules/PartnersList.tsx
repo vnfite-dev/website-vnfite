@@ -1,4 +1,21 @@
 import React from "react";
+import Image from "next/image";
+
+const PartnerItem = ({ partner = "vnpt" }: { partner: string }) => {
+	const urlString = "/icons/home/pn_" + partner + ".svg";
+
+	return (
+		<div className="relative group h-[64px] w-[250px]">
+			<Image
+				src={urlString}
+				alt="logo"
+				fill
+				className="object-contain h-[64px] w-auto transition-all duration-300 filter grayscale group-hover:grayscale-0"
+				sizes="(max-width: 768px) 50px, 64px" // Adjust as per your breakpoints
+			/>
+		</div>
+	);
+};
 
 const PartnersList = () => {
 	return (
@@ -11,7 +28,16 @@ const PartnersList = () => {
 				</p>
 			</div>
 
-			<div className="mt-16 px-[15%]">Các logo</div>
+			<div className="mt-16 px-[15%] flex flex-wrap justify-around gap-3">
+				<PartnerItem partner="vnpt" />
+				<PartnerItem partner="tnex" />
+				<PartnerItem partner="mbbank" />
+				<PartnerItem partner="finy" />
+				<PartnerItem partner="f88" />
+				<PartnerItem partner="pvcombank" />
+				<PartnerItem partner="baominh" />
+				<PartnerItem partner="chubb" />
+			</div>
 		</div>
 	);
 };

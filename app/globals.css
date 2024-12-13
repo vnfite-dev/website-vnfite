@@ -126,4 +126,10 @@
 	.animation-bounce {
 		animation: bounce-2 3s infinite;
 	}
+
+	/* Navigation Menu */
+
+	.navigation-menu-item {
+		@apply relative font-semibold text-base bg-transparent hover:bg-red-400 py-2 pt-3 text-gray-600;
+	}
 }

@@ -12,7 +12,7 @@ import NewsList from "@/components/molecules/NewsList";
 export default function Home() {
 	return (
 		<div>
-			{/* <header className="bg-home-banner pb-[190px]">
+			<header className="bg-home-banner pb-[190px]">
 				<Topbar />
 				<div className="lg:container mx-auto mt-12">
 					<Navbar />
@@ -42,7 +42,7 @@ export default function Home() {
 
 			<div className="mt-32">
 				<NewsList />
-			</div> */}
+			</div>
 			<footer className="mt-32">
 				<Footer />
 			</footer>

@@ -21,15 +21,7 @@ const ContactBox = () => {
 		<div className="w-full px-[6.25%]">
 			<div className="bg-customPink py-20 px-[11.3%] flex justify-between gap-20">
 				<div className="mt-16 w-[438px] h-[438px] aspect-square relative">
-					<Image
-						// className=""
-						src="/images/home/contact.png"
-						alt="icon"
-						// width={437}
-						// height={437}
-						fill
-						objectFit="cover"
-					/>
+					<Image className="object-cover w-auto h-full" src="/images/home/contact.png" alt="icon" fill />
 				</div>
 
 				<div className="max-w-[750px]">

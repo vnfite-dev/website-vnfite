@@ -7,6 +7,8 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { after } from "node:test";
+import NumberTicker from "../ui/number-ticker";
 
 const SlideItem = ({
 	image = "/images/home/slide-student.png",
@@ -28,12 +30,16 @@ const SlideItem = ({
 	);
 };
 
-const StaticItem = ({ number, name }: { number: string; name: string }) => {
-	const parts = name.split("VNFITE");
+const StaticItem = (item: { number: number; preNum: string; afterNum: string; name: string }) => {
+	const parts = item.name.split("VNFITE");
 
 	return (
 		<div className="w-1/4 flex flex-col items-center relative">
-			<h1 className="text-5xl font-extrabold text-gradient mb-4">{number}</h1>
+			<h1 className="text-5xl font-extrabold text-gradient mb-4 flex">
+				<p>{item.preNum}</p>
+				<NumberTicker value={item.number} className="text-5xl font-extrabold text-gradient" />
+				<p>{item.afterNum}</p>
+			</h1>
 			{/* <div className="px-10 border border-customPink w-full">
 				<div className="border border-gray-200"></div>
 			</div> */}
@@ -81,19 +87,24 @@ const data = [
 
 const staticData = [
 	{
-		number: "+98%",
+		preNum: "+",
+		number: 98,
+		afterNum: "%",
 		name: "Khoản giản ngân thành công",
 	},
 	{
-		number: "+30",
+		number: 30,
+		preNum: "+",
 		name: "Sản phẩm gọi vốn",
 	},
 	{
-		number: "+100,000",
+		number: 100000,
+		preNum: "+",
 		name: "Khách hàng đồng hành cùng VNFITE",
 	},
 	{
-		number: "+5,000",
+		number: 5000,
+		preNum: "+",
 		name: "Khoản bạn có thể đầu tư ngay",
 	},
 ];

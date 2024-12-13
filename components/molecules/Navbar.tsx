@@ -7,27 +7,32 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
+	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 const Navbar = () => {
 	return (
 		<div className="w-full flex justify-between items-center">
 			<div className="">
 				<Image src="/images/vnfite_logo.png" width={220} height={52} alt="logo" />
 			</div>
-			<div className="items">
+			<div className="items relative">
 				<NavigationMenu>
 					<NavigationMenuList>
 						<NavigationMenuItem>
-							<NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
-								Về VNFITE
-							</NavigationMenuTrigger>
+							<NavigationMenuTrigger className="navigation-menu-item">Về VNFITE</NavigationMenuTrigger>
 							<NavigationMenuContent>
-								<NavigationMenuLink>Link</NavigationMenuLink>
+								<div className="grid gap-3 p-6 w-[700px]">
+									<div className="grid gap-1">
+										<h4 className="text-sm font-medium leading-none">Về chúng tôi</h4>
+										<p className="text-sm text-muted-foreground">Kết nối nguồn vốn siêu tốc</p>
+									</div>
+								</div>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
+							<NavigationMenuTrigger className="navigation-menu-item">
 								Sàn giao dịch
 							</NavigationMenuTrigger>
 							<NavigationMenuContent>
@@ -35,25 +40,30 @@ const Navbar = () => {
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
-								Sản phẩm
-							</NavigationMenuTrigger>
+							<NavigationMenuTrigger className="navigation-menu-item">Sản phẩm</NavigationMenuTrigger>
 							<NavigationMenuContent>
 								<NavigationMenuLink>Link</NavigationMenuLink>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
-								Tin tức
-							</NavigationMenuTrigger>
+							<NavigationMenuTrigger className="navigation-menu-item">Tin tức</NavigationMenuTrigger>
 							<NavigationMenuContent>
 								<NavigationMenuLink>Link</NavigationMenuLink>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
-
+						<NavigationMenuItem>
+							<NavigationMenuTrigger className="navigation-menu-item">Bảo hiểm</NavigationMenuTrigger>
+							<NavigationMenuContent>
+								<NavigationMenuLink>Link</NavigationMenuLink>
+							</NavigationMenuContent>
+						</NavigationMenuItem>
 						<NavigationMenuItem>
 							<Link href="/docs" legacyBehavior passHref>
-								<NavigationMenuLink className="bg-transparent">Documentation</NavigationMenuLink>
+								<NavigationMenuLink
+									className={cn("navigation-menu-item", navigationMenuTriggerStyle())}
+								>
+									Documentation
+								</NavigationMenuLink>
 							</Link>
 						</NavigationMenuItem>
 					</NavigationMenuList>

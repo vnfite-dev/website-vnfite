@@ -111,7 +111,7 @@ const Stack = () => {
 			<StackItem pinkBackground={true} stack={0}>
 				<div className="pt-20">
 					<div className="relative z-10">
-						<p className="text-gradient font-semibold green-underline after:w-[120%]">Vì sao</p>
+						<p className="text-gradient font-semibold green-underline after:w-[120%]">Lý do</p>
 						<div className="mt-4 text-5xl">
 							Tại sao bạn nên sử dụng <span className="text-gradient font-bold">VNFITE</span>
 						</div>
