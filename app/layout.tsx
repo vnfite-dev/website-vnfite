@@ -58,22 +58,22 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<header className="bg-home-banner pb-[190px]">
-				<Topbar />
-				<div className="lg:container mx-auto mt-12">
-					<Navbar />
-					<div className="mt-[90px]">
-						<Banner />
-					</div>
-				</div>
-			</header>
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro antialiased`}>
+				<header className="bg-home-banner pb-[190px]">
+					<Topbar />
+					<div className="lg:container mx-auto mt-12">
+						<Navbar />
+						<div className="mt-[90px]">
+							<Banner />
+						</div>
+					</div>
+				</header>
 				{children}
-			</body>
 
-			<footer className="mt-32">
-				<Footer />
-			</footer>
+				<footer className="mt-32">
+					<Footer />
+				</footer>
+			</body>
 		</html>
 	);
 }
