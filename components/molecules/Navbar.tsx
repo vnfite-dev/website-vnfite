@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "../ui/button";
 import {
@@ -21,12 +23,25 @@ const Navbar = () => {
 				<NavigationMenu>
 					<NavigationMenuList>
 						<NavigationMenuItem>
-							<NavigationMenuTrigger className="navigation-menu-item">Về VNFITE</NavigationMenuTrigger>
-							<NavigationMenuContent>
-								<div className="grid gap-3 p-6 w-[700px]">
-									<div className="grid gap-1">
-										<h4 className="text-sm font-medium leading-none">Về chúng tôi</h4>
-										<p className="text-sm text-muted-foreground">Kết nối nguồn vốn siêu tốc</p>
+							<NavigationMenuTrigger className="hover:text-gradient hover:bg-transparent navigation-menu-item">
+								Về VNFITE
+							</NavigationMenuTrigger>
+							<NavigationMenuContent className="relative" onClick={(e) => console.log(e)}>
+								<div className="flex gap-3 py-3 px-3 w-[750px] relative z-[1000]">
+									<div className="flex flex-col min-w-[250px]">
+										<div className="py-3 px-6 w-full cursor-pointer hover:bg-customPink hover:font-semibold ">
+											Gọi vốn cá nhân
+										</div>
+										<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+											Gọi vốn cá nhân
+										</div>
+										<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+											Gọi vốn cá nhân
+										</div>
+									</div>
+
+									<div className="grid">
+										<div className=""></div>
 									</div>
 								</div>
 							</NavigationMenuContent>
@@ -36,19 +51,76 @@ const Navbar = () => {
 								Sàn giao dịch
 							</NavigationMenuTrigger>
 							<NavigationMenuContent>
-								<NavigationMenuLink>Link</NavigationMenuLink>
+								<NavigationMenuLink>
+									{" "}
+									<div className="flex gap-3 py-3 px-3 w-[750px] relative z-[1000]">
+										<div className="flex flex-col min-w-[250px]">
+											<div className="py-3 px-6 w-full cursor-pointer hover:bg-customPink hover:font-semibold ">
+												Gọi vốn cá nhân
+											</div>
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+												Gọi vốn cá nhân
+											</div>
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+												Gọi vốn cá nhân
+											</div>
+										</div>
+
+										<div className="grid">
+											<div className=""></div>
+										</div>
+									</div>
+								</NavigationMenuLink>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
 							<NavigationMenuTrigger className="navigation-menu-item">Sản phẩm</NavigationMenuTrigger>
 							<NavigationMenuContent>
-								<NavigationMenuLink>Link</NavigationMenuLink>
+								<NavigationMenuLink>
+									{" "}
+									<div className="flex gap-3 py-3 px-3 w-[750px] relative z-[1000]">
+										<div className="flex flex-col min-w-[250px]">
+											<div className="py-3 px-6 w-full cursor-pointer hover:bg-customPink hover:font-semibold ">
+												Gọi vốn cá nhân
+											</div>
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+												Gọi vốn cá nhân
+											</div>
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+												Gọi vốn cá nhân
+											</div>
+										</div>
+
+										<div className="grid">
+											<div className=""></div>
+										</div>
+									</div>
+								</NavigationMenuLink>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
 							<NavigationMenuTrigger className="navigation-menu-item">Tin tức</NavigationMenuTrigger>
 							<NavigationMenuContent>
-								<NavigationMenuLink>Link</NavigationMenuLink>
+								<NavigationMenuLink>
+									{" "}
+									<div className="flex gap-3 py-3 px-3 w-[750px] relative z-[1000]">
+										<div className="flex flex-col min-w-[250px]">
+											<div className="py-3 px-6 w-full cursor-pointer hover:bg-customPink hover:font-semibold ">
+												Gọi vốn cá nhân
+											</div>
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+												Gọi vốn cá nhân
+											</div>
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
+												Gọi vốn cá nhân
+											</div>
+										</div>
+
+										<div className="grid">
+											<div className=""></div>
+										</div>
+									</div>
+								</NavigationMenuLink>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 						<NavigationMenuItem>

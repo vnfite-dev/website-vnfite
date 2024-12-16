@@ -11,7 +11,7 @@ const NavigationMenu = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<NavigationMenuPrimitive.Root
 		ref={ref}
-		className={cn("relative z-10 flex max-w-max flex-1 items-center justify-center", className)}
+		className={cn("relative z-30 flex max-w-max flex-1 items-center justify-center", className)}
 		{...props}
 	>
 		{children}
@@ -35,7 +35,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
-	"group inline-flex w-max items-center justify-center rounded-md bg-transparent px-3 py-3 text-sm font-medium transition-colors hover:text-slate-900 focus:bg-blue-500 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50"
+	"group inline-flex w-max items-center justify-center rounded-md bg-transparent px-3 py-3 text-sm font-medium transition-colors hover:text-slate-900 focus:bg-blue-500 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50"
 );
 
 const NavigationMenuTrigger = React.forwardRef<
