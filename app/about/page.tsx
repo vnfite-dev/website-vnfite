@@ -1,0 +1,393 @@
+"use client";
+
+import React from "react";
+import { useState } from "react";
+import Image from "next/image";
+
+const Page = () => {
+  const [show, setShow] = useState(0);
+
+  return (
+    <div>
+      <div className="flex flex-row items-center justify-center space-x-10 mt-16">
+        <div
+          className="relative w-80 h-14 cursor-pointer"
+          onClick={() => setShow(0)}
+        >
+          <div
+            className={
+              "w-80 h-14 skew-x-12 " +
+              (show === 0
+                ? "bg-grad"
+                : "bg-gray-500 flex justify-center items-center")
+            }
+            style={{
+              clipPath:
+                "polygon(2% 0, 88% 0, 99.5% 60%, 98% 100%, 12% 100%, 0.5% 40%)",
+            }}
+          >
+            <div
+              className="skew-x-12 relative"
+              style={{
+                backgroundColor: "white",
+                width: "98%",
+                height: "98%",
+                clipPath:
+                  "polygon(3.4% 2%, 90% 2%, 99.35% 62%, 96.7% 98%, 10% 98%, 0.65% 38%)",
+              }}
+            ></div>
+          </div>
+          <div
+            className={
+              "absolute left-14 top-3 font-semibold text-xl " +
+              (show === 0 ? "text-gradient" : "text-gray-500")
+            }
+          >
+            Thông tin về VNFITE
+          </div>
+        </div>
+
+        <div
+          className="relative w-80 h-14 cursor-pointer "
+          onClick={() => setShow(1)}
+        >
+          <div
+            className={
+              "w-80 h-14 skew-x-12 " +
+              (show === 1
+                ? "bg-grad"
+                : "bg-gray-500 flex justify-center items-center")
+            }
+            style={{
+              clipPath:
+                "polygon(2% 0, 88% 0, 99.5% 60%, 98% 100%, 12% 100%, 0.5% 40%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              className="skew-x-12 relative"
+              style={{
+                backgroundColor: "white",
+                width: "98%",
+                height: "98%",
+                clipPath:
+                  "polygon(3.4% 2%, 90% 2%, 99.35% 62%, 96.7% 98%, 10% 98%, 0.65% 38%)",
+              }}
+            ></div>
+          </div>
+          <div
+            className={
+              "absolute left-24 top-3 font-semibold text-xl " +
+              (show === 1 ? "text-gradient" : "text-gray-500")
+            }
+          >
+            Ban lãnh đạo
+          </div>
+        </div>
+
+        <div
+          className="relative w-80 h-14 cursor-pointer"
+          onClick={() => setShow(2)}
+        >
+          <div
+            className={
+              "w-80 h-14 skew-x-12 " +
+              (show === 2
+                ? "bg-grad"
+                : "bg-gray-500 flex justify-center items-center")
+            }
+            style={{
+              clipPath:
+                "polygon(2% 0, 88% 0, 99.5% 60%, 98% 100%, 12% 100%, 0.5% 40%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              className="skew-x-12 relative"
+              style={{
+                backgroundColor: "white",
+                width: "98%",
+                height: "98%",
+                clipPath:
+                  "polygon(3.4% 2%, 90% 2%, 99.35% 62%, 96.7% 98%, 10% 98%, 0.65% 38%)",
+              }}
+            ></div>
+          </div>
+          <div
+            className={
+              "absolute left-28 top-3 font-semibold text-xl " +
+              (show === 2 ? "text-gradient" : "text-gray-500")
+            }
+          >
+            Cổ đông
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-28">
+        {/* 1. Thông tin về VNFITEVNFITE */}
+        {show === 0 && (
+          <div className="flex justify-center items-center flex-col space-y-40">
+            {/* 1.1. Giới thiệu về VNFITE */}
+            <div>
+              <p className="text-5xl font-semibold text-center">
+                Giới thiệu về <span className="text-gradient">VNFITE</span>
+              </p>
+              <Image
+                src="/images/about/AboutIntro.png"
+                className="mt-16"
+                alt="About Intro VNFITE"
+                width={1280}
+                height={500}
+              />
+              <p
+                style={{ width: "1280px" }}
+                className="font-normal text-base mt-14 flex flex-col space-y-7"
+              >
+                <span>
+                  VNFITE là một trong những nền tảng cho vay ngang hàng (P2P
+                  Lending) lớn tại Việt Nam, đóng vai trò kết nối giữa nhà đầu
+                  tư và người vay. Được thành lập từ năm 2020, VNFITE đã trở
+                  thành một đơn vị tiên phong trong lĩnh vực công nghệ tài chính
+                  tại Việt Nam, giúp đơn giản hóa quy trình vay vốn và đầu tư
+                  với công nghệ hiện đại.
+                </span>
+
+                <span>
+                  Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
+                  đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
+                  nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn.
+                </span>
+
+                <span>
+                  Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách
+                  hàng) hộ kinh doanh (gần 1 triệu khách hàng) và doanh nghiệp
+                  vừa và nhỏ SME (bao gồm cả miro SME) khoảng 0,5 triệu khách
+                  hàng.Đặc biệt định hướng vào phân khúc cho người dân vùng nông
+                  thôn, người nghèo chưa có điều kiện tiếp cận dịch vụ tài chính
+                  ngân hàng với ứng dụng công nghệ cao.
+                </span>
+
+                <span>
+                  Hướng đến nhóm khách hàng tài chính vi mô, để mọi người dân
+                  đều có thể sử dụng dịch vụ. Mang tính an sinh xã hội và phổ
+                  cập tài chính rộng khắp cho người dân. Có tính nhân văn lớn.Sở
+                  hữu đội ngũ nhân viên chuyên nghiệp, giàu kinh nghiệm trong
+                  lĩnh vực tài chính ngân hàng, VNFITE mang đến một kênh đầu tư
+                  hiệu quả, an toàn vì cuộc sống tốt đẹp phát triển thịnh vượng
+                  cho các nhà đầu tư trên mọi miền tổ quốc.
+                </span>
+
+                <span>
+                  Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập nhưng
+                  VNFITE đang dần khẳng định vị thế của mình trên thị trường
+                  Fintech nói chung và thị trường tài chính nói chung. Với mục
+                  tiêu kết nối nhanh chóng và an toàn, VNFITE đã và đang ứng
+                  dụng một cách triệt để công nghệ 4.0, kết nối trực tiếp các
+                  nhà đầu tư và người kêu gọi vốn, dần chứng minh mình là một
+                  trong những kênh dẫn vốn hiệu quả cho các hộ kinh doanh, các
+                  doanh nghiệp vừa và nhỏ.
+                </span>
+
+                <span>
+                  Với phương châm đặt lợi ích của khách hàng lên hàng đầu,
+                  VNFITE tin rằng chỉ có mang lại giá trị thiết thực cho khách
+                  hàng mới là giá trị cốt lõi của doanh nghiệp tài chính nói
+                  riêng và các doanh nghiệp nói chung
+                </span>
+              </p>
+            </div>
+
+            {/* 1.2. Lịch sử phát triển */}
+            <div>
+              <p className="text-5xl font-semibold text-center">
+                Lịch sử phát triển
+              </p>
+              <div className="flex justify-center items-center mt-16">
+                <Image
+                  src="/images/about/History.png"
+                  alt="About History VNFITE"
+                  width={437}
+                  height={437}
+                />
+              </div>
+            </div>
+
+            {/* 1.3. Tầm nhìn và sứ mệnh */}
+            <div>
+              <p className="text-5xl font-semibold text-center">
+                Tầm nhìn và sứ mệnh
+              </p>
+              <p className="font-normal text-base mt-14">
+                Là sợi dây kết nối giữa nhà đầu tư và nhà huy động, tạo ra sân
+                chơi an toàn giao thương tài chính, tạo lợi ích cho các bên đồng
+                thời tạo sự phát triển bền vững cho xã hội.
+              </p>
+              <div className="flex justify-center items-center mt-8 space-x-2">
+                <Image
+                  src="/images/about/View1.png"
+                  alt="Tầm nhìn và sứ mệnh 1"
+                  width={405}
+                  height={96}
+                  className="text-center p-4"
+                />
+                <Image
+                  src="/images/about/View2.png"
+                  alt="Tầm nhìn và sứ mệnh 2"
+                  width={405}
+                  height={96}
+                  className="text-center p-4"
+                />
+                <Image
+                  src="/images/about/View3.png"
+                  alt="Tầm nhìn và sứ mệnh 3"
+                  width={405}
+                  height={96}
+                  className="text-center p-4"
+                />
+              </div>
+              <div className="flex justify-center items-center space-x-2">
+                <Image
+                  src="/images/about/View4.png"
+                  alt="Tầm nhìn và sứ mệnh 4"
+                  width={405}
+                  height={96}
+                  className="text-center p-4"
+                />
+                <Image
+                  src="/images/about/View5.png"
+                  alt="Tầm nhìn và sứ mệnh 5"
+                  width={405}
+                  height={96}
+                  className="text-center p-4"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 2. Ban lãnh đạo */}
+        {show === 1 && (
+          <div className="flex justify-center items-center flex-col space-y-14">
+            <div>
+              <div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+                <Image
+                  src="/images/about/Logo.png"
+                  alt="About History VNFITE"
+                  width={264}
+                  height={264}
+                />
+                <p className="font-semibold text-xl text-gradient">
+                  Mai Ngọc Đoàn
+                </p>
+                <p className="font-medium text-base pt-3">
+                  Chủ tịch Hội Đồng Quản Trị
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center items-center space-x-10">
+              <div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+                <Image
+                  src="/images/about/Logo.png"
+                  alt="About History VNFITE"
+                  width={264}
+                  height={264}
+                />
+                <p className="font-semibold text-xl text-gradient">
+                  Trần Quốc Hưng
+                </p>
+                <p className="font-medium text-base pt-3">
+                  Phó chủ tịch Hội Đồng Quản Trị
+                </p>
+              </div>
+
+              <div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+                <Image
+                  src="/images/about/Logo.png"
+                  alt="About History VNFITE"
+                  width={264}
+                  height={264}
+                />
+                <p className="font-semibold text-xl text-gradient">
+                  Nguyễn Mạnh Cường
+                </p>
+                <p className="font-medium text-base pt-3">
+                  Phó chủ tịch Hội Đồng Quản Trị
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 3. Cổ đông */}
+        {show === 2 && (
+          <div className="flex justify-center items-center flex-col space-y-40">
+            <div>
+              <p className="text-5xl font-semibold text-center">
+                Đối với nhà đầu tư về{" "}
+                <span className="text-gradient">VNFITE</span>
+              </p>
+              <Image
+                src="/images/about/Investor.png"
+                className="mt-16"
+                alt="About Intro VNFITE"
+                width={1280}
+                height={512}
+              />
+              <p
+                style={{ width: "1280px" }}
+                className="font-normal text-base mt-14 flex flex-col space-y-7"
+              >
+                <span className="text-center">
+                  Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
+                  đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
+                  nghệ tài chính, kết nỗi giữa các nhà đầu tư và nhà gọi vốn.
+                </span>
+
+                <span className="text-center">
+                  Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách
+                  hàng) hộ kinh doanh (gần 1 triệu khách hàng) và doanh nghiệp
+                  vừa và nhỏ SME (bao gồm cả miro SME) khoảng 0,5 triệu khách
+                  hàng. Đặc biệt định hướng vào phân khúc cho người dân vùng
+                  nông thôn, người nghèo chưa có điều kiện tiếp cận dịch vụ tài
+                  chính ngân hàng với ứng dụng công nghệ cao. Hướng đến nhóm
+                  khách hàng tài chính vi mô, để mọi người dân đều có thể sử
+                  dụng dịch vụ. Mang tính an sinh xã hội và phổ cập tài chính
+                  rộng khắp cho người dân. Có tính nhân văn lớn. Sở hữu đội ngũ
+                  nhân viên chuyên nghiệp, giàu kinh nghiệm trong lĩnh vực tài
+                  chính ngân hàng, VNFITE mang đến một kênh đầu tư hiệu quả, an
+                  toàn vì cuộc sống tốt đẹp phát triển thịnh vượng cho các nhà
+                  đầu tư trên mọi miền tổ quốc.
+                </span>
+
+                <span className="text-center">
+                  Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập nhưng
+                  VNFITE đang dần khẳng định vị thế của mình trên thị trường
+                  Fintech nói chung và thị trường tài chính nói chung. Với mục
+                  tiêu kết nối nhanh chóng và an toàn, VNFITE đã và đang ứng
+                  dụng một cách triệt để công nghệ 4.0, kết nối trực tiếp các
+                  nhà đầu tư và người kêu gọi vốn, dần chứng minh mình là một
+                  trong những kênh dẫn vốn hiệu quả cho các hộ kinh doanh, các
+                  doanh nghiệp vừa và nhỏ.
+                </span>
+
+                <span className="text-center">
+                  Với phương châm đặt lợi ích của khách hàng lên hàng đầu,
+                  VNFITE tin rằng chỉ có mang lại giá trị thiết thực cho khách
+                  hàng mới là giá trị cốt lõi của doanh nghiệp tài chính nói
+                  riêng và các doanh nghiệp nói chung.
+                </span>
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Page;
