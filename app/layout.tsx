@@ -12,23 +12,41 @@ const inter = Inter({ subsets: ["latin"] });
 
 const sfpro = localFont({
 	src: [
+		// {
+		// 	path: "./fonts/SF_Pro.woff2",
+		// 	weight: "400",
+		// 	style: "normal",
+		// },
+		// {
+		// 	path: "./fonts/SF_Pro_semibold.woff2",
+		// 	weight: "600",
+		// 	style: "normal",
+		// },
+		// {
+		// 	path: "./fonts/SF_Pro_bold.woff2",
+		// 	weight: "700",
+		// 	style: "normal",
+		// },
+		// {
+		// 	path: "./fonts/SF_Pro_heavy.woff2",
+		// 	weight: "800",
+		// },
+
 		{
-			path: "./fonts/SF_Pro.woff2",
+			path: "./fonts/SF-Pro-Display-Regular.otf",
 			weight: "400",
 			style: "normal",
 		},
 		{
-			path: "./fonts/SF_Pro_semibold.woff2",
+			path: "./fonts/SF-Pro-Display-Semibold.otf",
 			weight: "600",
-			style: "normal",
 		},
 		{
-			path: "./fonts/SF_Pro_bold.woff2",
+			path: "./fonts/SF-Pro-Display-Bold.otf",
 			weight: "700",
-			style: "normal",
 		},
 		{
-			path: "./fonts/SF_Pro_heavy.woff2",
+			path: "./fonts/SF-Pro-Display-Heavy.otf",
 			weight: "800",
 		},
 	],
