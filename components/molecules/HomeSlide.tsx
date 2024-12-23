@@ -7,7 +7,6 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { after } from "node:test";
 import NumberTicker from "../ui/number-ticker";
 
 const SlideItem = ({
