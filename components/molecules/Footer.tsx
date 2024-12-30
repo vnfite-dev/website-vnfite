@@ -46,7 +46,7 @@ const navItemText = [
 ];
 
 const Footer = () => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(true);
 
 	useEffect(() => {
 		if (isOpen == true) {

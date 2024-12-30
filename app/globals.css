@@ -57,7 +57,25 @@
 		background-size: cover;
 	}
 	.btn-primary {
-		@apply px-10 py-3.5 rounded-[32px] bg-grad font-semibold text-[16px] leading-5 h-fit;
+		@apply px-10 py-3.5 rounded-xl bg-grad font-semibold text-[16px] leading-5 h-fit;
+	}
+
+	.gradient-line {
+		height: 4px;
+		background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%),
+			linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
+
+		background-size: 20px 3px, 100% 3px;
+		border: none;
+	}
+
+	.gradient-line-reversed {
+		height: 4px;
+		background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%),
+			linear-gradient(90deg, #ef836c 0%, #f84f4f 100%);
+
+		background-size: 20px 3px, 100% 3px;
+		border: none;
 	}
 
 	.webkit-bg-clip-text {
@@ -131,5 +149,10 @@
 
 	.navigation-menu-item {
 		@apply relative font-semibold text-base bg-transparent hover:bg-red-400 py-2 pt-3 text-gray-600;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 	}
 }

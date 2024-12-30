@@ -3,8 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Topbar from "@/components/molecules/Topbar";
-import Navbar from "@/components/molecules/Navbar";
-import Banner from "@/components/molecules/Banner";
 import Footer from "@/components/molecules/Footer";
 
 // If loading a variable font, you don't need to specify the font weight
@@ -12,23 +10,41 @@ const inter = Inter({ subsets: ["latin"] });
 
 const sfpro = localFont({
 	src: [
+		// {
+		// 	path: "./fonts/SF_Pro.woff2",
+		// 	weight: "400",
+		// 	style: "normal",
+		// },
+		// {
+		// 	path: "./fonts/SF_Pro_semibold.woff2",
+		// 	weight: "600",
+		// 	style: "normal",
+		// },
+		// {
+		// 	path: "./fonts/SF_Pro_bold.woff2",
+		// 	weight: "700",
+		// 	style: "normal",
+		// },
+		// {
+		// 	path: "./fonts/SF_Pro_heavy.woff2",
+		// 	weight: "800",
+		// },
+
 		{
-			path: "./fonts/SF_Pro.woff2",
+			path: "./fonts/SF-Pro-Display-Regular.otf",
 			weight: "400",
 			style: "normal",
 		},
 		{
-			path: "./fonts/SF_Pro_semibold.woff2",
+			path: "./fonts/SF-Pro-Display-Semibold.otf",
 			weight: "600",
-			style: "normal",
 		},
 		{
-			path: "./fonts/SF_Pro_bold.woff2",
+			path: "./fonts/SF-Pro-Display-Bold.otf",
 			weight: "700",
-			style: "normal",
 		},
 		{
-			path: "./fonts/SF_Pro_heavy.woff2",
+			path: "./fonts/SF-Pro-Display-Heavy.otf",
 			weight: "800",
 		},
 	],
@@ -59,18 +75,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro antialiased`}>
-				<header className="bg-home-banner pb-[190px]">
-					<Topbar />
-					<div className="lg:container mx-auto mt-12">
-						<Navbar />
-						<div className="mt-[90px]">
-							<Banner />
-						</div>
-					</div>
-				</header>
+				<Topbar />
+
 				{children}
 
-				<footer className="mt-32">
+				<footer className="mt-32 font-sfpro">
 					<Footer />
 				</footer>
 			</body>
