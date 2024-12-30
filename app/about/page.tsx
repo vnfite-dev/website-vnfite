@@ -5,8 +5,9 @@ import { useState } from "react";
 import Image from "next/image";
 import ButtonArrow from "@/components/molecules/ButtonArrow";
 
-const Page = () => {
+const About = () => {
   const [show, setShow] = useState(0);
+  const [isShowIntro, setIsShowIntro] = useState(false);
 
   return (
     <div>
@@ -176,46 +177,55 @@ const Page = () => {
                   nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn.
                 </span>
 
-                <span>
-                  Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách
-                  hàng) hộ kinh doanh (gần 1 triệu khách hàng) và doanh nghiệp
-                  vừa và nhỏ SME (bao gồm cả miro SME) khoảng 0,5 triệu khách
-                  hàng.Đặc biệt định hướng vào phân khúc cho người dân vùng nông
-                  thôn, người nghèo chưa có điều kiện tiếp cận dịch vụ tài chính
-                  ngân hàng với ứng dụng công nghệ cao.
-                </span>
+                {isShowIntro && (
+                  <>
+                    <span>
+                      Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách
+                      hàng) hộ kinh doanh (gần 1 triệu khách hàng) và doanh
+                      nghiệp vừa và nhỏ SME (bao gồm cả miro SME) khoảng 0,5
+                      triệu khách hàng.Đặc biệt định hướng vào phân khúc cho
+                      người dân vùng nông thôn, người nghèo chưa có điều kiện
+                      tiếp cận dịch vụ tài chính ngân hàng với ứng dụng công
+                      nghệ cao.
+                    </span>
 
-                <span>
-                  Hướng đến nhóm khách hàng tài chính vi mô, để mọi người dân
-                  đều có thể sử dụng dịch vụ. Mang tính an sinh xã hội và phổ
-                  cập tài chính rộng khắp cho người dân. Có tính nhân văn lớn.Sở
-                  hữu đội ngũ nhân viên chuyên nghiệp, giàu kinh nghiệm trong
-                  lĩnh vực tài chính ngân hàng, VNFITE mang đến một kênh đầu tư
-                  hiệu quả, an toàn vì cuộc sống tốt đẹp phát triển thịnh vượng
-                  cho các nhà đầu tư trên mọi miền tổ quốc.
-                </span>
+                    <span>
+                      Hướng đến nhóm khách hàng tài chính vi mô, để mọi người
+                      dân đều có thể sử dụng dịch vụ. Mang tính an sinh xã hội
+                      và phổ cập tài chính rộng khắp cho người dân. Có tính nhân
+                      văn lớn.Sở hữu đội ngũ nhân viên chuyên nghiệp, giàu kinh
+                      nghiệm trong lĩnh vực tài chính ngân hàng, VNFITE mang đến
+                      một kênh đầu tư hiệu quả, an toàn vì cuộc sống tốt đẹp
+                      phát triển thịnh vượng cho các nhà đầu tư trên mọi miền tổ
+                      quốc.
+                    </span>
 
-                <span>
-                  Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập nhưng
-                  VNFITE đang dần khẳng định vị thế của mình trên thị trường
-                  Fintech nói chung và thị trường tài chính nói chung. Với mục
-                  tiêu kết nối nhanh chóng và an toàn, VNFITE đã và đang ứng
-                  dụng một cách triệt để công nghệ 4.0, kết nối trực tiếp các
-                  nhà đầu tư và người kêu gọi vốn, dần chứng minh mình là một
-                  trong những kênh dẫn vốn hiệu quả cho các hộ kinh doanh, các
-                  doanh nghiệp vừa và nhỏ.
-                </span>
+                    <span>
+                      Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập
+                      nhưng VNFITE đang dần khẳng định vị thế của mình trên thị
+                      trường Fintech nói chung và thị trường tài chính nói
+                      chung. Với mục tiêu kết nối nhanh chóng và an toàn, VNFITE
+                      đã và đang ứng dụng một cách triệt để công nghệ 4.0, kết
+                      nối trực tiếp các nhà đầu tư và người kêu gọi vốn, dần
+                      chứng minh mình là một trong những kênh dẫn vốn hiệu quả
+                      cho các hộ kinh doanh, các doanh nghiệp vừa và nhỏ.
+                    </span>
 
-                <span>
-                  Với phương châm đặt lợi ích của khách hàng lên hàng đầu,
-                  VNFITE tin rằng chỉ có mang lại giá trị thiết thực cho khách
-                  hàng mới là giá trị cốt lõi của doanh nghiệp tài chính nói
-                  riêng và các doanh nghiệp nói chung
-                </span>
+                    <span>
+                      Với phương châm đặt lợi ích của khách hàng lên hàng đầu,
+                      VNFITE tin rằng chỉ có mang lại giá trị thiết thực cho
+                      khách hàng mới là giá trị cốt lõi của doanh nghiệp tài
+                      chính nói riêng và các doanh nghiệp nói chung
+                    </span>
+                  </>
+                )}
               </p>
 
               <div className="max-w-screen-xl w-[90%] mx-auto">
-                <ButtonArrow text="Xem thêm" />
+                <ButtonArrow
+                  text={isShowIntro ? "Ẩn bớt" : "Xem thêm"}
+                  onClick={() => setIsShowIntro((prev) => !prev)}
+                />
               </div>
             </div>
 
@@ -415,4 +425,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default About;

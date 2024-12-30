@@ -1,4 +1,4 @@
-const ButtonArrow = ({ text }) => {
+const ButtonArrow = ({ text, onClick }) => {
   return (
     <div className="mt-6 mx-auto">
       <div className="flex items-center mx-auto">
@@ -7,7 +7,10 @@ const ButtonArrow = ({ text }) => {
         {/* Đầu mũi tên */}
         <div className="w-0 h-0 border-l-[12px] border-t-[6px] border-b-[6px] border-[#f84f4f] border-t-transparent border-b-transparent bg-white"></div>
 
-        <button className="bg-grad py-2 mx-5 text-white rounded-lg text-base w-48">
+        <button
+          onClick={onClick}
+          className="bg-grad py-2 mx-5 text-white rounded-lg text-base w-48"
+        >
           {text}
         </button>
 
