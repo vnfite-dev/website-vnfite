@@ -3,6 +3,7 @@
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
+import ButtonArrow from "@/components/molecules/ButtonArrow";
 
 const Page = () => {
   const [show, setShow] = useState(0);
@@ -137,24 +138,36 @@ const Page = () => {
               <p className="text-5xl font-semibold text-center">
                 Giới thiệu về <span className="text-gradient">VNFITE</span>
               </p>
-              <Image
-                src="/images/about/AboutIntro.png"
-                className="mt-16"
-                alt="About Intro VNFITE"
-                width={1280}
-                height={500}
-              />
-              <p
-                style={{ width: "1280px" }}
-                className="font-normal text-base mt-14 flex flex-col space-y-7"
+
+              <div
+                style={{
+                  maxWidth: "1280px",
+                  width: "90%",
+                  margin: "30px auto",
+                }}
               >
+                <Image
+                  src="/images/about/AboutIntro.png"
+                  alt="About Intro"
+                  layout="responsive"
+                  width={1280}
+                  height={720}
+                  priority
+                />
+              </div>
+
+              <p className="p-4 font-normal text-base mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
                 <span>
                   VNFITE là một trong những nền tảng cho vay ngang hàng (P2P
                   Lending) lớn tại Việt Nam, đóng vai trò kết nối giữa nhà đầu
                   tư và người vay. Được thành lập từ năm 2020, VNFITE đã trở
                   thành một đơn vị tiên phong trong lĩnh vực công nghệ tài chính
                   tại Việt Nam, giúp đơn giản hóa quy trình vay vốn và đầu tư
-                  với công nghệ hiện đại.
+                  với công nghệ hiện đại. <br />
+                  <br />
+                  Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
+                  đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
+                  nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn.
                 </span>
 
                 <span>
@@ -200,6 +213,10 @@ const Page = () => {
                   riêng và các doanh nghiệp nói chung
                 </span>
               </p>
+
+              <div className="max-w-screen-xl w-[90%] mx-auto">
+                <ButtonArrow text="Xem thêm" />
+              </div>
             </div>
 
             {/* 1.2. Lịch sử phát triển */}
@@ -331,17 +348,25 @@ const Page = () => {
                 Đối với nhà đầu tư về{" "}
                 <span className="text-gradient">VNFITE</span>
               </p>
-              <Image
-                src="/images/about/Investor.png"
-                className="mt-16"
-                alt="About Intro VNFITE"
-                width={1280}
-                height={512}
-              />
-              <p
-                style={{ width: "1280px" }}
-                className="font-normal text-base mt-14 flex flex-col space-y-7"
+
+              <div
+                style={{
+                  maxWidth: "1280px",
+                  width: "90%",
+                  margin: "30px auto",
+                }}
               >
+                <Image
+                  src="/images/about/Investor.png"
+                  alt="About Intro"
+                  layout="responsive"
+                  width={1280}
+                  height={720}
+                  priority
+                />
+              </div>
+
+              <p className="p-4 font-normal text-base mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
                 <span className="text-center">
                   Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
                   đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
