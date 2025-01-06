@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Topbar from "@/components/molecules/Topbar";
 import Footer from "@/components/molecules/Footer";
+import Navbar from "@/components/molecules/Navbar";
+import Banner from "@/components/molecules/Banner";
+import Topbar from "@/components/molecules/Topbar";
+import Header from "@/components/molecules/Header";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
@@ -75,8 +78,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro antialiased`}>
-				<Topbar />
-
+				<Header />
 				{children}
 
 				<footer className="mt-32 font-sfpro">

@@ -9,6 +9,11 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			backgroundImage: {
+				investP2P: "url('/images/invest/p2p.jpg')",
+				investGroup: "url('/images/invest/group.jpg')",
+				investMidBanner: 'url("/images/invest/midBanner.png")',
+			},
 			borderRadius: {
 				"4xl": "32px",
 			},
