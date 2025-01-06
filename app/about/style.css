@@ -1,0 +1,6 @@
+.bg-grad-about {
+  background: radial-gradient(circle, #ffcdcd 2%, #ffeded 98%);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
