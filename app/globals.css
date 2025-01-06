@@ -7,40 +7,47 @@
 } */
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 @layer base {
-	body {
-		@apply font-sfpro text-[16px];
-	}
-	:root {
-		--radius: 0.5rem;
-	}
+  body {
+    @apply font-sfpro text-[16px];
+  }
+  :root {
+    --radius: 0.5rem;
+  }
 }
 /* BACKGROUND */
 .bg-grad {
-	background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bg-grad-content {
-	background-color: white;
-	width: calc(100% - 4px);
-	height: calc(100% - 4px);
+  background-color: white;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+}
+
+.bg-grad-about {
+  background: linear-gradient(90deg, #ffcdcd 100%, #ffeded 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .third-line-truncate {
-	overflow: hidden;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .bg-home-banner {
-	background: url("/images/home/banner.png");
-	background-size: cover;
+  background: url("/images/home/banner.png");
+  background-size: cover;
 }
 
 .bg-invest-banner {
@@ -48,116 +55,128 @@
 	background-size: cover;
 }
 @layer utilities {
-	.bg-pink-stack {
-		background: url("/images/home/pink-stack.png");
-		background-size: cover;
-	}
-	.bg-yellow-stack {
-		background: url("/images/home/yellow-stack.png");
-		background-size: cover;
-	}
+  .bg-pink-stack {
+    background: url("/images/home/pink-stack.png");
+    background-size: cover;
+  }
+  .bg-yellow-stack {
+    background: url("/images/home/yellow-stack.png");
+    background-size: cover;
+  }
 
-	.bg-footer {
-		background: url("/images/home/footer.png");
-		background-size: cover;
-	}
-	.btn-primary {
-		@apply px-10 py-3.5 rounded-xl bg-grad font-semibold text-[16px] leading-5 h-fit;
-	}
+  .bg-footer {
+    background: url("/images/home/footer.png");
+    background-size: cover;
+  }
+  .btn-primary {
+    @apply px-10 py-3.5 rounded-xl bg-grad font-semibold text-[16px] leading-5 h-fit;
+  }
 
-	.gradient-line {
-		height: 4px;
-		background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%),
-			linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
+  .gradient-line {
+    height: 4px;
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        transparent 50%,
+        #fff 50%,
+        #fff 100%
+      ),
+      linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
 
-		background-size: 20px 3px, 100% 3px;
-		border: none;
-	}
+    background-size: 20px 3px, 100% 3px;
+    border: none;
+  }
 
-	.gradient-line-reversed {
-		height: 4px;
-		background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%),
-			linear-gradient(90deg, #ef836c 0%, #f84f4f 100%);
+  .gradient-line-reversed {
+    height: 4px;
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        transparent 50%,
+        #fff 50%,
+        #fff 100%
+      ),
+      linear-gradient(90deg, #ef836c 0%, #f84f4f 100%);
 
-		background-size: 20px 3px, 100% 3px;
-		border: none;
-	}
+    background-size: 20px 3px, 100% 3px;
+    border: none;
+  }
 
-	.webkit-bg-clip-text {
-		-webkit-background-clip: text;
-		background-clip: text;
-	}
+  .webkit-bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 
-	.text-gradient {
-		background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
+  .text-gradient {
+    background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
-	.green-underline {
-		@apply relative inline-block;
-	}
+  .green-underline {
+    @apply relative inline-block;
+  }
 
-	.green-underline::after {
-		content: "";
-		@apply absolute top-[13px] -right-[5%] w-[110%] h-3 bg-[#E1F590] -z-10 -skew-x-[30deg];
-	}
+  .green-underline::after {
+    content: "";
+    @apply absolute top-[13px] -right-[5%] w-[110%] h-3 bg-[#E1F590] -z-10 -skew-x-[30deg];
+  }
 
-	/* Stack 4 / background */
+  /* Stack 4 / background */
 
-	.dash-border-skewed {
-		width: 100px;
-		height: 160px;
-		display: grid;
-		border-radius: 10px;
-		overflow: hidden;
-		transform-origin: bottom;
-		transform: skewX(-4deg);
-		background-color: aquamarine;
-	}
+  .dash-border-skewed {
+    width: 100px;
+    height: 160px;
+    display: grid;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-origin: bottom;
+    transform: skewX(-4deg);
+    background-color: aquamarine;
+  }
 
-	/* Stack 4 / breathing */
+  /* Stack 4 / breathing */
 
-	@keyframes breathing {
-		0% {
-			transform: scale(1);
-		}
-		50% {
-			transform: scale(1.2);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
+  @keyframes breathing {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
-	@keyframes bounce-2 {
-		0% {
-			bottom: 16px;
-		}
-		50% {
-			bottom: 40px;
-		}
-		100% {
-			bottom: 16px;
-		}
-	}
-	.animation-breathing {
-		animation: breathing 3s infinite;
-	}
+  @keyframes bounce-2 {
+    0% {
+      bottom: 16px;
+    }
+    50% {
+      bottom: 40px;
+    }
+    100% {
+      bottom: 16px;
+    }
+  }
+  .animation-breathing {
+    animation: breathing 3s infinite;
+  }
 
-	.animation-bounce {
-		animation: bounce-2 3s infinite;
-	}
+  .animation-bounce {
+    animation: bounce-2 3s infinite;
+  }
 
-	/* Navigation Menu */
+  /* Navigation Menu */
 
-	.navigation-menu-item {
-		@apply relative font-semibold text-base bg-transparent hover:bg-red-400 py-2 pt-3 text-gray-600;
-	}
+  .navigation-menu-item {
+    @apply relative font-semibold text-base bg-transparent hover:bg-red-400 py-2 pt-3 text-gray-600;
+  }
 
-	.no-scrollbar {
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
