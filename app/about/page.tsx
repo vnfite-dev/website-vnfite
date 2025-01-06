@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import ButtonArrow from "@/components/molecules/ButtonArrow";
+import "./style.css"
 
 const About = () => {
   const [show, setShow] = useState(0);
@@ -136,7 +137,7 @@ const About = () => {
           <div className="flex justify-center items-center flex-col space-y-40">
             {/* 1.1. Giới thiệu về VNFITE */}
             <div>
-              <p className="text-5xl font-semibold text-center">
+              <p className="text-5xl font-semibold text-center px-4">
                 Giới thiệu về <span className="text-gradient">VNFITE</span>
               </p>
 
@@ -231,7 +232,7 @@ const About = () => {
 
             {/* 1.2. Lịch sử phát triển */}
             <div>
-              <p className="text-5xl font-semibold text-center">
+              <p className="text-5xl font-semibold text-center px-4">
                 Lịch sử phát triển
               </p>
               <div className="flex justify-center items-center mt-16">
@@ -246,52 +247,72 @@ const About = () => {
 
             {/* 1.3. Tầm nhìn và sứ mệnh */}
             <div>
-              <p className="text-5xl font-semibold text-center">
+              <p className="text-5xl font-semibold text-center px-4">
                 Tầm nhìn và sứ mệnh
               </p>
-              <p className="font-normal text-base mt-14">
+              <p className="font-normal text-base mt-14 text-center p-6">
                 Là sợi dây kết nối giữa nhà đầu tư và nhà huy động, tạo ra sân
                 chơi an toàn giao thương tài chính, tạo lợi ích cho các bên đồng
                 thời tạo sự phát triển bền vững cho xã hội.
               </p>
-              <div className="flex justify-center items-center mt-8 space-x-2">
-                <Image
-                  src="/images/about/View1.png"
-                  alt="Tầm nhìn và sứ mệnh 1"
-                  width={405}
-                  height={96}
-                  className="text-center p-4"
-                />
-                <Image
-                  src="/images/about/View2.png"
-                  alt="Tầm nhìn và sứ mệnh 2"
-                  width={405}
-                  height={96}
-                  className="text-center p-4"
-                />
-                <Image
-                  src="/images/about/View3.png"
-                  alt="Tầm nhìn và sứ mệnh 3"
-                  width={405}
-                  height={96}
-                  className="text-center p-4"
-                />
+              <div className="flex justify-center items-center mt-8 space-y-4 flex-col lg:flex-row lg:space-x-4 lg:space-y-0 mb-4 px-4">
+                <div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
+                  <div style={{ width: "56px", height: "64px" }}>
+                    <Image
+                      src="/images/about/View1.png"
+                      alt="Tầm nhìn và sứ mệnh 1"
+                      width={56}
+                      height={64}
+                    />
+                  </div>
+                  <p>Khách hàng là trung tâm</p>
+                </div>
+                <div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
+                  <div style={{ width: "56px", height: "64px" }}>
+                    <Image
+                      src="/images/about/View2.png"
+                      alt="Tầm nhìn và sứ mệnh 2"
+                      width={56}
+                      height={64}
+                    />
+                  </div>
+                  <p>Đoàn kết và phát triển</p>
+                </div>
+                <div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
+                  <div style={{ width: "56px", height: "64px" }}>
+                    <Image
+                      src="/images/about/View3.png"
+                      alt="Tầm nhìn và sứ mệnh 3"
+                      width={56}
+                      height={64}
+                    />
+                  </div>
+                  <p>Nhiệt huyết và đổi mới</p>
+                </div>
               </div>
-              <div className="flex justify-center items-center space-x-2">
-                <Image
-                  src="/images/about/View4.png"
-                  alt="Tầm nhìn và sứ mệnh 4"
-                  width={405}
-                  height={96}
-                  className="text-center p-4"
-                />
-                <Image
-                  src="/images/about/View5.png"
-                  alt="Tầm nhìn và sứ mệnh 5"
-                  width={405}
-                  height={96}
-                  className="text-center p-4"
-                />
+              <div className="flex justify-center items-center space-y-4 flex-col lg:flex-row lg:space-x-4 lg:space-y-0 mb-4 px-4">
+                <div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
+                  <div style={{ width: "56px", height: "64px" }}>
+                    <Image
+                      src="/images/about/View4.png"
+                      alt="Tầm nhìn và sứ mệnh 4"
+                      width={56}
+                      height={64}
+                    />
+                  </div>
+                  <p>Tin cậy và trách nhiệm</p>
+                </div>
+                <div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
+                  <div style={{ width: "56px", height: "64px" }}>
+                    <Image
+                      src="/images/about/View5.png"
+                      alt="Tầm nhìn và sứ mệnh 5"
+                      width={56}
+                      height={64}
+                    />
+                  </div>
+                  <p>An sinh xã hội hướng tới lợi ích cộng đồng</p>
+                </div>
               </div>
             </div>
           </div>
@@ -354,7 +375,7 @@ const About = () => {
         {show === 2 && (
           <div className="flex justify-center items-center flex-col space-y-40">
             <div>
-              <p className="text-5xl font-semibold text-center">
+              <p className="text-5xl font-semibold text-center px-4">
                 Đối với nhà đầu tư về{" "}
                 <span className="text-gradient">VNFITE</span>
               </p>
