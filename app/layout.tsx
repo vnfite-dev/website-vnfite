@@ -3,9 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/molecules/Footer";
-import Navbar from "@/components/molecules/Navbar";
-import Banner from "@/components/molecules/Banner";
-import Topbar from "@/components/molecules/Topbar";
 import Header from "@/components/molecules/Header";
 
 // If loading a variable font, you don't need to specify the font weight
@@ -13,26 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 const sfpro = localFont({
 	src: [
-		// {
-		// 	path: "./fonts/SF_Pro.woff2",
-		// 	weight: "400",
-		// 	style: "normal",
-		// },
-		// {
-		// 	path: "./fonts/SF_Pro_semibold.woff2",
-		// 	weight: "600",
-		// 	style: "normal",
-		// },
-		// {
-		// 	path: "./fonts/SF_Pro_bold.woff2",
-		// 	weight: "700",
-		// 	style: "normal",
-		// },
-		// {
-		// 	path: "./fonts/SF_Pro_heavy.woff2",
-		// 	weight: "800",
-		// },
-
 		{
 			path: "./fonts/SF-Pro-Display-Regular.otf",
 			weight: "400",

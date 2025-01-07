@@ -17,16 +17,17 @@ const Header = () => {
 				return "bg-contact-banner";
 			case "/invest":
 				return "bg-invest-banner";
+			case "/insure":
+				return "bg-insure-banner";
 			default:
 				return "bg-home-banner";
 		}
 	})();
 	return (
-		<header className={`${bannerBackground} pb-[190px] h-v`}>
+		<header className={`${bannerBackground} pb-[190px] h-[100vh]`}>
 			<Topbar />
-			<div className="lg:container mx-auto pt-8 relative top-4">
-				<Navbar />
-
+			<Navbar />
+			<div className="lg:container mx-auto relative top-4">
 				{pathname === "/" && (
 					<div className="mt-[90px]">
 						<Banner />

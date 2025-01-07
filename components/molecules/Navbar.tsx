@@ -13,14 +13,61 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import Topbar from "./Topbar";
+import { useEffect, useState, useRef } from "react";
 const Navbar = () => {
+	const navRef = useRef<HTMLDivElement>(null);
+
+	const [isFixed, setIsFixed] = useState(false);
+	useEffect(() => {
+		const handleScroll = () => {
+			if (navRef.current) {
+				// const rect = navRef.current.getBoundingClientRect();
+
+				if (window.scrollY >= 60) {
+					if (isFixed == false) {
+						setIsFixed(true);
+					}
+				} else {
+					setIsFixed(false);
+				}
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 	return (
 		<>
 			{/* <Topbar /> */}
-			<div className="w-full flex justify-between items-center">
-				<div className="">
-					<Image src="/images/vnfite_logo.png" width={220} height={52} alt="logo" />
+			<div
+				className={cn(
+					"py-6 w-full flex justify-between items-center mx-auto px-[15%]",
+					isFixed ? "fixed bg-blue-200 z-[200] top-0 py-2" : ""
+				)}
+				ref={navRef}
+			>
+				<div className="flex gap-1">
+					{/* <Image src="/images/vnfite_logo.png" width={220} height={52} alt="logo" /> */}
+					<Image src="/logo.svg" width={55} height={55} alt="logo" />
+					<div className="flex flex-col justify-center items-center gap-1">
+						<Image
+							src="/onlyVNFITE.svg"
+							width={160}
+							height={32}
+							alt="logo"
+							// className={cn(isFixed && "transform")}
+						/>
+
+						{!isFixed && (
+							<Image
+								src="/knnv.svg"
+								width={150}
+								height={6}
+								alt="logo"
+								className="transition-opacity duration-300 opacity-100"
+							/>
+						)}
+					</div>
 				</div>
 				<div className="items relative">
 					<NavigationMenu>
