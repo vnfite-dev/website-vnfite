@@ -34,7 +34,7 @@ const StackItem = ({
 		const handleScroll = () => {
 			if (item.current) {
 				const rect = item.current.getBoundingClientRect();
-				const stickyStart = rect.top <= 20 * stack; // Sticky when it reaches the top
+				const stickyStart = rect.top <= 100 + 20 * stack; // Sticky when it reaches the top
 				setIsSticky(stickyStart);
 			}
 		};
@@ -54,7 +54,7 @@ const StackItem = ({
 				}
 			)}
 			style={{
-				top: `${stack * 20}px`,
+				top: `${100 + stack * 20}px`,
 				zIndex: stack * 10 + 1,
 			}}
 		>
