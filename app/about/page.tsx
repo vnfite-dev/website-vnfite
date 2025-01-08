@@ -4,11 +4,34 @@ import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import ButtonArrow from "@/components/molecules/ButtonArrow";
-import "./style.css"
+import "./style.css";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import TimeLine from "@/components/molecules/TimeLine";
 
 const About = () => {
   const [show, setShow] = useState(0);
   const [isShowIntro, setIsShowIntro] = useState(false);
+  const [api, setApi] = useState<CarouselApi>();
+
+  const dataHistory = [
+    {
+      title: "Thành lập VNFITE SOFTWARE",
+      content:
+        [
+          "VNFITE SOFTWARE được thành lập với sứ mệnh tạo ra những công nghệ tiên tiến nhất hiện nay, với đội ngũ nhân sự dày dặn kinh nghiệm sẽ giúp cho những phầm mềm của chúng tôi có những bước chuyển đổi đột phá.",
+          "Là một trong những công ty công nghệ thông tin hàng đầu Việt Nam và khu vực, trực thuộc VNFITE. Được thành lập vào năm 2024, VNFITE Software đã phát triển mạnh mẽ, cung cấp các dịch vụ công nghệ và gia công phần mềm cho khách hàng trên toàn cầu. Với sự hiện diện tại các quốc gia lớn, VNFITE Software hiện là đối tác tin cậy của nhiều tập đoàn lớn trong danh sách Fortune Global 500. "
+        ]
+    },
+    {
+      title: "Thành lập VNFITE MARKETING",
+      content:
+        [
+          "VNFITE MARKETING được thành lập với sứ mệnh tạo ra những công nghệ tiên tiến nhất hiện nay, với đội ngũ nhân sự dày dặn kinh nghiệm sẽ giúp cho những phầm mềm của chúng tôi có những bước chuyển đổi đột phá.",
+          "Là một trong những công ty công nghệ thông tin hàng đầu Việt Nam và khu vực, trực thuộc VNFITE. Được thành lập vào năm 2024, VNFITE Software đã phát triển mạnh mẽ, cung cấp các dịch vụ công nghệ và gia công phần mềm cho khách hàng trên toàn cầu. Với sự hiện diện tại các quốc gia lớn, VNFITE MARKETING hiện là đối tác tin cậy của nhiều tập đoàn lớn trong danh sách Fortune Global 500. "
+        ]
+    },
+  ];
 
   return (
     <div>
@@ -235,13 +258,67 @@ const About = () => {
               <p className="text-5xl font-semibold text-center px-4">
                 Lịch sử phát triển
               </p>
-              <div className="flex justify-center items-center mt-16">
-                <Image
-                  src="/images/about/History.png"
-                  alt="About History VNFITE"
-                  width={437}
-                  height={437}
-                />
+              <div className="flex justify-center items-center flex-row  mt-16 max-w-[1280px] space-x-6">
+                <div className="flex justify-center items-center w-[35%]">
+                  <Image
+                    src="/images/about/History.png"
+                    alt="About History VNFITE"
+                    width={437}
+                    height={437}
+                  />
+                </div>
+                <div className="w-[65%] flex justify-center flex-col items-center">
+                  <div className="mb-10">
+                    <TimeLine />
+                  </div>
+
+                  <div className="w-full flex relative">
+                    <div className="w-1/5 flex flex-col justify-center items-center ">
+                      <div className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center">
+                        <div
+                          className="h-8 w-8 rounded-full bg-white flex justify-center items-center"
+                          onClick={() => api?.scrollPrev()}
+                        >
+                          {/* <ArrowRight className="h-4 w-4" /> */}
+                          <ChevronRight
+                            size={40}
+                            color="#CF1313"
+                            className="relative -left-[2px] rotate-180"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <Carousel className="w-full" setApi={setApi} opts={{ loop: true }}>
+                      <CarouselContent>
+                        {dataHistory.map((_, index) => (
+                          <CarouselItem key={index}>
+                            <div className="flex-grow pt-8">
+                              <p className="text-2xl font-semibold leading-[48px] text-center mb-6">{_.title}</p>
+
+                              {_.content.map((_, index) => (
+                                <p key={index} className="text-base font-normal third-line-truncate">{_}</p>
+                              ))}
+
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                    </Carousel>
+
+                    <div className="w-1/5 flex flex-col justify-center items-center">
+                      <div
+                        className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center"
+                        onClick={() => api?.scrollNext()}
+                      >
+                        <div className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
+                          <ChevronRight size={40} color="#CF1313" className="relative left-[2px]" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
 

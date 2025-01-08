@@ -24,7 +24,7 @@ const Header = () => {
 		}
 	})();
 	return (
-		<header className={`${bannerBackground} pb-[190px] h-[100vh]`}>
+		<header className={`${bannerBackground} pb-[190px] h-[720px]`}>
 			<Topbar />
 			<Navbar />
 			<div className="lg:container mx-auto relative top-4">
