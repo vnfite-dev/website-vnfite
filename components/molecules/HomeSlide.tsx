@@ -143,7 +143,7 @@ const HomeSlide = () => {
 
 				<div className="mt-16 flex font-sfpro">
 					{staticData.map((item, index) => (
-						<StaticItem key={index} {...item} />
+						<StaticItem key={index} {...item} afterNum={item.afterNum || ''} name={item.name || ''} number={item.number} preNum={item.preNum} />
 					))}
 				</div>
 			</div>
