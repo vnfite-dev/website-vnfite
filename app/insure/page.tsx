@@ -65,7 +65,7 @@ const Insure = () => {
                   Bảo lãnh tại hơn 200 bệnh viện
                 </p>
               </div>
-              <div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center underline z-10">Xem chi tiết</div>
+              <div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center underline z-10 cursor-pointer">Xem chi tiết</div>
 
               <div className="absolute w-40 h-40 bg-white rounded-4xl top-[-80px] left-1/2 -translate-x-1/2 flex items-center justify-center border border-[#F84F4F] z-0">
                 <div className="w-32 h-32 bg-grad rounded-3xl flex items-center justify-center overflow-hidden z-50 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
@@ -99,7 +99,7 @@ const Insure = () => {
                   Bảo lãnh tại 1500 gara
                 </p>
               </div>
-              <div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline">Xem chi tiết</div>
+              <div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline cursor-pointer">Xem chi tiết</div>
 
               <div className="absolute w-40 h-40 bg-white rounded-4xl top-[-80px] left-1/2 -translate-x-1/2 flex items-center justify-center border border-[#F84F4F] z-0">
                 <div className="w-32 h-32 bg-grad rounded-3xl flex items-center justify-center overflow-hidden z-50 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
@@ -129,7 +129,7 @@ const Insure = () => {
                 </p>
 
               </div>
-              <div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline">Xem chi tiết</div>
+              <div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline cursor-pointer">Xem chi tiết</div>
 
               <div className="absolute w-40 h-40 bg-white rounded-4xl top-[-80px] left-1/2 -translate-x-1/2 flex items-center justify-center border border-[#F84F4F] z-0">
                 <div className="w-32 h-32 bg-grad rounded-3xl flex items-center justify-center overflow-hidden z-50 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
