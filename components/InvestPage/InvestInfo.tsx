@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const InfoBlock = ({ image, content }: { image: string; content: string }) => {
@@ -17,8 +17,8 @@ const InfoBlock = ({ image, content }: { image: string; content: string }) => {
 };
 
 const AnimateBlock = ({
-	image,
-	content,
+	// image,
+	// content,
 	reversed = false,
 }: {
 	image?: string;
