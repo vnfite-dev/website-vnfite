@@ -8,23 +8,30 @@ const Header = () => {
 
 	// Define background classes based on the route
 	const bannerBackground = (() => {
-		switch (pathname) {
-			case "/about":
-				return "bg-about-banner";
-			case "/products":
-				return "bg-products-banner";
-			case "/contact":
-				return "bg-contact-banner";
-			case "/invest":
-				return "bg-invest-banner";
-			case "/insure":
-				return "bg-insure-banner";
-			default:
-				return "bg-home-banner";
+		if (pathname === "/") {
+			return "bg-home-banner";
+		} else {
+			return `bg-${pathname.replace("/", "")}-banner`;
 		}
+		// switch (pathname) {
+		// 	case "/about":
+		// 		return "bg-about-banner";
+		// 	case "/products":
+		// 		return "bg-products-banner";
+		// 	case "/contact":
+		// 		return "bg-contact-banner";
+		// 	case "/invest":
+		// 		return "bg-invest-banner";
+		// 	case "/insure":
+		// 		return "bg-insure-banner";
+		// 	case "/news":
+		// 		return "bg-news-banner";
+		// 	default:
+		// 		return "bg-home-banner";
+		// }
 	})();
 	return (
-		<header className={`${bannerBackground} pb-[190px] h-[720px]`}>
+		<header className={`${bannerBackground} pb-[190px] min-h-[720px] max-h-[100vh]`}>
 			<Topbar />
 			<Navbar />
 			<div className="lg:container mx-auto relative top-4">
