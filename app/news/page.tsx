@@ -6,7 +6,8 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import { Calendar, Calendar1Icon } from "lucide-react";
+import { Calendar } from "lucide-react";
+import Image from "next/image";
 const bigNews = [
 	{
 		id: 1,
@@ -60,7 +61,7 @@ const NewsPage = () => {
 				<div className="mt-16 flex gap-8 ">
 					<div
 						className={cn(
-							"w-full aspect-square bg-cover rounded-4xl relative overflow-hidden group",
+							"w-full cursor-pointer aspect-square bg-cover rounded-4xl relative overflow-hidden group",
 							normalNews[0].banner
 						)}
 					>
@@ -82,7 +83,7 @@ const NewsPage = () => {
 							{/* Border Animation */}
 							<div className="w-full flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
 								<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"></div>
-								<p className="w-[250px] text-center px-3 text-white">Xem chi tiết</p>
+								<p className="w-[220px] text-center px-1 text-white">Xem chi tiết</p>
 								<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-in-out"></div>
 							</div>
 						</div>
@@ -90,12 +91,18 @@ const NewsPage = () => {
 
 					<div className="w-full grid grid-cols-2 gap-8">
 						{[...Array(4)].map((_, index) => (
-							<div key={index}>
+							<div key={index} className="cursor-pointer group">
 								<div
-									className={cn("w-full h-[200px] rounded-3xl bg-cover", normalNews[0].banner)}
-								></div>
-
-								<div className="text-base font-semibold">{normalNews[0].title}</div>
+									className={cn("w-full relative h-[160px] rounded-2xl bg-cover  overflow-hidden")}
+								>
+									<Image
+										className="group-hover:scale-110 object-cover"
+										src={"/images/news/bigNew.jpg"}
+										alt="banner"
+										fill
+									/>
+								</div>
+								<div className="text-base font-semibold mt-2">{normalNews[0].title}</div>
 								<div className="flex gap-1 text-sm items-center text-gray-600">
 									<Calendar size={16} />
 									{normalNews[0].time}
@@ -109,14 +116,33 @@ const NewsPage = () => {
 			<div className="mt-28">
 				<p className="text-center text-5xl font-semibold">Danh sách tin tức</p>
 
-				<div className="grid grid-cols-4">
+				<div className="grid grid-cols-4 gap-8 lg:gap-6 mt-16">
 					{[...Array(8)].map((_, index) => (
-						<div key={index} className="flex flex-col gap-4 p-4">
-							<div className="w-full h-[200px] rounded-3xl bg-cover"></div>
-							<div className="text-base font-semibold">{normalNews[0].title}</div>
-							<div className="flex gap-1 text-sm items-center text-gray-600">
-								<Calendar size={16} />
-								{normalNews[0].time}
+						<div
+							key={index}
+							className="flex flex-col gap-6 p-2 pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
+						>
+							<div className={cn("w-full relative h-[200px] rounded-2xl bg-cover  overflow-hidden")}>
+								<Image
+									className="group-hover:scale-110 object-cover"
+									src={"/images/news/bigNew.jpg"}
+									alt="banner"
+									fill
+								/>
+
+								<div className="absolute top-0 py-1 px-3 bg-grad text-white rounded-b-lg left-1/2 -translate-x-1/2">
+									{normalNews[0].time}
+								</div>
+							</div>
+							<div className="text-base font-semibold group-hover:text-gradient">
+								{normalNews[0].title}
+							</div>
+							<div className="w-full flex items-center gap-3  transition-opacity duration-500 ease-in-out font-medium">
+								<div className="w-full border-t border-red-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"></div>
+								<p className="w-[250px] text-center px-1 text-black group-hover:text-red-500 text-sm">
+									Xem chi tiết
+								</p>
+								<div className="w-full border-t border-red-500 transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-in-out"></div>
 							</div>
 						</div>
 					))}
