@@ -258,8 +258,8 @@ const About = () => {
               <p className="text-5xl font-semibold text-center px-4">
                 Lịch sử phát triển
               </p>
-              <div className="flex justify-center items-center flex-row  mt-16 max-w-[1280px] space-x-6">
-                <div className="flex justify-center items-center w-[35%]">
+              <div className="flex justify-center items-center flex-col md:flex-row mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 mx-10">
+                <div className="flex justify-center items-center w-full md:w-[35%]">
                   <Image
                     src="/images/about/History.png"
                     alt="About History VNFITE"
@@ -267,7 +267,7 @@ const About = () => {
                     height={437}
                   />
                 </div>
-                <div className="w-[65%] flex justify-center flex-col items-center">
+                <div className="w-full md:w-[65%] flex justify-center flex-col items-center">
                   <div className="mb-10">
                     <TimeLine />
                   </div>
