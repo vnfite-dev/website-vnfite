@@ -63,9 +63,11 @@
 .bg-insure-banner {
 	background: url("/images/insure/banner.jpg");
 	background-size: cover;
+}
 
-	/* background-size: contain; */
-	/* background-repeat: no-repeat; */
+.bg-news-banner {
+	background: url("/images/news/banner.jpg");
+	background-size: cover;
 }
 @layer utilities {
 	.bg-pink-stack {
