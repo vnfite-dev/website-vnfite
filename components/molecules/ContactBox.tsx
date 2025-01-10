@@ -19,7 +19,7 @@ const ContactBox = () => {
 	};
 	return (
 		<div className="w-full px-[6.25%]">
-			<div className="bg-customPink py-20 px-[11.3%] flex justify-between gap-20">
+			<div className="bg-customPink py-20 px-[11.3%] flex justify-between gap-20 rounded-4xl">
 				<div className="mt-16 w-[438px] h-[438px] aspect-square relative">
 					<Image className="object-cover w-auto h-full" src="/images/home/contact.png" alt="icon" fill />
 				</div>
@@ -44,7 +44,7 @@ const ContactBox = () => {
 								<Input
 									type="text"
 									placeholder="Họ và tên"
-									className="pl-14 h-12 rounded-full border-0 bg-white shadow-sm"
+									className="pl-14 h-12 rounded-xl border-0 bg-white shadow-sm"
 									value={formData.name}
 									onChange={(e) => setFormData({ ...formData, name: e.target.value })}
 								/>
@@ -56,7 +56,7 @@ const ContactBox = () => {
 								<Input
 									type="tel"
 									placeholder="Số điện thoại"
-									className="pl-14 h-12 rounded-full border-0 bg-white shadow-sm"
+									className="pl-14 h-12 rounded-xl border-0 bg-white shadow-sm"
 									value={formData.phone}
 									onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
 								/>
@@ -68,7 +68,7 @@ const ContactBox = () => {
 								<Input
 									type="email"
 									placeholder="Email"
-									className="pl-14 h-12 rounded-full border-0 bg-white shadow-sm"
+									className="pl-14 h-12 rounded-xl border-0 bg-white shadow-sm"
 									value={formData.email}
 									onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 								/>

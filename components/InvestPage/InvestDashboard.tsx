@@ -1,16 +1,11 @@
-import React from "react";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@/components/ui/table";
+"use client";
+import { useState } from "react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { cn, formatVND } from "@/lib/utils";
 import { Progress } from "../ui/progress";
 import { Button } from "../ui/button";
 import { Download } from "lucide-react";
+import { Slider } from "../ui/slider";
 const investmentData = [
 	{
 		code: "GV001",
@@ -78,12 +73,21 @@ const investmentData = [
 ];
 
 const InvestDashboard = () => {
+	const [sliderValues, setSliderValues] = useState<{
+		money: number[];
+		term: number[];
+		interest: number[];
+	}>({
+		money: [500000],
+		term: [12],
+		interest: [8.5],
+	});
 	const formatRank = (rank: string) => {
 		return (
 			<div
 				className={cn(
-					"flex justify-center items-center bg-red-400 rounded-lg text-white py-2 w-12",
-					rank.startsWith("A") ? "bg-blue-500" : rank.startsWith("B") ? "bg-[rgba(229, 189, 46, 1)]" : ""
+					"flex justify-center items-center bg-red-400 rounded-lg text-white font-semibold  py-2 w-12",
+					rank.startsWith("A") ? "bg-blue-500" : rank.startsWith("B") ? "bg-[#FFBF01]" : "bg-[#794719]"
 				)}
 			>
 				{rank}
@@ -92,7 +96,75 @@ const InvestDashboard = () => {
 	};
 	return (
 		<div className="">
-			<div className="text-center text-5xl font-semibold">
+			<div className="bg-grad w-full py-12 flex-col px-[16.7%]">
+				<div className="text-center text-white font-semibold text-5xl">
+					Công cụ tính lãi suất mỗi tháng
+				</div>
+
+				<div className="mt-6 grid grid-cols-[1fr_1fr_1fr_300px] w-full text-white justify-between gap-12">
+					<div className="">
+						<div className="text-end">
+							<p>Số tiền đầu tư</p>
+							<p className="text-xl font-semibold">{formatVND(sliderValues.money[0])} VNĐ</p>
+						</div>
+						<Slider
+							value={sliderValues.money}
+							className="mt-2"
+							min={500000}
+							step={500_000}
+							max={10_000_000_000}
+							onValueChange={(value) => setSliderValues({ ...sliderValues, money: value })}
+						/>
+					</div>
+
+					<div className="">
+						<div className="text-end">
+							<p>Số tháng đầu tư</p>
+							<p className="text-xl font-semibold">{sliderValues.term[0]} Tháng</p>
+						</div>
+						<Slider
+							value={sliderValues.term}
+							className="mt-2"
+							min={1}
+							max={36}
+							onValueChange={(value) => setSliderValues({ ...sliderValues, term: value })}
+						/>
+					</div>
+
+					<div className="">
+						<div className="text-end">
+							<p>Lãi suất</p>
+							<p className="text-xl font-semibold">{sliderValues.interest[0]} %/năm</p>
+						</div>
+						<Slider
+							value={sliderValues.interest}
+							className="mt-2"
+							min={0}
+							step={0.1}
+							max={30}
+							onValueChange={(value) => setSliderValues({ ...sliderValues, interest: value })}
+						/>
+					</div>
+
+					<div className="flex flex-col justify-between items-end">
+						<p>Số tiền nhận lãi mỗi tháng</p>
+						<div className="text-3xl font-bold">
+							{formatVND(
+								Math.round(
+									((sliderValues.money[0] / sliderValues.term[0]) * sliderValues.interest[0]) / 100
+								)
+							)}{" "}
+							VNĐ
+						</div>
+					</div>
+				</div>
+
+				<div className="mt-12 text-sm text-center text-white">
+					Lãi suất được tính bao gồm phí thu nhập cá nhân 10% lãi suất và phí trước bạn là 5%.
+				</div>
+			</div>
+
+			<div className="text-center text-5xl font-semibold mt-12">
 				Đầu tư cùng <span className="text-gradient">VNFITE</span>
 			</div>
 

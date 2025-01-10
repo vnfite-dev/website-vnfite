@@ -23,8 +23,6 @@ export default function AnimatedCircularProgressBar({
 	const currentPercent = Math.round(((value - min) / (max - min)) * 100);
 	const strokeDashoffset = circumference - (currentPercent / 100) * circumference; // Offset cho stroke
 
-	console.log("VALUE ", value);
-
 	return (
 		<div
 			className={cn(

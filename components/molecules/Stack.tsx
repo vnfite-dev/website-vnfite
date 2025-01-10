@@ -47,7 +47,7 @@ const StackItem = ({
 		<div
 			ref={item}
 			className={cn(
-				"w-full h-[100vh] relative text-center pt-16",
+				"w-full h-[100vh] relative text-center pt-1 rounded-[64px]",
 				pinkBackground ? "bg-pink-stack" : "bg-yellow-stack",
 				{
 					sticky: isSticky,

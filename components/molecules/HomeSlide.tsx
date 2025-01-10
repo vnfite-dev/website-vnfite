@@ -35,9 +35,9 @@ const StaticItem = (item: { number: number; preNum: string; afterNum: string; na
 	return (
 		<div className="w-1/4 flex flex-col items-center relative">
 			<h1 className="text-5xl font-extrabold text-gradient mb-4 flex">
-				<p>{item.preNum}</p>
 				<NumberTicker value={item.number} className="text-5xl font-extrabold text-gradient" />
 				<p>{item.afterNum}</p>
+				<p>{item.preNum}</p>
 			</h1>
 			{/* <div className="px-10 border border-customPink w-full">
 				<div className="border border-gray-200"></div>
@@ -86,7 +86,7 @@ const data = [
 
 const staticData = [
 	{
-		preNum: "+",
+		// preNum: "+",
 		number: 98,
 		afterNum: "%",
 		name: "Khoản giản ngân thành công",
@@ -143,7 +143,14 @@ const HomeSlide = () => {
 
 				<div className="mt-16 flex font-sfpro">
 					{staticData.map((item, index) => (
-						<StaticItem key={index} {...item} afterNum={item.afterNum || ''} name={item.name || ''} number={item.number} preNum={item.preNum} />
+						<StaticItem
+							key={index}
+							{...item}
+							afterNum={item.afterNum || ""}
+							name={item.name || ""}
+							number={item.number}
+							preNum={item.preNum}
+						/>
 					))}
 				</div>
 			</div>

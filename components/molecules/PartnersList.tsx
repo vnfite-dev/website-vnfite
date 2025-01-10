@@ -42,7 +42,7 @@ const PartnersList = () => {
 				<PartnerItem partner="baominh" />
 				<PartnerItem partner="chubb" />
 			</div> */}
-			<div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
+			<div className="relative flex mt-16 w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
 				<Marquee pauseOnHover className="[--duration:80s]">
 					<PartnerItem partner="vnpt" />
 					<PartnerItem partner="tnex" />
