@@ -96,7 +96,7 @@ const ListJobs = () => {
 	};
 	return (
 		<div className="">
-			<div className="w-full bg-grad p-[1.5px] rounded-xl">
+			<div className="w-full bg-grad p-[1.5px] rounded-xl transform -translate-y-1/2">
 				<div className="bg-white w-full h-full pb-6 rounded-[11px]">
 					<div className="text-center mt-6 font-semibold text-xl">
 						Cùng nhau là thành viên của <span className="text-gradient">VNFITE</span>
@@ -155,12 +155,12 @@ const ListJobs = () => {
 								</Select>
 							</div>
 
-							<Button className="bg-grad rounded-xl px-12">Tìm kiếm</Button>
+							<Button className="btn-primary !h-10 !rounded-xl px-12">Tìm kiếm</Button>
 						</form>
 					</div>
 				</div>
 			</div>
-			<div className="mt-28">
+			<div className="mt-12">
 				{jobList.map((item, index) => {
 					return (
 						<JobItem
