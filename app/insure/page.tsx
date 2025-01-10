@@ -68,18 +68,24 @@ const Insure = () => {
 						Giới thiệu về <span className="text-gradient">VNFITE</span>
 					</p>
 
-					<div className="flex flex-col lg:flex-row mt-28 max-w-[1280px] space-y-28 space-x-0 lg:space-y-0 lg:space-x-7 mx-auto">
+					<div
+						className="flex flex-col lg:flex-row mt-28 max-w-[1280px] space-y-28 space-x-0 lg:space-y-0 lg:space-x-7 mx-auto"
+					>
 						<div className="bg-[#FFF8F8] max-w-[405px] w-full h-[433px] rounded-3xl border border-[#F84F4F] relative group">
 							<p className="text-xl text-center font-semibold pt-28">Bảo hiểm sức khỏe</p>
 							<div className="text-[#4D4D4D] px-6 space-y-4 pt-6 font-normal">
 								<p>Chi trả chi phí khám chữa bệnh nội, ngoại trú</p>
-								<p>Cho trẻ từ 15 ngày đến người lớn 70 tuổi</p>
-								<p>Bồi thường online siêu tốc</p>
-								<p>Bảo lãnh tại hơn 200 bệnh viện</p>
+								<p>
+									Cho trẻ từ 15 ngày đến người lớn 70 tuổi
+								</p>
+								<p>
+									Bồi thường online siêu tốc
+								</p>
+								<p>
+									Bảo lãnh tại hơn 200 bệnh viện
+								</p>
 							</div>
-							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center underline z-10">
-								Xem chi tiết
-							</div>
+							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center underline z-10 cursor-pointer">Xem chi tiết</div>
 
 							<div className="absolute w-40 h-40 bg-white rounded-4xl top-[-80px] left-1/2 -translate-x-1/2 flex items-center justify-center border border-[#F84F4F] z-0">
 								<div className="w-32 h-32 bg-grad rounded-3xl flex items-center justify-center overflow-hidden z-50 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
@@ -100,14 +106,20 @@ const Insure = () => {
 						<div className="bg-[#FFF8F8] max-w-[405px] w-full h-[433px] rounded-3xl border border-[#F84F4F] relative group">
 							<p className="text-xl text-center font-semibold pt-28">Bảo hiểm xe cơ giới</p>
 							<div className="text-[#4D4D4D] px-6 space-y-4 pt-6 font-normal">
-								<p>Đền bù chi phí khắc phục thiệt hại của xe</p>
-								<p>Hỗ trợ chi phí sửa chữa thiết bị trên xe</p>
-								<p>Bồi thường siêu tốc</p>
-								<p>Bảo lãnh tại 1500 gara</p>
+								<p>
+									Đền bù chi phí khắc phục thiệt hại của xe
+								</p>
+								<p>
+									Hỗ trợ chi phí sửa chữa thiết bị trên xe
+								</p>
+								<p>
+									Bồi thường siêu tốc
+								</p>
+								<p>
+									Bảo lãnh tại 1500 gara
+								</p>
 							</div>
-							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline">
-								Xem chi tiết
-							</div>
+							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline cursor-pointer">Xem chi tiết</div>
 
 							<div className="absolute w-40 h-40 bg-white rounded-4xl top-[-80px] left-1/2 -translate-x-1/2 flex items-center justify-center border border-[#F84F4F] z-0">
 								<div className="w-32 h-32 bg-grad rounded-3xl flex items-center justify-center overflow-hidden z-50 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
@@ -132,7 +144,7 @@ const Insure = () => {
 								<p>Áp dụng cho chủ nhà, người thuê nhà, chung cư</p>
 								<p>Chi trả tối đa 20 Tỷ đồng/vụ</p>
 							</div>
-							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline">
+							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline cursor-pointer">
 								Xem chi tiết
 							</div>
 
