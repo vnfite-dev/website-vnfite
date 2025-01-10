@@ -192,7 +192,7 @@ const About = () => {
                   <br />
                   Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
                   đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
-                  nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn. Quang ddepj tria
+                  nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn. 
                 </span>
 
                 <span>
