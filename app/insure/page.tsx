@@ -289,6 +289,7 @@ const Insure = () => {
       </div>
     </div>
   );
+
 };
 
 export default Insure;

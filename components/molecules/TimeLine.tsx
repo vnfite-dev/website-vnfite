@@ -13,6 +13,7 @@ const TimeLine = () => {
                             boxShadow: colorClick === index ? '0 0 0 4px #E0694F' : '0 0 0 4px #B3B3B3',
                         }}
                     >
+
                         <div className={`absolute ${colorClick === index ? 'text-gradient' : 'text-[#B3B3B3]'} text-2xl font-semibold top-9 -left-5`}>{index + 2020}</div>
                     </div>
                     <div className={`w-14 lg:w-20 h-1 ${colorClick === index ? 'bg-grad' : 'bg-[#B3B3B3]'}`}></div>
