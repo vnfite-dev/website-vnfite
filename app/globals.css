@@ -19,7 +19,9 @@
 }
 /* BACKGROUND */
 .bg-grad {
-	background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
+	/* background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%); */
+	background: linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -55,6 +57,11 @@
 	background-size: cover;
 }
 
+.bg-products-banner {
+	background: url("/images/invest/banner.jpg");
+	background-size: cover;
+}
+
 .bg-about-banner {
 	background: url("/images/about/banner.jpg");
 	background-size: cover;
@@ -63,9 +70,15 @@
 .bg-insure-banner {
 	background: url("/images/insure/banner.jpg");
 	background-size: cover;
+}
+.bg-careers-banner {
+	background: url("/images/news/banner.jpg");
+	background-size: cover;
+}
 
-	/* background-size: contain; */
-	/* background-repeat: no-repeat; */
+.bg-news-banner {
+	background: url("/images/news/banner.jpg");
+	background-size: cover;
 }
 @layer utilities {
 	.bg-pink-stack {
@@ -83,12 +96,18 @@
 	}
 	.btn-primary {
 		@apply px-10 py-3.5 rounded-xl bg-grad font-semibold text-[16px] leading-5 h-fit;
+		/* transition: background 0.3s ease;  */
+	}
+
+	.btn-primary:hover {
+		background: linear-gradient(90deg, #e0694f 0%, #e82f2f 100%) !important;
 	}
 
 	.gradient-line {
 		height: 4px;
 		background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%),
-			linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
+			/* linear-gradient(90deg, #f84f4f 0%, #ef836c 100%); */
+				linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);
 
 		background-size: 20px 3px, 100% 3px;
 		border: none;
@@ -97,7 +116,8 @@
 	.gradient-line-reversed {
 		height: 4px;
 		background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%),
-			linear-gradient(90deg, #ef836c 0%, #f84f4f 100%);
+			/* linear-gradient(90deg, #ef836c 0%, #f84f4f 100%); */
+				linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);
 
 		background-size: 20px 3px, 100% 3px;
 		border: none;
@@ -109,7 +129,9 @@
 	}
 
 	.text-gradient {
-		background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%);
+		/* background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%); */
+		background: linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);
+
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;

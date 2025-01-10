@@ -46,11 +46,10 @@ const navItemText = [
 ];
 
 const Footer = () => {
-	const [isOpen, setIsOpen] = useState(true);
+	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		if (isOpen == true) {
-			console.log(document.body.scrollHeight);
 			setTimeout(() => {
 				window.scrollTo({
 					top: document.body.scrollHeight, // Đến cuối trang
@@ -64,7 +63,7 @@ const Footer = () => {
 			<div
 				className={cn(
 					"transition-all duration-500 overflow-hidden flex w-full",
-					isOpen ? "opacity-100 max-h-[1000px] pt-32 pb-[144px]" : "max-h-0 opacity-0"
+					isOpen ? "opacity-100 max-h-[1000px] pt-12 pb-10" : "max-h-0 opacity-0"
 				)}
 			>
 				<div className="w-4/5">
@@ -114,19 +113,19 @@ const Footer = () => {
 					<div className="w-full">
 						<div className="text-center font-semibold">Tải ứng dụng</div>
 						<div className="flex text-center mt-6">
-							<div className="w-1/2">
+							<div className="w-full flex justify-center ">
 								<div>
-									<Image src={"/images/home/QR.png"} width={102} height={102} alt="QR" />
+									<Image src={"/images/home/QR.png"} width={105} height={105} alt="QR" />
 								</div>
 							</div>
-							<div className="w-1/2">
+							{/* <div className="w-1/2">
 								<div className="mb-6">
 									<Image src={"/images/home/IOS.png"} width={120} height={40} alt="Android" />
 								</div>
 								<div>
 									<Image src={"/images/home/ANDROID.png"} width={120} height={40} alt="Android" />
 								</div>
-							</div>
+							</div> */}
 						</div>
 					</div>
 
@@ -144,7 +143,7 @@ const Footer = () => {
 			</div>
 			{/* <div className="mb-[148px] border-[0.5px] border-gray-300 w-full h-[0.5px]"></div> */}
 
-			<div className="w-full border-t-[1px] border-gray-300 py-14 flex justify-between">
+			<div className="w-full border-t-[1px] border-gray-300 py-10 flex justify-between">
 				<div className="">
 					<Image src={"/images/home/logoFooter.png"} width={220} height={52} alt="logo" />
 				</div>

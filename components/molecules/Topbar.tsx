@@ -15,7 +15,7 @@ const IconLink: React.FC<IconLinkProps> = ({ href, src, alt }) => (
 
 const Topbar = () => {
 	return (
-		<div className="text-[12px] text-white w-full flex justify-between items-center font-inter bg-gradient-to-r from-[#F36C6C] to-[#EAE45A] rounded-b-2xl h-12 md:px-[120px] py-4">
+		<div className="text-[12px] text-white w-full flex justify-between items-center font-inter bg-gradient-to-r from-[#E82F2F] to-[#E0694F] rounded-b-2xl h-12 md:px-[120px] py-4">
 			<div className="flex justify-around gap-12">
 				<div className="flex items-center gap-2">
 					<Image src={"/icons/topbar/headset.svg"} width={16} height={16} alt="headset" />

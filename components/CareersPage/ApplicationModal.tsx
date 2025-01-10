@@ -157,7 +157,6 @@ export function ApplicationModal({
     // Reset form state here if needed
   }
 
-  console.log("CURRENT STEP ", currentStep);
   return (
     <>
       <Dialog open={isOpen} onOpenChange={resetAndClose}>

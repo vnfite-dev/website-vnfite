@@ -1,9 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
-import { useState } from "react";
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const Insure = () => {
   const [isOpen, setIsOpen] = useState<null | number>(null);
 
