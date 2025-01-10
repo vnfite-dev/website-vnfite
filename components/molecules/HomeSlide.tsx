@@ -149,7 +149,7 @@ const HomeSlide = () => {
 							afterNum={item.afterNum || ""}
 							name={item.name || ""}
 							number={item.number}
-							preNum={item.preNum}
+							preNum={item.preNum || ""}
 						/>
 					))}
 				</div>
