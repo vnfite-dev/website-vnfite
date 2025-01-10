@@ -54,7 +54,7 @@ const StackItem = ({
 				}
 			)}
 			style={{
-				top: `${100 + stack * 20}px`,
+				top: `${80 + stack * 20}px`,
 				zIndex: stack * 10 + 1,
 			}}
 		>

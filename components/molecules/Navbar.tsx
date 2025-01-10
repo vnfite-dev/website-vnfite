@@ -94,14 +94,14 @@ const Navbar = () => {
 								<NavigationMenuContent className="relative">
 									<div className="flex gap-3 py-3 px-3 w-[750px] relative z-[1000]">
 										<div className="flex flex-col min-w-[250px]">
-											<div className="py-3 px-6 w-full cursor-pointer hover:bg-customPink hover:font-semibold ">
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink hover:font-semibold ">
 												Gọi vốn cá nhân
 											</div>
-											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
-												Gọi vốn cá nhân
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink hover:font-semibold ">
+												Gọi vốn gia đình
 											</div>
-											<div className="py-3 px-6 cursor-pointer hover:bg-customPink">
-												Gọi vốn cá nhân
+											<div className="py-3 px-6 cursor-pointer hover:bg-customPink hover:font-semibold ">
+												Gọi vốn doanh nghiệp
 											</div>
 										</div>
 
