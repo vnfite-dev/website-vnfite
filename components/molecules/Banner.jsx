@@ -19,7 +19,7 @@ const Banner = () => {
 
 					<BoxReveal duration={0.8}>
 						<p className="mt-6 font-sfpro font-semibold	">
-							<spam className="text-gradient">P2P</spam> hàng đầu Việt Nam
+							<span className="text-gradient">P2P</span> hàng đầu Việt Nam
 						</p>
 					</BoxReveal>
 
@@ -64,7 +64,7 @@ const Banner = () => {
 				</BoxReveal>
 
 				<div className="mt-12">
-					<Button className="bg-grad text-[16px] font-semibold rounded-[32px] px-10 py-3.5">
+					<Button className="btn-primary !h-14 text-[16px] font-semibold rounded-[32px] px-10 py-3.5">
 						Liên hệ với chúng tôi
 					</Button>
 				</div>

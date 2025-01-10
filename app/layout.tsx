@@ -54,7 +54,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro antialiased`}>
+			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro `}>
 				<Header />
 				{children}
 
