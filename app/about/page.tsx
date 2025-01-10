@@ -192,7 +192,7 @@ const About = () => {
                   <br />
                   Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
                   đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
-                  nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn.
+                  nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn. 
                 </span>
 
                 <span>
@@ -206,7 +206,7 @@ const About = () => {
                     <span>
                       Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách
                       hàng) hộ kinh doanh (gần 1 triệu khách hàng) và doanh
-                      nghiệp vừa và nhỏ SME (bao gồm cả miro SME) khoảng 0,5
+                      nghiệp vừa và nhỏ SME (bao gồm cả mir SME) khoảng 0,5
                       triệu khách hàng.Đặc biệt định hướng vào phân khúc cho
                       người dân vùng nông thôn, người nghèo chưa có điều kiện
                       tiếp cận dịch vụ tài chính ngân hàng với ứng dụng công
