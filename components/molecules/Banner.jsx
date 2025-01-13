@@ -4,8 +4,8 @@ import { Button } from "../ui/button";
 import BoxReveal from "../ui/box-reveal";
 const Banner = () => {
 	return (
-		<div className="w-full flex font-sfpro">
-			<div className="w-1/2 relative ">
+		<div className="max-w-[1280px] mx-auto flex font-sfpro p-4">
+			<div className="w-full md:w-1/2 relative ">
 				<div className="relative z-10">
 					<p className="text-gradient font-semibold green-underline">Dịch vụ khách hàng</p>
 				</div>
@@ -71,7 +71,7 @@ const Banner = () => {
 			</div>
 
 			{/* Right banner */}
-			<div className="w-1/2 flex justify-end relative">
+			<div className="hidden md:flex w-1/2 justify-end relative">
 				<div className="relative left-10 pt-4">
 					<div className="bg-grad p-[1px] rounded-[33px]">
 						<div className="relative w-[216px] h-[216px]">
