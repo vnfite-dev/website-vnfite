@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const ProductPage = () => {
 	return (
 		<div className="relative font-sfpro">
-			<div className="mt-40 px-[16.7%]">
+			<div className="mt-40 px-[10%] lg:px-[16.7%]">
 				<ListProducts />
 			</div>
 
