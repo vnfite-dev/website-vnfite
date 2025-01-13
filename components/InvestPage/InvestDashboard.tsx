@@ -95,13 +95,13 @@ const InvestDashboard = () => {
 		);
 	};
 	return (
-		<div className="">
+		<div className="mx-auto">
 			<div className="bg-grad w-full py-12 flex-col px-[16.7%]">
 				<div className="text-center text-white font-semibold text-5xl">
 					Công cụ tính lãi suất mỗi tháng
 				</div>
 
-				<div className="mt-6 grid grid-cols-[1fr_1fr_1fr_300px] w-full text-white justify-between gap-12">
+				<div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_300px] w-full text-white justify-between gap-12">
 					<div className="">
 						<div className="text-end">
 							<p>Số tiền đầu tư</p>
@@ -168,9 +168,9 @@ const InvestDashboard = () => {
 				Đầu tư cùng <span className="text-gradient">VNFITE</span>
 			</div>
 
-			<div className="px-48 mt-16 flex gap-8">
+			<div className="px-10 lg:px-48 mt-16 flex flex-col lg:flex-row gap-8">
 				{/* Khối 1 */}
-				<div className="bg-investP2P rounded-3xl bg-cover h-96 w-full flex flex-col justify-center items-center font-semibold text-3xl text-white relative overflow-hidden group">
+				<div className="bg-investP2P rounded-3xl bg-cover h-96 w-full flex flex-col justify-center items-center font-semibold text-3xl text-white relative overflow-hidden group aspect-square">
 					{/* Dòng đầu tiên */}
 					<p className="transition-transform absolute top-1/2 left-[40%] duration-500 group-hover:-translate-y-28">
 						Đầu tư P2P
@@ -189,7 +189,7 @@ const InvestDashboard = () => {
 				</div>
 
 				{/* Khối 2 */}
-				<div className="bg-investGroup rounded-3xl bg-cover h-96 w-full flex flex-col justify-center items-center font-semibold text-3xl text-white relative overflow-hidden group">
+				<div className="bg-investGroup rounded-3xl bg-cover h-96 w-full flex flex-col justify-center items-center font-semibold text-3xl text-white relative overflow-hidden group aspect-square">
 					<p className="transition-transform absolute top-1/2 left-[40%] duration-500 group-hover:-translate-y-28">
 						Đầu tư nhóm
 					</p>
@@ -206,8 +206,8 @@ const InvestDashboard = () => {
 				</div>
 			</div>
 
-			<div className="px-48 mt-16 ">
-				<Table>
+			<div className="px-10 lg:px-48 mt-16 ">
+				<Table className="min-w-[800px] overflow-scroll">
 					{/* <TableCaption>A list of your recent invoices.</TableCaption> */}
 					<TableHeader>
 						<TableRow className="text-base font-semibold">

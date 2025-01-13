@@ -36,7 +36,7 @@ const Header = () => {
 			<Navbar />
 			<div className="lg:container mx-auto relative top-4">
 				{pathname === "/" && (
-					<div className="mt-[90px]">
+					<div className="mt-6 md:mt-28">
 						<Banner />
 					</div>
 				)}
