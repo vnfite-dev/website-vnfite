@@ -7,10 +7,12 @@ import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const InfoBlock = ({ image, content }: { image: string; content: string }) => {
 	return (
-		<div className="bg-grad rounded-3xl w-[292px] h-[252px]">
-			<div className="flex flex-col justify-center items-center gap-12 bg-customPink rounded-3xl p-6 w-[290px] h-[250px]">
-				<Image src={image} alt="image" width={100} height={100} />
-				<div className="text-center text-gradient text-lg font-semibold">{content}</div>
+		<div className="flex justify-center">
+			<div className="bg-grad rounded-3xl w-full  p-[1px] h-[252px] max-w-[292px] ">
+				<div className="w-full flex flex-col justify-center items-center gap-6 bg-customPink rounded-3xl p-6 h-[250px]">
+					<Image src={image} alt="image" width={100} height={100} />
+					<div className="text-center text-gradient text-lg font-semibold">{content}</div>
+				</div>
 			</div>
 		</div>
 	);
@@ -49,10 +51,15 @@ const AnimateBlock = ({
 
 	return (
 		<div className={cn("mt-20 relative w-fit")} ref={sectionRef}>
-			<p className={cn("mb-8 font-semibold text-2xl relative", reversed ? "left-64" : "left-28")}>
+			<p
+				className={cn(
+					"mb-8 font-semibold text-2xl relative text-center lg:text-start",
+					reversed ? "lg:left-64" : "lg:left-28"
+				)}
+			>
 				Hình thức đầu tư đơn giản
 			</p>
-			<div className="w-[680px] bg-grad relative p-8 rounded-4xl">
+			<div className="w-fit lg:w-[680px] bg-grad relative p-8 rounded-4xl">
 				<div className="text-white z-30">
 					<p className="text-base">
 						Đến với VNFITE, bạn không chỉ là khách hàng mà còn là một nhà đầu tư thông thái, chúng tôi
@@ -77,20 +84,22 @@ const AnimateBlock = ({
 					</div>
 				</div>
 			</div>
-			<div
-				className={cn(
-					"absolute	",
-					reversed ? "left-0 -translate-x-2/3" : "right-0 translate-x-2/3",
-					"top-1/2 -z-10 -translate-y-1/2 bg-grad rounded-3xl p-[1px]"
-				)}
-			>
-				<Image
-					src="/images/invest/office.jpg"
-					className="rounded-3xl"
-					alt="image"
-					width={547}
-					height={411}
-				/>
+
+			<div className="hidden lg:block">
+				<div
+					className={cn(
+						"top-1/2 -z-10 -translate-y-1/2 rounded-3xl p-[1px] :bg-grad absolute",
+						reversed ? "left-0 -translate-x-2/3" : "right-0 translate-x-2/3"
+					)}
+				>
+					<Image
+						src="/images/invest/office.jpg"
+						className="rounded-3xl"
+						alt="image"
+						width={547}
+						height={411}
+					/>
+				</div>
 			</div>
 		</div>
 	);
@@ -137,12 +146,11 @@ const InvestInfo = () => {
 	];
 	return (
 		<div>
-			<div className="bg-investMidBanner w-full h-[560px]">
+			<div className="bg-investMidBanner w-full h-fit bg-cover pb-12">
 				<div className="text-center text-white text-5xl font-semibold pt-6">
 					Lợi ích khi đầu tư vào <span className="text-gradient">VNFITE</span>
 				</div>
-
-				<div className="mt-24 flex justify-center items-center gap-8">
+				<div className="mt-24 px-[10%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-8">
 					<InfoBlock image="/icons/invest/infoblock1.svg" content="Lãi suất cao, đầu tư nhanh chóng" />
 					<InfoBlock
 						image="/icons/invest/infoblock2.svg"
@@ -153,14 +161,14 @@ const InvestInfo = () => {
 				</div>
 			</div>
 
-			<div className="mt-28 px-[16.7%]">
+			<div className="mt-28 p-10 md:px-[16.7%]">
 				<div className="text-5xl font-semibold text-center">
 					Vì sao bạn nên đầu tư vào <span className="text-gradient">VNFITE</span>
 				</div>
 
-				<div className="flex flex-col gap-44 px-20">
+				<div className="flex flex-col lg:gap-44 md:px-10">
 					<AnimateBlock />
-					<div className="self-end">
+					<div className="md:self-end">
 						<AnimateBlock reversed={true} />
 					</div>
 
