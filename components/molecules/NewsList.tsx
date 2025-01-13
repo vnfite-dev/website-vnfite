@@ -66,28 +66,28 @@ const NewsList = () => {
 		});
 	}, [api]);
 	return (
-		<div className="px-[16.7%]">
+		<div className="max-w-[1280px] mx-auto px-8">
 			<div className="relative z-10 text-center">
 				<p className="text-gradient font-semibold green-underline after:w-[120%]">Tin tức</p>
-				<div className="mt-4 text-5xl">
+				<div className="mt-4 text-5xl font-semibold">
 					Đọc tin HOT nhất trong ngày cùng <span className="text-gradient font-bold">VNFITE</span>
 				</div>
 			</div>
 
-			<div className="bg-grad w-full rounded-[32px] mt-16 h-[420px]">
+			<div className="bg-grad w-full rounded-[32px] mt-16 h-fit py-[2px] lg:pt-0 lg:h-[420px]">
 				<div className="bg-grad-content rounded-[32px] relative">
-					<div className="flex w-full h-[416px]">
-						<div className="w-2/5 relative">
+					<div className="flex flex-col lg:flex-row w-full lg:h-[416px]">
+						<div className="w-full lg:w-2/5 relative h-[416px]">
 							<Image
 								src={imageLink}
 								alt="news"
 								fill
-								className="rounded-l-[32px] rounded-r-none object-cover "
+								className="rounded-t-[32px] lg:rounded-t-none lg:rounded-l-[32px] object-cover "
 							/>
 						</div>
 
-						<div className="w-3/5 flex relative">
-							<div className="w-1/5 flex flex-col justify-center items-center ">
+						<div className="w-full lg:w-3/5 flex relative pb-6 lg:pb-0">
+							<div className="hidden sm:flex w-1/5 flex-col justify-center items-center ">
 								<div className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center">
 									<div
 										className="h-8 w-8 rounded-full bg-white flex justify-center items-center"
@@ -103,7 +103,7 @@ const NewsList = () => {
 								</div>
 							</div>
 
-							<Carousel className="w-full" setApi={setApi} opts={{ loop: true }}>
+							<Carousel className="w-full px-4 lg:px-0" setApi={setApi} opts={{ loop: true }}>
 								<CarouselContent>
 									{data.map((_, index) => (
 										<CarouselItem key={index}>
@@ -126,7 +126,7 @@ const NewsList = () => {
 									))}
 								</CarouselContent>
 							</Carousel>
-							<div className="w-1/5 flex flex-col justify-center items-center">
+							<div className="hidden sm:flex w-1/5 flex-col justify-center items-center">
 								<div
 									className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center"
 									onClick={() => api?.scrollNext()}

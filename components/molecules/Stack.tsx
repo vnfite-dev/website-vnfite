@@ -7,7 +7,7 @@ import Image from "next/image";
 const CheckItem = ({ title, content }: { title: string; content: string }) => {
 	return (
 		<div className="flex gap-3">
-			<div className="flex-shrink-0">
+			<div className="">
 				<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} alt="Red Check" />
 			</div>
 			<div className="text-left">
@@ -75,7 +75,7 @@ const Stack1Info = ({
 	return (
 		<div className={cn("flex items-center gap-4", leftToRight ? "justify-start" : "justify-end")}>
 			{leftToRight == true && (
-				<div className="flex-shrink-0">
+				<div className="">
 					<Image src="/images/home/blueglobe.png" alt="globe" width={65} height={65} />
 				</div>
 			)}
@@ -310,7 +310,7 @@ const Stack = () => {
 						</div>
 					</div>
 
-					<div className="mt-32 flex px-[12%] justify-between gap-8">
+					<div className="mt-32 flex relative px-[12%] justify-between gap-8">
 						<div className="flex flex-col gap-8">
 							<div className="">
 								<p className="text-xl">
@@ -333,7 +333,7 @@ const Stack = () => {
 							/>
 						</div>
 						<div className="">
-							<div className="bg-gray-200 h-full w-[300px] rounded-full"></div>
+							<div className="bg-gray-200 h-full  rounded-full"></div>
 						</div>
 						<div className="flex flex-col gap-8">
 							<div className="">
