@@ -129,7 +129,10 @@ const HomeSlide = () => {
 					{/* <CarouselContent className="-ml-1"> */}
 					<CarouselContent className="">
 						{data.map((items, index) => (
-							<CarouselItem key={index} className="pl-4 w-fit basis-[100%]  md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+							<CarouselItem
+								key={index}
+								className="pl-4 w-fit basis-[100%]  md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+							>
 								<div className="pl-1">
 									{/* <SlideItem index={index} /> */}
 									<SlideItem {...items} />
@@ -137,8 +140,8 @@ const HomeSlide = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="w-20 h-20 -left-24 shadow-md" />
-					<CarouselNext className="w-20 h-20 -right-24 shadow-md text-3xl font-bold " />
+					<CarouselPrevious className="hidden md:block w-20 h-20 -left-24 shadow-md" />
+					<CarouselNext className="hidden md:block w-20 h-20 -right-24 shadow-md text-3xl font-bold " />
 				</Carousel>
 
 				<div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 font-sfpro gap-10">
