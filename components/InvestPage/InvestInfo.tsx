@@ -54,7 +54,7 @@ const AnimateBlock = ({
 			<p
 				className={cn(
 					"mb-8 font-semibold text-2xl relative text-center lg:text-start",
-					reversed ? "left-40 xl:left-64" : "left-8 xl:left-28"
+					reversed ? "lg:left-96 xl:left-64" : "lg:left-8 xl:left-28"
 				)}
 			>
 				Hình thức đầu tư đơn giản
@@ -89,7 +89,9 @@ const AnimateBlock = ({
 				<div
 					className={cn(
 						"top-1/2 -z-10 -translate-y-1/2 rounded-3xl p-[1px] :bg-grad absolute",
-						reversed ? "-translate-x-1/3 left-0 xl:-translate-x-2/3" : "right-0 xl:translate-x-2/3 translate-x-1/3"
+						reversed
+							? "-translate-x-1/3 left-0 xl:-translate-x-2/3"
+							: "right-0 xl:translate-x-2/3 translate-x-1/3"
 					)}
 				>
 					<Image
@@ -147,10 +149,10 @@ const InvestInfo = () => {
 	return (
 		<div>
 			<div className="bg-investMidBanner w-full h-fit bg-cover pb-12">
-				<div className="text-center text-white text-5xl font-semibold pt-6">
+				<div className="text-center text-white text-4xl md:text-5xl font-semibold pt-6">
 					Lợi ích khi đầu tư vào <span className="text-gradient">VNFITE</span>
 				</div>
-				<div className="mt-24 px-[10%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-8">
+				<div className="mt-8 md:mt-24 px-[10%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-8">
 					<InfoBlock image="/icons/invest/infoblock1.svg" content="Lãi suất cao, đầu tư nhanh chóng" />
 					<InfoBlock
 						image="/icons/invest/infoblock2.svg"
@@ -161,7 +163,7 @@ const InvestInfo = () => {
 				</div>
 			</div>
 
-			<div className="mt-28 p-10 xl:px-[14%] 2xl:px-[16.7%]">
+			<div className="mt-12 md:mt-28 p-10 xl:px-[14%] 2xl:px-[16.7%]">
 				<div className="text-5xl font-semibold text-center">
 					Vì sao bạn nên đầu tư vào <span className="text-gradient">VNFITE</span>
 				</div>
@@ -175,18 +177,18 @@ const InvestInfo = () => {
 					<AnimateBlock />
 				</div>
 
-				<div className="mt-40  flex items-center">
-					<div className="gradient-line w-full max-h-[3px] overflow-hidden"></div>
-					<div className="text-gradient overflow-visible text-center min-w-[480px] px-2 text-xl font-semibold">
+				<div className="mt-12 lg:mt-40  flex items-center">
+					<div className="hidden lg:block gradient-line w-full max-h-[3px] overflow-hidden"></div>
+					<div className="w-full text-gradient overflow-visible text-center lg:min-w-[480px] px-2 text-xl font-semibold">
 						Hãy là một nhà đầu tư lớn VNFITE ngay hôm nay
 					</div>
-					<div className="gradient-line-reversed w-full max-h-[3px] overflow-hidden"></div>
+					<div className="hidden lg:block gradient-line-reversed w-full max-h-[3px] overflow-hidden"></div>
 				</div>
 
-				<div className="text-center mt-28 text-5xl font-semibold">
+				<div className="text-center mt-28 text-4xl md:text-5xl font-semibold">
 					Bạn hỏi <span className="text-gradient">VNFITE</span> trả lời
 				</div>
-				<Accordion type="single" collapsible className="mt-16">
+				<Accordion type="single" collapsible className="mt-4 md:mt-16">
 					{faq.map((item, index) => (
 						<AccordionItem value={`value-${index}`} key={index}>
 							<AccordionTrigger className="text-xl font-medium">{item.question}</AccordionTrigger>

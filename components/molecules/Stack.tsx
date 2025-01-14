@@ -12,7 +12,7 @@ const CheckItem = ({ title, content }: { title: string; content: string }) => {
 			</div>
 			<div className="text-left">
 				<p className="mb-2 text-base leading-5 font-semibold">{title}</p>
-				<p className=" text-gray-600 max-w-[366px]">{content}</p>
+				<p className="hidden md:block text-gray-600 max-w-[366px]">{content}</p>
 			</div>
 		</div>
 	);
@@ -73,26 +73,28 @@ const Stack1Info = ({
 	content: string;
 }) => {
 	return (
-		<div className={cn("flex items-center gap-4", leftToRight ? "justify-start" : "justify-end")}>
-			{leftToRight == true && (
-				<div className="">
-					<Image src="/images/home/blueglobe.png" alt="globe" width={65} height={65} />
-				</div>
+		<div
+			className={cn(
+				"flex flex-col md:flex-row items-center gap-4 min-h-32",
+				leftToRight ? "md:justify-start" : "md:justify-end"
 			)}
+		>
+			{/* Hình ảnh chỉ hiện ở vị trí tương ứng */}
 			<div
-				className={cn("max-w-[250px] text-right", {
-					"text-left": leftToRight,
-				})}
+				className={cn(
+					"min-w-10 md:min-w-[65px]",
+					// { "order-2 md:order-none": !leftToRight } // Đảo vị trí khi cần
+					leftToRight ? "order-none" : "order-none md:order-2"
+				)}
 			>
-				<p className="font-semibold">{title}</p>
-				<p className="text-gray-600 content">{content}</p>
+				<Image src="/images/home/blueglobe.png" alt="globe" width={65} height={65} />
 			</div>
 
-			{leftToRight == false && (
-				<div className="">
-					<Image src="/images/home/blueglobe.png" alt="globe" width={65} height={65} />
-				</div>
-			)}
+			{/* Nội dung văn bản */}
+			<div className={cn("max-w-[250px] text-center", leftToRight ? "md:text-left" : "md:text-right")}>
+				<p className="font-semibold">{title}</p>
+				<p className="text-gray-600 content hidden md:inline-block">{content}</p>
+			</div>
 		</div>
 	);
 };
@@ -109,16 +111,16 @@ const Stack = () => {
 			{/* Stack 1 */}
 
 			<StackItem pinkBackground={true} stack={0}>
-				<div className="pt-20">
+				<div className="pt-10 md:pt-20">
 					<div className="relative z-10">
 						<p className="text-gradient font-semibold green-underline after:w-[120%]">Lý do</p>
-						<div className="mt-4 text-5xl">
+						<div className="mt-4 text-3xl md:text-5xl">
 							Tại sao bạn nên sử dụng <span className="text-gradient font-bold">VNFITE</span>
 						</div>
 					</div>
 
-					<div className="mt-32 flex px-[12%] justify-between">
-						<div className="flex flex-col gap-8">
+					<div className="mt-12 md:mt-32 flex px-2 md:px-[12%] justify-between">
+						<div className="flex flex-col gap-8 pr-1">
 							<Stack1Info
 								leftToRight={false}
 								title="Uy tín và bảo mật"
@@ -137,25 +139,25 @@ const Stack = () => {
 								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
 							/>
 						</div>
-						<div className="">
-							<div className="bg-gray-200 h-20 w-[300px] rounded-full"></div>
+						<div className="hidden md:block">
+							<Image src={"/images/home/banner-rightgirl.png"} width={300} height={200} alt="stack1" />
 						</div>
-						<div className="flex flex-col gap-8">
+						<div className="flex flex-col gap-8 pl-1">
 							<Stack1Info
 								leftToRight={true}
-								title="Uy tín và bảo mật"
+								title="Dễ dàng tiện lợi"
 								content="Mọi giao dịch đều được bảo vệ bởi các tiêu chuẩn bảo mật cao nhất, đảm bảo an toàn thông tin."
 							/>
 
 							<Stack1Info
 								leftToRight={true}
-								title="Đầu tư"
+								title="Khách hàng đông đảo"
 								content="Nhanh chóng thuận tiện, lãi suất cao"
 							/>
 
 							<Stack1Info
 								leftToRight={true}
-								title="Đội ngũ chuyên gia hàng đầu"
+								title="Tăng trưởng bền vững"
 								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
 							/>
 						</div>
@@ -165,34 +167,34 @@ const Stack = () => {
 
 			{/* Stack 2 */}
 			<StackItem pinkBackground={false} stack={1}>
-				<div className="w-full flex mt-20 px-[12%] ">
-					<div className="w-1/2">
+				<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-2 sm:px-[12%] ">
+					<div className="w-full md:w-1/2">
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline">Giá trị</p>
-							<p className="text-5xl text-left mt-4">
+							<p className="text-3xl md:text-5xl text-left mt-4 ">
 								Giá trị mà <span className="text-gradient font-semibold leading-[72px]">VNFITE</span>{" "}
 								mang lại cho khách hàng
 							</p>
 						</div>
 
-						<div className="mt-16 flex flex-col gap-6">
+						<div className="mt-6 md:mt-16 flex flex-col gap-6">
 							<CheckItem
 								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
 								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
 							/>
 
 							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+								title="Thông tin minh bạch và an toàn"
 								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
 							/>
 
 							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+								title="Giải pháp tài chính linh hoạt"
 								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
 							/>
 						</div>
 					</div>
-					<div className="w-1/2 flex justify-end">
+					<div className="w-full md:w-1/2 flex justify-end">
 						<div className=""></div>
 						<div className="">
 							<Image src={"/images/home/banner-rightgirl.png"} width={400} height={500} alt="Right" />
@@ -201,9 +203,8 @@ const Stack = () => {
 				</div>
 			</StackItem>
 			<StackItem pinkBackground={true} stack={2}>
-				<div className="w-full flex mt-20 px-[12%] ">
-					<div className="w-1/2 flex justify-start">
-						<div className=""></div>
+				<div className="w-full flex flex-col md:flex-row  mt-10 md:mt-20 px-2 sm:px-[12%] ">
+					<div className="w-full md:w-1/2 flex justify-start relative order-2 md:order-none">
 						<div>
 							<Image
 								className="rounded-tl-[64px] rounded-br-[64px] rounded-tr-4xl rounded-bl-4xl"
@@ -214,18 +215,18 @@ const Stack = () => {
 							/>
 						</div>
 					</div>
-					<div className="w-1/2">
+					<div className="w-full md:w-1/2">
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline">
 								Quản lý tài chính thông minh
 							</p>
-							<p className="text-5xl text-left mt-4">
+							<p className="text-3xl md:text-5xl text-left mt-4 ">
 								Cách quản lý tài chính của bạn hiệu quả thông qua
 								<span className="text-gradient font-semibold leading-[72px]"> VNFITE</span>
 							</p>
 						</div>
 
-						<div className="mt-16 flex flex-col gap-6">
+						<div className="mt-4 md:mt-16 flex flex-col gap-6">
 							<CheckItem
 								title="Quản lý tài chính chủ động"
 								content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
@@ -245,7 +246,7 @@ const Stack = () => {
 				</div>
 			</StackItem>
 			<StackItem pinkBackground={false} stack={3}>
-				<div className="w-full flex mt-20 px-[12%] ">
+				<div className="w-full flex  mt-10 md:mt-20 px-2 sm:px-[12%] ">
 					<div className="w-1/2 flex justify-start relative">
 						{/* <div className="border-dashed w-[400px] aspect-square border border-red-500 animation-breathing absolute top-40 left-3 rounded-[70px]">
 							<div className="bg-grad absolute rounded-[70px] -right-12  w-[350px] h-72 animation-bounce"></div>
@@ -301,8 +302,8 @@ const Stack = () => {
 					</div>
 				</div>
 			</StackItem>
-			<StackItem pinkBackground={true} stack={4}>
-				<div className="pt-20">
+			{/* <StackItem pinkBackground={true} stack={4}>
+				<div className=" mt-10 md:mt-20">
 					<div className="relative z-10">
 						<p className="text-gradient font-semibold green-underline after:w-[120%]">Tải ứng dụng</p>
 						<div className="mt-4 text-5xl">
@@ -358,7 +359,7 @@ const Stack = () => {
 						</div>
 					</div>
 				</div>
-			</StackItem>
+			</StackItem> */}
 			{/* <div className="w-full h-[100vh] bg-yellow-stack z-20 relative"></div> */}
 		</div>
 	);
