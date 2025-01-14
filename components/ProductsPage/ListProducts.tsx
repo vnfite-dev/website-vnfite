@@ -57,8 +57,8 @@ const ListProducts = () => {
 
 	return (
 		<div>
-			<div className="text-center font-semibold text-5xl leading-[72px]">
-				<p>
+			<div className="text-center leading-[72px]">
+				<p className="font-semibold text-2xl sm:text-5xl">
 					Sản phẩm <span className="text-gradient">VNFITE</span> mang lại cho bạn
 				</p>
 				{/* <div className="flex text-2xl mt-16 justify-between gap-6 relative w-full">
@@ -80,7 +80,7 @@ const ListProducts = () => {
 					)}
 				</div> */}
 
-				<div className="flex justify-center items-center md:justify-between flex-col md:flex-row space-y-8 md:space-y-0 px-4 mb-24 mt-12 font-medium">
+				<div className="flex justify-center items-center md:justify-between flex-col md:flex-row space-y-8 md:space-y-0 px-4 mb-8 lg:mb-24 mt-10 font-medium">
 					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
 						<div
 							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${
@@ -121,11 +121,11 @@ const ListProducts = () => {
 				<div className="bg-white rounded-b-4xl w-full">
 					<div className=" w-full flex py-12 relative">
 						<div className="w-full text-base text-left font-normal ">
-							<div className="text-center text-5xl leading-tight font-semibold mb-20">
+							<div className="text-center text-2xl lg:text-5xl leading-tight font-semibold mb-8 lg:mb-20">
 								Gọi vốn sinh viên
 							</div>
 							<div className="flex flex-col gap-6">
-								<div className="text-left text-2xl font-medium bg-grad pl-[2px] mb-2">
+								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-2">
 									<div className="bg-white w-full pl-2">
 										Vì sao bạn nên đồng hành với sản phẩm gọi vốn của VNFITE?
 									</div>
@@ -202,8 +202,10 @@ const ListProducts = () => {
 							</div>
 
 							<div className="mt-20">
-								<div className="text-left text-2xl font-medium bg-grad pl-[2px] mb-8">
-									<div className="bg-white w-full pl-2">Yêu cầu gọi vốn ở VNFITE</div>
+								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-8">
+									<div className="bg-white w-full pl-2">
+										Yêu cầu gọi vốn ở VNFITE
+									</div>
 								</div>
 
 								<div className="flex space-x-4 pb-8">
@@ -229,7 +231,7 @@ const ListProducts = () => {
 									</div>
 								</div>
 
-								<div className="flex items-center w-full justify-center">
+								<div className="hidden md:flex items-center w-full justify-center">
 									{dataArray.map((_, index) => (
 										<div
 											className="flex justify-center items-center cursor-pointer mx-0 px-0"
@@ -248,7 +250,7 @@ const ListProducts = () => {
 									))}
 								</div>
 
-								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-4">
+								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-4">
 									{dataArray.map((_, index) => (
 										<div
 											className={`flex justify-start items-center flex-col text-2xl font-semibold mx-auto`}
@@ -263,8 +265,8 @@ const ListProducts = () => {
 						</div>
 					</div>
 
-					<div className="px-20 mb-20 mt-80">
-						<div className="text-center text-5xl leading-tight font-semibold mb-20">
+					<div className="px-8 sm:px-20 my-10 lg:my-20">
+						<div className="text-center text-2xl lg:text-5xl leading-tight font-semibold mb-10 lg:mb-20">
 							Các sản phẩm khác
 						</div>
 
@@ -278,15 +280,15 @@ const ListProducts = () => {
 							{/* <CarouselContent className="-ml-1"> */}
 							<CarouselContent className="">
 								{[...Array(7)].map((items, index) => (
-									<CarouselItem key={index} className="pl-4 w-fit md:basis-1/2 lg:basis-1/4">
+									<CarouselItem key={index} className="pl-4 w-fit md:basis-1/2 lg:basis-1/3 2xl:1/4">
 										<div className="">
 											<SlideItem />
 										</div>
 									</CarouselItem>
 								))}
 							</CarouselContent>
-							<CarouselPrevious className="w-14 h-14 lg:w-20 lg:h-20 -left-24 shadow-md" />
-							<CarouselNext className="w-14 h-14 lg:w-20 lg:h-20 -right-24 shadow-md text-3xl font-bold " />
+							<CarouselPrevious className="hidden sm:flex w-14 h-14 lg:w-20 lg:h-20 -left-24 shadow-md" />
+							<CarouselNext className="hidden sm:flex w-14 h-14 lg:w-20 lg:h-20 -right-24 shadow-md text-3xl font-bold " />
 						</Carousel>
 					</div>
 				</div>

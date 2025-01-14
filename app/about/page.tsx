@@ -35,6 +35,29 @@ const About = () => {
 	return (
 		<div>
 			<div className="flex flex-row items-center justify-center space-x-10 mt-16">
+				<div className="flex justify-center items-center md:justify-between flex-col md:flex-row space-y-8 md:space-y-0 px-4 w-full max-w-[1280px] font-semibold text-xl">
+					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
+						<div className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${show === 0 ? 'bg-grad text-white' : 'bg-white text-[#E0694F]'}`}
+							onClick={() => setShow(0)}
+						>
+							Gọi vốn cá nhân
+						</div>
+					</div>
+					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
+						<div className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 1 ? 'bg-grad text-white' : 'bg-white text-[#E0694F]'}`}
+							onClick={() => setShow(1)}
+						>
+							Gọi vốn hộ kinh doanh
+						</div>
+					</div>
+					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
+						<div className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 2 ? 'bg-grad text-white' : 'bg-white text-[#E0694F]'}`}
+							onClick={() => setShow(2)}
+						>
+							Gọi vốn doanh nghiệp
+						</div>
+					</div>
+				</div>
 				{/* <div className="relative w-80 h-14 cursor-pointer" onClick={() => setShow(0)}>
 					<div
 						className={
@@ -132,23 +155,17 @@ const About = () => {
 				</div> */}
 			</div>
 
-			<div className="mt-28">
+			<div className="mt-8 lg:mt-28">
 				{/* 1. Thông tin về VNFITEVNFITE */}
 				{show === 0 && (
-					<div className="flex justify-center items-center flex-col space-y-40">
+					<div className="flex justify-center items-center flex-col space-y-20 lg:space-y-40">
 						{/* 1.1. Giới thiệu về VNFITE */}
 						<div>
-							<p className="text-5xl font-semibold text-center px-4">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
 								Giới thiệu về <span className="text-gradient">VNFITE</span>
 							</p>
 
-							<div
-								style={{
-									maxWidth: "1280px",
-									width: "90%",
-									margin: "30px auto",
-								}}
-							>
+							<div className="max-w-[1280px] w-[90%] my-8 mx-auto">
 								<Image
 									src="/images/about/AboutIntro.png"
 									alt="About Intro"
@@ -225,8 +242,8 @@ const About = () => {
 
 						{/* 1.2. Lịch sử phát triển */}
 						<div>
-							<p className="text-5xl font-semibold text-center px-8">Lịch sử phát triển</p>
-							<div className="flex justify-center items-center flex-col md:flex-row mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-8">Lịch sử phát triển</p>
+							<div className="flex justify-center items-center flex-col md:flex-row mt-8 lg:mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
 								<div className="flex justify-center items-center w-[90%] md:w-[35%] mx-auto">
 									<Image
 										src="/images/about/History.png"
@@ -236,12 +253,12 @@ const About = () => {
 									/>
 								</div>
 								<div className="w-full md:w-[65%] flex justify-center flex-col items-center">
-									<div className="mb-10">
+									<div className="mb-6 lg:mb-10">
 										<TimeLine />
 									</div>
 
 									<div className="w-full flex relative">
-										<div className="w-1/5 flex flex-col justify-center items-center ">
+										<div className="hidden w-1/5 sm:flex flex-col justify-center items-center ">
 											<div className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center">
 												<div
 													className="h-8 w-8 rounded-full bg-white flex justify-center items-center"
@@ -257,12 +274,12 @@ const About = () => {
 											</div>
 										</div>
 
-										<Carousel className="w-full" setApi={setApi} opts={{ loop: true }}>
+										<Carousel className="w-full px-8 sm:px-2" setApi={setApi} opts={{ loop: true }}>
 											<CarouselContent>
 												{dataHistory.map((_, index) => (
 													<CarouselItem key={index}>
 														<div className="flex-grow pt-8">
-															<p className="text-2xl font-semibold leading-[48px] text-center mb-6">
+															<p className="text-lg lg:text-2xl font-semibold leading-[48px] text-center mb-3 lg:mb-6">
 																{_.title}
 															</p>
 
@@ -280,7 +297,7 @@ const About = () => {
 											</CarouselContent>
 										</Carousel>
 
-										<div className="w-1/5 flex flex-col justify-center items-center">
+										<div className="hidden w-1/5 sm:flex flex-col justify-center items-center">
 											<div
 												className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center"
 												onClick={() => api?.scrollNext()}
@@ -301,13 +318,13 @@ const About = () => {
 
 						{/* 1.3. Tầm nhìn và sứ mệnh */}
 						<div>
-							<p className="text-5xl font-semibold text-center px-4">Tầm nhìn và sứ mệnh</p>
-							<p className="font-normal text-base mt-14 text-center p-6">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">Tầm nhìn và sứ mệnh</p>
+							<p className="font-normal text-base mt-4 lg:mt-14 text-center p-6">
 								Là sợi dây kết nối giữa nhà đầu tư và nhà huy động, tạo ra sân chơi an toàn giao
 								thương tài chính, tạo lợi ích cho các bên đồng thời tạo sự phát triển bền vững cho xã
 								hội.
 							</p>
-							<div className="flex justify-center items-center mt-8 space-y-4 flex-col lg:flex-row lg:space-x-4 lg:space-y-0 mb-4 px-4">
+							<div className="flex justify-center items-center mt-3 lg:mt-8 space-y-4 flex-col lg:flex-row lg:space-x-4 lg:space-y-0 mb-4 px-4">
 								<div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
 									<div style={{ width: "56px", height: "64px" }}>
 										<Image
@@ -385,8 +402,8 @@ const About = () => {
 								<p className="font-medium text-base pt-3">Chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 						</div>
-						<div className="flex justify-center items-center space-x-10">
-							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+						<div className="flex justify-center items-center space-x-0 md:space-x-10 space-y-14 md:space-y-0 flex-col md:flex-row">
+							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom mx-auto">
 								<Image
 									src="/images/about/Logo.png"
 									alt="About History VNFITE"
@@ -397,7 +414,7 @@ const About = () => {
 								<p className="font-medium text-base pt-3">Phó chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 
-							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom mx-auto">
 								<Image
 									src="/images/about/Logo.png"
 									alt="About History VNFITE"
@@ -415,7 +432,7 @@ const About = () => {
 				{show === 2 && (
 					<div className="flex justify-center items-center flex-col space-y-40">
 						<div>
-							<p className="text-5xl font-semibold text-center px-4">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
 								Đối với nhà đầu tư về <span className="text-gradient">VNFITE</span>
 							</p>
 
@@ -436,7 +453,7 @@ const About = () => {
 								/>
 							</div>
 
-							<p className="p-4 font-normal text-base mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
+							<p className="p-4 font-normal text-base mt-2 sm:mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
 								<span className="text-center">
 									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các đơn vị tiên phong và uy
 									tín hàng đầu cung cấp giải pháp công nghệ tài chính, kết nỗi giữa các nhà đầu tư và
