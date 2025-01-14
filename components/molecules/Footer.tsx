@@ -9,7 +9,7 @@ const NavItem = ({ title, items }: { title: string; items: string[] }) => {
 	return (
 		<div className="">
 			<p className="text-base font-semibold">{title}</p>
-			<div className="mt-6 flex flex-col gap-4">
+			<div className="mt-2 lg:mt-6 flex flex-col gap-4">
 				{items.map((item, index) => {
 					return (
 						<div key={index} className="text-gray-600 text-sm leading-[16px]">
@@ -59,24 +59,24 @@ const Footer = () => {
 		}
 	}, [isOpen]);
 	return (
-		<div className="lg:px-[16%] font-sfpro bg-footer relative">
+		<div className="px-10 md:px-10 xl:px-[16%] font-sfpro bg-footer relative">
 			<div
 				className={cn(
-					"transition-all duration-500 overflow-hidden flex w-full",
+					"transition-all duration-500 overflow-hidden flex w-full flex-col lg:flex-row",
 					isOpen ? "opacity-100 max-h-[1000px] pt-12 pb-10" : "max-h-0 opacity-0"
 				)}
 			>
-				<div className="w-4/5">
-					<div className="flex gap-12">
+				<div className="lg:w-4/5">
+					<div className="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-6 lg:gap-12">
 						{navItemText?.map((item, index) => {
 							return <NavItem key={index} title={item.title} items={item.items} />;
 						})}
 					</div>
 
-					<div className="mt-20 flex gap-16">
+					<div className="mt-10 lg:mt-20 flex flex-col sm:flex-row gap-4 sm:gap-16">
 						<div className="flex flex-col gap-4">
 							<div className="flex gap-2">
-								<div className="">
+								<div className="min-w-4">
 									<Image src={"icons/home/Location.svg"} width={16} height={16} alt="Location" />
 								</div>
 								<div className="text-sm leading-4 max-w-[273px]">
@@ -109,8 +109,8 @@ const Footer = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-1/5">
-					<div className="w-full">
+				<div className="mt-4 lg:mt-0 lg:w-1/5 flex flex-col sm:flex-row lg:block">
+					<div className="sm:w-1/2 lg:w-full">
 						<div className="text-center font-semibold">Tải ứng dụng</div>
 						<div className="flex text-center mt-6">
 							<div className="w-full flex justify-center ">
@@ -129,7 +129,7 @@ const Footer = () => {
 						</div>
 					</div>
 
-					<div className="mt-20">
+					<div className="mt-4 sm:mt-0 lg:mt-20">
 						<div className="text-center">Kết nối với VNFITE</div>
 
 						<div className="mt-6 flex gap-6 justify-center">
@@ -145,16 +145,24 @@ const Footer = () => {
 
 			<div className="w-full border-t-[1px] border-gray-300 py-10 flex justify-between">
 				<div className="">
-					<Image src={"/images/home/logoFooter.png"} width={220} height={52} alt="logo" />
+					<Image
+						className="md:w-40"
+						src={"/images/home/logoFooter.png"}
+						width={220}
+						height={52}
+						alt="logo"
+					/>
 				</div>
-				<div className="font-medium text-[12px] flex items-center">
+				<div className="hidden lg:flex font-medium text-[12px] items-center">
 					Sản phẩm được phát triển bởi VNFITE CAPITAL
 				</div>
 				<div
-					className="text-sm font-semibold flex items-center gap-2 cursor-pointer"
+					className="text-sm font-semibold flex items-center gap-2 cursor-pointer "
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					{isOpen ? "Thu nhỏ chân trang" : "Mở rộng chân trang"}
+					<span className="hidden xs:inline">
+						{isOpen ? "Thu nhỏ chân trang" : "Mở rộng chân trang"}
+					</span>
 					<div className={cn("transition-transform duration-150", isOpen ? "rotate-0" : "rotate-180")}>
 						<ChevronDown color={"#CF1313"} />
 					</div>

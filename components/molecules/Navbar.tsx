@@ -39,7 +39,7 @@ const Navbar = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return (
-		<>
+		<div className="relative">
 			{/* <Topbar /> */}
 			{/* <div
 				className={cn(
@@ -49,13 +49,13 @@ const Navbar = () => {
 				ref={navRef}
 			> */}
 			<div
-				className={cn(" w-full", isFixed ? "bg-white fixed z-[80] top-0 py-2 shadow-lg" : "")}
+				className={cn("w-full", isFixed ? "bg-white fixed z-[80] top-0 py-2 shadow-lg" : "")}
 				ref={navRef}
 			>
 				<div
 					className={cn(
-						"w-full flex justify-between items-center max-w-[1280px] mx-auto px-4 lg:px-10",
-						isFixed ? "" : "py-6"
+						"max-w-[1280px] flex justify-between items-center mx-auto px-4 xl:px-0",
+						isFixed ? "" : "py-6 w-full  "
 					)}
 				>
 					<Link href={"/"}>
@@ -167,7 +167,7 @@ const Navbar = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
