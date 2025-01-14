@@ -54,7 +54,7 @@ const AnimateBlock = ({
 			<p
 				className={cn(
 					"mb-8 font-semibold text-2xl relative text-center lg:text-start",
-					reversed ? "lg:left-64" : "lg:left-28"
+					reversed ? "left-40 xl:left-64" : "left-8 xl:left-28"
 				)}
 			>
 				Hình thức đầu tư đơn giản
@@ -89,7 +89,7 @@ const AnimateBlock = ({
 				<div
 					className={cn(
 						"top-1/2 -z-10 -translate-y-1/2 rounded-3xl p-[1px] :bg-grad absolute",
-						reversed ? "left-0 -translate-x-2/3" : "right-0 translate-x-2/3"
+						reversed ? "-translate-x-1/3 left-0 xl:-translate-x-2/3" : "right-0 xl:translate-x-2/3 translate-x-1/3"
 					)}
 				>
 					<Image
@@ -161,7 +161,7 @@ const InvestInfo = () => {
 				</div>
 			</div>
 
-			<div className="mt-28 p-10 md:px-[16.7%]">
+			<div className="mt-28 p-10 xl:px-[14%] 2xl:px-[16.7%]">
 				<div className="text-5xl font-semibold text-center">
 					Vì sao bạn nên đầu tư vào <span className="text-gradient">VNFITE</span>
 				</div>

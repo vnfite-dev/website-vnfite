@@ -19,13 +19,10 @@ const ContactBox = () => {
 	};
 	return (
 		<div className="w-full px-[6.25%]">
-<<<<<<< HEAD
-			<div className="bg-customPink py-20 px-[11.3%] lg:flex lg:justify-between gap-20 rounded-4xl">
-				<div className="mt-16 w-60 h-60 md:w-80 md:h-80 lg:w-[438px] lg:h-[438px] aspect-square mx-auto relative">
-=======
+			{/* <div className="bg-customPink py-20 px-[11.3%] lg:flex lg:justify-between gap-20 rounded-4xl">
+				<div className="mt-16 w-60 h-60 md:w-80 md:h-80 lg:w-[438px] lg:h-[438px] aspect-square mx-auto relative"> */}
 			<div className="bg-customPink py-20 px-[11.3%] flex justify-between gap-20 rounded-4xl">
 				<div className="hidden lg:block mt-16 w-[438px] h-[438px] aspect-square relative">
->>>>>>> 0eda459c6e0bd38a45b4a2ab697e83dbe650a719
 					<Image className="object-cover w-auto h-full" src="/images/home/contact.png" alt="icon" fill />
 				</div>
 

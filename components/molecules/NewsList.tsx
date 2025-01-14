@@ -82,7 +82,7 @@ const NewsList = () => {
 								src={imageLink}
 								alt="news"
 								fill
-								className="rounded-t-[32px] lg:rounded-t-none lg:rounded-l-[32px] object-cover "
+								className="rounded-t-[32px] lg:rounded-tr-none lg:rounded-l-[32px] object-cover "
 							/>
 						</div>
 
