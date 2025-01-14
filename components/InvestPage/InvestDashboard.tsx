@@ -168,21 +168,19 @@ const InvestDashboard = () => {
 				Đầu tư cùng <span className="text-gradient">VNFITE</span>
 			</div>
 
-			<div className="px-10 lg:px-48 mt-16 flex flex-col lg:flex-row gap-8">
+			<div className="px-10 xl:px-48 mt-16 flex flex-col lg:flex-row gap-8">
 				{/* Khối 1 */}
 				<div className="bg-investP2P rounded-3xl bg-cover h-96 w-full flex flex-col justify-center items-center font-semibold text-3xl text-white relative overflow-hidden group aspect-square">
 					{/* Dòng đầu tiên */}
-					<p className="transition-transform absolute top-1/2 left-[40%] duration-500 group-hover:-translate-y-28">
+					<p className="transition-transform md:absolute top-1/2 left-[40%] duration-500 group-hover:-translate-y-28">
 						Đầu tư P2P
 					</p>
 
 					{/* Dòng thứ hai */}
-					<div className="opacity-0  translate-y-32 group-hover:opacity-100 group-hover:translate-y-6 transition-all duration-500 w-full px-20">
+					<div className="md:opacity-0  md:translate-y-32 group-hover:opacity-100 group-hover:translate-y-6 transition-all duration-500 w-full px-8 md:px-20">
 						<ul className="text-left text-base font-normal list-disc list-inside">
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
+							<li className="mt-3">An toàn, bảo mật cao</li>
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 						</ul>
 					</div>
@@ -190,13 +188,12 @@ const InvestDashboard = () => {
 
 				{/* Khối 2 */}
 				<div className="bg-investGroup rounded-3xl bg-cover h-96 w-full flex flex-col justify-center items-center font-semibold text-3xl text-white relative overflow-hidden group aspect-square">
-					<p className="transition-transform absolute top-1/2 left-[40%] duration-500 group-hover:-translate-y-28">
+					<p className="transition-transform md:absolute top-1/2 left-[40%] duration-500 group-hover:-translate-y-28">
 						Đầu tư nhóm
 					</p>
 
-					<div className="opacity-0  translate-y-32 group-hover:opacity-100 group-hover:translate-y-6 transition-all duration-500 w-full px-20">
+					<div className="md:opacity-0  md:translate-y-32 group-hover:opacity-100 group-hover:translate-y-6 transition-all duration-500 w-full px-8 md:px-20">
 						<ul className="text-left text-base font-normal list-disc list-inside">
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
@@ -242,7 +239,8 @@ const InvestDashboard = () => {
 					</TableBody>
 				</Table>
 				<Button className="btn-primary mt-12 mx-auto">
-					Tải ứng dụng để thực hiện giao dịch ngay <Download />
+					Tải ứng dụng <span className="hidden sm:inline">để thực hiện giao dịch ngay</span>
+					<Download />
 				</Button>
 			</div>
 		</div>
