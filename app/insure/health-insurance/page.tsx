@@ -223,6 +223,7 @@ const HealthInsurance = () => {
                                         alt="Thông tin gói tài khoản"
                                         width={240}
                                         height={180}
+                                        className="transform group-hover:scale-105 transition-transform duration-300 ease-in-out"
                                     />
                                 </div>
                                 <p className="mt-4">Quy tắc bảo hiểm</p>
@@ -243,6 +244,7 @@ const HealthInsurance = () => {
                                         alt="Thông tin gói tài khoản"
                                         width={240}
                                         height={180}
+                                        className="transform group-hover:scale-105 transition-transform duration-300 ease-in-out"
                                     />
                                 </div>
                                 <p className="mt-4">Hướng dẫn bồi thường</p>
@@ -263,6 +265,7 @@ const HealthInsurance = () => {
                                         alt="Thông tin gói tài khoản"
                                         width={240}
                                         height={180}
+                                        className="transform group-hover:scale-105 transition-transform duration-300 ease-in-out"
                                     />
                                 </div>
                                 <p className="mt-4">Quy tắc bảo hiểm</p>
