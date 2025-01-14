@@ -37,9 +37,15 @@ const benefitTitle = [
 
 const Item = ({ index, title }: { index: number; title: string }) => {
 	return (
-		<div className="aspect-square flex justify-center items-center rounded-3xl shadow-benefit py-6 px-4 flex-col gap-10">
+		<div className="max-h-60 md:max-h-none aspect-square flex justify-center items-center rounded-3xl shadow-benefit py-6 px-4 flex-col gap-3 md:gap-10 min-w-[240px]">
 			<div>
-				<Image src={`icons/careers/b${index}.svg`} alt="benefit" width={100} height={100} />
+				<Image
+					src={`icons/careers/b${index}.svg`}
+					alt="benefit"
+					width={100}
+					height={100}
+					className="h-14 w-14 md:h-20 md:w-20 lg:w-28 lg:h-28"
+				/>
 			</div>
 			<div className="text-gray-600 text-xl font-semibold text-center">{title}</div>
 		</div>
@@ -48,13 +54,15 @@ const Item = ({ index, title }: { index: number; title: string }) => {
 const Benefits = () => {
 	return (
 		<div>
-			<div className="text-center font-semibold text-5xl leading-[72px]">
+			<div className="text-center font-semibold text-4xl md:text-5xl leading-[72px]">
 				Các đãi ngộ <span className="text-gradient">VNFITE</span> dành cho bạn
 			</div>
 
-			<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+			<div className="mt-8 grid w-full xs:grid-cols-1  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
 				{benefitTitle.map((item, index) => (
-					<Item key={index} index={index + 1} title={item} />
+					<div key={index + 1} className="xs:flex xs:justify-center">
+						<Item key={index} index={index + 1} title={item} />
+					</div>
 				))}
 			</div>
 
@@ -62,13 +70,13 @@ const Benefits = () => {
 				Cuộc sống thường ngày tại <span className="text-gradient">VNFITE</span>
 			</div>
 
-			<div className="mt-8 flex justify-between items-start gap-6">
-				<div className="w-1/2 relative pb-[56.25%]">
+			<div className="mt-8 flex flex-col md:flex-row justify-between items-start gap-6">
+				<div className="w-1/2 relative md:pb-[56.25%]">
 					{" "}
 					{/* 16:9 = 9 / 16 = 56.25% */}
 					<Image src="/images/careers/lifeInDay.png" alt="lid" fill className="object-contain" />
 				</div>
-				<div className="w-1/2 flex justify-end pt-16 pl-16">
+				<div className="w-full md:w-1/2 flex justify-end md:pt-16 md:pl-16 px-2">
 					<div className="flex flex-col gap-10">
 						{dayList.map((item, index) => (
 							<div key={index} className="flex flex-col gap-2">
