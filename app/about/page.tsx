@@ -34,7 +34,7 @@ const About = () => {
 	return (
 		<div>
 			<div className="flex flex-row items-center justify-center space-x-10 mt-16">
-				<div className="relative w-80 h-14 cursor-pointer" onClick={() => setShow(0)}>
+				{/* <div className="relative w-80 h-14 cursor-pointer" onClick={() => setShow(0)}>
 					<div
 						className={
 							"w-80 h-14 skew-x-12 " +
@@ -128,7 +128,7 @@ const About = () => {
 					>
 						Cổ đông
 					</div>
-				</div>
+				</div> */}
 			</div>
 
 			<div className="mt-28">
@@ -224,14 +224,14 @@ const About = () => {
 
 						{/* 1.2. Lịch sử phát triển */}
 						<div>
-							<p className="text-5xl font-semibold text-center px-4">Lịch sử phát triển</p>
-							<div className="flex justify-center items-center flex-col md:flex-row mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 mx-10">
-								<div className="flex justify-center items-center w-full md:w-[35%]">
+							<p className="text-5xl font-semibold text-center px-8">Lịch sử phát triển</p>
+							<div className="flex justify-center items-center flex-col md:flex-row mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
+								<div className="flex justify-center items-center w-[90%] md:w-[35%] mx-auto">
 									<Image
 										src="/images/about/History.png"
 										alt="About History VNFITE"
-										width={437}
-										height={437}
+										width={400}
+										height={400}
 									/>
 								</div>
 								<div className="w-full md:w-[65%] flex justify-center flex-col items-center">
@@ -268,7 +268,7 @@ const About = () => {
 															{_.content.map((_, index) => (
 																<p
 																	key={index}
-																	className="text-base font-normal third-line-truncate"
+																	className="text-base font-normal third-line-truncate px-4"
 																>
 																	{_}
 																</p>
