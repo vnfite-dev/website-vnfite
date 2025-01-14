@@ -131,23 +131,17 @@ const About = () => {
 				</div> */}
 			</div>
 
-			<div className="mt-28">
+			<div className="mt-8 lg:mt-28">
 				{/* 1. Thông tin về VNFITEVNFITE */}
 				{show === 0 && (
-					<div className="flex justify-center items-center flex-col space-y-40">
+					<div className="flex justify-center items-center flex-col space-y-20 lg:space-y-40">
 						{/* 1.1. Giới thiệu về VNFITE */}
 						<div>
-							<p className="text-5xl font-semibold text-center px-4">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
 								Giới thiệu về <span className="text-gradient">VNFITE</span>
 							</p>
 
-							<div
-								style={{
-									maxWidth: "1280px",
-									width: "90%",
-									margin: "30px auto",
-								}}
-							>
+							<div className="max-w-[1280px] w-[90%] my-8 mx-auto">
 								<Image
 									src="/images/about/AboutIntro.png"
 									alt="About Intro"
@@ -224,8 +218,8 @@ const About = () => {
 
 						{/* 1.2. Lịch sử phát triển */}
 						<div>
-							<p className="text-5xl font-semibold text-center px-8">Lịch sử phát triển</p>
-							<div className="flex justify-center items-center flex-col md:flex-row mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-8">Lịch sử phát triển</p>
+							<div className="flex justify-center items-center flex-col md:flex-row mt-8 lg:mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
 								<div className="flex justify-center items-center w-[90%] md:w-[35%] mx-auto">
 									<Image
 										src="/images/about/History.png"
@@ -235,12 +229,12 @@ const About = () => {
 									/>
 								</div>
 								<div className="w-full md:w-[65%] flex justify-center flex-col items-center">
-									<div className="mb-10">
+									<div className="mb-6 lg:mb-10">
 										<TimeLine />
 									</div>
 
 									<div className="w-full flex relative">
-										<div className="w-1/5 flex flex-col justify-center items-center ">
+										<div className="hidden w-1/5 sm:flex flex-col justify-center items-center ">
 											<div className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center">
 												<div
 													className="h-8 w-8 rounded-full bg-white flex justify-center items-center"
@@ -256,12 +250,12 @@ const About = () => {
 											</div>
 										</div>
 
-										<Carousel className="w-full" setApi={setApi} opts={{ loop: true }}>
+										<Carousel className="w-full px-8 sm:px-2" setApi={setApi} opts={{ loop: true }}>
 											<CarouselContent>
 												{dataHistory.map((_, index) => (
 													<CarouselItem key={index}>
 														<div className="flex-grow pt-8">
-															<p className="text-2xl font-semibold leading-[48px] text-center mb-6">
+															<p className="text-lg lg:text-2xl font-semibold leading-[48px] text-center mb-3 lg:mb-6">
 																{_.title}
 															</p>
 
@@ -279,7 +273,7 @@ const About = () => {
 											</CarouselContent>
 										</Carousel>
 
-										<div className="w-1/5 flex flex-col justify-center items-center">
+										<div className="hidden w-1/5 sm:flex flex-col justify-center items-center">
 											<div
 												className="h-9 w-9 cursor-pointer rounded-full bg-grad flex items-center justify-center"
 												onClick={() => api?.scrollNext()}
@@ -300,13 +294,13 @@ const About = () => {
 
 						{/* 1.3. Tầm nhìn và sứ mệnh */}
 						<div>
-							<p className="text-5xl font-semibold text-center px-4">Tầm nhìn và sứ mệnh</p>
-							<p className="font-normal text-base mt-14 text-center p-6">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">Tầm nhìn và sứ mệnh</p>
+							<p className="font-normal text-base mt-4 lg:mt-14 text-center p-6">
 								Là sợi dây kết nối giữa nhà đầu tư và nhà huy động, tạo ra sân chơi an toàn giao
 								thương tài chính, tạo lợi ích cho các bên đồng thời tạo sự phát triển bền vững cho xã
 								hội.
 							</p>
-							<div className="flex justify-center items-center mt-8 space-y-4 flex-col lg:flex-row lg:space-x-4 lg:space-y-0 mb-4 px-4">
+							<div className="flex justify-center items-center mt-3 lg:mt-8 space-y-4 flex-col lg:flex-row lg:space-x-4 lg:space-y-0 mb-4 px-4">
 								<div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
 									<div style={{ width: "56px", height: "64px" }}>
 										<Image
