@@ -14,11 +14,31 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useEffect, useState, useRef } from "react";
-import { Download, Menu } from "lucide-react";
+import { Briefcase, ChevronDown, Download, Menu, UserRound, UsersRound } from "lucide-react";
+import { usePathname } from "next/navigation";
 const Navbar = () => {
 	const navRef = useRef<HTMLDivElement>(null);
-
+	const [isOpen, setIsOpen] = useState(false);
+	const [childMenuOpen, setChildMenuOpen] = useState(false);
 	const [isFixed, setIsFixed] = useState(false);
+	const pathname = usePathname();
+
+	useEffect(() => {
+		setIsOpen(false);
+	}, [pathname]);
+
+	useEffect(() => {
+		if (isOpen == true) {
+			setIsFixed(true);
+		}
+
+		if (isOpen == false) {
+			if (window.scrollY < 48) {
+				setIsFixed(false);
+			}
+		}
+	}, [isOpen]);
+
 	useEffect(() => {
 		const handleScroll = () => {
 			if (navRef.current) {
@@ -159,7 +179,96 @@ const Navbar = () => {
 						</NavigationMenu>
 					</div>
 
-					<div className="lg:hidden ">
+					{/* mobile navbar */}
+
+					{/* Mobile Menu */}
+					<div
+						className={cn(
+							"absolute z-[80] top-full left-0 w-full bg-white shadow-lg overflow-hidden transition-all duration-300 lg:hidden",
+							{
+								"max-h-[100vh] opacity-100": isOpen,
+								"max-h-0 opacity-0": !isOpen,
+							}
+						)}
+					>
+						<ul className="flex flex-col divide-y divide-gray-200">
+							<li className="py-3 px-4">
+								<Link href="/" legacyBehavior>
+									<a className="text-lg font-semibold text-gray-600">Về VNFITE</a>
+								</Link>
+							</li>
+							<li className="py-3 px-4">
+								<div className="cursor-pointer">
+									<p
+										className="flex justify-between items-center text-lg font-semibold text-gray-600 hover:text-gradient"
+										onClick={() => setChildMenuOpen(!childMenuOpen)} // Toggle menu visibility
+									>
+										<span>Gọi vốn</span>
+
+										<ChevronDown
+											color="#E82F2F"
+											className={cn(
+												"transition-transform duration-300",
+												childMenuOpen && "rotate-180"
+											)}
+										/>
+									</p>
+									<div
+										className={`pt-2 text-lg font-medium overflow-hidden transition-all duration-300 ${
+											childMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+										}`}
+									>
+										<Link href="/products">
+											<div className="flex items-center gap-3 py-2 ">
+												{" "}
+												<UserRound color="#666666" /> Gọi vốn cá nhân{" "}
+											</div>
+										</Link>
+										<Link href="/products">
+											<div className="flex items-center gap-3 py-2 ">
+												<UsersRound color="#666666" />
+												Gọi vốn gia đình
+											</div>
+										</Link>
+										<Link href="/products">
+											<div className="flex items-center gap-3 py-2 ">
+												<Briefcase color="#666666" />
+												Gọi vốn doanh nghiệp
+											</div>
+										</Link>
+									</div>
+								</div>
+							</li>
+							<li className="py-3 px-4">
+								<Link href="/invest" legacyBehavior>
+									<a className="text-lg font-semibold text-gray-500">Đầu tư</a>
+								</Link>
+							</li>
+							<li className="py-3 px-4">
+								<Link href="/news" legacyBehavior>
+									<a className="text-lg font-semibold text-gray-500">Tin tức</a>
+								</Link>
+							</li>
+							<li className="py-3 px-4">
+								<Link href="/insure" legacyBehavior>
+									<a className="text-lg font-semibold text-gray-500">Bảo hiểm</a>
+								</Link>
+							</li>
+							<li className="py-3 px-4">
+								<Link href="/careers" legacyBehavior>
+									<a className="text-lg font-semibold text-gray-500">Tuyển dụng</a>
+								</Link>
+							</li>
+
+							<li className="py-3 px-4">
+								<Button className="btn-primary w-full">
+									<span>Tải ứng dụng</span> <Download />
+								</Button>
+							</li>
+						</ul>
+					</div>
+
+					<div className="lg:hidden " onClick={() => setIsOpen(!isOpen)}>
 						<Menu color="#E82F2F" size={40} />
 					</div>
 					<div className="hidden lg:block">

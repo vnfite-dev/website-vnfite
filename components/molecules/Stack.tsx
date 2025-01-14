@@ -99,214 +99,208 @@ const Stack1Info = ({
 	);
 };
 
-const Stack = () => {
-	return (
-		<div className="w-full px-[6%]">
-			{/* Stack 1 */}
-			{/* <div
-				ref={firstStackItem}
-				className={`w-full h-[100vh] bg-pink-stack ${isSticky ? "sticky top-0 z-10" : ""}`}
-			></div> */}
+const Stack = () => (
+	<div className="w-full px-1 md:px-[6%]">
+		{/* Stack 1 */}
+		{/* <div
+            ref={firstStackItem}
+            className={`w-full h-[100vh] bg-pink-stack ${isSticky ? "sticky top-0 z-10" : ""}`}
+        ></div> */}
 
-			{/* Stack 1 */}
+		{/* Stack 1 */}
 
-			<StackItem pinkBackground={true} stack={0}>
-				<div className="pt-10 md:pt-20">
+		<StackItem pinkBackground={true} stack={0}>
+			<div className="pt-10 md:pt-20">
+				<div className="relative z-10">
+					<p className="text-gradient font-semibold green-underline after:w-[120%]">Lý do</p>
+					<div className="mt-4 text-3xl md:text-5xl">
+						Tại sao bạn nên sử dụng <span className="text-gradient font-bold">VNFITE</span>
+					</div>
+				</div>
+
+				<div className="mt-12 md:mt-32 flex px-5 md:px-[12%] justify-between">
+					<div className="flex flex-col gap-8 pr-1 w-1/2 md:w-auto">
+						<Stack1Info
+							leftToRight={false}
+							title="Uy tín và bảo mật"
+							content="Mọi giao dịch đều được bảo vệ bởi các tiêu chuẩn bảo mật cao nhất, đảm bảo an toàn thông tin."
+						/>
+
+						<Stack1Info
+							leftToRight={false}
+							title="Đầu tư"
+							content="Nhanh chóng thuận tiện, lãi suất cao"
+						/>
+
+						<Stack1Info
+							leftToRight={false}
+							title="Đội ngũ chuyên gia hàng đầu"
+							content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
+						/>
+					</div>
+					<div className="hidden md:block">
+						<Image src={"/images/home/banner-rightgirl.png"} width={300} height={200} alt="stack1" />
+					</div>
+					<div className="flex flex-col gap-8 pl-1 w-1/2 md:w-auto">
+						<Stack1Info
+							leftToRight={true}
+							title="Dễ dàng tiện lợi"
+							content="Mọi giao dịch đều được bảo vệ bởi các tiêu chuẩn bảo mật cao nhất, đảm bảo an toàn thông tin."
+						/>
+
+						<Stack1Info
+							leftToRight={true}
+							title="Khách hàng đông đảo"
+							content="Nhanh chóng thuận tiện, lãi suất cao"
+						/>
+
+						<Stack1Info
+							leftToRight={true}
+							title="Tăng trưởng bền vững"
+							content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
+						/>
+					</div>
+				</div>
+			</div>
+		</StackItem>
+
+		{/* Stack 2 */}
+		<StackItem pinkBackground={false} stack={1}>
+			<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-5 sm:px-[12%] ">
+				<div className="w-full md:w-1/2">
 					<div className="relative z-10">
-						<p className="text-gradient font-semibold green-underline after:w-[120%]">Lý do</p>
-						<div className="mt-4 text-3xl md:text-5xl">
-							Tại sao bạn nên sử dụng <span className="text-gradient font-bold">VNFITE</span>
-						</div>
+						<p className="text-gradient font-semibold green-underline">Giá trị</p>
+						<p className="text-3xl md:text-5xl text-left mt-4 ">
+							Giá trị mà <span className="text-gradient font-semibold md:leading-[72px]">VNFITE</span>{" "}
+							mang lại cho khách hàng
+						</p>
 					</div>
 
-					<div className="mt-12 md:mt-32 flex px-2 md:px-[12%] justify-between">
-						<div className="flex flex-col gap-8 pr-1">
-							<Stack1Info
-								leftToRight={false}
-								title="Uy tín và bảo mật"
-								content="Mọi giao dịch đều được bảo vệ bởi các tiêu chuẩn bảo mật cao nhất, đảm bảo an toàn thông tin."
-							/>
+					<div className="mt-6 md:mt-16 flex flex-col gap-6">
+						<CheckItem
+							title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+						/>
 
-							<Stack1Info
-								leftToRight={false}
-								title="Đầu tư"
-								content="Nhanh chóng thuận tiện, lãi suất cao"
-							/>
+						<CheckItem
+							title="Thông tin minh bạch và an toàn"
+							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+						/>
 
-							<Stack1Info
-								leftToRight={false}
-								title="Đội ngũ chuyên gia hàng đầu"
-								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
-							/>
-						</div>
-						<div className="hidden md:block">
-							<Image src={"/images/home/banner-rightgirl.png"} width={300} height={200} alt="stack1" />
-						</div>
-						<div className="flex flex-col gap-8 pl-1">
-							<Stack1Info
-								leftToRight={true}
-								title="Dễ dàng tiện lợi"
-								content="Mọi giao dịch đều được bảo vệ bởi các tiêu chuẩn bảo mật cao nhất, đảm bảo an toàn thông tin."
-							/>
-
-							<Stack1Info
-								leftToRight={true}
-								title="Khách hàng đông đảo"
-								content="Nhanh chóng thuận tiện, lãi suất cao"
-							/>
-
-							<Stack1Info
-								leftToRight={true}
-								title="Tăng trưởng bền vững"
-								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
-							/>
-						</div>
+						<CheckItem
+							title="Giải pháp tài chính linh hoạt"
+							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+						/>
 					</div>
 				</div>
-			</StackItem>
-
-			{/* Stack 2 */}
-			<StackItem pinkBackground={false} stack={1}>
-				<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-2 sm:px-[12%] ">
-					<div className="w-full md:w-1/2">
-						<div className="relative z-10">
-							<p className="text-gradient font-semibold green-underline">Giá trị</p>
-							<p className="text-3xl md:text-5xl text-left mt-4 ">
-								Giá trị mà <span className="text-gradient font-semibold leading-[72px]">VNFITE</span>{" "}
-								mang lại cho khách hàng
-							</p>
-						</div>
-
-						<div className="mt-6 md:mt-16 flex flex-col gap-6">
-							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-							/>
-
-							<CheckItem
-								title="Thông tin minh bạch và an toàn"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-							/>
-
-							<CheckItem
-								title="Giải pháp tài chính linh hoạt"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-							/>
-						</div>
-					</div>
-					<div className="w-full md:w-1/2 flex justify-end">
-						<div className=""></div>
-						<div className="">
-							<Image src={"/images/home/banner-rightgirl.png"} width={400} height={500} alt="Right" />
-						</div>
+				<div className="w-full mt-6 md:mt-0 md:w-1/2 flex justify-end">
+					<div className=""></div>
+					<div className="w-[400px] h-52 md:h-[500px] relative">
+						<Image
+							className="object-cover"
+							src={"/images/home/banner-rightgirl.png"}
+							fill
+							alt="Right"
+						/>
 					</div>
 				</div>
-			</StackItem>
-			<StackItem pinkBackground={true} stack={2}>
-				<div className="w-full flex flex-col md:flex-row  mt-10 md:mt-20 px-2 sm:px-[12%] ">
-					<div className="w-full md:w-1/2 flex justify-start relative order-2 md:order-none">
-						<div>
-							<Image
-								className="rounded-tl-[64px] rounded-br-[64px] rounded-tr-4xl rounded-bl-4xl"
-								src={"/images/home/money.png"}
-								width={435}
-								height={500}
-								alt="Right"
-							/>
-						</div>
-					</div>
-					<div className="w-full md:w-1/2">
-						<div className="relative z-10">
-							<p className="text-gradient font-semibold green-underline">
-								Quản lý tài chính thông minh
-							</p>
-							<p className="text-3xl md:text-5xl text-left mt-4 ">
-								Cách quản lý tài chính của bạn hiệu quả thông qua
-								<span className="text-gradient font-semibold leading-[72px]"> VNFITE</span>
-							</p>
-						</div>
-
-						<div className="mt-4 md:mt-16 flex flex-col gap-6">
-							<CheckItem
-								title="Quản lý tài chính chủ động"
-								content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
-							/>
-
-							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-							/>
-
-							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-							/>
-						</div>
+			</div>
+		</StackItem>
+		<StackItem pinkBackground={true} stack={2}>
+			<div className="w-full flex flex-col md:flex-row  mt-10 md:mt-20 px-5 sm:px-[12%] ">
+				<div className="w-full md:w-1/2 flex justify-start relative order-2 md:order-none">
+					<div className="w-[435px] h-52 md:h-[500px] relative mt-4 md:mt-0">
+						<Image
+							className="rounded-tl-[64px] rounded-br-[64px] rounded-tr-4xl rounded-bl-4xl"
+							src={"/images/home/money.png"}
+							fill
+							alt="Right"
+						/>
 					</div>
 				</div>
-			</StackItem>
-			<StackItem pinkBackground={false} stack={3}>
-				<div className="w-full flex  mt-10 md:mt-20 px-2 sm:px-[12%] ">
-					<div className="w-1/2 flex justify-start relative">
-						{/* <div className="border-dashed w-[400px] aspect-square border border-red-500 animation-breathing absolute top-40 left-3 rounded-[70px]">
-							<div className="bg-grad absolute rounded-[70px] -right-12  w-[350px] h-72 animation-bounce"></div>
-						</div> */}
-
-						<div className="absolute top-24 left-4 animation-breathing">
-							<Image
-								className=""
-								src={"/icons/home/dashborder.svg"}
-								width={400}
-								height={500}
-								alt="Right"
-							/>
-							<div className="absolute -right-8 bottom-4 animation-bounce">
-								<Image src={"/images/home/rectangle.png"} width={350} height={500} alt="Right" />
-							</div>
-						</div>
-						<div className="relative -top-8 right-8">
-							<Image
-								className="animation-breathing rounded-tl-[64px] rounded-br-[64px] rounded-tr-4xl rounded-bl-4xl"
-								src={"/images/home/phonemockup.svg"}
-								width={620}
-								height={500}
-								alt="Right"
-							/>
-						</div>
+				<div className="w-full md:w-1/2">
+					<div className="relative z-10">
+						<p className="text-gradient font-semibold green-underline">Quản lý tài chính thông minh</p>
+						<p className="text-3xl md:text-5xl text-left mt-4 ">
+							Cách quản lý tài chính của bạn hiệu quả thông qua
+							<span className="text-gradient font-semibold md:leading-[72px]"> VNFITE</span>
+						</p>
 					</div>
-					<div className="w-1/2">
-						<div className="relative z-10">
-							<p className="text-gradient font-semibold green-underline">Quản lý tài chính</p>
-							<p className="text-5xl text-left mt-4">
-								Cách quản lý tài chính của bạn hiệu quả thông qua
-								<span className="text-gradient font-semibold leading-[72px]"> VNFITE</span>
-							</p>
-						</div>
 
-						<div className="mt-16 flex flex-col gap-6">
-							<CheckItem
-								title="Quản lý tài chính chủ động"
-								content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
-							/>
+					<div className="mt-4 md:mt-16 flex flex-col gap-6">
+						<CheckItem
+							title="Quản lý tài chính chủ động"
+							content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
+						/>
 
-							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-							/>
+						<CheckItem
+							title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+						/>
 
-							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-							/>
-						</div>
+						<CheckItem
+							title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+						/>
 					</div>
 				</div>
-			</StackItem>
-			{/* <StackItem pinkBackground={true} stack={4}>
-				<div className=" mt-10 md:mt-20">
+			</div>
+		</StackItem>
+
+		<StackItem pinkBackground={false} stack={3}>
+			<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-5 sm:px-[12%] ">
+				<div className="mx-auto w-1/2 order-2 md:order-none md:w-1/2 md:mx-0 flex justify-start relative">
+					<div className="absolute top-24 left-4 animation-breathing w-[100px] h-[100px] md:w-[400px] md:h-[500px]">
+						<Image className="" src={"/icons/home/dashborder.svg"} alt="Right" fill />
+						<div className="absolute -right-8 bottom-4 animation-bounce">
+							<Image src={"/images/home/rectangle.png"} width={350} height={500} alt="Right" />
+						</div>
+					</div>
+					<div className="relative -top-36  md:-top-8 right-8 w-[620px] h-[500px]">
+						<Image
+							className="animation-breathing rounded-tl-[64px] rounded-br-[64px] rounded-tr-4xl rounded-bl-4xl"
+							src={"/images/home/phonemockup.svg"}
+							fill
+							alt="Right"
+						/>
+					</div>
+				</div>
+				<div className="w-full md:w-1/2">
+					<div className="relative z-10">
+						<p className="text-gradient font-semibold green-underline">Quản lý tài chính</p>
+						<p className="text-3xl md:text-5xl text-left mt-4 ">
+							Cách quản lý tài chính của bạn hiệu quả thông qua
+							<span className="text-gradient font-semibold md:leading-[72px]"> VNFITE</span>
+						</p>
+					</div>
+
+					<div className="mt-16 flex flex-col gap-6">
+						<CheckItem
+							title="Quản lý tài chính chủ động"
+							content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
+						/>
+
+						<CheckItem
+							title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+						/>
+
+						<CheckItem
+							title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+						/>
+					</div>
+				</div>
+			</div>
+		</StackItem>
+
+		{/* Ẩn cái hướng dẫn này ở màn mobile */}
+		<div className="hidden sm:block">
+			<StackItem pinkBackground={true} stack={4}>
+				<div className=" mt-10 md:mt-20  px-5 sm:px-[12%]">
 					<div className="relative z-10">
 						<p className="text-gradient font-semibold green-underline after:w-[120%]">Tải ứng dụng</p>
-						<div className="mt-4 text-5xl">
+						<div className="mt-4 text-3xl  md:text-5xl">
 							Hướng dẫn cài đặt ứng dụng <span className="text-gradient font-bold">VNFITE</span>
 						</div>
 					</div>
@@ -359,10 +353,10 @@ const Stack = () => {
 						</div>
 					</div>
 				</div>
-			</StackItem> */}
-			{/* <div className="w-full h-[100vh] bg-yellow-stack z-20 relative"></div> */}
+			</StackItem>
 		</div>
-	);
-};
+		{/* <div className="w-full h-[100vh] bg-yellow-stack z-20 relative"></div> */}
+	</div>
+);
 
 export default Stack;
