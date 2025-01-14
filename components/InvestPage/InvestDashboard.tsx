@@ -101,7 +101,7 @@ const InvestDashboard = () => {
 					Công cụ tính lãi suất mỗi tháng
 				</div>
 
-				<div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_300px] w-full text-white justify-between gap-12">
+				<div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_1fr_1fr_300px] w-full text-white justify-between gap-12">
 					<div className="">
 						<div className="text-end">
 							<p>Số tiền đầu tư</p>
@@ -141,7 +141,7 @@ const InvestDashboard = () => {
 							className="mt-2"
 							min={0}
 							step={0.1}
-							max={30}
+							max={21.6}
 							onValueChange={(value) => setSliderValues({ ...sliderValues, interest: value })}
 						/>
 					</div>
@@ -206,7 +206,7 @@ const InvestDashboard = () => {
 				</div>
 			</div>
 
-			<div className="px-10 lg:px-48 mt-16 ">
+			<div className="px-10 xl:px-48 mt-16 ">
 				<Table className="min-w-[800px] overflow-scroll">
 					{/* <TableCaption>A list of your recent invoices.</TableCaption> */}
 					<TableHeader>
