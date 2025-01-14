@@ -9,6 +9,9 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			screens: {
+				xs: { max: "400px" }, // Đặt breakpoint cho màn hình <= 400px
+			},
 			backgroundImage: {
 				investP2P: "url('/images/invest/p2p.jpg')",
 				investGroup: "url('/images/invest/group.jpg')",

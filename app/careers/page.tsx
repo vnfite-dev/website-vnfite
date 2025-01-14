@@ -3,7 +3,7 @@ import ListJobs from "@/components/CareersPage/ListJobs";
 
 const CareersPage = () => {
 	return (
-		<div className="mx-[16.7%]">
+		<div className="max-w-[1280px] px-2 mx-auto">
 			<div className="">
 				<ListJobs />
 			</div>

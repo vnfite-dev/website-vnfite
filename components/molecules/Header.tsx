@@ -31,12 +31,12 @@ const Header = () => {
 		// }
 	})();
 	return (
-		<header className={`${bannerBackground} pb-[190px] min-h-[720px] max-h-[100vh]`}>
+		<header className={`${bannerBackground} min-h-[720px] max-h-fit`}>
 			<Topbar />
 			<Navbar />
 			<div className="lg:container mx-auto relative top-4">
 				{pathname === "/" && (
-					<div className="mt-6 md:mt-28">
+					<div className="mt-6 md:mt-10 xl:mt-12">
 						<Banner />
 					</div>
 				)}

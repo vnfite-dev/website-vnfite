@@ -50,19 +50,21 @@ const JobItem = ({
 			onClick={() => setIsOpen(true)}
 			className="w-full border-t border-b border-dashed cursor-pointer border-red-400 group "
 		>
-			<div className="flex py-6 px-4  justify-between items-center group-hover:bg-customPink transition-colors duration-200">
-				<div>
-					<div className="text-xl font-semibold group-hover:text-gradient  transition-colors duration-200">
-						{title}
-					</div>
-					<div className="text-sm flex gap-3 mt-2 font-normal">
-						{tags.map((item, index) => (
-							<div key={index} className="bg-grad p-[1px] rounded-sm">
-								<div className="bg-white rounded-sm px-2 py-1 group-hover:bg-transparent">
-									<span className="text-gradient group-hover:text-white">{item}</span>
+			<div className="flex flex-col md:flex-row py-6 px-4 md:justify-between items-start md:items-center group-hover:bg-customPink transition-colors duration-200">
+				<div className="">
+					<div className="">
+						<div className="text-xl font-semibold group-hover:text-gradient  transition-colors duration-200">
+							{title}
+						</div>
+						<div className="text-sm flex gap-3 mt-2 font-normal">
+							{tags.map((item, index) => (
+								<div key={index} className="bg-grad p-[1px] rounded-sm">
+									<div className="bg-white rounded-sm px-2 py-1 group-hover:bg-transparent">
+										<span className="text-gradient group-hover:text-white">{item}</span>
+									</div>
 								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
 					<div className="mt-4 flex text-gray-600 items-center group-hover:text-red-400">
 						<MapPin size={20} className="mr-1 group-hover:text-red-400" /> <span>Hà Nội</span>{" "}
@@ -71,9 +73,9 @@ const JobItem = ({
 					</div>
 				</div>
 
-				<div className="flex gap-4 w-[30%] text-left">
-					<span className="font-medium text-base text-gray-600 group-hover:font-semibold">
-						Mức lương :
+				<div className="flex gap-4 text-left mt-3 md:mt-0">
+					<span className=" font-medium text-base text-gray-600 group-hover:font-semibold w-fit">
+						Mức lương:
 					</span>
 					<span className="text-gradient font-semibold group-hover:font-bold">{range}</span>
 				</div>
@@ -103,7 +105,10 @@ const ListJobs = () => {
 					</div>
 
 					<div className="mt-8">
-						<form onSubmit={handleSubmit} className=" flex gap-8 justify-between px-20">
+						<form
+							onSubmit={handleSubmit}
+							className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-8 justify-center lg:justify-between px-4 lg:px-20"
+						>
 							<div className="relative h-fit w-full">
 								<Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300 h-4 w-4" />
 								<Input
@@ -155,12 +160,14 @@ const ListJobs = () => {
 								</Select>
 							</div>
 
-							<Button className="btn-primary !h-10 !rounded-xl px-12">Tìm kiếm</Button>
+							<Button className="btn-primary !h-10 !rounded-xl px-12 col-span-1 md:col-span-3 lg:col-span-1">
+								Tìm kiếm
+							</Button>
 						</form>
 					</div>
 				</div>
 			</div>
-			<div className="mt-12">
+			<div className="-mt-10 lg:mt-12">
 				{jobList.map((item, index) => {
 					return (
 						<JobItem
@@ -181,7 +188,7 @@ const ListJobs = () => {
 					Trang <span className="text-gradient font-semibold">3</span> trên tổng số 12 trang
 				</div>
 
-				<div className="">Pagination</div>
+				{/* <div className="">Pagination</div> */}
 			</div>
 		</div>
 	);

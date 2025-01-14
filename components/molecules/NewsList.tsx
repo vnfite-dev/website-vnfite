@@ -66,15 +66,15 @@ const NewsList = () => {
 		});
 	}, [api]);
 	return (
-		<div className="max-w-[1280px] mx-auto px-8">
+		<div className="max-w-[1280px] mx-auto px-1 md:px-8">
 			<div className="relative z-10 text-center">
 				<p className="text-gradient font-semibold green-underline after:w-[120%]">Tin tức</p>
-				<div className="mt-4 text-5xl font-semibold">
+				<div className="mt-4 text-3xl md:text-5xl font-semibold">
 					Đọc tin HOT nhất trong ngày cùng <span className="text-gradient font-bold">VNFITE</span>
 				</div>
 			</div>
 
-			<div className="bg-grad w-full rounded-[32px] mt-16 h-fit py-[2px] lg:pt-0 lg:h-[420px]">
+			<div className="bg-grad w-full rounded-[32px] mt-8 md:mt-16 h-fit py-[2px] lg:pt-0 lg:h-[420px]">
 				<div className="bg-grad-content rounded-[32px] relative">
 					<div className="flex flex-col lg:flex-row w-full lg:h-[416px]">
 						<div className="w-full lg:w-2/5 relative h-[416px]">

@@ -76,8 +76,8 @@ const Insure = () => {
             />
           </div>
         </div>
-        <div className="mt-28">
-          <p className="text-5xl font-semibold text-center">
+        <div className="mt-12 lg:mt-28">
+          <p className="text-2xl lg:text-5xl font-semibold text-center">
             Giới thiệu về <span className="text-gradient">VNFITE</span>
           </p>
 
@@ -176,8 +176,8 @@ const Insure = () => {
           </div>
         </div>
 
-        <div className="mt-28 max-w-[1280px] px-6">
-          <p className="text-5xl font-semibold text-center mb-16">
+        <div className="mt-16 lg:mt-28 max-w-[1280px] px-6">
+          <p className="text-2xl lg:text-5xl font-semibold text-center mb-8 lg:mb-16">
             Ưu đãi khi mua bảo hiểm tại{" "}
             <span className="text-gradient">VNFITE</span>
           </p>
@@ -196,7 +196,7 @@ const Insure = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-3/5 mt-8 md:mt-0 md:px-0 space-y-9">
+            <div className="w-full md:w-3/5 mt-8 md:mt-0 px-4 sm:px-10 md:px-0 space-y-9">
               <div className="flex items-center space-x-4">
                 <div className="rounded-full bg-grad min-w-6 h-6 text-white font-light">
                   &#10004;
@@ -261,17 +261,17 @@ const Insure = () => {
           </div>
         </div>
 
-        <div className="mt-28 px-6">
-          <p className="text-5xl font-semibold text-center">
+        <div className="mt-16 lg:mt-28 px-6">
+          <p className="text-2xl lg:text-5xl font-semibold text-center">
             Giải đáp khi mua bảo hiểm tại{" "}
             <span className="text-gradient">VNFITE</span>
           </p>
         </div>
-        <div className="w-full px-[12%] lg:px-[16.7%] mt-16">
+        <div className="w-full px-[12%] lg:px-[16.7%] mt-6 lg:mt-16">
           <Accordion type="single" collapsible>
             {questionsData.map((item, index) => (
               <AccordionItem value={`value-${index}`} key={index}>
-                <AccordionTrigger className="text-xl font-medium">
+                <AccordionTrigger className="text-lg sm:text-xl font-medium">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="pl-4 text-gray-700">
