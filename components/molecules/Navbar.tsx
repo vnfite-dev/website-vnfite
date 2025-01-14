@@ -25,6 +25,7 @@ const Navbar = () => {
 
 	useEffect(() => {
 		setIsOpen(false);
+		setChildMenuOpen(false);
 	}, [pathname]);
 
 	useEffect(() => {

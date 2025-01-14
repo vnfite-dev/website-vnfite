@@ -66,7 +66,7 @@ const Benefits = () => {
 				))}
 			</div>
 
-			<div className="text-center font-semibold text-5xl leading-[72px] mt-28">
+			<div className="text-center font-semibold text-3xl md:text-5xl leading-[72px] mt-28">
 				Cuộc sống thường ngày tại <span className="text-gradient">VNFITE</span>
 			</div>
 

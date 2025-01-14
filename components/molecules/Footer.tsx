@@ -160,7 +160,7 @@ const Footer = () => {
 					className="text-sm font-semibold flex items-center gap-2 cursor-pointer "
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					<span className="hidden xs:inline">
+					<span className="hidden md:inline">
 						{isOpen ? "Thu nhỏ chân trang" : "Mở rộng chân trang"}
 					</span>
 					<div className={cn("transition-transform duration-150", isOpen ? "rotate-0" : "rotate-180")}>
