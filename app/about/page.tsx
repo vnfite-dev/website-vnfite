@@ -34,6 +34,29 @@ const About = () => {
 	return (
 		<div>
 			<div className="flex flex-row items-center justify-center space-x-10 mt-16">
+				<div className="flex justify-center items-center md:justify-between flex-col md:flex-row space-y-8 md:space-y-0 px-4 w-full max-w-[1280px] font-semibold text-xl">
+					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
+						<div className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${show === 0 ? 'bg-grad text-white' : 'bg-white text-[#E0694F]'}`}
+							onClick={() => setShow(0)}
+						>
+							Gọi vốn cá nhân
+						</div>
+					</div>
+					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
+						<div className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 1 ? 'bg-grad text-white' : 'bg-white text-[#E0694F]'}`}
+							onClick={() => setShow(1)}
+						>
+							Gọi vốn hộ kinh doanh
+						</div>
+					</div>
+					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
+						<div className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 2 ? 'bg-grad text-white' : 'bg-white text-[#E0694F]'}`}
+							onClick={() => setShow(2)}
+						>
+							Gọi vốn doanh nghiệp
+						</div>
+					</div>
+				</div>
 				{/* <div className="relative w-80 h-14 cursor-pointer" onClick={() => setShow(0)}>
 					<div
 						className={
@@ -378,8 +401,8 @@ const About = () => {
 								<p className="font-medium text-base pt-3">Chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 						</div>
-						<div className="flex justify-center items-center space-x-10">
-							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+						<div className="flex justify-center items-center space-x-0 md:space-x-10 space-y-14 md:space-y-0 flex-col md:flex-row">
+							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom mx-auto">
 								<Image
 									src="/images/about/Logo.png"
 									alt="About History VNFITE"
@@ -390,7 +413,7 @@ const About = () => {
 								<p className="font-medium text-base pt-3">Phó chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 
-							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom mx-auto">
 								<Image
 									src="/images/about/Logo.png"
 									alt="About History VNFITE"
@@ -408,7 +431,7 @@ const About = () => {
 				{show === 2 && (
 					<div className="flex justify-center items-center flex-col space-y-40">
 						<div>
-							<p className="text-5xl font-semibold text-center px-4">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
 								Đối với nhà đầu tư về <span className="text-gradient">VNFITE</span>
 							</p>
 
@@ -429,7 +452,7 @@ const About = () => {
 								/>
 							</div>
 
-							<p className="p-4 font-normal text-base mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
+							<p className="p-4 font-normal text-base mt-2 sm:mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
 								<span className="text-center">
 									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các đơn vị tiên phong và uy
 									tín hàng đầu cung cấp giải pháp công nghệ tài chính, kết nỗi giữa các nhà đầu tư và
