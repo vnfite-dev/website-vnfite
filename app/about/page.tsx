@@ -10,6 +10,7 @@ import { ChevronRight } from "lucide-react";
 import TimeLine from "@/components/molecules/TimeLine";
 
 const About = () => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [show, setShow] = useState(0);
 	const [isShowIntro, setIsShowIntro] = useState(false);
 	const [api, setApi] = useState<CarouselApi>();
