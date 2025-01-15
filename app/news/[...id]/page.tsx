@@ -12,13 +12,13 @@ const SuggestedNew = ({
 	time?: string;
 }) => {
 	return (
-		<div className="flex gap-4">
-			<div className="w-20 h-20 relative">
-				<Image src={image} alt=";t" width={80} height={80} className="object-contain" />
+		<div className="flex gap-4 border-b border-b-[#E6E6E6] pb-4">
+			<div className="w-20 h-20 min-w-20 min-h-20 overflow-hidden relative rounded-lg">
+				<Image src={image} alt="Ảnh tin tức" objectFit="cover" layout="fill" className="" />
 			</div>
 			<div className="">
 				<div className="font-medium text-base">{title}</div>
-				<div className="flex justify-start items-center gap-2 text-[12px]">
+				<div className="flex justify-start items-center gap-2 text-[12px] mt-1">
 					<Clock size={14} />
 					{time}
 				</div>
@@ -28,8 +28,8 @@ const SuggestedNew = ({
 };
 const NewsDetail = () => {
 	return (
-		<div className="px-[16.7%] my-28 flex">
-			<div className=" font-semibold text-2xl pr-14">
+		<div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28 flex flex-col lg:flex-row">
+			<div className=" font-semibold text-2xl lg:pr-10 xl:pr-14 w-full lg:w-[75%] 2xl:w-[65%]">
 				VNFITE Chúc Mừng Câu Lạc Bộ Doanh Nhân Việt Nam - Asean Global Trong Lễ Bổ Nhiệm Lãnh Đạo Và Kế
 				Hoạch Xúc Tiến Thương Mại Tại Úc Năm 2025
 				<div className="flex gap-12 mt-4 items-center text-sm">
@@ -68,7 +68,7 @@ const NewsDetail = () => {
 					chúc mừng chân thành đến Câu Lạc Bộ Doanh Nhân Việt Nam - Asean Global và Ban Lãnh Đạo của CLB.
 					Chúng tôi tin rằng với sự nhiệt huyết và cam kết của các thành viên, CLB sẽ tiếp tục gặt hái
 					nhiều thành công trong các hoạt động xúc tiến thương mại, đưa sản phẩm Việt Nam ra thế giới và
-					tạo ra những cơ hội mới cho cộng đồng doanh nhân Việt Nam. Một số hình ảnh tại buổi lễ: 
+					tạo ra những cơ hội mới cho cộng đồng doanh nhân Việt Nam. Một số hình ảnh tại buổi lễ:
 				</div>
 				<div className="w-full h-auto relative mt-6">
 					<Image
@@ -83,10 +83,11 @@ const NewsDetail = () => {
 			</div>
 
 			{/* LEFT BAR */}
-			<div className="w-fit h-[400px] border-l-2 border-gray-300 pl-16 ">
+			<div className="w-full lg:w-fit lg:h-[400px] lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
 				<div className="text-2xl font-semibold text-center">Tin tức liên quan</div>
 
-				<div className="mt-12">
+				<div className="mt-4 lg:mt-12 space-y-4">
+					<SuggestedNew />
 					<SuggestedNew />
 				</div>
 			</div>
