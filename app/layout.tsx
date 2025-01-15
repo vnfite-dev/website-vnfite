@@ -43,7 +43,7 @@ const ambrose = localFont({
 });
 
 export const metadata: Metadata = {
-	title: "VNFITE",
+	title: "VNFITE - KẾT NỐI NGUỒN VỐN SIÊU TỐC",
 	description: "VNFITE - Làm chủ tương lai tài chính của bạn",
 };
 
