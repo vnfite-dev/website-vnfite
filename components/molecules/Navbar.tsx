@@ -39,6 +39,9 @@ const Navbar = () => {
 	const [productsType, setProductsType] = useState(0);
 
 	useEffect(() => {
+		if (window.innerWidth < 768) {
+			setIsFixed(true);
+		}
 		setIsOpen(false);
 		setChildMenuOpen(false);
 	}, [pathname]);
@@ -65,7 +68,9 @@ const Navbar = () => {
 						setIsFixed(true);
 					}
 				} else {
-					setIsFixed(false);
+					if (window.innerWidth > 768) {
+						setIsFixed(false);
+					}
 				}
 			}
 		};
@@ -236,11 +241,11 @@ const Navbar = () => {
 						)}
 					>
 						<ul className="flex flex-col divide-y divide-gray-200">
-							<li className="py-3 px-4">
-								<Link href="/" legacyBehavior>
+							<Link href="/" legacyBehavior>
+								<li className="py-3 px-4">
 									<a className="text-lg font-semibold text-gray-600">Về VNFITE</a>
-								</Link>
-							</li>
+								</li>
+							</Link>
 							<li className="py-3 px-4">
 								<div className="cursor-pointer">
 									<p
@@ -283,26 +288,26 @@ const Navbar = () => {
 									</div>
 								</div>
 							</li>
-							<li className="py-3 px-4">
-								<Link href="/invest" legacyBehavior>
+							<Link href="/invest" legacyBehavior>
+								<li className="py-3 px-4">
 									<a className="text-lg font-semibold text-gray-500">Đầu tư</a>
-								</Link>
-							</li>
-							<li className="py-3 px-4">
-								<Link href="/news" legacyBehavior>
+								</li>
+							</Link>
+							<Link href="/news" legacyBehavior>
+								<li className="py-3 px-4">
 									<a className="text-lg font-semibold text-gray-500">Tin tức</a>
-								</Link>
-							</li>
-							<li className="py-3 px-4">
-								<Link href="/insure" legacyBehavior>
+								</li>
+							</Link>
+							<Link href="/insure" legacyBehavior>
+								<li className="py-3 px-4">
 									<a className="text-lg font-semibold text-gray-500">Bảo hiểm</a>
-								</Link>
-							</li>
-							<li className="py-3 px-4">
-								<Link href="/careers" legacyBehavior>
+								</li>
+							</Link>
+							<Link href="/careers" legacyBehavior>
+								<li className="py-3 px-4">
 									<a className="text-lg font-semibold text-gray-500">Tuyển dụng</a>
-								</Link>
-							</li>
+								</li>
+							</Link>
 
 							<li className="py-3 px-4">
 								<Button className="btn-primary w-full">

@@ -42,7 +42,7 @@ const StaticItem = (item: { number: number; preNum: string; afterNum: string; na
 			{/* <div className="px-10 border border-customPink w-full">
 				<div className="border border-gray-200"></div>
 			</div> */}
-			<div className="relative text-[20px] text-center px-[27px] mt-14">
+			<div className="relative text-[20px] text-center px-[27px] mt-10 md:mt-14">
 				<p className="w-fit  relative font-medium before:content-[''] before:absolute  before:-top-8 before:w-[110%] before:h-[2px] before:bg-gray-200 before:left-[-5%]">
 					{parts[0]}
 					{parts.length > 1 && <span className="text-gradient font-bold">VNFITE</span>}

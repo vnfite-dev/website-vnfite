@@ -115,7 +115,7 @@ const Footer = () => {
 						<div className="flex text-center mt-6">
 							<div className="w-full flex justify-center ">
 								<div>
-									<Image src={"/images/home/QR.png"} width={150} height={150} alt="QR" />
+									<Image src={"/icons/home/QR.svg"} width={150} height={150} alt="QR" />
 								</div>
 							</div>
 							{/* <div className="w-1/2">
