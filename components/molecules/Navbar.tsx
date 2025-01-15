@@ -16,12 +16,27 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState, useRef } from "react";
 import { Briefcase, ChevronDown, Download, Menu, UserRound, UsersRound } from "lucide-react";
 import { usePathname } from "next/navigation";
+
+const ProductNavItem = ({ state, image, title }: { state: string; image: string; title: string }) => {
+	console.log(state);
+	return (
+		<Link href={`/products`} legacyBehavior>
+			<div className="flex w-full justify-center items-center gap-3 py-2 px-4 cursor-pointer hover:bg-customPink h-fit rounded-sm">
+				<div className="">
+					<Image src={`/icons/products/${image}.svg`} width={64} height={64} alt="productStudent1" />
+				</div>
+				<p>Gọi vốn {title}</p>
+			</div>
+		</Link>
+	);
+};
 const Navbar = () => {
 	const navRef = useRef<HTMLDivElement>(null);
 	const [isOpen, setIsOpen] = useState(false);
 	const [childMenuOpen, setChildMenuOpen] = useState(false);
 	const [isFixed, setIsFixed] = useState(false);
 	const pathname = usePathname();
+	const [productsType, setProductsType] = useState(0);
 
 	useEffect(() => {
 		setIsOpen(false);
@@ -70,7 +85,10 @@ const Navbar = () => {
 				ref={navRef}
 			> */}
 			<div
-				className={cn("w-full", isFixed ? "bg-white fixed z-[80] top-0 py-2 shadow-lg" : "")}
+				className={cn(
+					"w-full scrollbar-ignore",
+					isFixed ? "bg-white fixed z-[80] top-0 py-2 shadow-lg" : ""
+				)}
 				ref={navRef}
 			>
 				<div
@@ -83,7 +101,7 @@ const Navbar = () => {
 						<div className="flex gap-1">
 							{/* <Image src="/images/vnfite_logo.png" width={220} height={52} alt="logo" /> */}
 							<Image src="/logo.svg" width={55} height={55} alt="logo" />
-							<div className="flex flex-col justify-center items-center gap-1">
+							<div className="hidden sm:flex flex-col justify-center items-center gap-1">
 								<Image
 									src="/onlyVNFITE.svg"
 									width={160}
@@ -121,21 +139,46 @@ const Navbar = () => {
 										Gọi vốn
 									</NavigationMenuTrigger>
 									<NavigationMenuContent className="relative">
-										<div className="flex gap-3 py-3 px-3 w-[750px] relative z-[1000]">
+										<div className="flex gap-3 py-3 w-[1000px] pb-10 relative z-[1000]">
 											<div className="flex flex-col min-w-[250px]">
-												<div className="py-3 px-6 cursor-pointer hover:bg-customPink hover:font-semibold ">
+												<div
+													onMouseEnter={() => setProductsType(0)}
+													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold "
+												>
 													Gọi vốn cá nhân
 												</div>
-												<div className="py-3 px-6 cursor-pointer hover:bg-customPink hover:font-semibold ">
-													Gọi vốn gia đình
+												<div
+													onMouseEnter={() => setProductsType(1)}
+													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold "
+												>
+													Gọi vốn hộ kinh doanh
 												</div>
-												<div className="py-3 px-6 cursor-pointer hover:bg-customPink hover:font-semibold ">
+												<div
+													onMouseEnter={() => setProductsType(2)}
+													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold "
+												>
 													Gọi vốn doanh nghiệp
 												</div>
 											</div>
 
-											<div className="grid">
-												<div className=""></div>
+											<div className="w-full h-full grid grid-cols-3 gap-4 justify-between px-2 border-l-[3px]  border-customPink">
+												{productsType === 0 && (
+													<>
+														<ProductNavItem state="active" image="sieutoc" title="siêu tốc" />
+														<ProductNavItem state="active" image="sinhvien" title="sinh viên" />
+														<ProductNavItem state="active" image="baohiem" title="bảo hiểm" />
+													</>
+												)}
+
+												{productsType === 2 && (
+													<>
+														<ProductNavItem
+															state="active"
+															image="dn_doanhnghiep"
+															title="cho doanh nghiệp"
+														/>
+													</>
+												)}
 											</div>
 										</div>
 									</NavigationMenuContent>
@@ -201,7 +244,7 @@ const Navbar = () => {
 							<li className="py-3 px-4">
 								<div className="cursor-pointer">
 									<p
-										className="flex justify-between items-center text-lg font-semibold text-gray-600 hover:text-gradient"
+										className="flex justify-between items-center text-lg font-semibold text-gray-600 hover:text-gradient h-fit"
 										onClick={() => setChildMenuOpen(!childMenuOpen)} // Toggle menu visibility
 									>
 										<span>Gọi vốn</span>
@@ -215,7 +258,7 @@ const Navbar = () => {
 										/>
 									</p>
 									<div
-										className={`pt-2 text-lg font-medium overflow-hidden transition-all duration-300 ${
+										className={`text-lg font-medium overflow-hidden transition-all duration-300 ${
 											childMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
 										}`}
 									>
@@ -270,10 +313,11 @@ const Navbar = () => {
 					</div>
 
 					<div className="lg:hidden " onClick={() => setIsOpen(!isOpen)}>
-						<Menu color="#E82F2F" size={40} />
+						<Menu color="#E82F2F" size={46} />
 					</div>
 					<div className="hidden lg:block">
-						<Button className="btn-primary">{isFixed == false ? "Tải ứng dụng" : <Download />}</Button>
+						{/* <Button className="btn-primary">{isFixed == false ? "Tải ứng dụng" : <Download />}</Button> */}
+						<Button className="btn-primary">Tải ứng dụng</Button>
 					</div>
 				</div>
 			</div>

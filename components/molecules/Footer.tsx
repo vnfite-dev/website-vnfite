@@ -28,20 +28,20 @@ const navItemText = [
 		items: ["Đầu tư P2P", "Đầu tư nhóm", "Sàn chuyển nhượng"],
 	},
 	{
-		title: "Sàn giao dịch",
-		items: ["Đầu tư P2P", "Đầu tư nhóm", "Sàn chuyển nhượng"],
+		title: "Sản phẩm",
+		items: ["Gọi vốn cá nhân", "Gọi vốn hộ kinh doanh", "Gọi vốn doanh nghiệp"],
 	},
 	{
-		title: "Sàn giao dịch",
-		items: ["Đầu tư P2P", "Đầu tư nhóm", "Sàn chuyển nhượng"],
+		title: "Về VNFITE",
+		items: ["Thông tin về VNFITE", "Ban lãnh đạo", "Cổ đông"],
 	},
 	{
-		title: "Sàn giao dịch",
-		items: ["Đầu tư P2P", "Đầu tư nhóm", "Sàn chuyển nhượng"],
+		title: "Tin tức",
+		items: ["Khuyến mãi", "Tin tức về VNFITE", "Tin tức"],
 	},
 	{
-		title: "Sàn giao dịch",
-		items: ["Đầu tư P2P", "Đầu tư nhóm", "Sàn chuyển nhượng"],
+		title: "Tuyển dụng",
+		items: [""],
 	},
 ];
 
@@ -67,7 +67,7 @@ const Footer = () => {
 				)}
 			>
 				<div className="lg:w-4/5">
-					<div className="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-6 lg:gap-12">
+					<div className="hidden sm:grid grid-cols-2 sm:grid-cols-3 lg:flex gap-6 lg:gap-12">
 						{navItemText?.map((item, index) => {
 							return <NavItem key={index} title={item.title} items={item.items} />;
 						})}
@@ -79,7 +79,7 @@ const Footer = () => {
 								<div className="min-w-4">
 									<Image src={"icons/home/Location.svg"} width={16} height={16} alt="Location" />
 								</div>
-								<div className="text-sm leading-4 max-w-[273px]">
+								<div className="text-sm leading-4 md:max-w-[273px]">
 									Tầng 6 TaiTam Building, 39A Ngô Quyền, P.Phan Chu Trinh, Q.Hoàn Kiếm, Hà Nội
 								</div>
 							</div>
@@ -96,7 +96,7 @@ const Footer = () => {
 								<div className="text-sm leading-4 max-w-[273px]">dvkh@vnfite.com.vn</div>
 							</div>
 						</div>
-						<div className="list-disc">
+						<div className="hidden md:block list-disc">
 							<div className="flex gap-1 items-center">
 								<Dot />
 								<div className="text-[12px] font-medium">Điều khoản và điều kiện</div>
@@ -115,7 +115,7 @@ const Footer = () => {
 						<div className="flex text-center mt-6">
 							<div className="w-full flex justify-center ">
 								<div>
-									<Image src={"/images/home/QR.png"} width={105} height={105} alt="QR" />
+									<Image src={"/images/home/QR.png"} width={150} height={150} alt="QR" />
 								</div>
 							</div>
 							{/* <div className="w-1/2">

@@ -11,7 +11,7 @@ const Header = () => {
 		if (pathname === "/") {
 			return "bg-home-banner";
 		} else {
-			return `bg-${pathname.replace("/", "")}-banner`;
+			return `bg-${pathname.split("/")[1]}-banner`;
 		}
 		// switch (pathname) {
 		// 	case "/about":
