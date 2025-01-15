@@ -58,9 +58,9 @@ const Benefits = () => {
 				Các đãi ngộ <span className="text-gradient">VNFITE</span> dành cho bạn
 			</div>
 
-			<div className="mt-8 grid w-full xs:grid-cols-1  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
+			<div className="mt-8 grid w-full grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-2 md:gap-8">
 				{benefitTitle.map((item, index) => (
-					<div key={index + 1} className="xs:flex xs:justify-center">
+					<div key={index + 1} className="flex justify-center">
 						<Item key={index} index={index + 1} title={item} />
 					</div>
 				))}

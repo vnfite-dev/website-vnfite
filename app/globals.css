@@ -9,6 +9,11 @@
 * {
 	box-sizing: border-box;
 }
+
+html body[data-scroll-locked] {
+	overflow: visible !important;
+	margin-right: 0 !important;
+}
 @layer base {
 	body {
 		@apply font-sfpro text-[16px];
@@ -81,6 +86,9 @@
 	background-size: cover;
 }
 @layer utilities {
+	.scrollbar-ignore {
+		scrollbar-gutter: stable;
+	}
 	.bg-pink-stack {
 		background: url("/images/home/pink-stack.png");
 		background-size: cover;

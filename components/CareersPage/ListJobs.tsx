@@ -5,29 +5,34 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { BriefcaseBusiness, MapPin, PenLine, Search } from "lucide-react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
-import { ApplicationModal } from "./ApplicationModal";
+import { useRouter } from "next/navigation";
 const jobList = [
 	{
+		id: 1,
 		title: "Frontend Developer (Fresher/Junior)",
 		tags: ["Full-time", "Nhân viên"],
 		range: "15,000,000 - 20,000,000 VND",
 	},
 	{
+		id: 2,
 		title: "Backend Developer (Junior)",
 		tags: ["Full-time", "Nhân viên"],
 		range: "18,000,000 - 25,000,000 VND",
 	},
 	{
+		id: 3,
 		title: "Full-stack Developer (Intern)",
 		tags: ["Part-time", "Thực tập"],
 		range: "5,000,000 - 8,000,000 VND",
 	},
 	{
+		id: 4,
 		title: "UI/UX Designer",
 		tags: ["Contract", "Remote"],
 		range: "10,000,000 - 15,000,000 VND",
 	},
 	{
+		id: 5,
 		title: "DevOps Engineer",
 		tags: ["Full-time", "Senior"],
 		range: "25,000,000 - 35,000,000 VND",
@@ -35,19 +40,21 @@ const jobList = [
 ];
 
 const JobItem = ({
+	id = 1,
 	title = "Frontend Developer (Fresher/Junior)",
 	tags = ["Full-time", "Nhân viên"],
 	range = "15,000,000 - 20,000,000 VND",
-	setIsOpen = () => {},
-}: {
+}: // setIsOpen = () => {},
+{
+	id?: number;
 	title?: string;
 	tags?: string[];
 	range?: string;
-	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+	const router = useRouter();
 	return (
 		<div
-			onClick={() => setIsOpen(true)}
+			onClick={() => router.push(`/careers/${id}`)}
 			className="w-full border-t border-b border-dashed cursor-pointer border-red-400 group "
 		>
 			<div className="flex flex-col md:flex-row py-6 px-4 md:justify-between items-start md:items-center group-hover:bg-customPink transition-colors duration-200">
@@ -90,7 +97,6 @@ const ListJobs = () => {
 		field: "",
 		location: "",
 	});
-	const [isOpen, setIsOpen] = useState(false);
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		// Handle form submission here
@@ -169,18 +175,8 @@ const ListJobs = () => {
 			</div>
 			<div className="-mt-10 lg:mt-12">
 				{jobList.map((item, index) => {
-					return (
-						<JobItem
-							key={index}
-							range={item.range}
-							tags={item.tags}
-							title={item.title}
-							setIsOpen={setIsOpen}
-						/>
-					);
+					return <JobItem key={index} range={item.range} tags={item.tags} title={item.title} />;
 				})}
-
-				<ApplicationModal isOpen={isOpen} setIsOpen={setIsOpen} />
 			</div>
 
 			<div className="mt-3 flex justify-between">

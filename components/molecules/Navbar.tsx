@@ -70,7 +70,10 @@ const Navbar = () => {
 				ref={navRef}
 			> */}
 			<div
-				className={cn("w-full", isFixed ? "bg-white fixed z-[80] top-0 py-2 shadow-lg" : "")}
+				className={cn(
+					"w-full scrollbar-ignore",
+					isFixed ? "bg-white fixed z-[30] top-0 py-2 shadow-lg" : ""
+				)}
 				ref={navRef}
 			>
 				<div
