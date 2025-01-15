@@ -10,6 +10,7 @@ import AnimatedCircularProgressBar from "../ui/animated-circular-progress-bar";
 import {
 	ArrowLeft,
 	ArrowRight,
+	CheckCircle,
 	CircleDollarSign,
 	Clock,
 	GraduationCap,
@@ -18,6 +19,7 @@ import {
 	Star,
 	UserRound,
 } from "lucide-react";
+import { useState } from "react";
 import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DragDropFileUpload } from "./DrapDropFileUpload";
@@ -71,7 +73,7 @@ const jobDetail = {
 
 const KeyValueRender = ({ value, title, Icon }: { value: string; title: string; Icon: ElementType }) => {
 	return (
-		<div className="w-1/2 relative flex mt-2">
+		<div className="w-full sm:w-1/2 relative flex mt-2">
 			<div className="w-2/5 text-gray-600 flex gap-2">
 				{Icon && <Icon className="w-5 h-5" />}
 				{title} :
@@ -91,6 +93,8 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 		detail: "",
 		cv: null,
 	});
+
+	const [copied, setCopied] = useState(false);
 	// const [isLoading, setIsLoading] = useState(false);
 
 	// function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -98,6 +102,14 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 	// 		updateFields({ cv: e.target.files[0] });
 	// 	}
 	// }
+
+	const copyToClipboard = () => {
+		navigator.clipboard.writeText(window.location.href);
+		setCopied(true);
+		setTimeout(() => {
+			setCopied(false);
+		}, 5000);
+	};
 
 	function handleFileUpload(file: File) {
 		updateFields({ cv: file });
@@ -134,8 +146,8 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 			<div className="py-4">
 				{currentStep === 0 && (
 					<div className="">
-						<div className="font-semibold text-2xl">{jobDetail.title}</div>
-						<div className="flex flex-wrap relative w-full mt-12 px-7">
+						<div className="font-semibold text-2xl px-5 sm:px-1">{jobDetail.title}</div>
+						<div className="flex flex-col sm:flex-row flex-wrap relative w-full mt-12 px-7">
 							<KeyValueRender value={jobDetail.type} title="Hình thức làm việc" Icon={Clock} />
 							<KeyValueRender value={jobDetail.degree} title="Bằng cấp" Icon={GraduationCap} />
 							<KeyValueRender value={jobDetail.position} title="Vị trí" Icon={UserRound} />
@@ -192,8 +204,20 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 								<Button className="btn-primary" onClick={nextStep}>
 									Ứng tuyển ngay
 								</Button>
-								<div className="flex gap-2 cursor-pointer items-center ">
-									<Share2 color="blue" size={24} /> <p> Chia sẻ ngay</p>
+								<div
+									onClick={copyToClipboard}
+									className="flex gap-2 cursor-pointer items-center font-semibold"
+								>
+									{copied ? (
+										<>
+											<CheckCircle color="green" size={24} />
+											<p>Đã sao chép</p>
+										</>
+									) : (
+										<>
+											<Share2 color="blue" size={24} /> <p>Chia sẻ ngay</p>
+										</>
+									)}
 								</div>
 							</div>
 						</div>
@@ -205,9 +229,9 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 							e.preventDefault();
 							handleSubmit();
 						}}
-						className="space-y-4"
+						className="space-y-2 md:space-y-4"
 					>
-						<div className="grid grid-cols-2 gap-10">
+						<div className="px-3 md:grid grid-cols-2 gap-10">
 							<div className="space-y-2 flex items-center">
 								<Label htmlFor="fullName" className="mr-4 min-w-16">
 									Họ và tên :
@@ -232,7 +256,7 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 								/>
 							</div>
 						</div>
-						<div className="grid grid-cols-2 gap-10">
+						<div className="px-3 md:grid grid-cols-2 gap-10">
 							<div className="space-y-2 flex items-center">
 								<Label htmlFor="phone" className="min-w-16 mr-4">
 									SĐT
@@ -267,14 +291,14 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 							</div>
 						</div>
 
-						<div className="grid grid-cols-2 gap-10">
-							<div className="space-y-2">
+						<div className="px-3 md:grid grid-cols-2 gap-10">
+							<div className="mt-3 md:mt-0 md:space-y-2">
 								<Label>Upload CV</Label>
 								<DragDropFileUpload onFileUpload={handleFileUpload} />
 								{data.cv && <p className="text-sm text-gray-600">Selected file: {data.cv.name}</p>}
 							</div>
 
-							<div className="space-y-2">
+							<div className="mt-3 md:mt-0 space-y-2">
 								<Label>Vài dòng giới thiệu về bản thân với VNFITE</Label>
 								<Textarea
 									className="w-full"

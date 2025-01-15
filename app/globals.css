@@ -23,6 +23,10 @@ html body[data-scroll-locked] {
 	}
 }
 /* BACKGROUND */
+
+.bg-grad-only {
+	background: linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);
+}
 .bg-grad {
 	/* background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%); */
 	background: linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);

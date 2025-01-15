@@ -54,7 +54,7 @@ const Item = ({ index, title }: { index: number; title: string }) => {
 const Benefits = () => {
 	return (
 		<div>
-			<div className="text-center font-semibold text-4xl md:text-5xl leading-[72px]">
+			<div className="text-center font-semibold text-4xl md:text-5xl md:leading-[72px]">
 				Các đãi ngộ <span className="text-gradient">VNFITE</span> dành cho bạn
 			</div>
 
@@ -66,11 +66,11 @@ const Benefits = () => {
 				))}
 			</div>
 
-			<div className="text-center font-semibold text-3xl md:text-5xl leading-[72px] mt-28">
+			<div className="text-center font-semibold text-3xl md:text-5xl leading-10 md:leading-[72px] mt-28">
 				Cuộc sống thường ngày tại <span className="text-gradient">VNFITE</span>
 			</div>
 
-			<div className="mt-8 flex flex-col md:flex-row justify-between items-start gap-6">
+			<div className="mt-2 md:mt-8 flex flex-col md:flex-row justify-between items-start gap-6">
 				<div className="w-1/2 relative md:pb-[56.25%]">
 					{" "}
 					{/* 16:9 = 9 / 16 = 56.25% */}
