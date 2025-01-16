@@ -6,6 +6,7 @@ import {
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
+	CarouselDots
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 // import { time } from "console";
@@ -58,6 +59,7 @@ const NewsPage = () => {
 					</CarouselContent>
 					<CarouselPrevious className="hidden sm:flex" />
 					<CarouselNext className="hidden sm:flex" />
+					<CarouselDots className="mt-5" />
 				</Carousel>
 			</div>
 

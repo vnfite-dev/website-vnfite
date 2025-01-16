@@ -5,6 +5,7 @@ import {
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
+	CarouselDots
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import NumberTicker from "../ui/number-ticker";
@@ -140,8 +141,9 @@ const HomeSlide = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="hidden md:block w-20 h-20 -left-24 shadow-md" />
-					<CarouselNext className="hidden md:block w-20 h-20 -right-24 shadow-md text-3xl font-bold " />
+					<CarouselPrevious className="hidden md:flex w-20 h-20 -left-24 shadow-md" />
+					<CarouselNext className="hidden md:flex w-20 h-20 -right-24 shadow-md text-3xl font-bold " />
+					<CarouselDots className="mt-5" />
 				</Carousel>
 
 				<div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 font-sfpro gap-10">
