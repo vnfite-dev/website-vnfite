@@ -9,6 +9,11 @@
 * {
 	box-sizing: border-box;
 }
+
+html body[data-scroll-locked] {
+	overflow: visible !important;
+	margin-right: 0 !important;
+}
 @layer base {
 	body {
 		@apply font-sfpro text-[16px];
@@ -18,6 +23,10 @@
 	}
 }
 /* BACKGROUND */
+
+.bg-grad-only {
+	background: linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);
+}
 .bg-grad {
 	/* background: linear-gradient(90deg, #f84f4f 0%, #ef836c 100%); */
 	background: linear-gradient(90deg, #e82f2f 0%, #e0694f 100%);
@@ -81,6 +90,9 @@
 	background-size: cover;
 }
 @layer utilities {
+	.scrollbar-ignore {
+		scrollbar-gutter: stable;
+	}
 	.bg-pink-stack {
 		background: url("/images/home/pink-stack.png");
 		background-size: cover;

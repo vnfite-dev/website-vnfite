@@ -47,7 +47,7 @@ const StackItem = ({
 		<div
 			ref={item}
 			className={cn(
-				"w-full h-[100vh] relative text-center pt-1 rounded-[64px]",
+				"w-full h-[100vh] relative text-center pt-1 rounded-[20px] md:rounded-[64px]",
 				pinkBackground ? "bg-pink-stack" : "bg-yellow-stack",
 				{
 					sticky: isSticky,
@@ -276,17 +276,17 @@ const Stack = () => (
 
 					<div className="mt-16 flex flex-col gap-6">
 						<CheckItem
-							title="Quản lý tài chính chủ động"
+							title="Giao diện thân thiện"
 							content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
 						/>
 
 						<CheckItem
-							title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+							title="Tính linh hoạt cao"
 							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
 						/>
 
 						<CheckItem
-							title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+							title="Tốc độ xử lý nhanh chóng"
 							content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
 						/>
 					</div>
