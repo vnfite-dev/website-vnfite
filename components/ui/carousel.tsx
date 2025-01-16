@@ -229,25 +229,20 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = "CarouselNext";
 
-const CarouselDots = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->((props, ref) => {
+const CarouselDots = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref) => {
 	const { api } = useCarousel();
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [updateState, setUpdateState] = React.useState(false);
-	const toggleUpdateState = React.useCallback(
-		() => setUpdateState((prevState) => !prevState),
-		[]
-	);
+	const toggleUpdateState = React.useCallback(() => setUpdateState((prevState) => !prevState), []);
 
 	React.useEffect(() => {
 		if (api) {
-			api.on('select', toggleUpdateState);
-			api.on('reInit', toggleUpdateState);
+			api.on("select", toggleUpdateState);
+			api.on("reInit", toggleUpdateState);
 
 			return () => {
-				api.off('select', toggleUpdateState);
-				api.off('reInit', toggleUpdateState);
+				api.off("select", toggleUpdateState);
+				api.off("reInit", toggleUpdateState);
 			};
 		}
 	}, [api, toggleUpdateState]);
@@ -261,10 +256,11 @@ const CarouselDots = React.forwardRef<
 				{Array.from({ length: numberOfSlides }, (_, i) => (
 					<Button
 						key={i}
-						className={`mx-1 h-2 rounded-full p-0 transition-all duration-300 ease-in-out ${i === currentSlide
-							? 'w-10 transform bg-grad hover:bg-[#E0694F]'
-							: 'w-2 bg-grad hover:bg-gray-300'
-							}`}
+						className={`mx-1 h-2 rounded-full p-0 transition-all duration-300 ease-in-out ${
+							i === currentSlide
+								? "w-10 transform bg-grad hover:bg-[#E0694F]"
+								: "w-2 bg-grad hover:bg-gray-300"
+						}`}
 						aria-label={`Go to slide ${i + 1}`}
 						onClick={() => api?.scrollTo(i)}
 					/>
@@ -275,6 +271,14 @@ const CarouselDots = React.forwardRef<
 		return <></>;
 	}
 });
-CarouselDots.displayName = 'CarouselDots';
+CarouselDots.displayName = "CarouselDots";
 
-export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselDots };
+export {
+	type CarouselApi,
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselPrevious,
+	CarouselNext,
+	CarouselDots,
+};
