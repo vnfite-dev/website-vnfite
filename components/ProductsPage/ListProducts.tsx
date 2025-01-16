@@ -211,7 +211,7 @@ const ListProducts = () => {
 									))}
 								</div>
 
-								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-4 px-[16%] lg:px-0">
+								<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-4 px-[12%] md:px-[16%] lg:px-0">
 									{dataArray.map((_, index) => (
 										<div
 											className={`flex justify-start items-center flex-col text-2xl font-semibold mx-auto`}

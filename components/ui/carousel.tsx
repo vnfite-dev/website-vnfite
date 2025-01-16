@@ -262,7 +262,7 @@ const CarouselDots = React.forwardRef<
 					<Button
 						key={i}
 						className={`mx-1 h-2 rounded-full p-0 transition-all duration-300 ease-in-out ${i === currentSlide
-							? 'w-8 transform bg-grad hover:bg-[#E0694F]'
+							? 'w-10 transform bg-grad hover:bg-[#E0694F]'
 							: 'w-2 bg-grad hover:bg-gray-300'
 							}`}
 						aria-label={`Go to slide ${i + 1}`}
