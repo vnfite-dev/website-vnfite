@@ -243,7 +243,7 @@ const Navbar = () => {
 						)}
 					>
 						<ul className="flex flex-col divide-y divide-gray-200">
-							<Link href="/" legacyBehavior>
+							<Link href="/about" legacyBehavior>
 								<li className="py-3 px-4">
 									<a className="text-lg font-semibold text-gray-600">Về VNFITE</a>
 								</li>
@@ -270,20 +270,20 @@ const Navbar = () => {
 										}`}
 									>
 										<Link href="/products">
-											<div className="flex items-center gap-3 py-2 ">
+											<div className="flex items-center gap-3 py-3 px-4 ">
 												{" "}
-												<UserRound color="#666666" /> Gọi vốn cá nhân{" "}
+												<UserRound color="#E82F2F" /> Gọi vốn cá nhân{" "}
 											</div>
 										</Link>
 										<Link href="/products">
-											<div className="flex items-center gap-3 py-2 ">
-												<UsersRound color="#666666" />
-												Gọi vốn gia đình
+											<div className="flex items-center gap-3  py-3 px-4">
+												<UsersRound color="#E82F2F" />
+												Gọi vốn hộ kinh doanh
 											</div>
 										</Link>
 										<Link href="/products">
-											<div className="flex items-center gap-3 py-2 ">
-												<Briefcase color="#666666" />
+											<div className="flex items-center gap-3  py-3 px-4">
+												<Briefcase color="#E82F2F" />
 												Gọi vốn doanh nghiệp
 											</div>
 										</Link>
@@ -306,21 +306,21 @@ const Navbar = () => {
 								</li>
 							</Link>
 							<Link href="/careers" legacyBehavior>
-								<li className="py-3 px-4">
+								<li className="py-3 px-4  border-b border-gray-300">
 									<a className="text-lg font-semibold text-gray-500">Tuyển dụng</a>
 								</li>
 							</Link>
-
-							<li className="mt-12 py-3 px-4">
-								<Link href={appLink} target="_blank">
-									<Button className="btn-primary w-full">
-										<span>Tải ứng dụng</span> <Download />
-									</Button>
-								</Link>
-
-								<div className="mt-4 text-center text-gray-300">Kết nối nguồn vốn siêu tốc</div>
-							</li>
 						</ul>
+
+						<div className="mt-12 py-3 px-4">
+							<Link href={appLink} target="_blank">
+								<Button className="btn-primary w-full">
+									<span>Tải ứng dụng</span> <Download />
+								</Button>
+							</Link>
+
+							<div className="mt-4 text-center text-gray-300">Kết nối nguồn vốn siêu tốc</div>
+						</div>
 					</div>
 
 					<div
