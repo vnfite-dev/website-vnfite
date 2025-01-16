@@ -27,7 +27,7 @@ const PartnersList = () => {
 			<div className="relative z-10 text-center">
 				<p className="text-gradient font-semibold green-underline">Đối tác</p>
 
-				<p className="mt-3 text-5xl leading-[70px]">
+				<p className="mt-3 text-3xl md:text-5xl leading-10 md:leading-[70px]">
 					Một số đối tác uy tín của <span className="text-gradient font-semibold">VNFITE</span>
 				</p>
 			</div>

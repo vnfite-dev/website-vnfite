@@ -24,6 +24,7 @@ import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DragDropFileUpload } from "./DrapDropFileUpload";
 import { Textarea } from "../ui/textarea";
+// import { useRouter } from "next/navigation";
 
 type ApplicationData = {
 	jobId: string;
@@ -93,15 +94,15 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 		detail: "",
 		cv: null,
 	});
-
 	const [copied, setCopied] = useState(false);
-	// const [isLoading, setIsLoading] = useState(false);
 
-	// function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-	// 	if (e.target.files && e.target.files[0]) {
-	// 		updateFields({ cv: e.target.files[0] });
+	// const router = useRouter();
+	// useEffect(() => {
+	// 	if (window.screen.width < 768) {
+	// 		console.log("MOBILE");
 	// 	}
-	// }
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, []);
 
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText(window.location.href);

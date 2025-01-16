@@ -20,7 +20,7 @@ const SlideItem = ({
 }) => {
 	return (
 		<div className="bg-grad rounded-[33px] p-[1px]">
-			<div className="rounded-4xl pt-8 pb-14 px-4 bg-customPink w-full flex flex-col justify-center items-center">
+			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-customPink w-full flex flex-col justify-center items-center">
 				<Image src={image} alt="slide1" height={160} width={160} />
 				<div className="text-center mt-6 font-semibold text-xl">{title}</div>
 				<div className="text-center mt-6 text-sm ">{detail}</div>
@@ -42,8 +42,8 @@ const StaticItem = (item: { number: number; preNum: string; afterNum: string; na
 			{/* <div className="px-10 border border-customPink w-full">
 				<div className="border border-gray-200"></div>
 			</div> */}
-			<div className="relative text-[20px] text-center px-[27px] mt-10 md:mt-14">
-				<p className="w-fit  relative font-medium before:content-[''] before:absolute  before:-top-8 before:w-[110%] before:h-[2px] before:bg-gray-200 before:left-[-5%]">
+			<div className="relative text-[20px] text-center px-[27px] mt-4 md:mt-14">
+				<p className="w-fit  relative font-medium before:content-[''] before:absolute before:-top-4  md:before:-top-8 before:w-[110%] before:h-[2px] before:bg-gray-200 before:left-[-5%]">
 					{parts[0]}
 					{parts.length > 1 && <span className="text-gradient font-bold">VNFITE</span>}
 					{parts[1]}
@@ -113,12 +113,12 @@ const HomeSlide = () => {
 		<div>
 			<div className="w-full font-sfpro z-10 text-center ">
 				<p className="green-underline text-gradient font-semibold text-[16px]">Sản phẩm</p>
-				<p className="mt-4 text-5xl ">
+				<p className="mt-4 text-3xl md:text-5xl ">
 					Một số sản phẩm nổi bật của <span className="text-gradient font-semibold">VNFITE</span>
 				</p>
 			</div>
 
-			<div className="mt-16 w-full px-[13%]">
+			<div className="mt-8 md:mt-16 w-full px-4 md:px-[13%]">
 				<Carousel
 					opts={{
 						loop: true,
@@ -131,7 +131,7 @@ const HomeSlide = () => {
 						{data.map((items, index) => (
 							<CarouselItem
 								key={index}
-								className="pl-4 w-fit basis-[100%]  md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+								className="pl-4 w-fit basis-[80%]  md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
 							>
 								<div className="pl-1">
 									{/* <SlideItem index={index} /> */}

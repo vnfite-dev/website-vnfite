@@ -13,8 +13,9 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useAppLink } from "@/hooks/helper";
 import { useEffect, useState, useRef } from "react";
-import { Briefcase, ChevronDown, Download, Menu, UserRound, UsersRound } from "lucide-react";
+import { Briefcase, ChevronDown, Download, UserRound, UsersRound } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const ProductNavItem = ({ state, image, title }: { state: string; image: string; title: string }) => {
@@ -37,6 +38,7 @@ const Navbar = () => {
 	const [isFixed, setIsFixed] = useState(false);
 	const pathname = usePathname();
 	const [productsType, setProductsType] = useState(0);
+	const appLink = useAppLink();
 
 	useEffect(() => {
 		if (window.innerWidth < 768) {
@@ -309,20 +311,49 @@ const Navbar = () => {
 								</li>
 							</Link>
 
-							<li className="py-3 px-4">
-								<Button className="btn-primary w-full">
-									<span>Tải ứng dụng</span> <Download />
-								</Button>
+							<li className="mt-12 py-3 px-4">
+								<Link href={appLink} target="_blank">
+									<Button className="btn-primary w-full">
+										<span>Tải ứng dụng</span> <Download />
+									</Button>
+								</Link>
+
+								<div className="mt-4 text-center text-gray-300">Kết nối nguồn vốn siêu tốc</div>
 							</li>
 						</ul>
 					</div>
 
-					<div className="lg:hidden " onClick={() => setIsOpen(!isOpen)}>
-						<Menu color="#E82F2F" size={46} />
+					<div
+						className="lg:hidden relative flex flex-col items-center justify-center w-10 h-10 group gap-[6px]"
+						onClick={() => setIsOpen(!isOpen)}
+					>
+						{/* <Menu color="#E82F2F" size={46} /> */}
+
+						<span
+							className={`block w-8 h-1 bg-grad rounded-sm transition-transform duration-300 ${
+								isOpen ? "rotate-45 translate-y-3" : "translate-y-0"
+							}`}
+						></span>
+
+						{/* Line 2 */}
+						<span
+							className={`block w-8 h-1 bg-grad rounded-sm transition-opacity duration-300 ${
+								isOpen ? "opacity-0" : "opacity-100"
+							}`}
+						></span>
+
+						{/* Line 3 */}
+						<span
+							className={`block w-8 h-1 bg-grad rounded-sm transition-transform duration-300 ${
+								isOpen ? "-rotate-45 -translate-y-2" : "translate-y-0"
+							}`}
+						></span>
 					</div>
 					<div className="hidden lg:block">
 						{/* <Button className="btn-primary">{isFixed == false ? "Tải ứng dụng" : <Download />}</Button> */}
-						<Button className="btn-primary">Tải ứng dụng</Button>
+						<Link href={appLink} target="_blank">
+							<Button className="btn-primary">Tải ứng dụng</Button>
+						</Link>
 					</div>
 				</div>
 			</div>
