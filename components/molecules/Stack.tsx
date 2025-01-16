@@ -8,7 +8,7 @@ import Image from "next/image";
 const CheckItem = ({ title, content }: { title: string; content: string }) => {
 	return (
 		<div className="flex gap-3">
-			<div className="">
+			<div className="min-w-6">
 				<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} alt="Red Check" />
 			</div>
 			<div className="text-left">
@@ -315,7 +315,7 @@ const Stack = () => {
 			{/* Ẩn cái hướng dẫn này ở màn mobile */}
 			<div className="">
 				<StackItem pinkBackground={true} stack={4}>
-					<div className=" mt-10 md:mt-20  px-5 sm:px-[12%]">
+					<div className=" mt-10 md:mt-20  px-5 md:px-[12%]">
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline after:w-[120%]">
 								Tải ứng dụng
@@ -324,7 +324,7 @@ const Stack = () => {
 								Hướng dẫn cài đặt ứng dụng <span className="text-gradient font-bold">VNFITE</span>
 							</div>
 						</div>
-						<div className="mt-12 md:mt-32 flex relative px-4 md:px-[12%] justify-between gap-8">
+						<div className="mt-12 md:mt-32 flex relative md:px-[12%] justify-between md:gap-8">
 							{(os === "ANDROID" || isMobile == false) && (
 								<div className="flex flex-col gap-8">
 									<p className="text-xl">
@@ -332,27 +332,29 @@ const Stack = () => {
 									</p>
 									<CheckItem
 										title="Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng."
-										content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc truy cập vào đường link (........)."
+										content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải ứng dụng."
 									/>
-									<p className="sm:hidden text-sm text-gray-500 -my-8 text-start pl-7">
-										Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc truy cập vào
-										đường link (........).
+									<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
+										Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải
+										ứng dụng.
 									</p>
 
 									<CheckItem
 										title="Cài đặt ứng dụng"
 										content="Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng."
 									/>
-									<p>Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng.</p>
+									<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
+										Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng.
+									</p>
 
 									<CheckItem
 										title="Đăng kí tài khoản"
-										content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+										content="Yêu cầu bạn phải nhập số CCCD, tiếp theo xác minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui lòng đăng nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE. "
 									/>
-									<p>
-										Yêu cầu bạn phải nhập số CCCD, tiếp theo xác minh EKYC để tạo tài khoản VNFITE.
-										Sau khi hoàn thành các bước trên, vui lòng đăng nhập và trải nghiệp những dịch
-										vụ hấp dẫn từ VNFITE.
+									<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
+										Yêu cầu bạn phải nhập số <span className="font-semibold">CCCD</span>, tiếp theo
+										xác minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui
+										lòng đăng nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE.
 									</p>
 								</div>
 							)}
@@ -368,7 +370,7 @@ const Stack = () => {
 										</p>
 									</div>
 									<CheckItem
-										title="Mở ứng dụng CH Play trên điện thoại của bạn"
+										title="Mở ứng dụng Appstore trên điện thoại của bạn"
 										content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc truy cập vào đường link (........)."
 									/>
 
