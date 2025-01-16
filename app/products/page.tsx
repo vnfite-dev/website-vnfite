@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const ProductPage = () => {
 	return (
 		<div className="relative font-sfpro">
-			<div className="mt-20 lg:mt-40 px-[10%] lg:px-[16.7%]">
+			<div className="mt-20 lg:mt-40">
 				<ListProducts />
 			</div>
 
@@ -14,7 +14,7 @@ const ProductPage = () => {
 				<Image src={"/images/products/banner-mid.png"} alt="banner" width={2000} height={400} />
 			</div>
 
-			<div className="px-[16.7%] flex mt-10 lg:mt-20 banner gap-28">
+			<div className="px-8 sm:px-[12%] lg:px-[16.7%] flex mt-10 lg:mt-20 banner gap-28">
 				<div className="w-full lg:w-2/3">
 					<Accordion type="single" collapsible>
 						<AccordionItem value="item-1">
@@ -65,7 +65,11 @@ const ProductPage = () => {
 						</AccordionItem>
 					</Accordion>
 				</div>
-				<div className="hidden lg:flex w-1/3 bg-gray-500"></div>
+				<div className="hidden lg:flex w-1/3">
+					<div className="w-full">
+						<Image src={"/images/products/question.png"} alt="banner" width={431} height={317} />
+					</div>
+				</div>
 			</div>
 
 			<div className="relative rounded-4xl mt-12 lg:mt-32">

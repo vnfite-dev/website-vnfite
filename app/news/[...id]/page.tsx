@@ -1,6 +1,10 @@
+'use client';
+
 import Image from "next/image";
 import { Clock, Share2 } from "lucide-react";
 import React from "react";
+import { detailNews } from "../data";
+import { useParams } from "next/navigation";
 
 const SuggestedNew = ({
 	image = "/images/news/suggestedNew.jpg",
@@ -26,16 +30,30 @@ const SuggestedNew = ({
 		</div>
 	);
 };
+
 const NewsDetail = () => {
+	const { id } = useParams();
+
+	console.log(id);
+	if (!id || id.length === 0) {
+		// Xử lý khi id không tồn tại hoặc không hợp lệ
+		return <div>Error: Invalid ID</div>;
+	}
+
+	const news = detailNews.find((_) => _.id === Number(id[0]));
+
+	const formattedDetail = news?.detail.split('\n').map((line, index) => (
+		<span key={index}>{line}<br /></span>
+	));
+
 	return (
 		<div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28 flex flex-col lg:flex-row">
-			<div className=" font-semibold text-2xl lg:pr-10 xl:pr-14 w-full lg:w-[75%] 2xl:w-[65%]">
-				VNFITE Chúc Mừng Câu Lạc Bộ Doanh Nhân Việt Nam - Asean Global Trong Lễ Bổ Nhiệm Lãnh Đạo Và Kế
-				Hoạch Xúc Tiến Thương Mại Tại Úc Năm 2025
+			<div className="font-semibold text-2xl lg:pr-10 xl:pr-14 w-full lg:w-[70%] 2xl:w-[65%]">
+				{news?.title}
 				<div className="flex gap-12 mt-4 items-center text-sm">
 					<div className="flex items-center gap-3">
 						<Clock />
-						<p className="text-gray-600">17:30 - 26/12/2024</p>
+						<p className="text-gray-600">{news?.time}</p>
 					</div>
 
 					<div className="flex gap-3 items-center">
@@ -43,8 +61,16 @@ const NewsDetail = () => {
 						<p>Chia sẻ</p>
 					</div>
 				</div>
-				<div className="mt-6 text-base font-medium text-gray-700">
-					Ngày 6/11 vừa qua, tại Cung Trí Thức, Thành phố Hà Nội, Câu Lạc Bộ Doanh Nhân Việt Nam - Asean
+				<div className="w-full mt-6 mx-auto">
+					<Image
+						src={news?.image ?? ''}
+						alt="rich"
+						width={764}
+						height={573}
+					/>
+				</div>
+				<div className="mt-4 text-base font-medium text-gray-700">
+					{formattedDetail || `Ngày 6/11 vừa qua, tại Cung Trí Thức, Thành phố Hà Nội, Câu Lạc Bộ Doanh Nhân Việt Nam - Asean
 					Global đã tổ chức lễ bổ nhiệm các lãnh đạo mới và công bố kế hoạch xúc tiến thương mại tại Úc
 					vào năm 2025. Buổi lễ đã thu hút sự tham gia của đông đảo doanh nhân, các lãnh đạo CLB, cùng
 					nhiều khách mời, trong đó có ông Nguyễn Ngọc Quang, Chủ tịch Hiệp hội Doanh nghiệp Nhỏ và Vừa
@@ -68,7 +94,7 @@ const NewsDetail = () => {
 					chúc mừng chân thành đến Câu Lạc Bộ Doanh Nhân Việt Nam - Asean Global và Ban Lãnh Đạo của CLB.
 					Chúng tôi tin rằng với sự nhiệt huyết và cam kết của các thành viên, CLB sẽ tiếp tục gặt hái
 					nhiều thành công trong các hoạt động xúc tiến thương mại, đưa sản phẩm Việt Nam ra thế giới và
-					tạo ra những cơ hội mới cho cộng đồng doanh nhân Việt Nam. Một số hình ảnh tại buổi lễ:
+					tạo ra những cơ hội mới cho cộng đồng doanh nhân Việt Nam. Một số hình ảnh tại buổi lễ:`}
 				</div>
 				<div className="w-full h-auto relative mt-6">
 					<Image
@@ -83,12 +109,11 @@ const NewsDetail = () => {
 			</div>
 
 			{/* LEFT BAR */}
-			<div className="w-full lg:w-fit lg:h-[400px] lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
+			<div className="w-full lg:w-[30%] 2xl:w-[35%] lg:h-[400px] lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
 				<div className="text-2xl font-semibold text-center">Tin tức liên quan</div>
 
 				<div className="mt-4 lg:mt-12 space-y-4">
-					<SuggestedNew />
-					<SuggestedNew />
+					{detailNews.slice(1, 5).map((news, index) => (<SuggestedNew key={index} {...news} />))}
 				</div>
 			</div>
 		</div>

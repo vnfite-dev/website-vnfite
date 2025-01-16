@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, Carousel } from "../ui/carousel";
+import { CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, Carousel, CarouselDots } from "../ui/carousel";
 
 const SlideItem = ({
 	image = "/images/home/slide-student.png",
@@ -23,7 +23,6 @@ const SlideItem = ({
 	);
 };
 const ListProducts = () => {
-	const [tabTransition, setTabTransition] = useState(0);
 	const [tabLoanCondition, setTabLoanCondition] = useState(0);
 
 	// const handleTabClick = (index: number) => {
@@ -38,19 +37,19 @@ const ListProducts = () => {
 
 	const dataArray = [
 		{
-			image: "/images/home/",
+			image: "/images/products/cccd.png",
 			title: "Là người công dân Việt Nam",
 		},
 		{
-			image: "/images/home/",
+			image: "/images/products/age.png",
 			title: "Từ 18 đến 60 tuồi",
 		},
 		{
-			image: "/images/home/",
+			image: "/images/products/income.png",
 			title: "Thu nhập tối thiểu 5 triệu/tháng",
 		},
 		{
-			image: "/images/home/",
+			image: "/images/products/badDebt.png",
 			title: "Khách hàng không nợ xấu",
 		},
 	];
@@ -58,9 +57,6 @@ const ListProducts = () => {
 	return (
 		<div>
 			<div className="text-center leading-[72px]">
-				<p className="font-semibold text-2xl sm:text-5xl">
-					Sản phẩm <span className="text-gradient">VNFITE</span> mang lại cho bạn
-				</p>
 				{/* <div className="flex text-2xl mt-16 justify-between gap-6 relative w-full">
 					{["Gọi vốn cá nhân", "Gọi vốn hộ gia đình kinh doanh", "Gọi vốn doanh nghiệp"].map(
 						(item, index) => (
@@ -80,51 +76,18 @@ const ListProducts = () => {
 					)}
 				</div> */}
 
-				<div className="flex justify-center items-center md:justify-between flex-col md:flex-row space-y-8 md:space-y-0 px-4 mb-8 lg:mb-24 mt-10 font-medium">
-					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
-						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${
-								tabTransition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-							}`}
-							onClick={() => setTabTransition(0)}
-						>
-							Gọi vốn cá nhân
-						</div>
-					</div>
-					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
-						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${
-								tabTransition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-							}`}
-							onClick={() => setTabTransition(1)}
-						>
-							Gọi vốn hộ kinh doanh
-						</div>
-					</div>
-					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
-						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${
-								tabTransition === 2 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-							}`}
-							onClick={() => setTabTransition(2)}
-						>
-							Gọi vốn doanh nghiệp
-						</div>
-					</div>
-				</div>
-
 				{/* <div className="bg-grad w-full rounded-b-lg flex justify-center items-center relative">
 					<div className="bg-blue-300 w-[calc(100% - 4px)] h-[calc(100% - 4px)]  p-4 flex">Hello</div>
 				</div> */}
 
 				{/* <div className="bg-grad rounded-b-4xl p-[2px]"> */}
 				<div className="bg-white rounded-b-4xl w-full">
-					<div className=" w-full flex py-12 relative">
+					<div className=" w-full flex pb-12 relative">
 						<div className="w-full text-base text-left font-normal ">
 							<div className="text-center text-2xl lg:text-5xl leading-tight font-semibold mb-8 lg:mb-20">
 								Gọi vốn sinh viên
 							</div>
-							<div className="flex flex-col gap-6">
+							<div className="flex flex-col gap-6 px-5 sm:px-8 xl:px-[10%] 2xl:px-[16.7%]">
 								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-2">
 									<div className="bg-white w-full pl-2">
 										Vì sao bạn nên đồng hành với sản phẩm gọi vốn của VNFITE?
@@ -201,7 +164,7 @@ const ListProducts = () => {
 								</div>
 							</div>
 
-							<div className="mt-20">
+							<div className="mt-20 px-5 sm:px-8 xl:px-[10%] 2xl:px-[16.7%]">
 								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-8">
 									<div className="bg-white w-full pl-2">
 										Yêu cầu gọi vốn ở VNFITE
@@ -211,9 +174,8 @@ const ListProducts = () => {
 								<div className="flex space-x-4 pb-8">
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
-												tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-											}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+												}`}
 											onClick={() => setTabLoanCondition(0)}
 										>
 											Điều kiện vay vốn
@@ -221,9 +183,8 @@ const ListProducts = () => {
 									</div>
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
-												tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-											}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+												}`}
 											onClick={() => setTabLoanCondition(1)}
 										>
 											Điều kiện vay vốn
@@ -250,13 +211,15 @@ const ListProducts = () => {
 									))}
 								</div>
 
-								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-4">
+								<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-4 px-[12%] md:px-[16%] lg:px-0">
 									{dataArray.map((_, index) => (
 										<div
 											className={`flex justify-start items-center flex-col text-2xl font-semibold mx-auto`}
 											key={index}
 										>
-											<div className="bg-[#D9D9D9] w-48 h-44 rounded-2xl"></div>
+											<div className="w-48 h-44 rounded-2xl"
+												style={{ background: `url(${_.image})`, backgroundSize: "cover" }}
+											></div>
 											<p className="text-base font-medium text-center pt-3">{_.title}</p>
 										</div>
 									))}
@@ -265,8 +228,8 @@ const ListProducts = () => {
 						</div>
 					</div>
 
-					<div className="px-8 sm:px-20 my-10 lg:my-20">
-						<div className="text-center text-2xl lg:text-5xl leading-tight font-semibold mb-10 lg:mb-20">
+					<div className="px-8 md:px-[14%] lg:px-[10.5%] 2xl:px-[16.7%] my-10 lg:my-20">
+						<div className="text-center text-2xl lg:text-5xl leading-tight font-semibold mb-10 lg:mb-20 ">
 							Các sản phẩm khác
 						</div>
 
@@ -280,15 +243,16 @@ const ListProducts = () => {
 							{/* <CarouselContent className="-ml-1"> */}
 							<CarouselContent className="">
 								{[...Array(7)].map((items, index) => (
-									<CarouselItem key={index} className="pl-4 w-fit md:basis-1/2 lg:basis-1/3 2xl:1/4">
+									<CarouselItem key={index} className="pl-4 w-fit sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
 										<div className="">
 											<SlideItem />
 										</div>
 									</CarouselItem>
 								))}
 							</CarouselContent>
-							<CarouselPrevious className="hidden sm:flex w-14 h-14 lg:w-20 lg:h-20 -left-24 shadow-md" />
-							<CarouselNext className="hidden sm:flex w-14 h-14 lg:w-20 lg:h-20 -right-24 shadow-md text-3xl font-bold " />
+							<CarouselPrevious className="hidden md:flex w-14 h-14 lg:w-20 lg:h-20 -left-24 shadow-md" />
+							<CarouselNext className="hidden md:flex w-14 h-14 lg:w-20 lg:h-20 -right-24 shadow-md text-3xl font-bold " />
+							<CarouselDots className="mt-4" />
 						</Carousel>
 					</div>
 				</div>
