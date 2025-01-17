@@ -5,14 +5,8 @@ import { useState } from "react";
 import Image from "next/image";
 import ButtonArrow from "@/components/molecules/ButtonArrow";
 import "./style.css";
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselApi,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel";
 import { ChevronRight } from "lucide-react";
-import TimeLine from "@/components/molecules/TimeLine";
 import {
 	Select,
 	SelectContent,
@@ -84,8 +78,9 @@ const About = () => {
 				<div className="hidden md:flex justify-center items-center md:justify-between flex-col md:flex-row space-y-8 md:space-y-0 px-4 w-full max-w-[1280px] font-semibold text-xl">
 					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
 						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${show === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-								}`}
+							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${
+								show === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+							}`}
 							onClick={() => setShow(0)}
 						>
 							Thông tin về VNFITE
@@ -93,8 +88,9 @@ const About = () => {
 					</div>
 					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
 						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-								}`}
+							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${
+								show === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+							}`}
 							onClick={() => setShow(1)}
 						>
 							Ban lãnh đạo
@@ -102,8 +98,9 @@ const About = () => {
 					</div>
 					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
 						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 2 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-								}`}
+							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${
+								show === 2 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+							}`}
 							onClick={() => setShow(2)}
 						>
 							Cổ đông
@@ -245,63 +242,55 @@ const About = () => {
 
 							<p className="p-4 font-normal text-base mt-0 lg:mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
 								<span>
-									VNFITE là một trong những nền tảng cho vay ngang hàng (P2P
-									Lending) lớn tại Việt Nam, đóng vai trò kết nối giữa nhà đầu
-									tư và người vay. Được thành lập từ năm 2020, VNFITE đã trở
-									thành một đơn vị tiên phong trong lĩnh vực công nghệ tài chính
-									tại Việt Nam, giúp đơn giản hóa quy trình vay vốn và đầu tư
-									với công nghệ hiện đại. <br />
+									VNFITE là một trong những nền tảng cho vay ngang hàng (P2P Lending) lớn tại Việt
+									Nam, đóng vai trò kết nối giữa nhà đầu tư và người vay. Được thành lập từ năm 2020,
+									VNFITE đã trở thành một đơn vị tiên phong trong lĩnh vực công nghệ tài chính tại
+									Việt Nam, giúp đơn giản hóa quy trình vay vốn và đầu tư với công nghệ hiện đại.{" "}
 									<br />
-									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
-									đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
-									nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn.
+									<br />
+									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các đơn vị tiên phong và uy
+									tín hàng đầu cung cấp giải pháp công nghệ tài chính, kết nối giữa các nhà đầu tư và
+									nhà gọi vốn.
 								</span>
 
 								<span>
-									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
-									đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
-									nghệ tài chính, kết nối giữa các nhà đầu tư và nhà gọi vốn.
+									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các đơn vị tiên phong và uy
+									tín hàng đầu cung cấp giải pháp công nghệ tài chính, kết nối giữa các nhà đầu tư và
+									nhà gọi vốn.
 								</span>
 
 								{isShowIntro && (
 									<>
 										<span>
-											Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách
-											hàng) hộ kinh doanh (gần 1 triệu khách hàng) và doanh
-											nghiệp vừa và nhỏ SME (bao gồm cả mir SME) khoảng 0,5
-											triệu khách hàng.Đặc biệt định hướng vào phân khúc cho
-											người dân vùng nông thôn, người nghèo chưa có điều kiện
-											tiếp cận dịch vụ tài chính ngân hàng với ứng dụng công
-											nghệ cao.
+											Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách hàng) hộ kinh
+											doanh (gần 1 triệu khách hàng) và doanh nghiệp vừa và nhỏ SME (bao gồm cả mir
+											SME) khoảng 0,5 triệu khách hàng.Đặc biệt định hướng vào phân khúc cho người
+											dân vùng nông thôn, người nghèo chưa có điều kiện tiếp cận dịch vụ tài chính
+											ngân hàng với ứng dụng công nghệ cao.
 										</span>
 
 										<span>
-											Hướng đến nhóm khách hàng tài chính vi mô, để mọi người
-											dân đều có thể sử dụng dịch vụ. Mang tính an sinh xã hội
-											và phổ cập tài chính rộng khắp cho người dân. Có tính nhân
-											văn lớn.Sở hữu đội ngũ nhân viên chuyên nghiệp, giàu kinh
-											nghiệm trong lĩnh vực tài chính ngân hàng, VNFITE mang đến
-											một kênh đầu tư hiệu quả, an toàn vì cuộc sống tốt đẹp
-											phát triển thịnh vượng cho các nhà đầu tư trên mọi miền tổ
-											quốc.
+											Hướng đến nhóm khách hàng tài chính vi mô, để mọi người dân đều có thể sử
+											dụng dịch vụ. Mang tính an sinh xã hội và phổ cập tài chính rộng khắp cho
+											người dân. Có tính nhân văn lớn.Sở hữu đội ngũ nhân viên chuyên nghiệp, giàu
+											kinh nghiệm trong lĩnh vực tài chính ngân hàng, VNFITE mang đến một kênh đầu
+											tư hiệu quả, an toàn vì cuộc sống tốt đẹp phát triển thịnh vượng cho các nhà
+											đầu tư trên mọi miền tổ quốc.
 										</span>
 
 										<span>
-											Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập
-											nhưng VNFITE đang dần khẳng định vị thế của mình trên thị
-											trường Fintech nói chung và thị trường tài chính nói
-											chung. Với mục tiêu kết nối nhanh chóng và an toàn, VNFITE
-											đã và đang ứng dụng một cách triệt để công nghệ 4.0, kết
-											nối trực tiếp các nhà đầu tư và người kêu gọi vốn, dần
-											chứng minh mình là một trong những kênh dẫn vốn hiệu quả
-											cho các hộ kinh doanh, các doanh nghiệp vừa và nhỏ.
+											Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập nhưng VNFITE đang
+											dần khẳng định vị thế của mình trên thị trường Fintech nói chung và thị
+											trường tài chính nói chung. Với mục tiêu kết nối nhanh chóng và an toàn,
+											VNFITE đã và đang ứng dụng một cách triệt để công nghệ 4.0, kết nối trực tiếp
+											các nhà đầu tư và người kêu gọi vốn, dần chứng minh mình là một trong những
+											kênh dẫn vốn hiệu quả cho các hộ kinh doanh, các doanh nghiệp vừa và nhỏ.
 										</span>
 
 										<span>
-											Với phương châm đặt lợi ích của khách hàng lên hàng đầu,
-											VNFITE tin rằng chỉ có mang lại giá trị thiết thực cho
-											khách hàng mới là giá trị cốt lõi của doanh nghiệp tài
-											chính nói riêng và các doanh nghiệp nói chung
+											Với phương châm đặt lợi ích của khách hàng lên hàng đầu, VNFITE tin rằng chỉ
+											có mang lại giá trị thiết thực cho khách hàng mới là giá trị cốt lõi của
+											doanh nghiệp tài chính nói riêng và các doanh nghiệp nói chung
 										</span>
 									</>
 								)}
@@ -311,17 +300,13 @@ const About = () => {
 								<ButtonArrow
 									text={isShowIntro ? "Ẩn bớt" : "Xem thêm"}
 									onClick={() => setIsShowIntro((prev) => !prev)}
-
 								/>
 							</div>
 						</div>
 
 						{/* 1.2. Lịch sử phát triển */}
 						<div>
-							<p className="text-2xl lg:text-5xl font-semibold text-center px-8">
-								Lịch sử phát triển
-							</p>
-
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-8">Lịch sử phát triển</p>
 
 							<div className="flex justify-center items-center flex-col md:flex-row mt-8 lg:mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
 								<div className="flex justify-center items-center w-[90%] md:w-[35%] mx-auto">
@@ -346,9 +331,7 @@ const About = () => {
 													<div
 														className={
 															`w-5 h-5 rounded-full border-2 border-white relative` +
-															(colorClick === index
-																? " bg-grad "
-																: " bg-gray-500 ")
+															(colorClick === index ? " bg-grad " : " bg-gray-500 ")
 														}
 														style={{
 															boxShadow:
@@ -358,17 +341,17 @@ const About = () => {
 														}}
 													>
 														<div
-															className={`absolute ${colorClick === index
-																? "text-gradient"
-																: "text-[#B3B3B3]"
-																} text-lg lg:text-2xl font-semibold top-9 -left-3 lg:-left-5`}
+															className={`absolute ${
+																colorClick === index ? "text-gradient" : "text-[#B3B3B3]"
+															} text-lg lg:text-2xl font-semibold top-9 -left-3 lg:-left-5`}
 														>
 															{index + 2020}
 														</div>
 													</div>
 													<div
-														className={`w-10 lg:w-20 h-1 ${colorClick === index ? "bg-grad" : "bg-[#B3B3B3]"
-															}`}
+														className={`w-10 lg:w-20 h-1 ${
+															colorClick === index ? "bg-grad" : "bg-[#B3B3B3]"
+														}`}
 													></div>
 												</div>
 											))}
@@ -442,7 +425,6 @@ const About = () => {
 									</div>
 								</div>
 							</div>
-
 						</div>
 
 						{/* 1.3. Tầm nhìn và sứ mệnh */}
@@ -451,9 +433,9 @@ const About = () => {
 								Tầm nhìn và sứ mệnh
 							</p>
 							<p className="font-normal text-base mt-0 lg:mt-14 text-center p-6">
-								Là sợi dây kết nối giữa nhà đầu tư và nhà huy động, tạo ra sân
-								chơi an toàn giao thương tài chính, tạo lợi ích cho các bên đồng
-								thời tạo sự phát triển bền vững cho xã hội.
+								Là sợi dây kết nối giữa nhà đầu tư và nhà huy động, tạo ra sân chơi an toàn giao
+								thương tài chính, tạo lợi ích cho các bên đồng thời tạo sự phát triển bền vững cho xã
+								hội.
 							</p>
 							<div className="flex justify-center items-center mt-3 lg:mt-8 space-y-4 flex-col lg:flex-row lg:space-x-4 lg:space-y-0 mb-4 px-4">
 								<div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
@@ -529,12 +511,8 @@ const About = () => {
 									width={264}
 									height={264}
 								/>
-								<p className="font-semibold text-xl text-gradient">
-									Mai Ngọc Đoàn
-								</p>
-								<p className="font-medium text-base pt-3">
-									Chủ tịch Hội Đồng Quản Trị
-								</p>
+								<p className="font-semibold text-xl text-gradient">Mai Ngọc Đoàn</p>
+								<p className="font-medium text-base pt-3">Chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 						</div>
 						<div className="flex justify-center items-center space-x-0 md:space-x-10 space-y-14 md:space-y-0 flex-col md:flex-row">
@@ -545,12 +523,8 @@ const About = () => {
 									width={264}
 									height={264}
 								/>
-								<p className="font-semibold text-xl text-gradient">
-									Trần Quốc Hưng
-								</p>
-								<p className="font-medium text-base pt-3">
-									Phó chủ tịch Hội Đồng Quản Trị
-								</p>
+								<p className="font-semibold text-xl text-gradient">Trần Quốc Hưng</p>
+								<p className="font-medium text-base pt-3">Phó chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 
 							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom mx-auto">
@@ -560,12 +534,8 @@ const About = () => {
 									width={264}
 									height={264}
 								/>
-								<p className="font-semibold text-xl text-gradient">
-									Nguyễn Mạnh Cường
-								</p>
-								<p className="font-medium text-base pt-3">
-									Phó chủ tịch Hội Đồng Quản Trị
-								</p>
+								<p className="font-semibold text-xl text-gradient">Nguyễn Mạnh Cường</p>
+								<p className="font-medium text-base pt-3">Phó chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 						</div>
 					</div>
@@ -576,8 +546,7 @@ const About = () => {
 					<div className="flex justify-center items-center flex-col">
 						<div>
 							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
-								Đối với nhà đầu tư về{" "}
-								<span className="text-gradient">VNFITE</span>
+								Đối với nhà đầu tư về <span className="text-gradient">VNFITE</span>
 							</p>
 
 							<div
@@ -599,43 +568,37 @@ const About = () => {
 
 							<p className="p-4 font-normal text-base mt-0 lg:mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
 								<span className="text-center">
-									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các
-									đơn vị tiên phong và uy tín hàng đầu cung cấp giải pháp công
-									nghệ tài chính, kết nỗi giữa các nhà đầu tư và nhà gọi vốn.
+									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các đơn vị tiên phong và uy
+									tín hàng đầu cung cấp giải pháp công nghệ tài chính, kết nỗi giữa các nhà đầu tư và
+									nhà gọi vốn.
 								</span>
 
 								<span className="text-center">
-									Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách
-									hàng) hộ kinh doanh (gần 1 triệu khách hàng) và doanh nghiệp
-									vừa và nhỏ SME (bao gồm cả miro SME) khoảng 0,5 triệu khách
-									hàng. Đặc biệt định hướng vào phân khúc cho người dân vùng
-									nông thôn, người nghèo chưa có điều kiện tiếp cận dịch vụ tài
-									chính ngân hàng với ứng dụng công nghệ cao. Hướng đến nhóm
-									khách hàng tài chính vi mô, để mọi người dân đều có thể sử
-									dụng dịch vụ. Mang tính an sinh xã hội và phổ cập tài chính
-									rộng khắp cho người dân. Có tính nhân văn lớn. Sở hữu đội ngũ
-									nhân viên chuyên nghiệp, giàu kinh nghiệm trong lĩnh vực tài
-									chính ngân hàng, VNFITE mang đến một kênh đầu tư hiệu quả, an
-									toàn vì cuộc sống tốt đẹp phát triển thịnh vượng cho các nhà
-									đầu tư trên mọi miền tổ quốc.
+									Phân khúc khách hàng của VNFITE là cá nhân (30 triệu khách hàng) hộ kinh doanh (gần
+									1 triệu khách hàng) và doanh nghiệp vừa và nhỏ SME (bao gồm cả miro SME) khoảng 0,5
+									triệu khách hàng. Đặc biệt định hướng vào phân khúc cho người dân vùng nông thôn,
+									người nghèo chưa có điều kiện tiếp cận dịch vụ tài chính ngân hàng với ứng dụng
+									công nghệ cao. Hướng đến nhóm khách hàng tài chính vi mô, để mọi người dân đều có
+									thể sử dụng dịch vụ. Mang tính an sinh xã hội và phổ cập tài chính rộng khắp cho
+									người dân. Có tính nhân văn lớn. Sở hữu đội ngũ nhân viên chuyên nghiệp, giàu kinh
+									nghiệm trong lĩnh vực tài chính ngân hàng, VNFITE mang đến một kênh đầu tư hiệu
+									quả, an toàn vì cuộc sống tốt đẹp phát triển thịnh vượng cho các nhà đầu tư trên
+									mọi miền tổ quốc.
 								</span>
 
 								<span className="text-center">
-									Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập nhưng
-									VNFITE đang dần khẳng định vị thế của mình trên thị trường
-									Fintech nói chung và thị trường tài chính nói chung. Với mục
-									tiêu kết nối nhanh chóng và an toàn, VNFITE đã và đang ứng
-									dụng một cách triệt để công nghệ 4.0, kết nối trực tiếp các
-									nhà đầu tư và người kêu gọi vốn, dần chứng minh mình là một
-									trong những kênh dẫn vốn hiệu quả cho các hộ kinh doanh, các
-									doanh nghiệp vừa và nhỏ.
+									Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập nhưng VNFITE đang dần
+									khẳng định vị thế của mình trên thị trường Fintech nói chung và thị trường tài
+									chính nói chung. Với mục tiêu kết nối nhanh chóng và an toàn, VNFITE đã và đang ứng
+									dụng một cách triệt để công nghệ 4.0, kết nối trực tiếp các nhà đầu tư và người kêu
+									gọi vốn, dần chứng minh mình là một trong những kênh dẫn vốn hiệu quả cho các hộ
+									kinh doanh, các doanh nghiệp vừa và nhỏ.
 								</span>
 
 								<span className="text-center">
-									Với phương châm đặt lợi ích của khách hàng lên hàng đầu,
-									VNFITE tin rằng chỉ có mang lại giá trị thiết thực cho khách
-									hàng mới là giá trị cốt lõi của doanh nghiệp tài chính nói
-									riêng và các doanh nghiệp nói chung.
+									Với phương châm đặt lợi ích của khách hàng lên hàng đầu, VNFITE tin rằng chỉ có
+									mang lại giá trị thiết thực cho khách hàng mới là giá trị cốt lõi của doanh nghiệp
+									tài chính nói riêng và các doanh nghiệp nói chung.
 								</span>
 							</p>
 						</div>
