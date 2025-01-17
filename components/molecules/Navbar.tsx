@@ -133,7 +133,7 @@ const Navbar = () => {
 						<NavigationMenu className="font-sfpro">
 							<NavigationMenuList>
 								<NavigationMenuItem>
-									<Link href="/" legacyBehavior passHref>
+									<Link href="/about" legacyBehavior passHref>
 										<NavigationMenuLink
 											className={cn("navigation-menu-item", navigationMenuTriggerStyle())}
 										>
