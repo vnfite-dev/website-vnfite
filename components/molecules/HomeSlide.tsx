@@ -5,7 +5,7 @@ import {
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-	CarouselDots
+	CarouselDots,
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import NumberTicker from "../ui/number-ticker";
@@ -21,7 +21,7 @@ const SlideItem = ({
 }) => {
 	return (
 		<div className="bg-grad rounded-[33px] p-[1px]">
-			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-customPink w-full flex flex-col justify-center items-center">
+			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-[#FFF8F8] w-full flex flex-col justify-center items-center">
 				<Image src={image} alt="slide1" height={160} width={160} />
 				<div className="text-center mt-6 font-semibold text-xl">{title}</div>
 				<div className="text-center mt-6 text-sm ">{detail}</div>

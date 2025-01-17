@@ -1,5 +1,6 @@
 import InvestDashboard from "@/components/InvestPage/InvestDashboard";
 import InvestInfo from "@/components/InvestPage/InvestInfo";
+import InvestTable from "@/components/InvestPage/InvestTable";
 import React from "react";
 
 const Invest = () => {
@@ -9,6 +10,9 @@ const Invest = () => {
 				<div className="">
 					<InvestDashboard />
 				</div>
+			</div>
+			<div className="">
+				<InvestTable />
 			</div>
 			<div className="mt-28">
 				<InvestInfo />

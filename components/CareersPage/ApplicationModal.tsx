@@ -24,6 +24,7 @@ import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DragDropFileUpload } from "./DrapDropFileUpload";
 import { Textarea } from "../ui/textarea";
+import { jobList } from "@/app/news/data";
 // import { useRouter } from "next/navigation";
 
 type ApplicationData = {
@@ -34,42 +35,6 @@ type ApplicationData = {
 	address: string;
 	detail: string;
 	cv: File | null;
-};
-
-const jobDetail = {
-	title: "Chuyên viên Quan hệ Khách hàng Cá nhân - Quảng Nam (Khu vực Duy Xuyên, Điện Bàn)",
-	type: "Toàn thời gian",
-	position: "Nhân viên",
-	salary: "12.000.000 - 15.000.000 VND",
-	degree: "Đại học",
-	exp: "Trên 1 năm",
-	location: "Hà Nội",
-	description: [
-		"Xuất hóa đơn GTGT và hạch toán các nghiệp vụ liên quan đến bán hàng lên phần mềm kế toán.",
-		"Tiếp nhận, kiểm tra, xem xét và hướng dẫn các đề nghị thanh toán, đề nghị tạm ứng, phiếu thanh toán công tác phí. ",
-		"Kiểm tra tính đầy đủ, hợp lý, hợp lệ, hợp pháp của hóa đơn chứng từ thanh toán.",
-		"Giám sát và đôn đốc CBNV quyết toán công nợ.",
-		"Phối hợp với các phòng ban liên quan thực hiện đối chiếu công nợ phải thu phải trả định kỳ (6 tháng/1 năm).",
-	],
-
-	requirements: [
-		"Tốt nghiệp Kế toán hoặc Tài chính doanh nghiệp ",
-		"Tiếng Anh trung cấp (Yêu cầu tối thiểu: Đọc hiểu các văn bản hợp đồng tiếng Anh)",
-		"Có tối thiểu 3 năm kinh nghiệm trong lĩnh vực kế toán",
-		"Có khả năng làm việc độc lập; trung thực, chăm chỉ, cẩn thận, tỉ mỉ",
-		"Nắm và hiểu rõ các quy định về tài chính kế toán, chính sách thuế hiện hành",
-		"Có kiến thức, kinh nghiệm về các phần hành kế toán nói chung.",
-	],
-
-	benefit: [
-		"Mức lương: Thỏa thuận",
-		"Đóng BHXH ngay khi ký HĐLĐ chính thức, hỗ trợ ăn trưa, gửi xe, khám sức khỏe định kỳ, thưởng các dịp lễ hàng năm.",
-		"Thử việc hưởng nguyên lương.",
-		"Hưởng tháng lương thứ 13 và xét thưởng theo kết quả công việc định kỳ 6 tháng.",
-		"Môi trường làm việc trẻ, năng động, chuyên nghiệp",
-	],
-
-	detailLocation: ["Hà Nội: Tầng 6 Tai Tam building, 39A Ngô Quyền, Hàng Bài, Phan Chu Chinh, Hoàn Kiếm"],
 };
 
 const KeyValueRender = ({ value, title, Icon }: { value: string; title: string; Icon: ElementType }) => {
@@ -85,6 +50,7 @@ const KeyValueRender = ({ value, title, Icon }: { value: string; title: string; 
 };
 
 export function ApplicationModal({ jobId }: { jobId: string }) {
+	const jobDetail = jobList.find((item) => item.id === Number(jobId));
 	const { data, updateFields, currentStep, nextStep, prevStep } = useFormState<ApplicationData>({
 		jobId: jobId,
 		fullName: "",
@@ -147,19 +113,38 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 			<div className="py-4">
 				{currentStep === 0 && (
 					<div className="">
-						<div className="font-semibold text-2xl px-5 sm:px-1">{jobDetail.title}</div>
+						<div className="font-semibold text-2xl px-5 sm:px-1">
+							{jobDetail?.title ||
+								"Chuyên viên Quan hệ Khách hàng Cá nhân - Quảng Nam (Khu vực Duy Xuyên, Điện Bàn)"}
+						</div>
 						<div className="flex flex-col sm:flex-row flex-wrap relative w-full mt-12 px-7">
-							<KeyValueRender value={jobDetail.type} title="Hình thức làm việc" Icon={Clock} />
-							<KeyValueRender value={jobDetail.degree} title="Bằng cấp" Icon={GraduationCap} />
-							<KeyValueRender value={jobDetail.position} title="Vị trí" Icon={UserRound} />
-							<KeyValueRender value={jobDetail.exp} title="Kinh nghiệm" Icon={Star} />
-							<KeyValueRender value={jobDetail.salary} title="Lương" Icon={CircleDollarSign} />
-							<KeyValueRender value={jobDetail.location} title="Địa chỉ" Icon={MapPin} />
+							<KeyValueRender
+								value={jobDetail?.type || "Toàn thời gian"}
+								title="Hình thức làm việc"
+								Icon={Clock}
+							/>
+							<KeyValueRender
+								value={jobDetail?.degree || "Đại học"}
+								title="Bằng cấp"
+								Icon={GraduationCap}
+							/>
+							<KeyValueRender
+								value={jobDetail?.position || "Nhân viên"}
+								title="Vị trí"
+								Icon={UserRound}
+							/>
+							<KeyValueRender value={jobDetail?.exp || "Trên 1 năm"} title="Kinh nghiệm" Icon={Star} />
+							<KeyValueRender
+								value={jobDetail?.salary || "12.000.000 - 15.000.000 VND"}
+								title="Lương"
+								Icon={CircleDollarSign}
+							/>
+							<KeyValueRender value={jobDetail?.location || "Hà Nội"} title="Địa chỉ" Icon={MapPin} />
 						</div>
 						<div className="px-7">
 							<div className="font-semibold text-xl mt-8">Mô tả làm việc</div>
 							<div className="">
-								{jobDetail.description.map((item, index) => (
+								{jobDetail?.description?.map((item, index) => (
 									<p key={index} className="text-gray-700 mt-1">
 										{" "}
 										- {item}
@@ -171,7 +156,7 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 
 							<div className="font-semibold text-xl mt-8">Yêu cầu ứng viên</div>
 							<div className="">
-								{jobDetail.requirements.map((item, index) => (
+								{jobDetail?.requirements?.map((item, index) => (
 									<p key={index} className="text-gray-700 mt-1">
 										{" "}
 										- {item}
@@ -181,7 +166,7 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 							{/* Quyen loi */}
 							<div className="font-semibold text-xl mt-8">Quyền lợi</div>
 							<div className="">
-								{jobDetail.benefit.map((item, index) => (
+								{jobDetail?.benefit?.map((item, index) => (
 									<p key={index} className="text-gray-700 mt-1">
 										{" "}
 										- {item}
@@ -193,7 +178,7 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 
 							<div className="font-semibold text-xl mt-8">Địa chỉ làm việc</div>
 							<div className="">
-								{jobDetail.detailLocation.map((item, index) => (
+								{jobDetail?.detailLocation?.map((item, index) => (
 									<p key={index} className="text-gray-700 mt-1">
 										{" "}
 										- {item}
