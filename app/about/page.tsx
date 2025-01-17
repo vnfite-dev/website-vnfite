@@ -311,6 +311,7 @@ const About = () => {
 								<ButtonArrow
 									text={isShowIntro ? "Ẩn bớt" : "Xem thêm"}
 									onClick={() => setIsShowIntro((prev) => !prev)}
+
 								/>
 							</div>
 						</div>

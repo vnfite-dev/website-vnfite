@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import BoxReveal from "../ui/box-reveal";
+import Link from "next/link";
 const Banner = () => {
 	return (
 		<div className="max-w-[1280px] mx-auto flex font-sfpro pb-20 xl:pb-[190px] px-4 ">
@@ -64,9 +65,11 @@ const Banner = () => {
 				</BoxReveal>
 
 				<div className="mt-12">
-					<Button className="btn-primary !h-14 text-[16px] font-semibold rounded-[32px] px-10 py-3.5">
-						Liên hệ với chúng tôi
-					</Button>
+					<Link href="#contactbox">
+						<Button className="btn-primary !h-14 text-[16px] font-semibold rounded-[32px] px-10 py-3.5">
+							Liên hệ với chúng tôi
+						</Button>
+					</Link>
 				</div>
 			</div>
 

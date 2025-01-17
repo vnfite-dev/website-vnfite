@@ -1,18 +1,18 @@
 export const detailNews = [
-  {
-    id: 1,
-    banner: `bg-[url("/images/news/bigNew.jpg")]`,
-    title: "Mở thêm cửa tiếp cận tín dụng cho người yếu thế",
-    detail:
-      "Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại. Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại.Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại.",
-    time: "17/12/2025",
-    image: "/images/news/bigNew.jpg",
-  },
-  {
-    id: 2,
-    banner: `bg-[url("/images/news/rich.jpg")]`,
-    title: "Các tỷ phú sẽ rót tiền vào đâu trong năm mới?",
-    detail: `Khảo sát của UBS với 2.682 tỷ phú toàn cầu cho thấy trong giai đoạn 2015-2024, tổng tài sản của nhóm này đã tăng 121%, đạt mức 14.000 tỷ USD.
+	{
+		id: 1,
+		banner: `bg-[url("/images/news/bigNew.jpg")]`,
+		title: "Mở thêm cửa tiếp cận tín dụng cho người yếu thế",
+		detail:
+			"Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại. Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại.Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại.",
+		time: "17/12/2025",
+		image: "/images/news/bigNew.jpg",
+	},
+	{
+		id: 2,
+		banner: `bg-[url("/images/news/rich.jpg")]`,
+		title: "Các tỷ phú sẽ rót tiền vào đâu trong năm mới?",
+		detail: `Khảo sát của UBS với 2.682 tỷ phú toàn cầu cho thấy trong giai đoạn 2015-2024, tổng tài sản của nhóm này đã tăng 121%, đạt mức 14.000 tỷ USD.
 
             Trong khi đó, chỉ số MSCI AC World Index - theo dõi hiệu suất các công ty lớn và vừa tại 23 thị trường phát triển - chỉ ghi nhận mức tăng trưởng 73% trong cùng kỳ.
 
@@ -37,15 +37,14 @@ export const detailNews = [
             Không chỉ thế, đầu tư vào nghệ thuật và đồ cổ đang gia tăng mạnh mẽ với 32% tỷ phú có kế hoạch mở rộng danh mục này. Con số này chỉ ở mức 11% trong năm 2024.
 
             Báo cáo của UBS cũng chỉ ra rằng khối tài sản mà các tỷ phú để lại cho con cháu cũng ngày càng lớn. Trong thập kỷ qua, các tỷ phú đa thế hệ đã để lại 1.300 tỷ USD cho thế hệ kế tiếp. Con số này dự kiến tăng lên 6.300 tỷ USD trong 15 năm tới, khi ngày càng nhiều tỷ phú bước qua tuổi 70 và giá trị tài sản của họ tiếp tục tăng.`,
-    time: "11/01/2025",
-    image: "/images/news/rich.jpg",
-  },
-  {
-    id: 3,
-    banner: `bg-[url("/images/news/dantri.png")]`,
-    title:
-      "Chọn kênh đầu tư năm 2025: Gửi ngân hàng, chứng khoán hay đổ vào vàng, đất?",
-    detail: `Vàng có thể bước vào giai đoạn "ngủ đông"
+		time: "11/01/2025",
+		image: "/images/news/rich.jpg",
+	},
+	{
+		id: 3,
+		banner: `bg-[url("/images/news/dantri.png")]`,
+		title: "Chọn kênh đầu tư năm 2025: Gửi ngân hàng, chứng khoán hay đổ vào vàng, đất?",
+		detail: `Vàng có thể bước vào giai đoạn "ngủ đông"
             Phiên giao dịch đầu tiên năm 2024, giá vàng miếng SJC được các cửa hàng lớn niêm yết ở mức 71-74 triệu đồng/lượng (mua - bán). Hiện tại, vàng được niêm yết trong vùng 82,5-84,5 triệu đồng/lượng (mua - bán). Trừ đi chênh lệch 2 chiều mua - bán, nhà đầu tư vàng lãi 8,5 triệu đồng nếu mua vàng miếng SJC từ đầu năm và nắm giữ cả năm vừa rồi.
 
             Năm qua, để ổn định thị trường, Ngân hàng Nhà nước mở đấu thầu vàng miếng vào cuối tháng 4, nhưng diễn biến giá lại tiếp tục căng thẳng khi đạt mức cao nhất mọi thời đại 92,5 triệu đồng/lượng vào phiên ngày 10/5. Vàng trở thành kênh đầu tư có tỷ suất sinh lời vượt xa gửi tiết kiệm ngân hàng, chứng khoán… Chênh lệch với giá thế giới neo ở mức cao, có thời điểm hơn 20 triệu đồng/lượng.
@@ -114,14 +113,14 @@ export const detailNews = [
             Sau giai đoạn này, thị trường sẽ tiến tới thời điểm khởi sắc, dự kiến sẽ bắt đầu từ quý II/2025 đến quý IV/2025. Nhà đầu tư lúc này sẽ không còn quá đặt nặng yếu tố giá bán, pháp lý như thời điểm thị trường ảm đạm. Thay vào đó, tiềm năng tăng giá mới là mấu chốt quyết định xuống tiền. Những phân khúc sinh lời tốt như đất nền và biệt thự dự án cũng vì vậy mà được nhà đầu tư đặc biệt chú ý.
 
             Theo, Thảo Thu, báo Dân trí`,
-    time: "10/01/2025",
-    image: "/images/news/dantri.png",
-  },
-  {
-    id: 4,
-    banner: `bg-[url("/images/news/vnfiteNewYear.png")]`,
-    title: "LÌ XÌ ĐÓN TẾT 2025",
-    detail: `Nhận ngay 68.000 VNĐ vào tài khoản VNFITE khi:
+		time: "10/01/2025",
+		image: "/images/news/dantri.png",
+	},
+	{
+		id: 4,
+		banner: `bg-[url("/images/news/vnfiteNewYear.png")]`,
+		title: "LÌ XÌ ĐÓN TẾT 2025",
+		detail: `Nhận ngay 68.000 VNĐ vào tài khoản VNFITE khi:
 
             - Đầu tư ngang hàng (P2P) trên sàn gọi vốn VNFITE
 
@@ -152,14 +151,14 @@ export const detailNews = [
             - Hotline: 024.3367.6699
 
             Nhanh tay tham gia ngay để không bỏ lỡ lì xì đầu năm hấp dẫn từ VNFITE!`,
-    time: "31/12/2024",
-    image: "/images/news/vnfiteNewYear.png",
-  },
-  {
-    id: 5,
-    banner: `bg-[url("/images/news/happyNewYear.png")]`,
-    title: "CHÚC MỪNG NĂM MỚI 2025",
-    detail: `Năm 2024 khép lại với nhiều dấu ấn đáng nhớ, và VNFITE xin gửi lời cảm ơn chân thành đến tất cả quý khách hàng, đối tác và đội ngũ nhân viên đã đồng hành, tin tưởng và cống hiến trong suốt chặng đường vừa qua.
+		time: "31/12/2024",
+		image: "/images/news/vnfiteNewYear.png",
+	},
+	{
+		id: 5,
+		banner: `bg-[url("/images/news/happyNewYear.png")]`,
+		title: "CHÚC MỪNG NĂM MỚI 2025",
+		detail: `Năm 2024 khép lại với nhiều dấu ấn đáng nhớ, và VNFITE xin gửi lời cảm ơn chân thành đến tất cả quý khách hàng, đối tác và đội ngũ nhân viên đã đồng hành, tin tưởng và cống hiến trong suốt chặng đường vừa qua.
 
             Bước sang năm mới 2025, VNFITE cam kết tiếp tục đổi mới, nâng cao chất lượng dịch vụ và mang đến những giá trị vượt trội cho cộng đồng và khách hàng.
 
@@ -176,14 +175,14 @@ export const detailNews = [
             - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
             📧 Email: dvkh@vnfite.com.vn
             ☎ Hotline: 024.3367.6699`,
-    time: "31/12/2024",
-    image: "/images/news/happyNewYear.png",
-  },
-  {
-    id: 6,
-    banner: `bg-[url("/images/news/vnfiteNewYear.png")]`,
-    title: "🎄 Chúc Mừng Giáng Sinh Từ VNFITE ",
-    detail: `Nhân dịp mùa Giáng sinh, VNFITE xin gửi lời chúc ấm áp và tốt đẹp nhất đến tất cả Quý khách hàng, đối tác, và toàn thể cán bộ nhân viên.
+		time: "31/12/2024",
+		image: "/images/news/happyNewYear.png",
+	},
+	{
+		id: 6,
+		banner: `bg-[url("/images/news/vnfiteNewYear.png")]`,
+		title: "🎄 Chúc Mừng Giáng Sinh Từ VNFITE ",
+		detail: `Nhân dịp mùa Giáng sinh, VNFITE xin gửi lời chúc ấm áp và tốt đẹp nhất đến tất cả Quý khách hàng, đối tác, và toàn thể cán bộ nhân viên.
 
             Chúng tôi trân trọng cảm ơn sự đồng hành và tin tưởng của Quý vị trong suốt một năm qua. Sự hỗ trợ của Quý vị chính là động lực giúp chúng tôi không ngừng phát triển trong tương lai. VNFITE cam kết tiếp tục nỗ lực, sáng tạo và phát triển bền vững trong hành trình mang đến những giải pháp tài chính đột phá, phục vụ tốt nhất nhu cầu của cộng đồng.
 
@@ -199,14 +198,14 @@ export const detailNews = [
             - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
             📧 Email: dvkh@vnfite.com.vn
             ☎ Hotline: 024.3367.6699`,
-    time: "24/12/2024",
-    image: "/images/news/vnfiteNewYear.png",
-  },
-  {
-    id: 7,
-    banner: `bg-[url("/images/news/newDetail.png")]`,
-    title: "Áp lực giảm giá vẫn “rình rập” vàng trong những ngày cuối năm 2024",
-    detail: `Giá vàng thế giới khởi động tuần giao dịch mới vào sáng nay (23/12) tại thị trường châu Á trong trạng thái giảm nhẹ do sức ép từ đồng USD tăng giá. Dù đã hồi mạnh trong phiên ngày thứ Sáu vừa rồi, giá vàng được giới chuyên gia dự báo sẽ tiếp tục đương đầu áp lực giảm trong tuần này.
+		time: "24/12/2024",
+		image: "/images/news/vnfiteNewYear.png",
+	},
+	{
+		id: 7,
+		banner: `bg-[url("/images/news/newDetail.png")]`,
+		title: "Áp lực giảm giá vẫn “rình rập” vàng trong những ngày cuối năm 2024",
+		detail: `Giá vàng thế giới khởi động tuần giao dịch mới vào sáng nay (23/12) tại thị trường châu Á trong trạng thái giảm nhẹ do sức ép từ đồng USD tăng giá. Dù đã hồi mạnh trong phiên ngày thứ Sáu vừa rồi, giá vàng được giới chuyên gia dự báo sẽ tiếp tục đương đầu áp lực giảm trong tuần này.
 
             Lúc gần 8h sáng theo giờ Việt Nam, giá vàng giao ngay giảm 2,5 USD/oz so với giá chốt tuần trước tại thị trường Mỹ, tương đương giảm 0,1%, giao dịch ở mức 2.620,9 USD/oz - theo dữ liệu từ sàn giao dịch Kitco. Quy đổi theo tỷ giá USD bán ra tại ngân hàng Vietcombank, mức giá này tương đương khoảng 80,6 triệu đồng/lượng.
 
@@ -236,14 +235,14 @@ export const detailNews = [
             Tuần vừa qua là tuần giao dịch cuối cùng của năm 2024 có đủ 5 phiên giao dịch. Tuần này, thị trường tài chính Mỹ và nhiều quốc gia sẽ đóng cửa sớm vào ngày thứ Tư và ngừng giao dịch trong ngày thứ Năm để đón lễ Giáng sinh.
 
             Tuy vậy, trong tuần này sẽ có nhiều số liệu kinh tế quan trọng của Mỹ được công bố, gồm số liệu niềm tin tiêu dùng, số đơn đặt mua hàng hóa lâu bền, doanh số bán nhà, và báo cáo thất nghiệp hàng tuần. Những dữ liệu này đều có thể ảnh hưởng đến triển vọng lãi suất Fed, từ đó tác động đến giá vàng.`,
-    time: "23/12/2024",
-    image: "/images/news/newDetail.png",
-  },
-  {
-    id: 8,
-    banner: `bg-[url("/images/news/suggestedNew.jpg")]`,
-    title: "CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12!",
-    detail: `🎉 CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12! 🎉
+		time: "23/12/2024",
+		image: "/images/news/newDetail.png",
+	},
+	{
+		id: 8,
+		banner: `bg-[url("/images/news/suggestedNew.jpg")]`,
+		title: "CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12!",
+		detail: `🎉 CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12! 🎉
 
             💰 Giảm ngay 1% phí và lợi suất khi gọi vốn dành riêng cho cán bộ lực lượng vũ trang!
 
@@ -266,7 +265,140 @@ export const detailNews = [
             - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
             📧 Email: dvkh@vnfite.com.vn
             ☎ Hotline: 024.3367.6699`,
-    time: "21/12/2024",
-    image: "/images/news/suggestedNew.jpg",
-  },
+		time: "21/12/2024",
+		image: "/images/news/suggestedNew.jpg",
+	},
+];
+
+export const jobList = [
+	{
+		id: 1,
+		shortTitle: "Backend Developer (Fresher/Junior)",
+		tags: ["Full-time", "Nhân viên"],
+		range: "15.000.000 - 20.000.000 VND",
+		title: "Backend Developer (Fresher/Junior)",
+		type: "Toàn thời gian",
+		position: "Nhân viên",
+		salary: "15.000.000 - 20.000.000 VND",
+		degree: "Đại học",
+		exp: "Trên 1 năm",
+		location: "Hà Nội",
+		description: [
+			"Thiết kế, phát triển, và bảo trì các hệ thống backend.",
+			"Xây dựng API phục vụ các chức năng của ứng dụng.",
+			"Tối ưu hóa hiệu suất và bảo mật cho hệ thống backend.",
+			"Tích hợp với cơ sở dữ liệu và các hệ thống bên thứ ba.",
+			"Thực hiện kiểm thử và sửa lỗi để đảm bảo hệ thống hoạt động ổn định.",
+		],
+		requirements: [
+			"Tốt nghiệp chuyên ngành Công nghệ Thông tin hoặc tương đương.",
+			"Có kinh nghiệm làm việc với một trong các ngôn ngữ lập trình backend (Golang, Node.js, hoặc Python).",
+			"Hiểu biết về cơ sở dữ liệu quan hệ (PostgreSQL, MySQL) hoặc NoSQL (MongoDB, Redis).",
+			"Có kinh nghiệm làm việc với API (RESTful, GraphQL).",
+			"Có khả năng làm việc độc lập, cẩn thận, và trách nhiệm.",
+			"Ưu tiên ứng viên có kinh nghiệm về Docker và Kubernetes.",
+		],
+		benefit: [
+			"Mức lương: 15.000.000 - 20.000.000 VND (Thỏa thuận theo năng lực).",
+			"Đóng BHXH ngay khi ký HĐLĐ chính thức, hỗ trợ ăn trưa, gửi xe, khám sức khỏe định kỳ.",
+			"Thử việc hưởng nguyên lương.",
+			"Hưởng tháng lương thứ 13 và xét thưởng theo kết quả công việc định kỳ 6 tháng.",
+			"Cơ hội tham gia các dự án lớn và phát triển bản thân trong môi trường năng động.",
+		],
+		detailLocation: ["Hà Nội: Tầng 6 Tai Tam building, 39A Ngô Quyền, Hàng Bài, Phan Chu Chinh, Hoàn Kiếm"],
+	},
+	{
+		id: 2,
+		shortTitle: "Chuyên Viên Phát Triển Đối Tác",
+		tags: ["Full-time", "Nhân viên"],
+		range: "15.000.000 - 20.000.000 VND",
+		title: "Chuyên Viên Phát Triển Đối Tác",
+		type: "Toàn thời gian",
+		position: "Nhân viên",
+		salary: "15.000.000 - 20.000.000 VND",
+		degree: "Cao đẳng trở lên",
+		exp: "Dưới 1 năm",
+		location: "Hà Nội",
+		description: [
+			"Làm việc tại Công ty Cổ phần Công nghệ Tài chính VNFITE.",
+			"Tìm kiếm, thu thập thông tin khách có nhu cầu tài chính trong 3 mảng chính: Cho vay, Đầu tư, Bảo hiểm.",
+			"Liên hệ, kết nối, trao đổi với khách hàng tiềm năng để giới thiệu các sản phẩm của công ty.",
+			"Chuyển thông tin cho bộ phận Kinh doanh tư vấn và chốt deal.",
+			"Chủ động gửi thông tin về các chương trình khuyến mãi, ưu đãi cho khách hàng.",
+			"Phối hợp với bộ phận Marketing để triển khai các chương trình thúc đẩy bán hàng.",
+			"Chăm sóc và phát triển đối tác sâu rộng, xử lý các tình huống phát sinh.",
+		],
+		requirements: [
+			"Độ tuổi: 22 - 40 tuổi.",
+			"Tốt nghiệp Cao đẳng trở lên các chuyên ngành Kinh tế, Quản trị kinh doanh, Tài chính doanh nghiệp, Kế toán, Kiểm toán.",
+			"Yêu thích công việc tiếp xúc khách hàng, năng động, tự tin, giao tiếp tốt.",
+			"Không ngại di chuyển, đi công tác.",
+			"Ưu tiên có kinh nghiệm ở mảng Phát triển quan hệ khách hàng, đối tác; Thiết lập các kênh bán hàng thông qua hệ thống đại lý.",
+		],
+		benefit: [
+			"Mức lương từ 15.000.000 VNĐ – 20.000.000 VNĐ.",
+			"Lương tháng 13, thưởng KPI hấp dẫn, các chính sách phúc lợi theo quy định của công ty.",
+			"Cơ hội làm việc với các đối tác lớn tại dự án cao cấp, học hỏi, phát huy năng lực và thể hiện bản thân.",
+			"Được phát triển mối quan hệ, kỹ năng, tư duy lãnh đạo, quản lý.",
+			"Môi trường làm việc chuyên nghiệp, hiện đại trong lĩnh vực tài chính công nghệ.",
+			"Được tham gia bảo hiểm theo quy định của Luật lao động.",
+		],
+		detailLocation: ["Hà Nội: 39A Ngô Quyền, Hoàn Kiếm"],
+		workingTime: ["Thứ 2 - Thứ 6: 08:00 - 17:30", "Thứ 7: 08:00 - 12:00"],
+		applicationDeadline: "29/01/2025",
+	},
+	{
+		id: 3,
+		shortTitle: "Nhân Viên Digital Marketing (Ads)",
+		tags: ["Full-time", "Nhân viên"],
+		range: "12.000.000 - 15.000.000 VND",
+		title: "Nhân Viên Digital Marketing (Ads)",
+		type: "Toàn thời gian",
+		position: "Nhân viên",
+		salary: "12.000.000 - 15.000.000 VND",
+		degree: "Không yêu cầu",
+		exp: "Dưới 1 năm",
+		location: "Hà Nội",
+		description: [
+			"Xây dựng và triển khai chiến dịch quảng cáo: Lên kế hoạch, thiết kế và triển khai các chiến dịch quảng cáo trên Facebook để tăng doanh số.",
+			"Quản lý ngân sách: Phân bổ ngân sách quảng cáo một cách hợp lý và hiệu quả.",
+			"Tối ưu hóa chiến dịch: Theo dõi, phân tích và tối ưu hóa các chiến dịch quảng cáo để đạt hiệu quả cao nhất.",
+			"Hỗ trợ lên nội dung để phục vụ cho chiến dịch quảng cáo.",
+			"Báo cáo kết quả: Lập báo cáo về hiệu quả của các chiến dịch quảng cáo, các công việc liên quan khác.",
+		],
+		requirements: [
+			"Có kinh nghiệm từ 06 tháng.",
+			"Ưu tiên từng chạy ngành tài chính.",
+			"Ưu tiên biết chỉnh sửa ảnh, video cơ bản.",
+			"Có trách nhiệm trong công việc, nhiệt huyết, ham học hỏi và cầu tiến.",
+		],
+		benefit: [
+			"BGĐ cam kết tạo điều kiện học tập, phát triển bản thân và thăng tiến.",
+			"Thu nhập: Từ 12.000.000 – 15.000.000 VND (+ %DT) (thỏa thuận trực tiếp khi phỏng vấn).",
+			"Lương thưởng xứng đáng với hiệu quả công việc, năng lực.",
+			"Thưởng tháng thứ 13, thưởng ngày lễ, Tết theo tình hình kinh doanh của công ty.",
+			"Thời gian làm việc: 8h00 - 17h30 từ thứ 2 đến thứ 6 (nghỉ trưa 1h30), thứ 7 làm việc từ 8h00 – 12h00.",
+			"Được ký hợp đồng lao động và hưởng đầy đủ các quyền lợi do nhà nước quy định (đóng BHXH, BHYT, BHTN).",
+			"Xem xét tăng lương 1 năm/2 lần.",
+			"Happy time, sinh nhật hàng tháng và các sự kiện xã hội.",
+			"Khám sức khỏe định kỳ hằng năm tại bệnh viện uy tín.",
+			"Văn hóa làm việc khuyến khích học tập rèn luyện; đồng nghiệp năng động trẻ trung, vui vẻ, thân thiện.",
+			"Văn hóa công ty lấy cân bằng, hạnh phúc làm gốc, khuyến khích sáng tạo các ý tưởng giúp công ty phát triển.",
+		],
+		detailLocation: ["Hà Nội: 39A Ngô Quyền, Hoàn Kiếm"],
+		workingTime: ["Thứ 2 - Thứ 6: 08:00 - 17:30 (nghỉ trưa 1h30).", "Thứ 7: 08:00 - 12:00."],
+		applicationDeadline: "17/01/2025",
+	},
+	{
+		id: 4,
+		title: "UI/UX Designer",
+		tags: ["Contract", "Remote"],
+		range: "10,000,000 - 15,000,000 VND",
+	},
+	{
+		id: 5,
+		title: "DevOps Engineer",
+		tags: ["Full-time", "Senior"],
+		range: "25,000,000 - 35,000,000 VND",
+	},
 ];

@@ -6,42 +6,11 @@ import { Input } from "../ui/input";
 import { BriefcaseBusiness, MapPin, PenLine, Search } from "lucide-react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { useRouter } from "next/navigation";
-const jobList = [
-	{
-		id: 1,
-		title: "Frontend Developer (Fresher/Junior)",
-		tags: ["Full-time", "Nhân viên"],
-		range: "15,000,000 - 20,000,000 VND",
-	},
-	{
-		id: 2,
-		title: "Backend Developer (Junior)",
-		tags: ["Full-time", "Nhân viên"],
-		range: "18,000,000 - 25,000,000 VND",
-	},
-	{
-		id: 3,
-		title: "Full-stack Developer (Intern)",
-		tags: ["Part-time", "Thực tập"],
-		range: "5,000,000 - 8,000,000 VND",
-	},
-	{
-		id: 4,
-		title: "UI/UX Designer",
-		tags: ["Contract", "Remote"],
-		range: "10,000,000 - 15,000,000 VND",
-	},
-	{
-		id: 5,
-		title: "DevOps Engineer",
-		tags: ["Full-time", "Senior"],
-		range: "25,000,000 - 35,000,000 VND",
-	},
-];
+import { jobList } from "@/app/news/data";
 
 const JobItem = ({
-	id = 1,
 	title = "Frontend Developer (Fresher/Junior)",
+	id = 1,
 	tags = ["Full-time", "Nhân viên"],
 	range = "15,000,000 - 20,000,000 VND",
 }: // setIsOpen = () => {},
@@ -52,6 +21,7 @@ const JobItem = ({
 	range?: string;
 }) => {
 	const router = useRouter();
+
 	return (
 		<div
 			onClick={() => router.push(`/careers/${id}`)}
@@ -135,11 +105,10 @@ const ListJobs = () => {
 									<SelectContent>
 										<SelectGroup>
 											{/* <SelectLabel>Fruits</SelectLabel> */}
-											<SelectItem value="apple">Apple</SelectItem>
-											<SelectItem value="banana">Banana</SelectItem>
-											<SelectItem value="blueberry">Blueberry</SelectItem>
-											<SelectItem value="grapes">Grapes</SelectItem>
-											<SelectItem value="pineapple">Pineapple</SelectItem>
+											<SelectItem value="apple">Technology</SelectItem>
+											<SelectItem value="banana">Marketing</SelectItem>
+											<SelectItem value="blueberry">Sale</SelectItem>
+											<SelectItem value="grapes">Back Office</SelectItem>
 										</SelectGroup>
 									</SelectContent>
 								</Select>
@@ -156,11 +125,9 @@ const ListJobs = () => {
 									</SelectTrigger>
 									<SelectContent>
 										<SelectGroup>
-											<SelectItem value="apple">Apple</SelectItem>
-											<SelectItem value="banana">Banana</SelectItem>
-											<SelectItem value="blueberry">Blueberry</SelectItem>
-											<SelectItem value="grapes">Grapes</SelectItem>
-											<SelectItem value="pineapple">Pineapple</SelectItem>
+											<SelectItem value="HANOI">Hà Nội</SelectItem>
+											<SelectItem value="SAIGON">Sài Gòn</SelectItem>
+											<SelectItem value="DANANG">Đà Nẵng</SelectItem>
 										</SelectGroup>
 									</SelectContent>
 								</Select>
@@ -175,17 +142,25 @@ const ListJobs = () => {
 			</div>
 			<div className="-mt-10 lg:mt-12">
 				{jobList.map((item, index) => {
-					return <JobItem key={index} range={item.range} tags={item.tags} title={item.title} />;
+					return (
+						<JobItem
+							key={index}
+							range={item.range}
+							tags={item.tags}
+							title={item.shortTitle}
+							id={item.id}
+						/>
+					);
 				})}
 			</div>
-
+			{/* 
 			<div className="mt-3 flex justify-between">
 				<div className="">
 					Trang <span className="text-gradient font-semibold">3</span> trên tổng số 12 trang
 				</div>
 
-				{/* <div className="">Pagination</div> */}
-			</div>
+				<div className="">Pagination</div>
+			</div> */}
 		</div>
 	);
 };

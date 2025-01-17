@@ -18,7 +18,7 @@ const ContactBox = () => {
 		console.log(formData);
 	};
 	return (
-		<div className="w-full px-1 md:px-[6.25%]">
+		<div id="contactbox" className="w-full px-1 md:px-[6.25%]">
 			{/* <div className="bg-customPink py-20 px-[11.3%] lg:flex lg:justify-between gap-20 rounded-4xl">
 				<div className="mt-16 w-60 h-60 md:w-80 md:h-80 lg:w-[438px] lg:h-[438px] aspect-square mx-auto relative"> */}
 			<div className="bg-customPink py-8 md:py-20 px-4 md:px-[11.3%] flex justify-between gap-20 rounded-4xl">
