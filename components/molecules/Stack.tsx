@@ -60,7 +60,7 @@ const StackItem = ({
 		<div
 			ref={item}
 			className={cn(
-				"w-full h-[100vh] relative text-center pt-1 rounded-[20px] md:rounded-[64px]",
+				"w-full h-[100vh] relative text-center pt-1 rounded-[20px] md:rounded-[64px] overflow-y-hidden",
 				pinkBackground ? "bg-pink-stack" : "bg-yellow-stack",
 				{
 					sticky: isSticky,
@@ -325,7 +325,7 @@ const Stack = () => {
 			{/* Ẩn cái hướng dẫn này ở màn mobile */}
 			<div className="">
 				<StackItem pinkBackground={true} stack={4}>
-					<div className=" mt-10 md:mt-20  px-5 md:px-[12%]">
+					<div className=" mt-10 md:mt-20  px-5 md:px-[12%] h-fit">
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline after:w-[120%]">
 								Tải ứng dụng
