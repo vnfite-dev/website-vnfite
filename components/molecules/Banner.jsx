@@ -8,7 +8,7 @@ const Banner = () => {
 		<div className="max-w-[1280px] mx-auto flex font-sfpro pb-20 xl:pb-[190px] px-4 ">
 			<div className="w-full lg:w-1/2 relative ">
 				<div className="relative z-10">
-					<p className="text-gradient font-semibold green-underline">Dịch vụ khách hàng</p>
+					<p className="text-gradient font-semibold green-underline text-xl">Dịch vụ khách hàng</p>
 				</div>
 
 				<div className="mt-10 font-ambrose text-5xl leading-[61px] relative">

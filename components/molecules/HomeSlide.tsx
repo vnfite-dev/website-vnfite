@@ -143,7 +143,7 @@ const HomeSlide = () => {
 					</CarouselContent>
 					<CarouselPrevious className="hidden md:flex w-20 h-20 -left-24 shadow-md" />
 					<CarouselNext className="hidden md:flex w-20 h-20 -right-24 shadow-md text-3xl font-bold " />
-					<CarouselDots className="mt-5" />
+					<CarouselDots className="mt-5 flex lg:hidden" />
 				</Carousel>
 
 				<div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 font-sfpro gap-10">

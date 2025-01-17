@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useCheckOS, useIsMobile } from "@/hooks/helper";
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import AnimatedBeamDemo from "./AnimatedBeam";
 
 const CheckItem = ({ title, content }: { title: string; content: string }) => {
 	return (
@@ -125,7 +126,7 @@ const Stack = () => {
 			{/* Stack 1 */}
 
 			<StackItem pinkBackground={true} stack={0}>
-				<div className="pt-10 md:pt-20">
+				<div className="flex flex-col sm:hidden pt-10 md:pt-20">
 					<div className="relative z-10">
 						<p className="text-gradient font-semibold green-underline after:w-[120%]">Lý do</p>
 						<div className="mt-4 text-3xl md:text-5xl">
@@ -176,6 +177,15 @@ const Stack = () => {
 							/>
 						</div>
 					</div>
+				</div>
+				<div className="hidden sm:flex sm:flex-col pt-10 md:pt-20">
+					<div className="relative z-10">
+						<p className="text-gradient font-semibold green-underline after:w-[120%]">Lý do</p>
+						<div className="mt-4 text-3xl md:text-5xl">
+							Tại sao bạn nên sử dụng <span className="text-gradient font-bold">VNFITE</span>
+						</div>
+					</div>
+					<AnimatedBeamDemo />
 				</div>
 			</StackItem>
 
