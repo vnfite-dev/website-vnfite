@@ -57,8 +57,8 @@ const NewsPage = () => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="hidden sm:flex" />
-					<CarouselNext className="hidden sm:flex" />
+					<CarouselPrevious className="hidden sm:flex size-12 xl:size-20 -left-14 xl:-left-24 shadow-md" />
+					<CarouselNext className="hidden sm:flex size-12 xl:size-20 -right-14 xl:-right-24 shadow-md text-3xl font-bold" />
 					<CarouselDots className="mt-5" />
 				</Carousel>
 			</div>

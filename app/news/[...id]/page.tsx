@@ -4,19 +4,27 @@ import Image from "next/image";
 import { Clock, Share2 } from "lucide-react";
 import React from "react";
 import { detailNews } from "../data";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const SuggestedNew = ({
 	image = "/images/news/suggestedNew.jpg",
 	title = "P2P Lending hút nhà đầu tư thời công nghệ 4.0",
 	time = "17:30 - 26/12/2024",
+	id = 1,
 }: {
 	image?: string;
 	title?: string;
 	time?: string;
+	id?: number;
 }) => {
+	const router = useRouter();
+
+	const navigateToDetail = (id: number) => {
+		router.push(`/news/${id}`);
+	};
+
 	return (
-		<div className="flex gap-4 border-b border-b-[#E6E6E6] pb-4">
+		<div className="flex gap-4 border-b border-b-[#E6E6E6] pb-4 cursor-pointer" onClick={() => navigateToDetail(id)}>
 			<div className="w-20 h-20 min-w-20 min-h-20 overflow-hidden relative rounded-lg">
 				<Image src={image} alt="Ảnh tin tức" objectFit="cover" layout="fill" className="" />
 			</div>
@@ -109,10 +117,10 @@ const NewsDetail = () => {
 			</div>
 
 			{/* LEFT BAR */}
-			<div className="w-full lg:w-[30%] 2xl:w-[35%] lg:h-[400px] lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
+			<div className="w-full lg:w-[30%] 2xl:w-[35%]">
 				<div className="text-2xl font-semibold text-center">Tin tức liên quan</div>
 
-				<div className="mt-4 lg:mt-12 space-y-4">
+				<div className="mt-4 lg:mt-12 space-y-4 lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
 					{detailNews.slice(1, 5).map((news, index) => (<SuggestedNew key={index} {...news} />))}
 				</div>
 			</div>
