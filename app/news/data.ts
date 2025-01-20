@@ -389,16 +389,4 @@ export const jobList = [
 		workingTime: ["Thứ 2 - Thứ 6: 08:00 - 17:30 (nghỉ trưa 1h30).", "Thứ 7: 08:00 - 12:00."],
 		applicationDeadline: "17/01/2025",
 	},
-	{
-		id: 4,
-		title: "UI/UX Designer",
-		tags: ["Contract", "Remote"],
-		range: "10,000,000 - 15,000,000 VND",
-	},
-	{
-		id: 5,
-		title: "DevOps Engineer",
-		tags: ["Full-time", "Senior"],
-		range: "25,000,000 - 35,000,000 VND",
-	},
 ];

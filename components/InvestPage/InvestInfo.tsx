@@ -20,11 +20,18 @@ const InfoBlock = ({ image, content }: { image: string; content: string }) => {
 
 const AnimateBlock = ({
 	// image,
-	// content,
+	content = [
+		"Đến với VNFITE, bạn không chỉ là khách hàng mà còn là một nhà đầu tư thông thái, chúng tôi sẽ giúp bạn thực hiện điều đó, hãy đến với chúng tôi ngay bây giờ.",
+		"Chỉ từ 500.000VNĐ, bạn đã có thể trở thành nhà đầu tư.",
+		"Không yêu cầu kiến thức chuyên sâu, dễ dàng giao dịch.",
+		"Đang đang ở độ tuổi nào hay bất kì ai đều có VNFITE kế bên bạn.",
+	],
+	title = "Hình thức đầu tư đơn giản",
 	reversed = false,
 }: {
 	image?: string;
-	content?: string;
+	content?: string[];
+	title?: string;
 	reversed?: boolean;
 }) => {
 	const blockControls = useAnimation();
@@ -57,29 +64,24 @@ const AnimateBlock = ({
 					reversed ? "lg:left-96 xl:left-64" : "lg:left-8 xl:left-28"
 				)}
 			>
-				Hình thức đầu tư đơn giản
+				{title}
 			</p>
 			<div className="w-fit lg:w-[680px] bg-grad relative p-8 rounded-4xl">
 				<div className="text-white z-30">
-					<p className="text-base">
-						Đến với VNFITE, bạn không chỉ là khách hàng mà còn là một nhà đầu tư thông thái, chúng tôi
-						sẽ giúp bạn thực hiện điều đó, hãy đến với chúng tôi ngay bây giờ.
-					</p>
+					<p className="text-base">{content[0]}</p>
 					<div className="mt-6 flex flex-col gap-3">
 						<div className="inline-flex gap-2">
 							<Image src="/icons/invest/whiteCheck.svg" alt="image" width={24} height={24} />
-							<p>
-								Chỉ từ <strong>500.000VNĐ</strong>, bạn đã có thể trở thành nhà đầu tư.
-							</p>
+							<p>{content[1]}</p>
 						</div>
 						<div className="inline-flex gap-2">
 							<Image src="/icons/invest/whiteCheck.svg" alt="image" width={24} height={24} />
-							<p>Không yêu cầu kiến thức chuyên sâu, dễ dàng giao dịch.</p>
+							<p>{content[2]}</p>
 						</div>
 
 						<div className="inline-flex gap-2">
 							<Image src="/icons/invest/whiteCheck.svg" alt="image" width={24} height={24} />
-							<p>Đang đang ở độ tuổi nào hay bất kì ai đều có VNFITE kế bên bạn.</p>
+							<p>{content[3]}</p>
 						</div>
 					</div>
 				</div>
@@ -110,42 +112,47 @@ const AnimateBlock = ({
 const InvestInfo = () => {
 	const faq = [
 		{
-			question: "Tôi cần chuẩn bị gì để bắt đầu đầu tư tại VNFITE?",
-			answer: "Không gì hết",
-		},
-		{
-			question: "Tôi cần chuẩn bị gì để bắt đầu đầu tư tại VNFITE?",
-			answer: "Không gì hết",
+			question: "Tôi cần chuẩn bị những gì để bắt đầu đầu tư tại VNFITE?",
+			answer:
+				"Bạn chỉ cần có một tài khoản tại VNFITE và sẵn sàng với một số vốn nhỏ ban đầu để bắt đầu đầu tư.",
 		},
 		{
 			question: "VNFITE phù hợp với những ai?",
-			answer: "Không gì hết",
+			answer:
+				"VNFITE phù hợp với tất cả những người muốn đầu tư an toàn, từ người mới bắt đầu đến các nhà đầu tư có kinh nghiệm.",
 		},
 		{
-			question: "Lợi nhuận đầu tư được tính như thế nào",
-			answer: "Không gì hết",
+			question: "Lợi nhuận đầu tư được tính như thế nào?",
+			answer:
+				"Lợi nhuận được tính dựa trên hiệu suất của khoản đầu tư và được thông báo rõ ràng trong từng sản phẩm đầu tư của bạn.",
 		},
 		{
 			question: "Đầu tư qua VNFITE có an toàn không?",
-			answer: "Không gì hết",
+			answer:
+				"VNFITE cam kết bảo mật thông tin và tuân thủ các quy định tài chính để đảm bảo an toàn cho nhà đầu tư.",
 		},
 		{
 			question: "Tôi có thể rút vốn trước hạn không?",
-			answer: "Không gì hết",
+			answer:
+				"Bạn có thể rút vốn trước hạn trong một số sản phẩm đầu tư, nhưng có thể áp dụng phí rút sớm tùy thuộc vào điều kiện của sản phẩm.",
 		},
 		{
-			question: "Tôi cần chuẩn bị gì để bắt đầu đầu tư tại VNFITE?",
-			answer: "Không gì hết",
+			question: "VNFITE hỗ trợ những phương thức thanh toán nào?",
+			answer:
+				"VNFITE hỗ trợ các phương thức thanh toán phổ biến như chuyển khoản ngân hàng và thanh toán qua ví điện tử.",
 		},
 		{
-			question: "Tôi cần chuẩn bị gì để bắt đầu đầu tư tại VNFITE?",
-			answer: "Không gì hết",
+			question: "Làm cách nào để theo dõi hiệu suất đầu tư của tôi?",
+			answer:
+				"Bạn có thể theo dõi hiệu suất đầu tư chi tiết thông qua bảng điều khiển trên ứng dụng hoặc website VNFITE.",
 		},
 		{
-			question: "Tôi cần chuẩn bị gì để bắt đầu đầu tư tại VNFITE?",
-			answer: "Không gì hết",
+			question: "Tôi có thể liên hệ hỗ trợ khách hàng của VNFITE bằng cách nào?",
+			answer:
+				"Bạn có thể liên hệ với VNFITE qua email, hotline hoặc live chat trên website chính thức của chúng tôi.",
 		},
 	];
+
 	return (
 		<div>
 			<div className="bg-investMidBanner w-full h-fit bg-cover pb-12">
@@ -163,7 +170,7 @@ const InvestInfo = () => {
 				</div>
 			</div>
 
-			<div className="mt-12 md:mt-28 p-10 xl:px-[14%] 2xl:px-[16.7%]">
+			<div className="mt-12 md:mt-28 py-10 px-2 xl:px-[14%] 2xl:px-[16.7%]">
 				<div className="text-5xl font-semibold text-center">
 					Vì sao bạn nên đầu tư vào <span className="text-gradient">VNFITE</span>
 				</div>
@@ -171,10 +178,27 @@ const InvestInfo = () => {
 				<div className="flex flex-col lg:gap-44 md:px-10">
 					<AnimateBlock />
 					<div className="md:self-end">
-						<AnimateBlock reversed={true} />
+						<AnimateBlock
+							reversed={true}
+							title="An toàn, nhanh chóng"
+							content={[
+								"Tại VNFITE, mỗi nhân viên đều được đảm bảo môi trường làm việc lý tưởng cùng với chế độ đãi ngộ toàn diện, giúp nhân viên phát triển sự nghiệp bền vững trong công việc.",
+								"Các khoản Gọi vốn được thẩm định ký lưỡng.",
+								"Chủ gọi vốn phải đủ thủ tục về mặt chính sách như mua bảo hiểm trước khi gọi vốn, không nợ xấu",
+								"Với lượng khách hàng lớn mạnh và cộng đồng rộng rãi giúp cho các khoản đầu được được giải ngân nhanh hơn.",
+							]}
+						/>
 					</div>
 
-					<AnimateBlock />
+					<AnimateBlock
+						title="Hiệu quả & An toàn đầu tư"
+						content={[
+							"Đến với VNFITE, bạn không chỉ tìm thấy một công việc, mà còn là một cộng đồng gắn kết, cùng nhau chinh phục những thử thách và tạo nên giá trị bền vững. ",
+							"Lãi suất lên đến 20%/năm",
+							"Nhà đầu tư có thể chuyển nhượng sản phẩm đầu tư bất cứ khi nào.",
+							"Sản phẩm đầu tư đa dạng.",
+						]}
+					/>
 				</div>
 
 				<div className="mt-12 lg:mt-40  flex items-center">

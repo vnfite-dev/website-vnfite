@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
 	/* config options here */
 	images: {
-		domains: ["42.113.122.119"], // Thêm hostname của hình ảnh
+		domains: ["42.113.122.118"], // Thêm hostname của hình ảnh
 	},
 };
 

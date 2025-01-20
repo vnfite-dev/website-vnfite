@@ -49,7 +49,7 @@ export default async function InvestTable() {
 					<TableBody>
 						{
 							// eslint-disable-next-line @typescript-eslint/no-explicit-any
-							data.data.map((data: any) => (
+							data.data.slice(0, 10).map((data: any) => (
 								<TableRow key={data.loanCode} className="text-center ">
 									<TableCell className="font-medium text-base">
 										{data.loanCode || "VNF00101                                         "}
@@ -88,7 +88,7 @@ export default async function InvestTable() {
 			<div className="lg:hidden flex flex-col gap-3 mx-4 mt-6">
 				{
 					// eslint-disable-next-line @typescript-eslint/no-explicit-any
-					data.data?.map((item: any, index: number) => (
+					data.data?.slice(0, 7).map((item: any, index: number) => (
 						<div key={index} className="shadow-md flex justify-between items-center p-2 rounded-xl">
 							<div className="flex items-center gap-1">
 								<div className="">
