@@ -334,9 +334,9 @@ const Stack = () => {
 								Hướng dẫn cài đặt ứng dụng <span className="text-gradient font-bold">VNFITE</span>
 							</div>
 						</div>
-						<div className="mt-12 md:mt-32 flex relative md:px-[12%] justify-between md:gap-8">
+						<div className="mt-12 md:mt-32 flex relative md:px-[8%] justify-between md:gap-8">
 							{(os === "ANDROID" || isMobile == false) && (
-								<div className="flex flex-col gap-8">
+								<div className="flex flex-col gap-8 w-1/2">
 									<p className="text-xl">
 										Hệ điều hành <span className="font-semibold">Android</span>
 									</p>
@@ -368,12 +368,12 @@ const Stack = () => {
 									</p>
 								</div>
 							)}
-							<div className="">
-								<div className="bg-gray-200 h-full  rounded-full"></div>
+							<div className="md:w-[400px] md:h-[350px] hidden sm:block">
+								<Image src={"/icons/home/QR_STACK.svg"} width={400} height={350} alt="step1" />
 							</div>
 
 							{(os === "IOS" || isMobile == false) && (
-								<div className="flex flex-col gap-8">
+								<div className="flex flex-col gap-8 w-1/2">
 									<div className="">
 										<p className="text-xl">
 											Hệ điều hành <span className="font-semibold">IOS</span>
@@ -381,7 +381,7 @@ const Stack = () => {
 									</div>
 									<CheckItem
 										title="Mở ứng dụng Appstore trên điện thoại của bạn"
-										content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc truy cập vào đường link (........)."
+										content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc truy cập vào đường link."
 									/>
 
 									<CheckItem

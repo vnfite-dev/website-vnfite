@@ -222,7 +222,7 @@ const About = () => {
 			<div className="mt-8 lg:mt-28">
 				{/* 1. Thông tin về VNFITEVNFITE */}
 				{show === 0 && (
-					<div className="flex justify-center items-center flex-col space-y-14 lg:space-y-40">
+					<div className="flex justify-center items-center flex-col space-y-14 lg:space-y-28">
 						{/* 1.1. Giới thiệu về VNFITE */}
 						<div>
 							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
@@ -431,7 +431,7 @@ const About = () => {
 							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
 								Tầm nhìn và sứ mệnh
 							</p>
-							<p className="font-normal text-base mt-0 lg:mt-14 text-center p-6">
+							<p className="font-normal text-base mt-0 lg:mt-10 text-center p-6">
 								Là sợi dây kết nối giữa nhà đầu tư và nhà huy động, tạo ra sân chơi an toàn giao
 								thương tài chính, tạo lợi ích cho các bên đồng thời tạo sự phát triển bền vững cho xã
 								hội.
