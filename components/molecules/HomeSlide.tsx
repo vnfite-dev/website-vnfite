@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+
 import {
 	Carousel,
 	CarouselContent,
@@ -85,6 +87,11 @@ const data = [
 	},
 ];
 
+type CarouselOptions = {
+	loop?: boolean;
+	align?: "start" | "center" | "end";
+};
+
 const staticData = [
 	{
 		// preNum: "+",
@@ -110,6 +117,24 @@ const staticData = [
 ];
 
 const HomeSlide = () => {
+	const [carouselOpts, setCarouselOpts] = useState<CarouselOptions>({
+		loop: true,
+		align: "start",
+	});
+
+	useEffect(() => {
+		if (window.innerWidth < 768) {
+			setCarouselOpts({
+				loop: true,
+				align: "center",
+			});
+		} else {
+			setCarouselOpts({
+				loop: true,
+				align: "start",
+			});
+		}
+	}, []);
 	return (
 		<div>
 			<div className="w-full font-sfpro z-10 text-center ">
@@ -120,13 +145,7 @@ const HomeSlide = () => {
 			</div>
 
 			<div className="mt-8 md:mt-16 w-full px-4 md:px-[13%]">
-				<Carousel
-					opts={{
-						loop: true,
-						align: "start",
-					}}
-					className="w-full"
-				>
+				<Carousel opts={carouselOpts} className="w-full">
 					{/* <CarouselContent className="-ml-1"> */}
 					<CarouselContent className="">
 						{data.map((items, index) => (

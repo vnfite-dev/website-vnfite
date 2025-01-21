@@ -108,7 +108,7 @@ const About = () => {
 					</div>
 				</div>
 
-				<div className="flex md:hidden w-[80%] mx-auto pr-9">
+				<div className="flex md:hidden w-full mx-auto pr-9">
 					<Select onValueChange={(value) => setShow(Number(value))}>
 						<SelectTrigger className="w-full mx-auto">
 							<SelectValue placeholder="Thông tin về VNFITE" />
@@ -240,7 +240,7 @@ const About = () => {
 								/>
 							</div>
 
-							<p className="p-4 font-normal text-base mt-0 lg:mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
+							<p className="sm:p-4 font-normal text-base mt-0 lg:mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
 								<span>
 									VNFITE là một trong những nền tảng cho vay ngang hàng (P2P Lending) lớn tại Việt
 									Nam, đóng vai trò kết nối giữa nhà đầu tư và người vay. Được thành lập từ năm 2020,
@@ -305,8 +305,8 @@ const About = () => {
 						</div>
 
 						{/* 1.2. Lịch sử phát triển */}
-						<div>
-							<p className="text-2xl lg:text-5xl font-semibold text-center px-8">Lịch sử phát triển</p>
+						<div className="w-full md:w-auto">
+							<p className="text-2xl lg:text-5xl font-semibold text-center">Lịch sử phát triển</p>
 
 							<div className="flex justify-center items-center flex-col md:flex-row mt-8 lg:mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
 								<div className="flex justify-center items-center w-[90%] md:w-[35%] mx-auto">
@@ -370,7 +370,6 @@ const About = () => {
 														);
 													}}
 												>
-													{/* <ArrowRight className="h-4 w-4" /> */}
 													<ChevronRight
 														size={40}
 														color="#CF1313"
@@ -397,7 +396,7 @@ const About = () => {
 															{_.content.map((_, index) => (
 																<p
 																	key={index}
-																	className=" text-base font-normal third-line-truncate px-4"
+																	className=" text-base font-normal third-line-truncate px-4 w-full"
 																>
 																	{_}
 																</p>

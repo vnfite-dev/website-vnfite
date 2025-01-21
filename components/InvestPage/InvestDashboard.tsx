@@ -71,7 +71,10 @@ const InvestDashboard = () => {
 						<div className="text-3xl font-bold">
 							{formatVND(
 								Math.round(
-									((sliderValues.money[0] / sliderValues.term[0]) * sliderValues.interest[0]) / 100
+									((sliderValues.money[0] * sliderValues.term[0] * 30) /
+										sliderValues.interest[0] /
+										365) *
+										0.95
 								)
 							)}{" "}
 							VNĐ

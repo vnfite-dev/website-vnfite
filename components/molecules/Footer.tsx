@@ -47,6 +47,19 @@ const navItemText = [
 
 const Footer = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [isDisabled, setIsDisabled] = useState(false);
+
+	const handleClick = () => {
+		if (isDisabled) return;
+
+		setIsDisabled(true);
+		setIsOpen(!isOpen);
+
+		// Kích hoạt lại sau 300ms
+		setTimeout(() => {
+			setIsDisabled(false);
+		}, 500);
+	};
 
 	useEffect(() => {
 		if (isOpen == true) {
@@ -80,7 +93,7 @@ const Footer = () => {
 									<Image src={"icons/home/Location.svg"} width={16} height={16} alt="Location" />
 								</div>
 								<div className="text-sm leading-4 md:max-w-[273px]">
-									Tầng 6 TaiTam Building, 39A Ngô Quyền, P.Phan Chu Trinh, Q.Hoàn Kiếm, Hà Nội
+									Số 4A Vương Thừa Vũ, phường Khương Trung, quận Thanh Xuân, Hà Nội
 								</div>
 							</div>
 							<div className="flex gap-2">
@@ -154,11 +167,14 @@ const Footer = () => {
 					/>
 				</div>
 				<div className="hidden lg:flex font-medium text-[12px] items-center">
-					Sản phẩm được phát triển bởi VNFITE CAPITAL
+					Sản phẩm được phát triển bởi VNFITE SOFTWARE
 				</div>
 				<div
-					className="text-sm font-semibold flex items-center gap-2 cursor-pointer "
-					onClick={() => setIsOpen(!isOpen)}
+					className={cn(
+						"text-sm font-semibold flex items-center gap-2 cursor-pointer",
+						isDisabled && "cursor-not-allowed"
+					)}
+					onClick={handleClick}
 				>
 					<span className="hidden md:inline">
 						{isOpen ? "Thu nhỏ chân trang" : "Mở rộng chân trang"}
