@@ -77,7 +77,7 @@ export default async function InvestTable() {
 						}
 					</TableBody>
 				</Table>
-				<Button className="btn-primary mt-12 mx-auto">
+				<Button className="btn-primary mt-12 mx-auto" >
 					Tải ứng dụng <span className="hidden sm:inline">để thực hiện giao dịch ngay</span>
 					<Download />
 				</Button>

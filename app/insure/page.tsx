@@ -31,7 +31,7 @@ const Insure = () => {
 	return (
 		<div>
 			<div className="flex justify-center items-center flex-col ">
-				<div className="w-full bg-grad py-10 flex justify-around items-center gap-4 sm:gap-10 md:gap-20 lg:gap-32">
+				<div className="w-full bg-[#E82F2F] lg:px-[16.7%]  py-10 flex justify-around items-center gap-4 sm:gap-10 md:gap-20 lg:gap-32">
 					<div className="">
 						<Image
 							src={"/icons/home/pn_mic.svg"}
@@ -70,7 +70,7 @@ const Insure = () => {
 						Giới thiệu về <span className="text-gradient">VNFITE</span>
 					</p>
 
-					<div className="flex flex-col lg:flex-row mt-28 max-w-[1280px] space-y-28 space-x-0 lg:space-y-0 lg:space-x-7 mx-auto px-8">
+					<div className="flex flex-col lg:flex-row mt-28 max-w-[1280px] space-y-28 space-x-0 lg:space-y-0 lg:space-x-7 mx-auto px-2 md:px-8">
 						<div className="bg-[#FFF8F8] max-w-[405px] w-full h-[433px] rounded-3xl border border-[#F84F4F] relative group">
 							<p className="text-xl text-center font-semibold pt-28">Bảo hiểm sức khỏe</p>
 							<div className="text-[#4D4D4D] px-6 space-y-4 pt-6 font-normal">
@@ -159,7 +159,7 @@ const Insure = () => {
 					</div>
 				</div>
 
-				<div className="mt-16 lg:mt-28 max-w-[1280px] px-6">
+				<div className="mt-16 lg:mt-28 max-w-[1280px] px-2 md:px-6">
 					<p className="text-2xl lg:text-5xl font-semibold text-center mb-8 lg:mb-16">
 						Ưu đãi khi mua bảo hiểm tại <span className="text-gradient">VNFITE</span>
 					</p>
@@ -178,7 +178,7 @@ const Insure = () => {
 							</div>
 						</div>
 
-						<div className="w-full md:w-3/5 mt-8 md:mt-0 px-4 sm:px-10 md:px-0 space-y-9">
+						<div className="w-full md:w-3/5 mt-8 md:mt-0 px-2 sm:px-10 md:px-0 space-y-9">
 							<div className="flex items-center space-x-4">
 								<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} alt="Red Check" />
 
@@ -213,7 +213,13 @@ const Insure = () => {
 							</div>
 
 							<div className="flex space-x-4 relative">
-								<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} className="relative -top-8" alt="Red Check" />
+								<Image
+									src={"/icons/home/RedCheck.svg"}
+									width={24}
+									height={24}
+									className="relative -top-8"
+									alt="Red Check"
+								/>
 
 								<div style={{ color: "#4D4D4D" }}>
 									Các ưu đãi kèm theo khi mua bảo hiểm MIC qua VNFITE <br />
@@ -233,7 +239,7 @@ const Insure = () => {
 						Giải đáp khi mua bảo hiểm tại <span className="text-gradient">VNFITE</span>
 					</p>
 				</div>
-				<div className="w-full px-[12%] lg:px-[16.7%] mt-6 lg:mt-16">
+				<div className="w-full px-4 md:px-[12%] lg:px-[16.7%] mt-6 lg:mt-16">
 					<Accordion type="single" collapsible>
 						{questionsData.map((item, index) => (
 							<AccordionItem value={`value-${index}`} key={index}>

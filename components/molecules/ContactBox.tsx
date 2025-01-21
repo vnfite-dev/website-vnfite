@@ -32,7 +32,7 @@ const ContactBox = () => {
 					</div>
 					<div className="text-4xl font-semibold lg:text-5xl lg:leading-[70px] mt-3">
 						Bạn đang quan tâm đến sản phẩm của{" "}
-						<span className="text-gradient font-semibold ">VNFITE</span>.
+						<span className="text-gradient font-semibold ">VNFITE</span>
 					</div>
 					<div className="mt-3">
 						Hãy để lại thông tin của bạn để chúng tôi có thể tư vấn một cách chính xác nhất.

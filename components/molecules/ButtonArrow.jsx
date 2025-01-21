@@ -7,7 +7,7 @@ const ButtonArrow = ({ text, onClick }) => {
 				{/* Đầu mũi tên */}
 				<div className="w-0 h-0 border-l-[12px] border-t-[6px] border-b-[6px] border-[#f84f4f] border-t-transparent border-b-transparent bg-white"></div>
 
-				<button onClick={onClick} className="btn-primary py-2 mx-5 text-white rounded-lg text-base w-48">
+				<button onClick={onClick} className="btn-primary sm:py-2 mx-2 sm:mx-5 text-white rounded-lg text-base w-fit">
 					{text}
 				</button>
 

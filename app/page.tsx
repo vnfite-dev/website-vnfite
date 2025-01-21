@@ -11,7 +11,7 @@ export default function Home() {
 			<div className="mt-[120px]">
 				<HomeSlide />
 			</div>
-			<div className="mt-16 md:mt-32">
+			<div className="mt-8 md:mt-16">
 				<Stack />
 			</div>
 
