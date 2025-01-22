@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { homeSlideData } from "@/app/news/data";
+import { useRouter } from "next/navigation";
 
 import {
 	Carousel,
@@ -12,19 +12,23 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import NumberTicker from "../ui/number-ticker";
+import itemProduct from "@/app/products/data";
 
 const SlideItem = ({
 	image = "/images/home/slide-student.png",
 	title = "Gọi vốn sinh viên",
 	detail = "Gọi vốn dành cho các bạn sinh viên với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
+	id = 1,
 }: {
 	image: string;
 	title: string;
 	detail: string;
+	id: number;
 }) => {
+	const router = useRouter();
 	return (
-		<div className="bg-grad rounded-[33px] p-[1px] h-full">
-			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-[#FFF8F8] w-full flex flex-col justify-center items-center h-full">
+		<div className="bg-grad rounded-[33px] p-[1px] h-full" onClick={() => router.push("/products/" + id)}>
+			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-[#FFF8F8] w-full flex flex-col justify-center items-center h-full hover:bg-opacity-55">
 				<Image src={image} alt="slide1" height={160} width={160} />
 				<div
 					className="text-center mt-6 font-semibold text-xl h-[50px] flex items-center justify-center overflow-hidden"
@@ -129,12 +133,12 @@ const HomeSlide = () => {
 				<Carousel opts={carouselOpts} className="w-full">
 					{/* <CarouselContent className="-ml-1"> */}
 					<CarouselContent className="">
-						{homeSlideData.map((items, index) => (
+						{itemProduct.map((items, index) => (
 							<CarouselItem
 								key={index}
 								className="pl-4 w-fit basis-[80%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex items-stretch"
 							>
-								<div className="pl-1 relative flex items-start">
+								<div className="pl-1 relative flex items-start cursor-pointer">
 									<SlideItem {...items} />
 								</div>
 							</CarouselItem>

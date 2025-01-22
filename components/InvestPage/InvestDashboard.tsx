@@ -16,7 +16,7 @@ const InvestDashboard = () => {
 
 	return (
 		<div className="mx-auto">
-			<div className="bg-grad w-full py-12 flex-col px-5 md:px-[16.7%]">
+			<div className="bg-[#E82F2F] w-full py-12 flex-col px-5 md:px-[16.7%]">
 				<div className="text-center text-white font-semibold text-3xl md:text-5xl">
 					Công cụ tính lãi suất mỗi tháng
 				</div>

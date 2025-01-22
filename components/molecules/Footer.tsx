@@ -72,7 +72,7 @@ const Footer = () => {
 		}
 	}, [isOpen]);
 	return (
-		<div className="px-10 md:px-10 xl:px-[16%] font-sfpro bg-footer relative">
+		<div id="footer" className="px-10 md:px-10 xl:px-[16%] font-sfpro bg-footer relative">
 			<div
 				className={cn(
 					"transition-all duration-500 overflow-hidden flex w-full flex-col lg:flex-row",

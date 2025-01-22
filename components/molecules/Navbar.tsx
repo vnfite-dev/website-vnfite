@@ -17,16 +17,16 @@ import { useAppLink } from "@/hooks/helper";
 import { useEffect, useState, useRef } from "react";
 import { Briefcase, ChevronDown, Download, UserRound, UsersRound } from "lucide-react";
 import { usePathname } from "next/navigation";
+import itemProduct from "@/app/products/data";
 
-const ProductNavItem = ({ state, image, title, id }: { state: string; image: string; title: string, id: number }) => {
-	console.log(state);
+const ProductNavItem = ({ image, title, id }: { image: string; title: string; id: number }) => {
 	return (
 		<Link href={`/products/${id}`} legacyBehavior>
 			<div className="flex w-full justify-center items-center gap-3 py-2 px-4 cursor-pointer hover:bg-customPink h-fit rounded-sm">
-				<div className="">
-					<Image src={`/icons/products/${image}.svg`} width={64} height={64} alt="productStudent1" />
+				<div className="w-16 h-16 relative">
+					<Image src={image} fill alt="products" />
 				</div>
-				<p>Gọi vốn {title}</p>
+				<p>{title}</p>
 			</div>
 		</Link>
 	);
@@ -114,7 +114,7 @@ const Navbar = () => {
 									width={160}
 									height={32}
 									alt="logo"
-								// className={cn(isFixed && "transform")}
+									// className={cn(isFixed && "transform")}
 								/>
 
 								{!isFixed && (
@@ -142,9 +142,11 @@ const Navbar = () => {
 									</Link>
 								</NavigationMenuItem>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className="hover:text-gradient navigation-menu-item">
-										Gọi vốn
-									</NavigationMenuTrigger>
+									<Link href={"/products/1"}>
+										<NavigationMenuTrigger className="hover:text-gradient navigation-menu-item">
+											Gọi vốn
+										</NavigationMenuTrigger>
+									</Link>
 									<NavigationMenuContent className="relative">
 										<div className="flex gap-3 py-3 w-[1000px] pb-10 relative z-[1000]">
 											<div className="flex flex-col min-w-[250px]">
@@ -169,42 +171,44 @@ const Navbar = () => {
 											</div>
 
 											<div className="w-full h-full grid grid-cols-3 gap-4 justify-between px-2 border-l-[3px]  border-customPink">
-												{productsType === 0 && (
-													<>
-														<ProductNavItem state="active" image="sieutoc" title="siêu tốc" id={2} />
-														<ProductNavItem state="active" image="sinhvien" title="sinh viên" id={1} />
-														<ProductNavItem state="active" image="baohiem" title="nhân viên văn phòng" id={3} />
-														<ProductNavItem state="active" image="baohiem" title="công nhân" id={4} />
-													</>
-												)}
+												{productsType === 0 &&
+													itemProduct
+														.filter((item) => item.productsType === 0)
+														.map((item, index) => (
+															<ProductNavItem
+																// state="active"
+																image={item.image}
+																title={item.title}
+																id={item.id}
+																key={index}
+															/>
+														))}
 
-												{productsType === 1 && (
-													<>
-														<ProductNavItem
-															state="active"
-															image="dn_doanhnghiep"
-															title="cho hộ kinh doanh"
-															id={6}
-														/>
-														<ProductNavItem
-															state="active"
-															image="dn_doanhnghiep"
-															title="cho hộ kinh doanh online"
-															id={7}
-														/>
-													</>
-												)}
+												{productsType === 1 &&
+													itemProduct
+														.filter((item) => item.productsType === 1)
+														.map((item, index) => (
+															<ProductNavItem
+																// state="active"
+																image={item.image}
+																title={item.title}
+																id={item.id}
+																key={index}
+															/>
+														))}
 
-												{productsType === 2 && (
-													<>
-														<ProductNavItem
-															state="active"
-															image="dn_doanhnghiep"
-															title="cho doanh nghiệp"
-															id={5}
-														/>
-													</>
-												)}
+												{productsType === 2 &&
+													itemProduct
+														.filter((item) => item.productsType === 2)
+														.map((item, index) => (
+															<ProductNavItem
+																// state="active"
+																image={item.image}
+																title={item.title}
+																id={item.id}
+																key={index}
+															/>
+														))}
 											</div>
 										</div>
 									</NavigationMenuContent>
@@ -284,8 +288,9 @@ const Navbar = () => {
 										/>
 									</p>
 									<div
-										className={`text-lg font-medium overflow-hidden transition-all duration-300 ${childMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
-											}`}
+										className={`text-lg font-medium overflow-hidden transition-all duration-300 ${
+											childMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+										}`}
 									>
 										<Link href="/products">
 											<div className="flex items-center gap-3 py-3 px-4 ">
@@ -348,25 +353,28 @@ const Navbar = () => {
 						{/* <Menu color="#E82F2F" size={46} /> */}
 
 						<span
-							className={`block w-8 h-1 bg-grad rounded-sm transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-3" : "translate-y-0"
-								}`}
+							className={`block w-8 h-1 bg-grad rounded-sm transition-transform duration-300 ${
+								isOpen ? "rotate-45 translate-y-3" : "translate-y-0"
+							}`}
 						></span>
 
 						{/* Line 2 */}
 						<span
-							className={`block w-8 h-1 bg-grad rounded-sm transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"
-								}`}
+							className={`block w-8 h-1 bg-grad rounded-sm transition-opacity duration-300 ${
+								isOpen ? "opacity-0" : "opacity-100"
+							}`}
 						></span>
 
 						{/* Line 3 */}
 						<span
-							className={`block w-8 h-1 bg-grad rounded-sm transition-transform duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : "translate-y-0"
-								}`}
+							className={`block w-8 h-1 bg-grad rounded-sm transition-transform duration-300 ${
+								isOpen ? "-rotate-45 -translate-y-2" : "translate-y-0"
+							}`}
 						></span>
 					</div>
 					<div className="hidden lg:block">
 						{/* <Button className="btn-primary">{isFixed == false ? "Tải ứng dụng" : <Download />}</Button> */}
-						<Link href={appLink} target="_blank">
+						<Link href={"#footer"} target="_self">
 							<Button className="btn-primary">Tải ứng dụng</Button>
 						</Link>
 					</div>

@@ -80,10 +80,12 @@ const Stack1Info = ({
 	leftToRight = true,
 	title,
 	content,
+	index = 1,
 }: {
 	leftToRight?: boolean;
 	title: string;
 	content: string;
+	index: number;
 }) => {
 	return (
 		<div
@@ -100,7 +102,7 @@ const Stack1Info = ({
 					leftToRight ? "order-none" : "order-none md:order-2"
 				)}
 			>
-				<Image src="/images/home/blueglobe.png" alt="globe" width={65} height={65} />
+				<Image src={`/icons/home/s1_${index}.svg`} alt="globe" width={65} height={65} />
 			</div>
 
 			{/* Nội dung văn bản */}
@@ -140,18 +142,21 @@ const Stack = () => {
 								leftToRight={false}
 								title="Uy tín và bảo mật"
 								content="Mọi giao dịch đều được bảo vệ bởi các tiêu chuẩn bảo mật cao nhất, đảm bảo an toàn thông tin."
+								index={1}
 							/>
 
 							<Stack1Info
 								leftToRight={false}
 								title="Đầu tư"
 								content="Nhanh chóng thuận tiện, lãi suất cao"
+								index={2}
 							/>
 
 							<Stack1Info
 								leftToRight={false}
 								title="Đội ngũ chuyên gia hàng đầu"
 								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
+								index={3}
 							/>
 						</div>
 						<div className="hidden md:block">
@@ -162,18 +167,21 @@ const Stack = () => {
 								leftToRight={true}
 								title="Dễ dàng tiện lợi"
 								content="Mọi giao dịch đều được bảo vệ bởi các tiêu chuẩn bảo mật cao nhất, đảm bảo an toàn thông tin."
+								index={4}
 							/>
 
 							<Stack1Info
 								leftToRight={true}
 								title="Khách hàng đông đảo"
 								content="Nhanh chóng thuận tiện, lãi suất cao"
+								index={5}
 							/>
 
 							<Stack1Info
 								leftToRight={true}
 								title="Tăng trưởng bền vững"
 								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
+								index={5}
 							/>
 						</div>
 					</div>
@@ -210,12 +218,12 @@ const Stack = () => {
 
 							<CheckItem
 								title="Thông tin minh bạch và an toàn"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+								content="VNFITE cam kết về minh bạch lãi suất và các điều khoản vay giúp khách hàng hiểu rõ trước khi quyết định. "
 							/>
 
 							<CheckItem
 								title="Giải pháp tài chính linh hoạt"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+								content="Tạo điều kiện cho doanh nghiệp, hộ gia đình và cá nhân tiếp cận nguồn vốn nhanh chóng để phát triển kinh doanh. "
 							/>
 						</div>
 					</div>
