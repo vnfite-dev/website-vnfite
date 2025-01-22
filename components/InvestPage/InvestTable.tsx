@@ -1,9 +1,8 @@
 import { simpleFetchFunction, cn, formatVND, WebUtils } from "@/lib/utils";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Progress } from "../ui/progress";
-import { Button } from "../ui/button";
-import { Download } from "lucide-react";
 import Image from "next/image";
+import DownloadButton from "../molecules/DownloadButton";
 export default async function InvestTable() {
 	const data = await simpleFetchFunction("/user-loan/get-all-user-loan?sortBy=0");
 
@@ -77,10 +76,10 @@ export default async function InvestTable() {
 						}
 					</TableBody>
 				</Table>
-				<Button className="btn-primary mt-12 mx-auto" >
+
+				<DownloadButton>
 					Tải ứng dụng <span className="hidden sm:inline">để thực hiện giao dịch ngay</span>
-					<Download />
-				</Button>
+				</DownloadButton>
 			</div>
 
 			{/* MOBILE DASHbOARD */}

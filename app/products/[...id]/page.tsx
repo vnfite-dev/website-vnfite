@@ -1,9 +1,14 @@
+"use client";
+
 import ContactBox from "@/components/molecules/ContactBox";
 import ListProducts from "@/components/ProductsPage/ListProducts";
 import Image from "next/image";
 import React from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 const ProductPage = () => {
+
+
 	return (
 		<div className="relative font-sfpro">
 			<div className="mt-20 lg:mt-40">

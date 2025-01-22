@@ -110,9 +110,12 @@ const Insure = () => {
 								<p>Bồi thường siêu tốc</p>
 								<p>Bảo lãnh tại 1500 gara</p>
 							</div>
-							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline cursor-pointer">
+							<Link
+								href={"/insure/health-insurance"}
+								className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center underline z-10 cursor-pointer"
+							>
 								Xem chi tiết
-							</div>
+							</Link>
 
 							<div className="absolute w-40 h-40 bg-white rounded-4xl top-[-80px] left-1/2 -translate-x-1/2 flex items-center justify-center border border-[#F84F4F] z-0">
 								<div className="w-32 h-32 bg-grad rounded-3xl flex items-center justify-center overflow-hidden z-50 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
@@ -137,10 +140,12 @@ const Insure = () => {
 								<p>Áp dụng cho chủ nhà, người thuê nhà, chung cư</p>
 								<p>Chi trả tối đa 20 Tỷ đồng/vụ</p>
 							</div>
-							<div className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center pt-16 underline cursor-pointer">
+							<Link
+								href={"/insure/health-insurance"}
+								className="absolute left-1/2 bottom-10 -translate-x-1/2 font-semibold text-gradient text-center underline z-10 cursor-pointer"
+							>
 								Xem chi tiết
-							</div>
-
+							</Link>
 							<div className="absolute w-40 h-40 bg-white rounded-4xl top-[-80px] left-1/2 -translate-x-1/2 flex items-center justify-center border border-[#F84F4F] z-0">
 								<div className="w-32 h-32 bg-grad rounded-3xl flex items-center justify-center overflow-hidden z-50 group-hover:translate-y-[-20px] transition-all duration-300 ease-in-out">
 									<div className="w-20 h-20">
