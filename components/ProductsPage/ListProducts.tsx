@@ -111,7 +111,7 @@ const ListProducts = () => {
 											</div>
 
 											<div className="text-base font-normal text-[#4D4D4D] mt-5 space-y-3 px-[6%] mb-5">
-												<p>Đối tượng gọi vốn là nhứng sinh viên</p>
+												<p>Đối tượng gọi vốn là những sinh viên</p>
 												<p>Có thể gọi vốn lên tới 50.000.000 VNĐ</p>
 												<p>Lãi suất từ 13 - 20%/năm</p>
 											</div>
