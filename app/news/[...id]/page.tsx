@@ -118,10 +118,12 @@ const NewsDetail = () => {
 
 			{/* LEFT BAR */}
 			<div className="w-full lg:w-[30%] 2xl:w-[35%]">
-				<div className="text-2xl font-semibold text-center">Tin tức liên quan</div>
+				<div className="sticky top-40 lg:top-0 w-full h-auto">
+					<div className="text-2xl font-semibold text-center ">Tin tức liên quan</div>
 
-				<div className="mt-4 lg:mt-12 space-y-4 lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
-					{detailNews.slice(1, 5).map((news, index) => (<SuggestedNew key={index} {...news} />))}
+					<div className="mt-4 lg:mt-12 space-y-4 lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
+						{detailNews.slice(1, 5).map((news, index) => (<SuggestedNew key={index} {...news} />))}
+					</div>
 				</div>
 			</div>
 		</div>
