@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { homeSlideData } from "@/app/news/data";
 
 import {
 	Carousel,
@@ -22,11 +23,22 @@ const SlideItem = ({
 	detail: string;
 }) => {
 	return (
-		<div className="bg-grad rounded-[33px] p-[1px]">
-			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-[#FFF8F8] w-full flex flex-col justify-center items-center">
+		<div className="bg-grad rounded-[33px] p-[1px] h-full">
+			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-[#FFF8F8] w-full flex flex-col justify-center items-center h-full">
 				<Image src={image} alt="slide1" height={160} width={160} />
-				<div className="text-center mt-6 font-semibold text-xl">{title}</div>
-				<div className="text-center mt-6 text-sm ">{detail}</div>
+				<div
+					className="text-center mt-6 font-semibold text-xl h-[50px] flex items-center justify-center overflow-hidden"
+					style={{
+						lineHeight: "1.5em",
+						height: "3em", // Duy trì đủ chiều cao cho 2 dòng
+						display: "-webkit-box",
+						WebkitLineClamp: 2, // Giới hạn hiển thị tối đa 2 dòng
+						WebkitBoxOrient: "vertical",
+					}}
+				>
+					{title}
+				</div>
+				<div className="text-center mt-2 text-sm">{detail}</div>
 			</div>
 		</div>
 	);
@@ -55,37 +67,6 @@ const StaticItem = (item: { number: number; preNum: string; afterNum: string; na
 		</div>
 	);
 };
-
-const data = [
-	{
-		image: "/images/home/slide-student.png",
-		title: "Gọi vốn sinh viên",
-		detail:
-			"Gọi vốn dành cho các bạn sinh viên với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
-	},
-	{
-		image: "/images/home/slide-teacher.png",
-		title: "Gọi vốn giáo viên",
-		detail:
-			"Gọi vốn dành cho các bạn giáo viên với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
-	},
-	{
-		image: "/images/home/slide-engineer.png",
-		title: "Gọi vốn công nhân",
-		detail:
-			"Gọi vốn dành cho các bạn công nhân với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
-	},
-	{
-		image: "/images/home/slide-doctor.png",
-		title: "Gọi vốn bác sĩ",
-		detail: "Gọi vốn dành cho các bạn bác sĩ với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
-	},
-	{
-		image: "/images/home/slide-doctor.png",
-		title: "Gọi vốn bác sĩ",
-		detail: "Gọi vốn dành cho các bạn bác sĩ với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
-	},
-];
 
 type CarouselOptions = {
 	loop?: boolean;
@@ -148,13 +129,12 @@ const HomeSlide = () => {
 				<Carousel opts={carouselOpts} className="w-full">
 					{/* <CarouselContent className="-ml-1"> */}
 					<CarouselContent className="">
-						{data.map((items, index) => (
+						{homeSlideData.map((items, index) => (
 							<CarouselItem
 								key={index}
-								className="pl-4 w-fit basis-[80%]  md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+								className="pl-4 w-fit basis-[80%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex items-stretch"
 							>
-								<div className="pl-1">
-									{/* <SlideItem index={index} /> */}
+								<div className="pl-1 relative flex items-start">
 									<SlideItem {...items} />
 								</div>
 							</CarouselItem>
