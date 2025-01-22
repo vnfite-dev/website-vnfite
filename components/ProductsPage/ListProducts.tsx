@@ -112,7 +112,7 @@ const ListProducts = () => {
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
-														src={"/images/home/slide-student.png"}
+														src={data?.image || "/images/home/slide-student.png"}
 														alt="productStudent1"
 														width={120}
 														height={120}
@@ -186,9 +186,8 @@ const ListProducts = () => {
 								<div className="flex space-x-4 pb-8">
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
-												tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-											}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+												}`}
 											onClick={() => setTabLoanCondition(0)}
 										>
 											Điều kiện vay vốn
@@ -196,9 +195,8 @@ const ListProducts = () => {
 									</div>
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
-												tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-											}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+												}`}
 											onClick={() => setTabLoanCondition(1)}
 										>
 											Nộp hồ sơ yêu cầu
@@ -257,16 +255,18 @@ const ListProducts = () => {
 						>
 							{/* <CarouselContent className="-ml-1"> */}
 							<CarouselContent className="flex">
-								{itemProduct.map((items, index) => (
-									<CarouselItem
-										key={index}
-										className="pl-4 w-fit sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex items-stretch"
-									>
-										<div className="flex-grow flex items-stretch">
-											<SlideItem {...items} />
-										</div>
-									</CarouselItem>
-								))}
+								{itemProduct
+									.filter((item) => item.id !== Number(param))
+									.map((items, index) => (
+										<CarouselItem
+											key={index}
+											className="pl-4 w-fit sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex items-stretch"
+										>
+											<div className="flex-grow flex items-stretch">
+												<SlideItem {...items} />
+											</div>
+										</CarouselItem>
+									))}
 							</CarouselContent>
 							<CarouselPrevious className="hidden md:flex w-14 h-14 lg:w-20 lg:h-20 -left-24 shadow-md" />
 							<CarouselNext className="hidden md:flex w-14 h-14 lg:w-20 lg:h-20 -right-24 shadow-md text-3xl font-bold " />
