@@ -181,7 +181,7 @@ const Stack = () => {
 								leftToRight={true}
 								title="Tăng trưởng bền vững"
 								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
-								index={5}
+								index={6}
 							/>
 						</div>
 					</div>
@@ -230,12 +230,7 @@ const Stack = () => {
 					<div className="w-full mt-6 md:mt-0 md:w-1/2 flex justify-end">
 						<div className=""></div>
 						<div className="w-[400px] h-52 md:h-[500px] relative">
-							<Image
-								className="object-cover"
-								src={"/images/home/banner-rightgirl.png"}
-								fill
-								alt="Right"
-							/>
+							<Image className="object-cover" src={"/images/home/stack2.1.png"} fill alt="Right" />
 						</div>
 					</div>
 				</div>
@@ -344,7 +339,7 @@ const Stack = () => {
 						</div>
 						<div className="mt-12 md:mt-32 flex relative md:px-[8%] justify-between md:gap-8">
 							{(os === "ANDROID" || isMobile == false) && (
-								<div className="flex flex-col gap-8 w-1/2">
+								<div className="flex flex-col gap-8 w-full md:w-1/2">
 									<p className="text-xl">
 										Hệ điều hành <span className="font-semibold">Android</span>
 									</p>
@@ -381,7 +376,7 @@ const Stack = () => {
 							</div>
 
 							{(os === "IOS" || isMobile == false) && (
-								<div className="flex flex-col gap-8 w-1/2">
+								<div className="flex flex-col gap-8  w-full md:w-1/2">
 									<div className="">
 										<p className="text-xl">
 											Hệ điều hành <span className="font-semibold">IOS</span>

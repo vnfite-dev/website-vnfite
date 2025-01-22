@@ -62,7 +62,7 @@ html body[data-scroll-locked] {
 }
 
 .bg-invest-banner {
-	background: url("/images/invest/banner.jpg");
+	background: url("/images/invest/banner.png");
 	background-size: cover;
 }
 
@@ -86,7 +86,7 @@ html body[data-scroll-locked] {
 }
 
 .bg-news-banner {
-	background: url("/images/news/banner.jpg");
+	background: url("/images/news/banner.png");
 	background-size: cover;
 }
 @layer utilities {
