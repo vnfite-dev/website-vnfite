@@ -56,6 +56,9 @@ html body[data-scroll-locked] {
 	-webkit-box-orient: vertical;
 }
 
+.bg-responsive-banner {
+	background-repeat: no-repeat;
+}
 .bg-home-banner {
 	background: url("/images/home/banner.png");
 	background-size: cover;
@@ -67,7 +70,7 @@ html body[data-scroll-locked] {
 }
 
 .bg-products-banner {
-	background: url("/images/invest/banner.jpg");
+	background: url("/images/products/banner.png");
 	background-size: cover;
 }
 
@@ -77,9 +80,10 @@ html body[data-scroll-locked] {
 }
 
 .bg-insure-banner {
-	background: url("/images/insure/banner.jpg");
+	background: url("/images/insure/banner.png");
 	background-size: cover;
 }
+
 .bg-careers-banner {
 	background: url("/images/news/banner.jpg");
 	background-size: cover;
@@ -89,6 +93,29 @@ html body[data-scroll-locked] {
 	background: url("/images/news/banner.png");
 	background-size: cover;
 }
+
+@media (min-width: 320px) and (max-width: 720px) {
+	.bg-invest-banner {
+		background: url("/images/invest/banner-mobile.png");
+		background-size: cover;
+	}
+
+	.bg-products-banner {
+		background: url("/images/products/banner-mobile.png");
+		background-size: cover;
+	}
+
+	.bg-news-banner {
+		background: url("/images/news/banner-mobile.png");
+		background-size: cover;
+	}
+
+	.bg-insure-banner {
+		background: url("/images/insure/banner-mobile.png");
+		background-size: cover;
+	}
+}
+
 @layer utilities {
 	.scrollbar-ignore {
 		scrollbar-gutter: stable;

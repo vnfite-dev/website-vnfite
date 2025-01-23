@@ -38,9 +38,9 @@ export function DragDropFileUpload({ onFileUpload }: DragDropFileUploadProps) {
 			<input {...getInputProps()} />
 			<Upload className="mx-auto h-10 w-12 text-gray-400" />
 			<p className="mt-2 text-sm text-gray-600">
-				{isDragActive ? "Drop the file here" : "Drag 'n' drop your CV here, or click to select a file"}
+				{isDragActive ? "Tải CV của bạn ở đây" : "Tải CV của bạn ở đây"}
 			</p>
-			<p className="mt-1 text-xs text-gray-500">Supported formats: PDF, DOC, DOCX</p>
+			{/* <p className="mt-1 text-xs text-gray-500">Supported formats: PDF, DOC, DOCX</p> */}
 		</div>
 	);
 }

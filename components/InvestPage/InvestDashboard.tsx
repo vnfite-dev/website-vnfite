@@ -16,7 +16,7 @@ const InvestDashboard = () => {
 
 	return (
 		<div className="mx-auto">
-			<div className="bg-[#E82F2F] w-full py-12 flex-col px-5 md:px-[16.7%]">
+			<div className="bg-grad w-full py-12 flex-col px-5 md:px-[16.7%]">
 				<div className="text-center text-white font-semibold text-3xl md:text-5xl">
 					Công cụ tính lãi suất mỗi tháng
 				</div>
@@ -32,7 +32,7 @@ const InvestDashboard = () => {
 							className="mt-2"
 							min={500000}
 							step={500_000}
-							max={10_000_000_000}
+							max={1_000_000_000}
 							onValueChange={(value) => setSliderValues({ ...sliderValues, money: value })}
 						/>
 					</div>
@@ -59,7 +59,7 @@ const InvestDashboard = () => {
 						<Slider
 							value={sliderValues.interest}
 							className="mt-2"
-							min={0}
+							min={0.1}
 							step={0.1}
 							max={21.6}
 							onValueChange={(value) => setSliderValues({ ...sliderValues, interest: value })}
@@ -67,13 +67,13 @@ const InvestDashboard = () => {
 					</div>
 
 					<div className="flex flex-col justify-between items-end">
-						<p>Số tiền nhận lãi mỗi tháng</p>
+						<p>Lãi dự kiến nhận về</p>
 						<div className="text-3xl font-bold">
 							{formatVND(
 								Math.round(
-									((sliderValues.money[0] * sliderValues.term[0] * 30) /
-										sliderValues.interest[0] /
-										365) *
+									((sliderValues.money[0] * sliderValues.term[0] * 30 * sliderValues.interest[0]) /
+										365 /
+										100) *
 										0.95
 								)
 							)}{" "}
@@ -87,7 +87,7 @@ const InvestDashboard = () => {
 				</div>
 			</div>
 
-			<div className="text-center text-5xl font-semibold mt-12">
+			<div className="text-center text-5xl font-semibold mt-20">
 				Đầu tư cùng <span className="text-gradient">VNFITE</span>
 			</div>
 

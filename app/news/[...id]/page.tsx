@@ -42,7 +42,6 @@ const SuggestedNew = ({
 const NewsDetail = () => {
 	const { id } = useParams();
 
-	console.log(id);
 	if (!id || id.length === 0) {
 		// Xử lý khi id không tồn tại hoặc không hợp lệ
 		return <div>Error: Invalid ID</div>;

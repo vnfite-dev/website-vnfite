@@ -62,14 +62,6 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 	});
 	const [copied, setCopied] = useState(false);
 
-	// const router = useRouter();
-	// useEffect(() => {
-	// 	if (window.screen.width < 768) {
-	// 		console.log("MOBILE");
-	// 	}
-	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, []);
-
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText(window.location.href);
 		setCopied(true);
@@ -295,7 +287,7 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 							</div>
 						</div>
 
-						<div className="flex justify-between">
+						<div className="flex justify-between gap-6">
 							<Button
 								type="button"
 								onClick={prevStep}

@@ -11,7 +11,7 @@ const ProductPage = () => {
 
 	return (
 		<div className="relative font-sfpro">
-			<div className="mt-20 lg:mt-40">
+			<div className="mt-12 lg:mt-24">
 				<ListProducts />
 			</div>
 

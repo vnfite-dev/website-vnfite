@@ -80,7 +80,7 @@ const Banner = () => {
 						<div className="relative w-[216px] h-[216px]">
 							<Image
 								className="rounded-[32px] object-cover"
-								src="/images/home/banner-leftgirl.png"
+								src="/images/home/1.png"
 								alt="banner-girl"
 								fill
 							/>

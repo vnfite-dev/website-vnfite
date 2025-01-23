@@ -41,6 +41,7 @@ const Navbar = () => {
 	const appLink = useAppLink();
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		if (window.innerWidth < 768) {
 			setIsFixed(true);
 		}
@@ -292,19 +293,19 @@ const Navbar = () => {
 											childMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
 										}`}
 									>
-										<Link href="/products">
+										<Link href="/products/1">
 											<div className="flex items-center gap-3 py-3 px-4 ">
 												{" "}
 												<UserRound color="#E82F2F" /> Gọi vốn cá nhân{" "}
 											</div>
 										</Link>
-										<Link href="/products">
+										<Link href="/products/5">
 											<div className="flex items-center gap-3  py-3 px-4">
 												<UsersRound color="#E82F2F" />
 												Gọi vốn hộ kinh doanh
 											</div>
 										</Link>
-										<Link href="/products">
+										<Link href="/products/4">
 											<div className="flex items-center gap-3  py-3 px-4">
 												<Briefcase color="#E82F2F" />
 												Gọi vốn doanh nghiệp

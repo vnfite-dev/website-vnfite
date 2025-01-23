@@ -100,15 +100,15 @@ const ListProducts = () => {
 								{data?.title}
 							</div>
 							<div className="flex flex-col gap-6 px-5 sm:px-8 xl:px-[10%] 2xl:px-[16.7%]">
-								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-2">
+								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-2 mb-2">
 									<div className="bg-white w-full pl-2">
 										Vì sao bạn nên đồng hành với sản phẩm gọi vốn của VNFITE?
 									</div>
 								</div>
 
 								<div className="grid grid-cols-1 justify-center lg:flex lg:justify-between space-y-8 lg:space-y-0">
-									<div className="bg-grad rounded-4xl p-[2px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
-										<div className="bg-white rounded-[30px] w-full h-full">
+									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
+										<div className="bg-white rounded-[29px] w-full h-full">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
@@ -130,7 +130,7 @@ const ListProducts = () => {
 										</div>
 									</div>
 
-									<div className="bg-grad rounded-4xl p-[2px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
+									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
 										<div className="bg-white rounded-[30px] w-full h-full">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
@@ -153,7 +153,7 @@ const ListProducts = () => {
 										</div>
 									</div>
 
-									<div className="bg-grad rounded-4xl p-[2px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
+									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
 										<div className="bg-white rounded-[30px] w-full h-full">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
@@ -179,7 +179,7 @@ const ListProducts = () => {
 							</div>
 
 							<div className="mt-20 px-5 sm:px-8 xl:px-[10%] 2xl:px-[16.7%]">
-								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-8">
+								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-2 mb-8">
 									<div className="bg-white w-full pl-2">Yêu cầu gọi vốn ở VNFITE</div>
 								</div>
 

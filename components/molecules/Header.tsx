@@ -31,7 +31,9 @@ const Header = () => {
 		// }
 	})();
 	return (
-		<header className={`${bannerBackground} min-h-[720px] max-h-fit`}>
+		<header
+			className={`${bannerBackground} bg-responsive-banner min-h-[520px] md:min-h-[720px] md:max-h-fit `}
+		>
 			<Topbar />
 			<Navbar />
 			<div className="lg:container mx-auto relative top-4">

@@ -199,7 +199,7 @@ const Stack = () => {
 
 			{/* Stack 2 */}
 			<StackItem pinkBackground={false} stack={1}>
-				<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-5 sm:px-[12%] ">
+				<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-5 sm:px-[12%] gap-10 ">
 					<div className="w-full md:w-1/2">
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline">Giá trị</p>
@@ -227,10 +227,15 @@ const Stack = () => {
 							/>
 						</div>
 					</div>
-					<div className="w-full mt-6 md:mt-0 md:w-1/2 flex justify-end">
+					<div className="w-full mt-6 md:mt-0 md:w-1/2 flex justify-center items-center">
 						<div className=""></div>
-						<div className="w-[400px] h-52 md:h-[500px] relative">
-							<Image className="object-cover" src={"/images/home/stack2.1.png"} fill alt="Right" />
+						<div className="w-[400px] h-52 md:h-[500px] relative rounded-tr-full rounded-bl-full">
+							<Image
+								className="object-cover  rounded-tr-[64px] rounded-bl-[64px] rounded-tl-[32px] rounded-br-[32px]"
+								src={"/images/home/stack2.1.png"}
+								fill
+								alt="Right"
+							/>
 						</div>
 					</div>
 				</div>
@@ -337,7 +342,7 @@ const Stack = () => {
 								Hướng dẫn cài đặt ứng dụng <span className="text-gradient font-bold">VNFITE</span>
 							</div>
 						</div>
-						<div className="mt-12 md:mt-32 flex relative md:px-[8%] justify-between md:gap-8">
+						<div className="mt-12 md:mt-20 flex relative md:px-[0%] justify-between md:gap-8">
 							{(os === "ANDROID" || isMobile == false) && (
 								<div className="flex flex-col gap-8 w-full md:w-1/2">
 									<p className="text-xl">
