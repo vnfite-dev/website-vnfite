@@ -5,15 +5,21 @@ import { ChevronDown, Dot } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SOCIAL_MEDIA } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
-const NavItem = ({ title, items }: { title: string; items: string[] }) => {
+const NavItem = ({ href, title, items }: { href: string; title: string; items: string[] }) => {
+	const router = useRouter();
 	return (
-		<div className="">
-			<p className="text-base font-semibold">{title}</p>
+		<div onClick={() => router.push(href)} className="cursor-pointer">
+			<p className="text-base font-semibold hover:text-red-600">{title}</p>
 			<div className="mt-2 lg:mt-6 flex flex-col gap-4">
 				{items.map((item, index) => {
 					return (
-						<div key={index} className="text-gray-600 text-sm leading-[16px]">
+						<div
+							onClick={() => router.push(href)}
+							key={index}
+							className="text-gray-600 text-sm leading-[16px] hover:text-red-400"
+						>
 							{item}
 						</div>
 					);
@@ -27,22 +33,27 @@ const navItemText = [
 	{
 		title: "Sàn giao dịch",
 		items: ["Đầu tư P2P", "Đầu tư nhóm", "Sàn chuyển nhượng"],
+		href: "/invest",
 	},
 	{
 		title: "Sản phẩm",
 		items: ["Gọi vốn cá nhân", "Gọi vốn hộ kinh doanh", "Gọi vốn doanh nghiệp"],
+		href: "/products/1",
 	},
 	{
 		title: "Về VNFITE",
 		items: ["Thông tin về VNFITE", "Ban lãnh đạo", "Cổ đông"],
+		href: "/about",
 	},
 	{
 		title: "Tin tức",
 		items: ["Khuyến mãi", "Tin tức về VNFITE", "Tin tức"],
+		href: "/news",
 	},
 	{
 		title: "Tuyển dụng",
 		items: [""],
+		href: "/careers",
 	},
 ];
 
@@ -83,7 +94,7 @@ const Footer = () => {
 				<div className="lg:w-4/5">
 					<div className="hidden sm:grid grid-cols-2 sm:grid-cols-3 lg:flex gap-6 lg:gap-12">
 						{navItemText?.map((item, index) => {
-							return <NavItem key={index} title={item.title} items={item.items} />;
+							return <NavItem key={index} title={item.title} items={item.items} href={item.href} />;
 						})}
 					</div>
 

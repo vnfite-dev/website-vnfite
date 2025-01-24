@@ -103,6 +103,7 @@ html body[data-scroll-locked] {
 	.bg-products-banner {
 		background: url("/images/products/banner-mobile.png");
 		background-size: cover;
+		background-position: center;
 	}
 
 	.bg-news-banner {
@@ -113,6 +114,7 @@ html body[data-scroll-locked] {
 	.bg-insure-banner {
 		background: url("/images/insure/banner-mobile.png");
 		background-size: cover;
+		background-position: center;
 	}
 }
 

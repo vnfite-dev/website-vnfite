@@ -19,7 +19,7 @@ const Topbar = () => {
 			<div className="hidden lg:flex justify-around gap-12">
 				<div className="flex items-center gap-2">
 					<Image src={"/icons/topbar/headset.svg"} width={16} height={16} alt="headset" />
-					<p>Hotline : +6281-8888-8888</p>
+					<p>Hotline : 024.3367.6699</p>
 				</div>
 				<div className="flex items-center">
 					<Image src={"/icons/topbar/location.svg"} width={16} height={16} alt="location" />

@@ -32,7 +32,7 @@ const Header = () => {
 	})();
 	return (
 		<header
-			className={`${bannerBackground} bg-responsive-banner min-h-[520px] md:min-h-[720px] md:max-h-fit `}
+			className={`${bannerBackground} bg-responsive-banner min-h-[300px] md:min-h-[720px] md:max-h-fit `}
 		>
 			<Topbar />
 			<Navbar />
