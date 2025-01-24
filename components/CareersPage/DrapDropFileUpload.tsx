@@ -40,7 +40,7 @@ export function DragDropFileUpload({ onFileUpload }: DragDropFileUploadProps) {
 			<p className="mt-2 text-sm text-gray-600">
 				{isDragActive ? "Tải CV của bạn ở đây" : "Tải CV của bạn ở đây"}
 			</p>
-			{/* <p className="mt-1 text-xs text-gray-500">Supported formats: PDF, DOC, DOCX</p> */}
+			<p className="mt-1 text-xs text-gray-500">Định dạng file chấp nhận: PDF, DOC, DOCX</p>
 		</div>
 	);
 }

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { ChevronDown, Dot } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { SOCIAL_MEDIA } from "@/lib/utils";
 
 const NavItem = ({ title, items }: { title: string; items: string[] }) => {
 	return (
@@ -146,7 +147,13 @@ const Footer = () => {
 						<div className="text-center">Kết nối với VNFITE</div>
 
 						<div className="mt-6 flex gap-6 justify-center">
-							<Image src={"/icons/home/facebook.svg"} width={32} height={32} alt="Facebook" />
+							<Image
+								src={"/icons/home/facebook.svg"}
+								width={32}
+								height={32}
+								alt="Facebook"
+								onClick={() => window.open(SOCIAL_MEDIA.facebook, "_blank")}
+							/>
 							<Image src={"/icons/home/youtube.svg"} width={32} height={32} alt="Facebook" />
 							<Image src={"/icons/home/tiktok.svg"} width={32} height={32} alt="Facebook" />
 							<Image src={"/icons/home/zalo.svg"} width={32} height={32} alt="Facebook" />

@@ -45,3 +45,9 @@ class HelpersUtil {
 export const WebUtils = new HelpersUtil();
 
 // 0 cas nhaa 1 doanh nghiep
+
+export const SOCIAL_MEDIA = {
+	facebook: "https://www.facebook.com/vnfitevietnam?locale=vi_VN",
+	youtube: "https://www.youtube.com/@vnfitevietnam9932",
+	tiktok: "https://www.tiktok.com/@vnfite.vn.fintech?lang=vi-VN",
+};

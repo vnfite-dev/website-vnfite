@@ -99,8 +99,8 @@ const Banner = () => {
 					</div>
 				</div>
 				<div className="relative skew-y-6 overflow-hidden rounded-[40px] w-[404px] h-[490px] shadow-custom z-20">
-					<div className="-skew-y-6  h-full w-full scale-[1.13]">
-						<Image src="/images/home/banner-rightgirl.png" alt="banner-girl" width={380} height={400} />
+					<div className="-skew-y-6  h-full w-full scale-[1.08] relative left-3">
+						<Image src="/images/home/banner-right.png" alt="banner-girl" width={380} height={400} />
 					</div>
 				</div>
 			</div>

@@ -273,7 +273,9 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 							<div className="mt-3 md:mt-0 md:space-y-2">
 								<Label>Upload CV</Label>
 								<DragDropFileUpload onFileUpload={handleFileUpload} />
-								{data.cv && <p className="text-sm text-gray-600">Selected file: {data.cv.name}</p>}
+								{data.cv && (
+									<p className="text-sm text-gray-600">File bạn đã tải lên: {data.cv.name}</p>
+								)}
 							</div>
 
 							<div className="mt-3 md:mt-0 space-y-2">

@@ -176,6 +176,7 @@ const Insure = () => {
 									src="/images/insure/Advantage.png"
 									alt="Advantage"
 									layout="responsive"
+									className="rounded-4xl"
 									width={437}
 									height={469}
 									priority

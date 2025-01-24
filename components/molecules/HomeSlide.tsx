@@ -28,7 +28,7 @@ const SlideItem = ({
 	const router = useRouter();
 	return (
 		<div className="bg-grad rounded-[33px] p-[1px] h-full" onClick={() => router.push("/products/" + id)}>
-			<div className="rounded-4xl pt-8 pb-6 md:pb-14 px-4 bg-[#FFF8F8] w-full flex flex-col justify-center items-center h-full hover:bg-opacity-55">
+			<div className="rounded-4xl pt-8 pb-6 md:pb-8 px-4 bg-[#FFF8F8] w-full flex flex-col justify-start items-center h-full hover:bg-opacity-55">
 				<Image src={image} alt="slide1" height={160} width={160} />
 				<div
 					className="text-center mt-6 font-semibold text-xl h-[50px] flex items-center justify-center overflow-hidden"

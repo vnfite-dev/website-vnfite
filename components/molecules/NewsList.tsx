@@ -23,21 +23,21 @@ import { useEffect, useState } from "react";
 // };
 const data = [
 	{
-		src: "/images/home/new-1.png",
+		src: "/images/news/rich.jpg",
 		title: "Lộ lý do giá vàng đột ngột tăng mạnh, phá vỡ mọi kỷ lục.",
 		content:
 			'Giá vàng giao ngay bắt đầu tuần giao dịch ở 2.570 USD/ounce, không thay đổi nhiều so với giá đóng cửa tuần trước. Sau đó, mặt hàng này chủ yếu đi ngang, "nín thở" chờ đợi quyết định cuối cùng của Cục Dự trữ Liên bang Mỹ (Fed), rằng sẽ cắt giảm 0,25% hay là mức cắt giảm mạnh 0,5% nếu có sự thay đổi.',
 		date: "17:19 - 10/12/2023",
 	},
 	{
-		src: "/images/home/money.png",
+		src: "/images/news/dantri.png",
 		title: "Lộ lý do giá vàng đột ngột tăng mạnh, phá vỡ mọi kỷ lục.",
 		content:
 			'Giá vàng giao ngay bắt đầu tuần giao dịch ở 2.570 USD/ounce, không thay đổi nhiều so với giá đóng cửa tuần trước. Sau đó, mặt hàng này chủ yếu đi ngang, "nín thở" chờ đợi quyết định cuối cùng của Cục Dự trữ Liên bang Mỹ (Fed), rằng sẽ cắt giảm 0,25% hay là mức cắt giảm mạnh 0,5% nếu có sự thay đổi.',
 		date: "17:19 - 10/12/2023",
 	},
 	{
-		src: "/images/home/new-1.png",
+		src: "/images/news/bigNew.jpg",
 		title: "Lộ lý do giá vàng đột ngột tăng mạnh, phá vỡ mọi kỷ lục.",
 		content:
 			'Giá vàng giao ngay bắt đầu tuần giao dịch ở 2.570 USD/ounce, không thay đổi nhiều so với giá đóng cửa tuần trước. Sau đó, mặt hàng này chủ yếu đi ngang, "nín thở" chờ đợi quyết định cuối cùng của Cục Dự trữ Liên bang Mỹ (Fed), rằng sẽ cắt giảm 0,25% hay là mức cắt giảm mạnh 0,5% nếu có sự thay đổi.',

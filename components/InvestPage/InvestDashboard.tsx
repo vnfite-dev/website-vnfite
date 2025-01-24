@@ -104,7 +104,7 @@ const InvestDashboard = () => {
 						<ul className="text-left text-base font-normal list-disc list-inside">
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 							<li className="mt-3">An toàn, bảo mật cao</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
+							<li className="mt-3">Nhanh chóng, thuận tiện</li>
 						</ul>
 					</div>
 				</div>
@@ -117,9 +117,11 @@ const InvestDashboard = () => {
 
 					<div className="md:opacity-0  md:translate-y-32 group-hover:opacity-100 group-hover:translate-y-6 transition-all duration-500 w-full px-8 md:px-20">
 						<ul className="text-left text-base font-normal list-disc list-inside">
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
+							<li className="mt-3">
+								An toàn vốn 100% (do bảo lãnh vốn của Công ty chúng tôi cho khoản đầu tư của bạn)
+							</li>
+							<li className="mt-3">Lợi suất lên đến 20%/năm</li>
+							<li className="mt-3">Đầu tư online, mọi lúc mọi nơi</li>
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 						</ul>
 					</div>

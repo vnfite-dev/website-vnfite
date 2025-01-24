@@ -9,19 +9,25 @@ import {
 	Carousel,
 	CarouselDots,
 } from "../ui/carousel";
-import { useParams } from "next/navigation";
 import itemProduct from "@/app/products/data";
+import { useRouter, useParams } from "next/navigation";
 
 const SlideItem = ({
+	id = 1,
 	image = "/images/home/slide-student.png",
 	title = "Gọi vốn dành cho các bạn sinh viên với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
 }: {
+	id: number;
 	image?: string;
 	title?: string;
 	detail?: string;
 }) => {
+	const router = useRouter();
 	return (
-		<div className="pt-6 pb-3 border-2 rounded-2xl h-full w-full flex flex-col justify-between items-center cursor-pointer">
+		<div
+			onClick={() => router.push("/products/" + id)}
+			className="pt-6 pb-3 border-2 rounded-2xl h-full w-full flex flex-col justify-between items-center cursor-pointer"
+		>
 			<div className="px-5">
 				<Image src={image} alt="slide1" height={160} width={160} />
 			</div>
@@ -108,7 +114,7 @@ const ListProducts = () => {
 
 								<div className="grid grid-cols-1 justify-center lg:flex lg:justify-between space-y-8 lg:space-y-0">
 									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
-										<div className="bg-white rounded-[29px] w-full h-full">
+										<div className="bg-white rounded-[29px] w-full h-full pb-2">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
@@ -131,7 +137,7 @@ const ListProducts = () => {
 									</div>
 
 									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
-										<div className="bg-white rounded-[30px] w-full h-full">
+										<div className="bg-white rounded-[30px] w-full h-full pb-2">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
@@ -154,7 +160,7 @@ const ListProducts = () => {
 									</div>
 
 									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
-										<div className="bg-white rounded-[30px] w-full h-full">
+										<div className="bg-white rounded-[30px] w-full h-full pb-2">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
@@ -186,8 +192,9 @@ const ListProducts = () => {
 								<div className="flex space-x-4 pb-8">
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-												}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
+												tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+											}`}
 											onClick={() => setTabLoanCondition(0)}
 										>
 											Điều kiện vay vốn
@@ -195,8 +202,9 @@ const ListProducts = () => {
 									</div>
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-												}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
+												tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+											}`}
 											onClick={() => setTabLoanCondition(1)}
 										>
 											Nộp hồ sơ yêu cầu
