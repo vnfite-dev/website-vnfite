@@ -92,6 +92,7 @@ html body[data-scroll-locked] {
 .bg-news-banner {
 	background: url("/images/news/banner.png");
 	background-size: cover;
+	background-position: center;
 }
 
 @media (min-width: 320px) and (max-width: 720px) {
