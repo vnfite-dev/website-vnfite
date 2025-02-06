@@ -90,7 +90,7 @@ html body[data-scroll-locked] {
 }
 
 .bg-news-banner {
-	background: url("/images/news/banner.png");
+	background: url("/images/news/banner.jpg");
 	background-size: cover;
 	background-position: center;
 }
@@ -108,7 +108,7 @@ html body[data-scroll-locked] {
 	}
 
 	.bg-news-banner {
-		background: url("/images/news/banner-mobile.png");
+		background: url("/images/news/banner-mobile.jpg");
 		background-size: cover;
 	}
 
