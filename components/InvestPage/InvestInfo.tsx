@@ -170,11 +170,11 @@ const InvestInfo = () => {
 				</div>
 
 				<div className="flex flex-col lg:gap-44 md:px-10">
-					{/* <AnimateBlock image="/images/invest/ablock1.jpg" /> */}
+					<AnimateBlock image="/images/invest/ablock11.jpg" />
 					<AnimateBlock />
 					<div className="md:self-end">
 						<AnimateBlock
-							image="/images/invest/ablock2.jpg"
+							image="/images/invest/ablock22.jpg"
 							reversed={true}
 							title="An toàn, nhanh chóng"
 							content={[
@@ -187,7 +187,7 @@ const InvestInfo = () => {
 					</div>
 
 					<AnimateBlock
-						image="/images/invest/ablock3.jpg"
+						image="/images/invest/ablock33.jpg"
 						title="Hiệu quả & An toàn đầu tư"
 						content={[
 							"Đến với VNFITE, bạn không chỉ tìm thấy một công việc, mà còn là một cộng đồng gắn kết, cùng nhau chinh phục những thử thách và tạo nên giá trị bền vững. ",
