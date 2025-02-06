@@ -177,7 +177,7 @@ const Insure = () => {
 						<div className="w-full md:w-2/5">
 							<div className="max-w-[437px] w-[80%] md:w-[100%] mx-auto">
 								<Image
-									src="/images/insure/Advantage.png"
+									src="/images/insure/Advantage1.png"
 									alt="Advantage"
 									layout="responsive"
 									className="rounded-4xl"

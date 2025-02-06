@@ -25,7 +25,7 @@ const ContactBox = () => {
 				<div className="hidden lg:block mt-16 w-[438px] h-[438px] aspect-square relative ">
 					<Image
 						className="object-cover w-auto h-full rounded-3xl"
-						src="/images/home/contact.png"
+						src="/images/home/contact1.png"
 						alt="icon"
 						fill
 					/>

@@ -171,7 +171,7 @@ const InvestInfo = () => {
 
 				<div className="flex flex-col lg:gap-44 md:px-10">
 					<AnimateBlock image="/images/invest/ablock11.jpg" />
-					<AnimateBlock />
+					{/* <AnimateBlock /> */}
 					<div className="md:self-end">
 						<AnimateBlock
 							image="/images/invest/ablock22.jpg"
