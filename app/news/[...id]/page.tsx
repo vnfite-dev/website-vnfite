@@ -55,16 +55,19 @@ const SuggestedNew = ({
 };
 
 const NewsDetail = async ({ params }: { params: { id: string[] } }) => {
+	// Đảm bảo params được awaited
+	if (!params?.id?.[0]) {
+		return notFound();
+	}
+
 	const newsData = await fetchNewsData();
 	const newsList = newsData?.data ?? [];
 
-	if (!params || !params.id || !Array.isArray(params.id) || !params.id[0]) {
+	const id = params.id[0];
+	const news = newsList.find((_: { id: string }) => _.id === id);
+	if (!news) {
 		return notFound();
 	}
-	const id = params.id[0];
-
-
-	const news = newsList.find((_: { id: string }) => _.id === id);
 
 	return (
 		<div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28 flex flex-col lg:flex-row">

@@ -9,7 +9,7 @@ import {
 import { cn, simpleFetchFunction } from "@/lib/utils";
 import { Calendar } from "lucide-react";
 import Image from "next/image";
-import { detailNews } from "./data";
+// import { detailNews } from "./data";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Key } from "react";
 import Link from "next/link";
@@ -30,6 +30,19 @@ const fetchNewsData = async () => {
 const NewsPage = async () => {
 	const newsData = await fetchNewsData();
 	const newsList = newsData?.data ?? [];
+
+	const htmlToText = (html: string): string => {
+		if (!html) return "";
+
+		return html
+			.replace(/<br\s*\/?>/gi, "\n") // Thay <br> bằng xuống dòng
+			.replace(/<\/?(p|div|li)[^>]*>/gi, "\n") // Thay <p>, <div>, <li> bằng xuống dòng
+			.replace(/<\/?(ul|ol|span|strong|em|b|i|u|h\d|blockquote|code|pre)[^>]*>/gi, "") // Xoá các thẻ không cần thiết
+			.replace(/\n\s*\n+/g, "\n") // Xoá khoảng trắng thừa giữa các dòng
+			.trim(); // Xoá khoảng trắng đầu/cuối chuỗi
+	};
+
+	const textContent = htmlToText(newsList[0]?.content || '');
 
 	const truncateText = (text: string, length: number) => {
 		return text.length > length ? text.slice(0, length) + "..." : text;
@@ -72,12 +85,18 @@ const NewsPage = async () => {
 			<div className="mt-10 lg:mt-20">
 				<div className="text-center text-2xl lg:text-5xl font-semibold">Tin tức nổi bật</div>
 				<div className="mt-8 lg:mt-16 flex gap-8 xl:flex-row flex-col ">
-					<div
+					<Link
+						href={`/news/${newsList[0]?.id}`}
 						className={cn(
 							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer aspect-square bg-cover rounded-4xl relative overflow-hidden group mx-auto",
-							detailNews[0].banner
+							// detailNews[0].banner
 						)}
-					// onClick={() => navigateToDetail(1)}
+						style={{
+							backgroundImage: newsList[0]?.urlImage ? `url(${newsList[0].urlImage})` : undefined,
+							backgroundPosition: "center",
+							backgroundRepeat: "no-repeat",
+							backgroundSize: "cover"
+						}}
 					>
 						{/* Gradient Filter for Bottom Half */}
 						<div className="absolute bottom-0 left-0 w-full h-3/4 bg-gradient-to-t from-gray-800/100 to-transparent group-hover:h-full group-hover:from-red-600/65 transition-all duration-300 pointer-events-none"></div>
@@ -90,12 +109,17 @@ const NewsPage = async () => {
 							</p>
 
 							{/* Detail Animation */}
-							<p className="hidden sm:flex text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-								{truncateText(detailNews[0].detail, 300)}
-							</p>
-							<p className="flex sm:hidden text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-								{truncateText(detailNews[0].detail, 150)}
-							</p>
+							{textContent && (
+								<>
+									<p className="hidden sm:flex sm:flex-col text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out whitespace-pre-line">
+										{truncateText(textContent, 300)}
+									</p>
+									<p className="flex flex-col sm:hidden text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out whitespace-pre-line">
+										{truncateText(textContent, 150)}
+									</p>
+								</>
+							)}
+
 
 							{/* Border Animation */}
 							<div className="w-full flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
@@ -104,7 +128,7 @@ const NewsPage = async () => {
 								<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-in-out"></div>
 							</div>
 						</div>
-					</div>
+					</Link>
 
 					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0">
 						{newsList?.slice(1, 5).map((_: { urlImage: string | StaticImport; mainTitle: string; createdDate: string | number | Date; id: string }, index: Key | null | undefined) => (
