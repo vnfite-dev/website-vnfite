@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Clock, Share2 } from "lucide-react";
 import React from "react";
-// import { detailNews } from "../data";
+import { detailNews } from "../data";
 // import { useParams, useRouter } from "next/navigation";
 import { simpleFetchFunction } from "@/lib/utils";
 import { notFound } from "next/navigation";
@@ -61,13 +61,20 @@ const NewsDetail = async ({ params }: { params: { id: string[] } }) => {
 	}
 
 	const newsData = await fetchNewsData();
-	const newsList = newsData?.data ?? [];
+	const newsList = [...(newsData?.data ?? []), ...detailNews];
 
 	const id = params.id[0];
 	const news = newsList.find((_: { id: string }) => _.id === id);
 	if (!news) {
 		return notFound();
 	}
+
+	const formattedDetail = (detail: string | undefined) => {
+		if (!detail) return null; // Nếu không có dữ liệu, trả về null tránh lỗi
+		return detail.split('\n').map((line, index) => (
+			<span key={index}>{line}<br /></span>
+		));
+	};
 
 	return (
 		<div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28 flex flex-col lg:flex-row">
@@ -92,10 +99,21 @@ const NewsDetail = async ({ params }: { params: { id: string[] } }) => {
 						height={573}
 					/>
 				</div>
-				<div
+				{
+					news?.content.includes("<p>") ?
+						(<div
+							className="mt-4 text-base font-medium text-gray-700"
+							dangerouslySetInnerHTML={{ __html: news?.content || `Không tìm thấy nội dung cho tin tức này` }}
+						/>) : (
+							<div className="mt-4 text-base font-medium text-gray-700">
+								{formattedDetail(news?.content)}
+							</div>
+						)
+				}
+				{/* <div
 					className="mt-4 text-base font-medium text-gray-700"
 					dangerouslySetInnerHTML={{ __html: news?.content || `Không tìm thấy nội dung cho tin tức này` }}
-				/>
+				/> */}
 
 				<div className="w-full h-auto relative mt-6">
 					<Image

@@ -9,7 +9,7 @@ import {
 import { cn, simpleFetchFunction } from "@/lib/utils";
 import { Calendar } from "lucide-react";
 import Image from "next/image";
-// import { detailNews } from "./data";
+import { detailNews } from "./data";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Key } from "react";
 import Link from "next/link";
@@ -24,12 +24,13 @@ const bigNews = [
 
 const fetchNewsData = async () => {
 	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=1`);
+	console.log(data)
 	return data.data;
 };
 
 const NewsPage = async () => {
 	const newsData = await fetchNewsData();
-	const newsList = newsData?.data ?? [];
+	const newsList = [...(newsData?.data ?? []), ...detailNews];
 
 	const htmlToText = (html: string): string => {
 		if (!html) return "";
