@@ -213,17 +213,17 @@ const Stack = () => {
 						<div className="mt-6 md:mt-16 flex flex-col gap-6">
 							<CheckItem
 								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+								content="Với quy trình đơn giản và công nghệ hiện đại, VNFITE giúp khách hàng dễ dàng tiếp cận các sản phẩm tài chính chỉ trong vài phút, mọi lúc, mọi nơi. Chúng tôi cam kết mang đến trải nghiệm thuận tiện và tiết kiệm thời gian nhất cho người dùng. "
 							/>
 
 							<CheckItem
 								title="Thông tin minh bạch và an toàn"
-								content="VNFITE cam kết về minh bạch lãi suất và các điều khoản vay giúp khách hàng hiểu rõ trước khi quyết định. "
+								content="VNFITE đảm bảo mọi thông tin đều rõ ràng, chi tiết và dễ hiểu, giúp khách hàng an tâm trong mọi giao dịch. Hệ thống bảo mật tiên tiến bảo vệ tuyệt đối dữ liệu cá nhân và tài sản tài chính của người dùng. "
 							/>
 
 							<CheckItem
 								title="Giải pháp tài chính linh hoạt"
-								content="Tạo điều kiện cho doanh nghiệp, hộ gia đình và cá nhân tiếp cận nguồn vốn nhanh chóng để phát triển kinh doanh. "
+								content="Chúng tôi cung cấp các sản phẩm tài chính đa dạng, từ tích lũy đến vay vốn, được tùy chỉnh để phù hợp với nhu cầu và khả năng của từng khách hàng. VNFITE là đối tác tin cậy giúp bạn quản lý tài chính hiệu quả. "
 							/>
 						</div>
 					</div>

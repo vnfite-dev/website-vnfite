@@ -82,6 +82,7 @@ const staticData = [
 		// preNum: "+",
 		number: 98,
 		afterNum: "%",
+
 		name: "Khoản giải ngân",
 	},
 	{
