@@ -80,7 +80,7 @@ const Banner = () => {
 						<div className="relative w-[216px] h-[216px]">
 							<Image
 								className="rounded-[32px] object-cover"
-								src="/images/home/banner-leftgirl.png"
+								src="/images/home/1.png"
 								alt="banner-girl"
 								fill
 							/>
@@ -99,8 +99,8 @@ const Banner = () => {
 					</div>
 				</div>
 				<div className="relative skew-y-6 overflow-hidden rounded-[40px] w-[404px] h-[490px] shadow-custom z-20">
-					<div className="-skew-y-6  h-full w-full scale-[1.13]">
-						<Image src="/images/home/banner-rightgirl.png" alt="banner-girl" width={380} height={400} />
+					<div className="-skew-y-6  h-full w-full scale-[1.08] relative left-3">
+						<Image src="/images/home/banner-right.png" alt="banner-girl" width={380} height={400} />
 					</div>
 				</div>
 			</div>

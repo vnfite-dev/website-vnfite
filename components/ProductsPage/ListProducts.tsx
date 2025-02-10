@@ -9,15 +9,18 @@ import {
 	Carousel,
 	CarouselDots,
 } from "../ui/carousel";
-import { useParams } from "next/navigation";
 import itemProduct from "@/app/products/data";
-import { useRouter } from "next/navigation";
+
+import { useRouter, useParams } from "next/navigation";
+
 
 const SlideItem = ({
+	id = 1,
 	image = "/images/home/slide-student.png",
 	title = "Gọi vốn dành cho các bạn sinh viên với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
 	id = 1
 }: {
+	id: number;
 	image?: string;
 	title?: string;
 	detail?: string;
@@ -25,7 +28,12 @@ const SlideItem = ({
 }) => {
 	const router = useRouter();
 	return (
-		<div className="pt-6 pb-3 border-2 rounded-2xl h-full w-full flex flex-col justify-between items-center cursor-pointer" onClick={() => router.push("/products/" + id)}>
+
+		<div
+			onClick={() => router.push("/products/" + id)}
+			className="pt-6 pb-3 border-2 rounded-2xl h-full w-full flex flex-col justify-between items-center cursor-pointer"
+		>
+
 			<div className="px-5">
 				<Image src={image} alt="slide1" height={160} width={160} />
 			</div>
@@ -104,15 +112,15 @@ const ListProducts = () => {
 								{data?.title}
 							</div>
 							<div className="flex flex-col gap-6 px-5 sm:px-8 xl:px-[10%] 2xl:px-[16.7%]">
-								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-2">
+								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-2 mb-2">
 									<div className="bg-white w-full pl-2">
 										Vì sao bạn nên đồng hành với sản phẩm gọi vốn của VNFITE?
 									</div>
 								</div>
 
 								<div className="grid grid-cols-1 justify-center lg:flex lg:justify-between space-y-8 lg:space-y-0">
-									<div className="bg-grad rounded-4xl p-[2px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
-										<div className="bg-white rounded-[30px] w-full h-full">
+									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
+										<div className="bg-white rounded-[29px] w-full h-full pb-2">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
@@ -134,8 +142,8 @@ const ListProducts = () => {
 										</div>
 									</div>
 
-									<div className="bg-grad rounded-4xl p-[2px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
-										<div className="bg-white rounded-[30px] w-full h-full">
+									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
+										<div className="bg-white rounded-[30px] w-full h-full pb-2">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
@@ -157,8 +165,8 @@ const ListProducts = () => {
 										</div>
 									</div>
 
-									<div className="bg-grad rounded-4xl p-[2px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
-										<div className="bg-white rounded-[30px] w-full h-full">
+									<div className="bg-grad rounded-4xl p-[3px] max-w-96 w-full lg:w-[30%] min-h-80 mx-auto">
+										<div className="bg-white rounded-[30px] w-full h-full pb-2">
 											<div className="flex justify-start flex-col items-center space-y-3 mt-3">
 												<div className="max-w-[120px] ">
 													<Image
@@ -183,15 +191,16 @@ const ListProducts = () => {
 							</div>
 
 							<div className="mt-20 px-5 sm:px-8 xl:px-[10%] 2xl:px-[16.7%]">
-								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-[2px] mb-8">
+								<div className="text-left text-lg lg:text-2xl font-medium bg-grad pl-2 mb-8">
 									<div className="bg-white w-full pl-2">Yêu cầu gọi vốn ở VNFITE</div>
 								</div>
 
 								<div className="flex space-x-4 pb-8">
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-												}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
+												tabLoanCondition === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+											}`}
 											onClick={() => setTabLoanCondition(0)}
 										>
 											Điều kiện vay vốn
@@ -199,8 +208,9 @@ const ListProducts = () => {
 									</div>
 									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
-											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-												}`}
+											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
+												tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+											}`}
 											onClick={() => setTabLoanCondition(1)}
 										>
 											Nộp hồ sơ yêu cầu

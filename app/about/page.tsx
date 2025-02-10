@@ -33,41 +33,44 @@ const About = () => {
 	const handleCarouselChange = (index: number) => {
 		setColorClick(index);
 	};
-
 	const dataHistory = [
 		{
 			title: "Thành lập VNFITE",
 			content: [
-				"VNFITE MARKETING được thành lập với sứ mệnh tạo ra những công nghệ tiên tiến nhất hiện nay, với đội ngũ nhân sự dày dặn kinh nghiệm sẽ giúp cho những phầm mềm của chúng tôi có những bước chuyển đổi đột phá.",
-				"Là một trong những công ty công nghệ thông tin hàng đầu Việt Nam và khu vực, trực thuộc VNFITE. Được thành lập vào năm 2024, VNFITE Software đã phát triển mạnh mẽ, cung cấp các dịch vụ công nghệ và gia công phần mềm cho khách hàng trên toàn cầu. Với sự hiện diện tại các quốc gia lớn, VNFITE MARKETING hiện là đối tác tin cậy của nhiều tập đoàn lớn trong danh sách Fortune Global 500. ",
+				"Được thành lập với sứ mệnh cung cấp các giải pháp tài chính thông minh, minh bạch và an toàn.",
+				"Tập trung vào gọi vốn P2P, quản lý tài chính cá nhân, và hỗ trợ sinh viên, VNFITE không ngừng đổi mới công nghệ để tạo ra nền tảng tài chính toàn diện.",
+				"Với tầm nhìn dẫn đầu ngành FinTech, VNFITE cam kết mang lại giá trị bền vững cho khách hàng trong nước và khu vực.",
 			],
 		},
 		{
-			title: "Thành lập VNFITE SOFTWARE",
+			title: "Ban hành các quy trình, quy chế tại VNFITE",
 			content: [
-				"VNFITE SOFTWARE được thành lập với sứ mệnh tạo ra những công nghệ tiên tiến nhất hiện nay, với đội ngũ nhân sự dày dặn kinh nghiệm sẽ giúp cho những phầm mềm của chúng tôi có những bước chuyển đổi đột phá.",
-				"Là một trong những công ty công nghệ thông tin hàng đầu Việt Nam và khu vực, trực thuộc VNFITE. Được thành lập vào năm 2024, VNFITE Software đã phát triển mạnh mẽ, cung cấp các dịch vụ công nghệ và gia công phần mềm cho khách hàng trên toàn cầu. Với sự hiện diện tại các quốc gia lớn, VNFITE Software hiện là đối tác tin cậy của nhiều tập đoàn lớn trong danh sách Fortune Global 500. ",
+				"VNFITE xây dựng và ban hành các quy trình, quy chế nhằm đảm bảo hoạt động minh bạch, hiệu quả và tuân thủ pháp luật.",
+				"Quy trình gồm các bước: xây dựng nội dung, thẩm định, phê duyệt, công bố và giám sát thực thi.",
+				"Các quy chế tiêu biểu bao gồm quy định về tài chính, nhân sự và an ninh thông tin, tạo nền tảng cho môi trường làm việc chuyên nghiệp và phát triển bền vững.",
 			],
 		},
 		{
-			title: "Thành lập VNFITE MARKETING 2022",
+			title: "Ứng dụng VNFITE chính thức lên CH Play và App Store",
 			content: [
-				"VNFITE MARKETING được thành lập với sứ mệnh tạo ra những công nghệ tiên tiến nhất hiện nay, với đội ngũ nhân sự dày dặn kinh nghiệm sẽ giúp cho những phầm mềm của chúng tôi có những bước chuyển đổi đột phá.",
-				"Là một trong những công ty công nghệ thông tin hàng đầu Việt Nam và khu vực, trực thuộc VNFITE. Được thành lập vào năm 2024, VNFITE Software đã phát triển mạnh mẽ, cung cấp các dịch vụ công nghệ và gia công phần mềm cho khách hàng trên toàn cầu. Với sự hiện diện tại các quốc gia lớn, VNFITE MARKETING hiện là đối tác tin cậy của nhiều tập đoàn lớn trong danh sách Fortune Global 500. ",
+				"Người dùng có thể dễ dàng tải về và trải nghiệm các dịch vụ tài chính thông minh như gọi vốn P2P, đầu tư nhóm, quản lý tài chính cá nhân, và đầu tư một cách an toàn, tiện lợi.",
+				"Với giao diện thân thiện và công nghệ hiện đại, VNFITE mang đến giải pháp tài chính tối ưu ngay trên thiết bị di động của bạn.",
 			],
 		},
 		{
-			title: "Thành lập VNFITE MARKETING 2023",
+			title: "Hoàn thiện hệ thống Core P2P Lending VNFITE",
 			content: [
-				"VNFITE MARKETING được thành lập với sứ mệnh tạo ra những công nghệ tiên tiến nhất hiện nay, với đội ngũ nhân sự dày dặn kinh nghiệm sẽ giúp cho những phầm mềm của chúng tôi có những bước chuyển đổi đột phá.",
-				"Là một trong những công ty công nghệ thông tin hàng đầu Việt Nam và khu vực, trực thuộc VNFITE. Được thành lập vào năm 2024, VNFITE Software đã phát triển mạnh mẽ, cung cấp các dịch vụ công nghệ và gia công phần mềm cho khách hàng trên toàn cầu. Với sự hiện diện tại các quốc gia lớn, VNFITE MARKETING hiện là đối tác tin cậy của nhiều tập đoàn lớn trong danh sách Fortune Global 500. ",
+				"Hệ thống tích hợp công nghệ hiện đại và Blockchain để đảm bảo an toàn, minh bạch và nhanh chóng.",
+				"Hỗ trợ tự động kết nối người vay và nhà đầu tư, cung cấp thông tin chi tiết, quản lý rủi ro hiệu quả, và tối ưu hóa quy trình giải ngân.",
+				"Đây là giải pháp tài chính toàn diện, mang lại lợi ích vượt trội cho cả nhà đầu tư và người vay vốn.",
 			],
 		},
 		{
-			title: "Thành lập VNFITE MARKETING 2024",
+			title: "Nâng cấp ứng dụng VNFITE Version 2",
 			content: [
-				"VNFITE MARKETING được thành lập với sứ mệnh tạo ra những công nghệ tiên tiến nhất hiện nay, với đội ngũ nhân sự dày dặn kinh nghiệm sẽ giúp cho những phầm mềm của chúng tôi có những bước chuyển đổi đột phá.",
-				"Là một trong những công ty công nghệ thông tin hàng đầu Việt Nam và khu vực, trực thuộc VNFITE. Được thành lập vào năm 2024, VNFITE Software đã phát triển mạnh mẽ, cung cấp các dịch vụ công nghệ và gia công phần mềm cho khách hàng trên toàn cầu. Với sự hiện diện tại các quốc gia lớn, VNFITE MARKETING hiện là đối tác tin cậy của nhiều tập đoàn lớn trong danh sách Fortune Global 500. ",
+				"VNFITE Version 2 mang đến trải nghiệm tài chính vượt trội với giao diện thân thiện và dễ sử dụng.",
+				"Phiên bản mới này tích hợp nhiều tính năng thú vị, đầu tư P2P thông minh và quy trình gọi vốn nhanh chóng.",
+				"Nâng cao bảo mật với công nghệ hiện đại, giúp khách hàng đầu tư dễ dàng và nhanh chóng hơn.",
 			],
 		},
 	];
@@ -246,11 +249,11 @@ const About = () => {
 									<br />
 								</span>
 
-								<span>
+								{/* <span>
 									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các đơn vị tiên phong và uy
 									tín hàng đầu cung cấp giải pháp công nghệ tài chính, kết nối giữa các nhà đầu tư và
 									nhà gọi vốn.
-								</span>
+								</span> */}
 
 								{isShowIntro && (
 									<>
@@ -302,12 +305,12 @@ const About = () => {
 							<p className="text-2xl lg:text-5xl font-semibold text-center">Lịch sử phát triển</p>
 
 							<div className="flex justify-center items-center flex-col md:flex-row mt-8 lg:mt-16 max-w-[1280px] space-y-14 md:space-x-6 md:space-y-0 md:mx-10">
-								<div className="flex justify-center items-center w-[90%] md:w-[35%] mx-auto">
+								<div className="flex justify-center items-center w-[90%] h-[400px] md:w-[35%] mx-auto relative">
 									<Image
-										src="/images/about/History.png"
+										src="/images/about/History1.jpg"
 										alt="About History VNFITE"
-										width={400}
-										height={400}
+										className=" rounded-xl object-cover"
+										fill
 									/>
 								</div>
 								<div className="w-full md:w-[65%] flex justify-center flex-col items-center">
@@ -501,7 +504,7 @@ const About = () => {
 									width={264}
 									height={264}
 								/>
-								<p className="font-semibold text-xl text-gradient">Mai Ngọc Đoàn</p>
+								<p className="font-semibold text-xl text-gradient">Mr. Mai Ngọc</p>
 								<p className="font-medium text-base pt-3">Chủ tịch Hội Đồng Quản Trị</p>
 							</div>
 						</div>

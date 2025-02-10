@@ -181,12 +181,12 @@ const Stack = () => {
 								leftToRight={true}
 								title="Tăng trưởng bền vững"
 								content="Am hiểu về tài chính và công nghệ, sẵn sàng hỗ trợ từng bước trên hành trình của bạn."
-								index={5}
+								index={6}
 							/>
 						</div>
 					</div>
 				</div>
-				<div className="hidden sm:flex sm:flex-col pt-10 md:pt-20">
+				<div className="hidden sm:flex sm:flex-col pt-6 md:pt-10 2xl:pt-20">
 					<div className="relative z-10">
 						<p className="text-gradient font-semibold green-underline after:w-[120%]">Lý do</p>
 						<div className="mt-4 text-3xl md:text-5xl">
@@ -199,7 +199,7 @@ const Stack = () => {
 
 			{/* Stack 2 */}
 			<StackItem pinkBackground={false} stack={1}>
-				<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-5 sm:px-[12%] ">
+				<div className="w-full flex flex-col md:flex-row mt-6 md:mt-10 2xl:mt-20 px-5 sm:px-[12%] gap-10 ">
 					<div className="w-full md:w-1/2">
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline">Giá trị</p>
@@ -227,12 +227,12 @@ const Stack = () => {
 							/>
 						</div>
 					</div>
-					<div className="w-full mt-6 md:mt-0 md:w-1/2 flex justify-end">
+					<div className="w-full mt-6 md:mt-0 md:w-1/2 flex justify-center items-center">
 						<div className=""></div>
-						<div className="w-[400px] h-52 md:h-[500px] relative">
+						<div className="w-[400px] h-52 md:h-[500px] 2xl:h-[700px] 2xl:w-[500px] relative">
 							<Image
-								className="object-cover"
-								src={"/images/home/banner-rightgirl.png"}
+								className="object-cover  rounded-tr-[64px] rounded-bl-[64px] rounded-tl-[32px] rounded-br-[32px]"
+								src={"/images/home/stack2.1.png"}
 								fill
 								alt="Right"
 							/>
@@ -241,7 +241,7 @@ const Stack = () => {
 				</div>
 			</StackItem>
 			<StackItem pinkBackground={true} stack={2}>
-				<div className="w-full flex flex-col md:flex-row  mt-10 md:mt-20 px-5 sm:px-[12%] ">
+				<div className="w-full flex flex-col md:flex-row gap-10  mt-6 md:mt-10 2xl:mt-20 px-5 sm:px-[12%] ">
 					<div className="w-full md:w-1/2 flex justify-start relative order-2 md:order-none">
 						<div className="w-[435px] h-52 md:h-[500px] relative mt-4 md:mt-0">
 							<Image
@@ -259,24 +259,24 @@ const Stack = () => {
 							</p>
 							<p className="text-3xl md:text-5xl text-left mt-4 ">
 								Cách quản lý tài chính của bạn hiệu quả thông qua
-								<span className="text-gradient font-semibold md:leading-[72px]"> VNFITE</span>
+								<span className="text-gradient font-semibold md:leading-[60px]"> VNFITE</span>
 							</p>
 						</div>
 
-						<div className="mt-4 md:mt-16 flex flex-col gap-6">
+						<div className="mt-4 md:mt-10 2xl:mt-12 flex flex-col gap-6">
 							<CheckItem
 								title="Quản lý tài chính chủ động"
 								content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
 							/>
 
 							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+								title="Tối ưu hóa dòng tiền"
+								content="Giúp bạn sử dụng nguồn vốn hiệu quả, tiết kiện hơn và đầu tư thông minh hơn. "
 							/>
 
 							<CheckItem
-								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-								content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+								title="Không sợ lạm phát tiền tệ"
+								content="VNFITE giúp bạn đầu tư vào các sản phẩm với lãi suất cao, ưu đãi tốt."
 							/>
 						</div>
 					</div>
@@ -284,33 +284,17 @@ const Stack = () => {
 			</StackItem>
 
 			<StackItem pinkBackground={false} stack={3}>
-				<div className="w-full flex flex-col md:flex-row mt-10 md:mt-20 px-5 sm:px-[12%] ">
-					<div className="mx-auto w-1/2 order-2 md:order-none md:w-1/2 md:mx-0 flex justify-start relative">
-						<div className="absolute top-24 left-4 animation-breathing w-[100px] h-[100px] md:w-[400px] md:h-[500px]">
-							<Image className="" src={"/icons/home/dashborder.svg"} alt="Right" fill />
-							<div className="absolute -right-8 bottom-4 animation-bounce">
-								<Image src={"/images/home/rectangle.png"} width={350} height={500} alt="Right" />
-							</div>
-						</div>
-						<div className="relative -top-36  md:-top-8 right-8 w-[620px] h-[500px]">
-							<Image
-								className="animation-breathing rounded-tl-[64px] rounded-br-[64px] rounded-tr-4xl rounded-bl-4xl"
-								src={"/images/home/phonemockup.svg"}
-								fill
-								alt="Right"
-							/>
-						</div>
-					</div>
-					<div className="w-full md:w-1/2">
+				<div className="w-full flex flex-col md:flex-row mt-6 md:mt-10 2xl:mt-20  px-5 sm:px-[12%] ">
+					<div className="w-full md:w-1/2 z-[34">
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline">Quản lý tài chính</p>
 							<p className="text-3xl md:text-5xl text-left mt-4 ">
-								Cách quản lý tài chính của bạn hiệu quả thông qua
-								<span className="text-gradient font-semibold md:leading-[72px]"> VNFITE</span>
+								<span className="text-gradient font-semibold md:leading-[72px]"> VNFITE</span> có gì
+								xứng đáng để bạn sử dụng
 							</p>
 						</div>
 
-						<div className="mt-8 md:mt-16 flex flex-col gap-6">
+						<div className="mt-8 md:mt-10 2xl:mt-16 flex flex-col gap-6">
 							<CheckItem
 								title="Giao diện thân thiện"
 								content="Bạn không còn lo lắng về khoản chi tiêu vượt quá kiểm soát."
@@ -327,86 +311,100 @@ const Stack = () => {
 							/>
 						</div>
 					</div>
+
+					<div className="mx-auto w-1/2 order-2 md:order-none md:w-1/2 md:mx-0 flex justify-end relative">
+						<div className="absolute top-24 left-4 animation-breathing w-[100px] h-[100px] md:w-[400px] md:h-[500px]">
+							<Image className="" src={"/icons/home/dashborder.svg"} alt="Right" fill />
+							<div className="absolute -right-8 bottom-4 animation-bounce">
+								<Image src={"/images/home/rectangle.png"} width={350} height={500} alt="Right" />
+							</div>
+						</div>
+						<div className="relative -top-36  md:-top-8 right-8 w-[620px] h-[500px]">
+							<Image
+								className="animation-breathing rounded-tl-[64px] rounded-br-[64px] rounded-tr-4xl rounded-bl-4xl"
+								src={"/images/home/phonemockup.svg"}
+								fill
+								alt="Right"
+							/>
+						</div>
+					</div>
 				</div>
 			</StackItem>
 
 			{/* Ẩn cái hướng dẫn này ở màn mobile */}
-			<div className="">
-				<StackItem pinkBackground={true} stack={4}>
-					<div className=" mt-10 md:mt-20  px-5 md:px-[12%] h-fit">
-						<div className="relative z-10">
-							<p className="text-gradient font-semibold green-underline after:w-[120%]">
-								Tải ứng dụng
-							</p>
-							<div className="mt-4 text-3xl  md:text-5xl">
-								Hướng dẫn cài đặt ứng dụng <span className="text-gradient font-bold">VNFITE</span>
-							</div>
-						</div>
-						<div className="mt-12 md:mt-32 flex relative md:px-[8%] justify-between md:gap-8">
-							{(os === "ANDROID" || isMobile == false) && (
-								<div className="flex flex-col gap-8 w-1/2">
-									<p className="text-xl">
-										Hệ điều hành <span className="font-semibold">Android</span>
-									</p>
-									<CheckItem
-										title="Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng."
-										content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải ứng dụng."
-									/>
-									<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
-										Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải
-										ứng dụng.
-									</p>
-
-									<CheckItem
-										title="Cài đặt ứng dụng"
-										content="Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng."
-									/>
-									<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
-										Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng.
-									</p>
-
-									<CheckItem
-										title="Đăng kí tài khoản"
-										content="Yêu cầu bạn phải nhập số CCCD, tiếp theo xác minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui lòng đăng nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE. "
-									/>
-									<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
-										Yêu cầu bạn phải nhập số <span className="font-semibold">CCCD</span>, tiếp theo
-										xác minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui
-										lòng đăng nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE.
-									</p>
-								</div>
-							)}
-							<div className="md:w-[400px] md:h-[350px] hidden sm:block">
-								<Image src={"/icons/home/QR_STACK.svg"} width={400} height={350} alt="step1" />
-							</div>
-
-							{(os === "IOS" || isMobile == false) && (
-								<div className="flex flex-col gap-8 w-1/2">
-									<div className="">
-										<p className="text-xl">
-											Hệ điều hành <span className="font-semibold">IOS</span>
-										</p>
-									</div>
-									<CheckItem
-										title="Mở ứng dụng Appstore trên điện thoại của bạn"
-										content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc truy cập vào đường link."
-									/>
-
-									<CheckItem
-										title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-										content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-									/>
-
-									<CheckItem
-										title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
-										content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
-									/>
-								</div>
-							)}
+			<StackItem pinkBackground={true} stack={4}>
+				<div className=" mt-6 md:mt-10  2xl:mt-20  px-5 md:px-[12%] h-fit">
+					<div className="relative z-10">
+						<p className="text-gradient font-semibold green-underline after:w-[120%]">Tải ứng dụng</p>
+						<div className="mt-4 text-3xl  md:text-5xl">
+							Hướng dẫn cài đặt ứng dụng <span className="text-gradient font-bold">VNFITE</span>
 						</div>
 					</div>
-				</StackItem>
-			</div>
+					<div className="mt-12 md:mt-20 flex flex-col sm:flex-row relative md:px-[0%] justify-between md:gap-8">
+						{(os === "ANDROID" || isMobile == false) && (
+							<div className="flex flex-col gap-8 w-full md:w-1/2">
+								<p className="text-xl">
+									Hệ điều hành <span className="font-semibold">Android</span>
+								</p>
+								<CheckItem
+									title="Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng."
+									content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải ứng dụng."
+								/>
+								<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
+									Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải ứng
+									dụng.
+								</p>
+
+								<CheckItem
+									title="Cài đặt ứng dụng"
+									content="Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng."
+								/>
+								<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
+									Nhấn vào nút “cài đặt” để tải ứng dụng về máy, tiếp theo mở ứng dụng.
+								</p>
+
+								<CheckItem
+									title="Đăng kí tài khoản"
+									content="Yêu cầu bạn phải nhập số CCCD, tiếp theo xác minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui lòng đăng nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE. "
+								/>
+								<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
+									Yêu cầu bạn phải nhập số <span className="font-semibold">CCCD</span>, tiếp theo xác
+									minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui lòng đăng
+									nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE.
+								</p>
+							</div>
+						)}
+
+						<div className="w-[300px] h-[220px] md:w-[400px] md:h-[350px] sm:block order-2 sm:order-none mt-5 sm:mt-0 mx-auto">
+							<Image src={"/icons/home/QR_STACK.svg"} width={400} height={350} alt="step1" />
+						</div>
+
+						{(os === "IOS" || isMobile == false) && (
+							<div className="flex flex-col gap-8  w-full md:w-1/2">
+								<div className="">
+									<p className="text-xl">
+										Hệ điều hành <span className="font-semibold">IOS</span>
+									</p>
+								</div>
+								<CheckItem
+									title="Mở ứng dụng Appstore trên điện thoại của bạn"
+									content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc truy cập vào đường link."
+								/>
+
+								<CheckItem
+									title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+									content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+								/>
+
+								<CheckItem
+									title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
+									content="Khách hàng có thể đăng kí khoản vay nhanh chóng tại ứng dụng VNFITE. "
+								/>
+							</div>
+						)}
+					</div>
+				</div>
+			</StackItem>
 			{/* <div className="w-full h-[100vh] bg-yellow-stack z-20 relative"></div> */}
 		</div>
 	);

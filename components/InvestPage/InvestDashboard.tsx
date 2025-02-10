@@ -16,7 +16,7 @@ const InvestDashboard = () => {
 
 	return (
 		<div className="mx-auto">
-			<div className="bg-[#E82F2F] w-full py-12 flex-col px-5 md:px-[16.7%]">
+			<div className="bg-grad w-full py-12 flex-col px-5 md:px-[16.7%]">
 				<div className="text-center text-white font-semibold text-3xl md:text-5xl">
 					Công cụ tính lãi suất mỗi tháng
 				</div>
@@ -32,7 +32,7 @@ const InvestDashboard = () => {
 							className="mt-2"
 							min={500000}
 							step={500_000}
-							max={10_000_000_000}
+							max={1_000_000_000}
 							onValueChange={(value) => setSliderValues({ ...sliderValues, money: value })}
 						/>
 					</div>
@@ -59,7 +59,7 @@ const InvestDashboard = () => {
 						<Slider
 							value={sliderValues.interest}
 							className="mt-2"
-							min={0}
+							min={0.1}
 							step={0.1}
 							max={21.6}
 							onValueChange={(value) => setSliderValues({ ...sliderValues, interest: value })}
@@ -67,13 +67,13 @@ const InvestDashboard = () => {
 					</div>
 
 					<div className="flex flex-col justify-between items-end">
-						<p>Số tiền nhận lãi mỗi tháng</p>
+						<p>Lãi dự kiến nhận về</p>
 						<div className="text-3xl font-bold">
 							{formatVND(
 								Math.round(
-									((sliderValues.money[0] * sliderValues.term[0] * 30) /
-										sliderValues.interest[0] /
-										365) *
+									((sliderValues.money[0] * sliderValues.term[0] * 30 * sliderValues.interest[0]) /
+										365 /
+										100) *
 										0.95
 								)
 							)}{" "}
@@ -87,7 +87,7 @@ const InvestDashboard = () => {
 				</div>
 			</div>
 
-			<div className="text-center text-5xl font-semibold mt-12">
+			<div className="text-center text-5xl font-semibold mt-20">
 				Đầu tư cùng <span className="text-gradient">VNFITE</span>
 			</div>
 
@@ -104,7 +104,7 @@ const InvestDashboard = () => {
 						<ul className="text-left text-base font-normal list-disc list-inside">
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 							<li className="mt-3">An toàn, bảo mật cao</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
+							<li className="mt-3">Nhanh chóng, thuận tiện</li>
 						</ul>
 					</div>
 				</div>
@@ -117,9 +117,11 @@ const InvestDashboard = () => {
 
 					<div className="md:opacity-0  md:translate-y-32 group-hover:opacity-100 group-hover:translate-y-6 transition-all duration-500 w-full px-8 md:px-20">
 						<ul className="text-left text-base font-normal list-disc list-inside">
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
-							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
+							<li className="mt-3">
+								An toàn vốn 100% (do bảo lãnh vốn của Công ty chúng tôi cho khoản đầu tư của bạn)
+							</li>
+							<li className="mt-3">Lợi suất lên đến 20%/năm</li>
+							<li className="mt-3">Đầu tư online, mọi lúc mọi nơi</li>
 							<li className="mt-3">Liên kết người đầu tư với người gọi vốn nhanh nhất</li>
 						</ul>
 					</div>

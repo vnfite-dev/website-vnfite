@@ -19,7 +19,7 @@ const InfoBlock = ({ image, content }: { image: string; content: string }) => {
 };
 
 const AnimateBlock = ({
-	// image,
+	image = "/images/invest/office.jpg",
 	content = [
 		"Đến với VNFITE, bạn không chỉ là khách hàng mà còn là một nhà đầu tư thông thái, chúng tôi sẽ giúp bạn thực hiện điều đó, hãy đến với chúng tôi ngay bây giờ.",
 		"Chỉ từ 500.000VNĐ, bạn đã có thể trở thành nhà đầu tư.",
@@ -96,13 +96,7 @@ const AnimateBlock = ({
 							: "right-0 xl:translate-x-2/3 translate-x-1/3"
 					)}
 				>
-					<Image
-						src="/images/invest/office.jpg"
-						className="rounded-3xl"
-						alt="image"
-						width={547}
-						height={411}
-					/>
+					<Image src={image} className="rounded-3xl" alt="image" width={547} height={411} />
 				</div>
 			</div>
 		</div>
@@ -176,9 +170,11 @@ const InvestInfo = () => {
 				</div>
 
 				<div className="flex flex-col lg:gap-44 md:px-10">
-					<AnimateBlock />
+					<AnimateBlock image="/images/invest/ablock11.jpg" />
+					{/* <AnimateBlock /> */}
 					<div className="md:self-end">
 						<AnimateBlock
+							image="/images/invest/ablock22.jpg"
 							reversed={true}
 							title="An toàn, nhanh chóng"
 							content={[
@@ -191,6 +187,7 @@ const InvestInfo = () => {
 					</div>
 
 					<AnimateBlock
+						image="/images/invest/ablock33.jpg"
 						title="Hiệu quả & An toàn đầu tư"
 						content={[
 							"Đến với VNFITE, bạn không chỉ tìm thấy một công việc, mà còn là một cộng đồng gắn kết, cùng nhau chinh phục những thử thách và tạo nên giá trị bền vững. ",

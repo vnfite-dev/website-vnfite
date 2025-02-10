@@ -8,23 +8,27 @@ const Insure = () => {
 		{
 			question: "Bảo hiểm trong sản phẩm gọi vốn tại VNFITE là gì?",
 			answer:
-				"Bảo hiểm trong sản phẩm gọi vốn tại VNFITE là một hình thức bảo vệ tài chính bổ sung, giúp nhà đầu tư an tâm khi tham gia vào các dự án. Các sản phẩm này thường bao gồm bảo hiểm khoản vay hoặc bảo hiểm rủi ro đầu tư nhằm bảo vệ nhà đầu tư trước các trường hợp mất khả năng thanh toán từ bên vay.",
+				"Bảo hiểm trong sản phẩm gọi vốn tại VNFITE là một biện pháp giúp bảo vệ nhà đầu tư khỏi rủi ro tài chính. Các gói bảo hiểm có thể bao gồm bảo hiểm khoản vay hoặc bảo hiểm rủi ro đầu tư nhằm đảm bảo quyền lợi trong trường hợp bên vay mất khả năng thanh toán.",
 		},
 		{
 			question: "Lợi ích khi mua bảo hiểm trong sản phẩm gọi vốn tại VNFITE là gì?",
-			answer: "Đây là câu trả lời chi tiết về bảo hiểm trong sản phẩm gọi vốn tại VNFITE...",
+			answer:
+				"Khi mua bảo hiểm, nhà đầu tư sẽ được bảo vệ trước các rủi ro về tài chính, giảm nguy cơ mất vốn, tăng mức độ an toàn cho khoản đầu tư và yên tâm hơn khi tham gia vào các dự án gọi vốn.",
 		},
 		{
 			question: "Loại bảo hiểm nào được áp dụng cho các sản phẩm gọi vốn tại VNFITE?",
-			answer: "Đây là câu trả lời chi tiết về bảo hiểm trong sản phẩm gọi vốn tại VNFITE...",
+			answer:
+				"Các loại bảo hiểm bao gồm: bảo hiểm khoản vay (bảo vệ nhà đầu tư nếu bên vay mất khả năng thanh toán), bảo hiểm rủi ro đầu tư (hạn chế tổn thất do biến động thị trường) và bảo hiểm tài sản thế chấp (bảo vệ tài sản được dùng để thế chấp).",
 		},
 		{
 			question: "Làm thế nào để đăng ký bảo hiểm khi đầu tư qua VNFITE?",
-			answer: "Đây là câu trả lời chi tiết về bảo hiểm trong sản phẩm gọi vốn tại VNFITE...",
+			answer:
+				"Nhà đầu tư có thể đăng ký bảo hiểm trong quá trình đầu tư bằng cách lựa chọn gói bảo hiểm phù hợp hoặc liên hệ trực tiếp với đội ngũ hỗ trợ của VNFITE để được tư vấn chi tiết.",
 		},
 		{
 			question: "Chi phí bảo hiểm có cao không?",
-			answer: "Đây là câu trả lời chi tiết về bảo hiểm trong sản phẩm gọi vốn tại VNFITE...",
+			answer:
+				"Chi phí bảo hiểm phụ thuộc vào số tiền đầu tư, loại bảo hiểm và thời gian đầu tư. VNFITE cung cấp nhiều gói bảo hiểm với mức phí linh hoạt để phù hợp với nhu cầu của từng nhà đầu tư.",
 		},
 	];
 
@@ -173,9 +177,10 @@ const Insure = () => {
 						<div className="w-full md:w-2/5">
 							<div className="max-w-[437px] w-[80%] md:w-[100%] mx-auto">
 								<Image
-									src="/images/insure/Advantage.png"
+									src="/images/insure/Advantage1.png"
 									alt="Advantage"
 									layout="responsive"
+									className="rounded-4xl"
 									width={437}
 									height={469}
 									priority
