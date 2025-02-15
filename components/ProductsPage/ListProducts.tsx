@@ -206,7 +206,7 @@ const ListProducts = () => {
 											Điều kiện vay vốn
 										</div>
 									</div>
-									<div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
+									{/* <div className="bg-grad p-[1px] rounded-lg w-44 min-h-8">
 										<div
 											className={`rounded-[7px] w-full h-full text-center text-base cursor-pointer leading-8 ${
 												tabLoanCondition === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
@@ -215,7 +215,7 @@ const ListProducts = () => {
 										>
 											Nộp hồ sơ yêu cầu
 										</div>
-									</div>
+									</div> */}
 								</div>
 
 								<div className="hidden md:flex items-center w-full justify-center">

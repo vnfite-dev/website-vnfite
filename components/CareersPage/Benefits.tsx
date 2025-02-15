@@ -30,7 +30,7 @@ const benefitTitle = [
 	"Tham gia các dự án lớn",
 	"Phát triển bản thân tốt",
 	"Hoạt động thể thao",
-	"Môi trường làm việc chuyên nghiệp",
+	"Môi trường chuyên nghiệp",
 	"Chế độ lương thưởng hấp dẫn",
 	"Thời gian nghỉ phép linh hoạt",
 ];

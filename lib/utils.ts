@@ -2,6 +2,38 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+export const keyToValue = (key: string) => {
+	switch (key) {
+		case "1":
+			return "IT";
+		case "2":
+			return "Marketing";
+		case "3":
+			return "Nhân sự";
+		case "4":
+			return "Kinh doanh";
+		case "fulltime":
+			return "Toàn thời gian";
+		case "parttime":
+			return "Bán thời gian";
+		case "intern":
+			return "Thực tập";
+		case "onsite":
+			return "Tại văn phòng";
+		case "remote":
+			return "Từ xa";
+		case "hybrid":
+			return "Linh hoạt";
+		case "nhanvien":
+			return "Nhân viên";
+		case "quanlyvien":
+			return "Quản lý";
+		case "congtacvien":
+			return "Cộng tác viên";
+		default:
+			return key;
+	}
+};
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
@@ -29,8 +61,9 @@ export const simpleFetchFunction = async (url: string) => {
 };
 
 const ENV_Test = {
-	baseURL: "http://42.113.122.119:2993",
-	imageServer: "http://42.113.122.119:70",
+	// baseURL: "http://42.113.122.119:2993",
+	baseURL: "http://192.168.100.176:2993",
+	imageServer: "http://42.113.122.118:70",
 };
 // eslint-disable-next-line no-unused-vars
 const ENV_Live = {
@@ -39,7 +72,7 @@ const ENV_Live = {
 };
 
 class HelpersUtil {
-	envMode = ENV_Live;
+	envMode = ENV_Test;
 }
 
 export const WebUtils = new HelpersUtil();

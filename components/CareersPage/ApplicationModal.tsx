@@ -24,20 +24,33 @@ import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DragDropFileUpload } from "./DrapDropFileUpload";
 import { Textarea } from "../ui/textarea";
-import { jobList } from "@/app/news/data";
+import { useEffect } from "react";
+import { keyToValue, simpleFetchFunction } from "@/lib/utils";
+import { WebUtils } from "@/lib/utils";
+// import { jobList } from "@/app/news/data";
 // import { useRouter } from "next/navigation";
 
+import { IJob } from "./ListJobs";
 type ApplicationData = {
-	jobId: string;
-	fullName: string;
+	name: string;
+	phoneNumber: string;
 	email: string;
-	phone: string;
-	address: string;
-	detail: string;
-	cv: File | null;
+	location: string;
+	introduction: string;
+	hiringJobId: string;
+	fileCv: File | null;
+	description: string;
 };
 
-const KeyValueRender = ({ value, title, Icon }: { value: string; title: string; Icon: ElementType }) => {
+const KeyValueRender = ({
+	value,
+	title,
+	Icon,
+}: {
+	value: string | undefined;
+	title: string;
+	Icon: ElementType;
+}) => {
 	return (
 		<div className="w-full sm:w-1/2 relative flex mt-2">
 			<div className="w-2/5 text-gray-600 flex gap-2">
@@ -50,16 +63,30 @@ const KeyValueRender = ({ value, title, Icon }: { value: string; title: string; 
 };
 
 export function ApplicationModal({ jobId }: { jobId: string }) {
-	const jobDetail = jobList.find((item) => item.id === Number(jobId));
+	// const jobDetail = jobList.find((item) => item.id === Number(jobId));
+
+	const [jobDetail, setJobDetail] = useState<IJob>(); // khong co khong co
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const res = await simpleFetchFunction(`/hiring/${jobId}`);
+			if (res.result.isOK) {
+				setJobDetail(res.data);
+			}
+		};
+		fetchData();
+	}, [jobId]);
 	const { data, updateFields, currentStep, nextStep, prevStep } = useFormState<ApplicationData>({
-		jobId: jobId,
-		fullName: "",
+		name: "",
+		phoneNumber: "",
 		email: "",
-		phone: "",
-		address: "",
-		detail: "",
-		cv: null,
+		location: "",
+		introduction: "",
+		hiringJobId: jobId,
+		fileCv: null,
+		description: "",
 	});
+
 	const [copied, setCopied] = useState(false);
 
 	const copyToClipboard = () => {
@@ -71,11 +98,35 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 	};
 
 	function handleFileUpload(file: File) {
-		updateFields({ cv: file });
+		updateFields({ fileCv: file });
 	}
-	function handleSubmit() {
-		console.log("Application submitted:", data);
-		nextStep();
+	async function handleSubmit() {
+		const formData = new FormData();
+
+		const applyJobRequest = {
+			name: data.name,
+			phoneNumber: data.phoneNumber,
+			email: data.email,
+			location: data.location,
+			introduction: data.introduction,
+			hiringJobId: data.hiringJobId,
+		};
+
+		formData.append("applyJobRequest", JSON.stringify(applyJobRequest));
+		if (data.fileCv) {
+			formData.append("fileCv", data.fileCv);
+		}
+
+		const res = await fetch(`${WebUtils.envMode.baseURL}/apply/apply-job`, {
+			method: "POST",
+			headers: {
+				transactionId: "1234",
+			},
+			body: formData,
+		});
+		if (res.ok) {
+			nextStep();
+		}
 	}
 
 	return (
@@ -106,12 +157,12 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 				{currentStep === 0 && (
 					<div className="">
 						<div className="font-semibold text-2xl px-5 sm:px-1">
-							{jobDetail?.title ||
+							{jobDetail?.name ||
 								"Chuyên viên Quan hệ Khách hàng Cá nhân - Quảng Nam (Khu vực Duy Xuyên, Điện Bàn)"}
 						</div>
 						<div className="flex flex-col sm:flex-row flex-wrap relative w-full mt-12 px-7">
 							<KeyValueRender
-								value={jobDetail?.type || "Toàn thời gian"}
+								value={keyToValue(jobDetail?.workingForm || "Toàn thời gian")}
 								title="Hình thức làm việc"
 								Icon={Clock}
 							/>
@@ -121,21 +172,26 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 								Icon={GraduationCap}
 							/>
 							<KeyValueRender
-								value={jobDetail?.position || "Nhân viên"}
-								title="Vị trí"
+								value={keyToValue(jobDetail?.position || "Nhân viên")}
+								title="Cấp bậc"
 								Icon={UserRound}
 							/>
-							<KeyValueRender value={jobDetail?.exp || "Trên 1 năm"} title="Kinh nghiệm" Icon={Star} />
+							<KeyValueRender value={jobDetail?.experience} title="Kinh nghiệm" Icon={Star} />
+							<KeyValueRender value={jobDetail?.salary} title="Lương" Icon={CircleDollarSign} />
 							<KeyValueRender
-								value={jobDetail?.salary || "12.000.000 - 15.000.000 VND"}
-								title="Lương"
-								Icon={CircleDollarSign}
+								value={
+									Array.isArray(jobDetail?.location)
+										? jobDetail?.location.join(" - ")
+										: jobDetail?.location
+								}
+								title="Địa chỉ"
+								Icon={MapPin}
 							/>
-							<KeyValueRender value={jobDetail?.location || "Hà Nội"} title="Địa chỉ" Icon={MapPin} />
 						</div>
 						<div className="px-7">
 							<div className="font-semibold text-xl mt-8">Mô tả làm việc</div>
-							<div className="">
+							<div dangerouslySetInnerHTML={{ __html: jobDetail?.description || "" }} />
+							{/* <div className="">
 								{jobDetail?.description?.map((item, index) => (
 									<p key={index} className="text-gray-700 mt-1">
 										{" "}
@@ -143,8 +199,6 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 									</p>
 								))}
 							</div>
-
-							{/* Yeu cau ung vien */}
 
 							<div className="font-semibold text-xl mt-8">Yêu cầu ứng viên</div>
 							<div className="">
@@ -155,7 +209,6 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 									</p>
 								))}
 							</div>
-							{/* Quyen loi */}
 							<div className="font-semibold text-xl mt-8">Quyền lợi</div>
 							<div className="">
 								{jobDetail?.benefit?.map((item, index) => (
@@ -166,8 +219,6 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 								))}
 							</div>
 
-							{/*  */}
-
 							<div className="font-semibold text-xl mt-8">Địa chỉ làm việc</div>
 							<div className="">
 								{jobDetail?.detailLocation?.map((item, index) => (
@@ -176,7 +227,7 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 										- {item}
 									</p>
 								))}
-							</div>
+							</div> */}
 
 							<div className="mt-6 flex gap-5">
 								<Button className="btn-primary" onClick={nextStep}>
@@ -211,13 +262,13 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 					>
 						<div className="px-3 md:grid grid-cols-2 gap-10">
 							<div className="space-y-2 flex items-center">
-								<Label htmlFor="fullName" className="mr-4 min-w-16">
+								<Label htmlFor="name" className="mr-4 min-w-16">
 									Họ và tên :
 								</Label>
 								<Input
-									id="fullName"
-									value={data.fullName}
-									onChange={(e) => updateFields({ fullName: e.target.value })}
+									id="name"
+									value={data.name}
+									onChange={(e) => updateFields({ name: e.target.value })}
 									required
 								/>
 							</div>
@@ -236,34 +287,35 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 						</div>
 						<div className="px-3 md:grid grid-cols-2 gap-10">
 							<div className="space-y-2 flex items-center">
-								<Label htmlFor="phone" className="min-w-16 mr-4">
+								<Label htmlFor="phoneNumber" className="min-w-16 mr-4">
 									SĐT
 								</Label>
 								<Input
-									id="phone"
-									type="phone"
-									value={data.phone}
-									onChange={(e) => updateFields({ phone: e.target.value })}
+									id="phoneNumber"
+									type="tel"
+									value={data.phoneNumber}
+									onChange={(e) => updateFields({ phoneNumber: e.target.value })}
 									required
 								/>
 							</div>
 
 							<div className="space-y-2 flex items-center">
-								<Label htmlFor="address" className="min-w-16 mr-4">
+								<Label htmlFor="location" className="min-w-16 mr-4">
 									Địa chỉ
 								</Label>
 								<Select
-									value={data.address}
-									onValueChange={(value) => updateFields({ address: value })}
+									value={data.location}
+									onValueChange={(value) => updateFields({ location: value })}
 								>
-									<SelectTrigger id="address" className="w-full">
+									<SelectTrigger id="location" className="w-full">
 										<SelectValue placeholder="Chọn thành phố" />
 									</SelectTrigger>
 									<SelectContent>
-										<SelectItem value="hanoi">Hà Nội</SelectItem>
-										<SelectItem value="hochiminh">Hồ Chí Minh</SelectItem>
-										<SelectItem value="danang">Đà Nẵng</SelectItem>
-										<SelectItem value="cantho">Cần Thơ</SelectItem>
+										<SelectItem value="65ebe5b0-3ba4-4a39-987c-da4aae70dc76">Hà Nội</SelectItem>
+										<SelectItem value="4f0f6956-27dd-4076-9e6c-fbca2514a81e">
+											Hồ Chí Minh
+										</SelectItem>
+										<SelectItem value="1eafc872-465b-43f5-a938-c05c5bfc01ab">Đà Nẵng</SelectItem>
 									</SelectContent>
 								</Select>
 							</div>
@@ -272,9 +324,13 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 						<div className="px-3 md:grid grid-cols-2 gap-10">
 							<div className="mt-3 md:mt-0 md:space-y-2">
 								<Label>Upload CV</Label>
-								<DragDropFileUpload onFileUpload={handleFileUpload} />
-								{data.cv && (
-									<p className="text-sm text-gray-600">File bạn đã tải lên: {data.cv.name}</p>
+								<DragDropFileUpload
+									onFileUpload={handleFileUpload}
+									fileCv={data.fileCv}
+									setFileCv={(file) => updateFields({ fileCv: file })}
+								/>
+								{data.fileCv && (
+									<p className="text-sm text-gray-600">File bạn đã tải lên: {data.fileCv.name}</p>
 								)}
 							</div>
 
@@ -283,8 +339,8 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 								<Textarea
 									className="w-full"
 									rows={6}
-									value={data.detail}
-									onChange={(e) => updateFields({ detail: e.target.value })}
+									value={data.introduction}
+									onChange={(e) => updateFields({ introduction: e.target.value })}
 								/>
 							</div>
 						</div>
