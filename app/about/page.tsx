@@ -81,9 +81,8 @@ const About = () => {
 				<div className="hidden md:flex justify-center items-center md:justify-between flex-col md:flex-row space-y-8 md:space-y-0 px-4 w-full max-w-[1280px] font-semibold text-xl">
 					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
 						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${
-								show === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-							}`}
+							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer  ${show === 0 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+								}`}
 							onClick={() => setShow(0)}
 						>
 							Thông tin về VNFITE
@@ -91,9 +90,8 @@ const About = () => {
 					</div>
 					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
 						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${
-								show === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-							}`}
+							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 1 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+								}`}
 							onClick={() => setShow(1)}
 						>
 							Ban lãnh đạo
@@ -101,9 +99,8 @@ const About = () => {
 					</div>
 					<div className="bg-grad p-[1px] rounded-lg w-[90%] md:w-[30%] h-12 ">
 						<div
-							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${
-								show === 2 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
-							}`}
+							className={`rounded-[7px] flex justify-center items-center w-full h-full text-lg md:text-sm lg:text-lg xl:text-2xl cursor-pointer ${show === 2 ? "bg-grad text-white" : "bg-white text-[#E0694F]"
+								}`}
 							onClick={() => setShow(2)}
 						>
 							Cổ đông
@@ -250,10 +247,6 @@ const About = () => {
 									VNFITE đã trở thành một đơn vị tiên phong trong lĩnh vực công nghệ tài chính tại
 									Việt Nam, giúp đơn giản hóa quy trình vay vốn và đầu tư với công nghệ hiện đại.{" "}
 									<br />
-									<br />
-									Công ty Cổ phần Công nghệ Tài chính VNFITE là một trong các đơn vị tiên phong và uy
-									tín hàng đầu cung cấp giải pháp công nghệ tài chính, kết nối giữa các nhà đầu tư và
-									nhà gọi vốn.
 								</span>
 
 								{/* <span>
@@ -344,17 +337,15 @@ const About = () => {
 														}}
 													>
 														<div
-															className={`absolute ${
-																colorClick === index ? "text-gradient" : "text-[#B3B3B3]"
-															} text-lg lg:text-2xl font-semibold top-9 -left-3 lg:-left-5`}
+															className={`absolute ${colorClick === index ? "text-gradient" : "text-[#B3B3B3]"
+																} text-lg lg:text-2xl font-semibold top-9 -left-3 lg:-left-5`}
 														>
 															{index + 2020}
 														</div>
 													</div>
 													<div
-														className={`w-10 lg:w-20 h-1 ${
-															colorClick === index ? "bg-grad" : "bg-[#B3B3B3]"
-														}`}
+														className={`w-10 lg:w-20 h-1 ${colorClick === index ? "bg-grad" : "bg-[#B3B3B3]"
+															}`}
 													></div>
 												</div>
 											))}
