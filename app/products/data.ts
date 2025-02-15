@@ -5,8 +5,8 @@ const itemProduct = [
 		image: "/icons/packages/flash.svg",
 		title: "Gọi vốn siêu tốc",
 		detail:
-			"Sản phẩm gọi vốn siêu tốc dành cho mọi khách hàng đáp ứng nhanh nhu cầu sử dụng vốn của khách hàng với thủ tục nhanh chóng- đơn giản, không yêu cầu tài sản đảm bảo với số tiền gọi vốn tối đa lên tới 15,000,000 VND.",
-		info: `Số tiền vay tối đa: 15,000,000 VND (Mười lăm triệu đồng).
+			"Sản phẩm gọi vốn siêu tốc dành cho mọi khách hàng đáp ứng nhanh nhu cầu sử dụng vốn của khách hàng với thủ tục nhanh chóng và đơn giản, không yêu cầu tài sản đảm bảo với số tiền gọi vốn tối đa lên tới 15,000,000 VND.",
+		info: `Số tiền vay tối đa: 15,000,000 VND.
       Trả gốc: Từng lần/Gốc trả cuối kỳ. Tiền lãi được trừ ngay vào vốn gốc sau khi nhận nợ.
       Trả lãi: Lãi trả 01 lần vào ngày nhận nợ, tiền lãi được trừ ngay vào vốn gốc sau khi nhận nợ.
       Đăng ký trực tuyến: Cung cấp CMND/CCCD, số điện thoại cá nhân và số tham chiếu (3 người thân, 1 bạn bè/đồng nghiệp)`,

@@ -54,6 +54,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 	modal: React.ReactNode;
 }>) {
+
+
 	return (
 		<html lang="en">
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro`}>
