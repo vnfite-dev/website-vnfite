@@ -13,27 +13,22 @@ import itemProduct from "@/app/products/data";
 
 import { useRouter, useParams } from "next/navigation";
 
-
 const SlideItem = ({
 	id = 1,
 	image = "/images/home/slide-student.png",
 	title = "Gọi vốn dành cho các bạn sinh viên với lãi suất vô cùng hấp dẫn, nhanh chóng không cần giấy tờ.",
-	id = 1
 }: {
 	id: number;
 	image?: string;
 	title?: string;
 	detail?: string;
-	id?: number;
 }) => {
 	const router = useRouter();
 	return (
-
 		<div
 			onClick={() => router.push("/products/" + id)}
 			className="pt-6 pb-3 border-2 rounded-2xl h-full w-full flex flex-col justify-between items-center cursor-pointer"
 		>
-
 			<div className="px-5">
 				<Image src={image} alt="slide1" height={160} width={160} />
 			</div>
