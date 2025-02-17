@@ -387,3 +387,119 @@ export const jobList = [
     applicationDeadline: "17/01/2025",
   },
 ];
+
+export const detailPromotion = [
+  {
+    id: 1,
+    banner: `bg-[url("/images/news/vnfiteNewYear.png")]`,
+    mainTitle: "LÌ XÌ ĐÓN TẾT 2025",
+    content: `Nhận ngay 68.000 VNĐ vào tài khoản VNFITE khi:
+
+      - Đầu tư ngang hàng (P2P) trên sàn gọi vốn VNFITE
+
+      - Gọi vốn tiêu dùng thành công
+
+      - Gọi vốn siêu tốc thành công
+
+      Thời gian áp dụng: Chỉ duy nhất ngày 1/1/2025
+
+      Sản phẩm áp dụng: Đầu tư P2P, Gọi vốn tiêu dùng, Gọi vốn siêu tốc
+
+      Tết này, vừa nhận lộc, vừa đầu tư sinh lời với VNFITE – cơ hội nhân đôi niềm vui và tài lộc đầu năm!
+
+      ========================
+
+      VNFITE – KẾT NỐI NGUỒN VỐN SIÊU TỐC
+
+      ---------------------------------------------
+
+      TẢI APP VNFITE NGAY, lợi ích liền tay: http://vnfite.com.vn/tai-ung-dung
+
+      Để được hỗ trợ, xin vui lòng liên hệ trực tiếp qua tin nhắn tại:
+
+      - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
+
+      - Email: dvkh@vnfite.com.vn
+
+      - Hotline: 024.3367.6699
+
+      Nhanh tay tham gia ngay để không bỏ lỡ lì xì đầu năm hấp dẫn từ VNFITE!`,
+          createdDate: "12/31/2024",
+          urlImage: "/images/news/vnfiteNewYear.png",
+      },
+  {
+    id: 2,
+    banner: `bg-[url("/images/news/happyNewYear.png")]`,
+    mainTitle: "CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12!",
+    content: `🎉 CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12! 🎉
+
+      💰 Giảm ngay 1% phí và lợi suất khi gọi vốn dành riêng cho cán bộ lực lượng vũ trang!
+
+      👉 Chỉ áp dụng trong 01 ngày duy nhất: 22/12/2024
+
+      ✨ Đây là cơ hội vàng để bạn tối ưu hóa nguồn tài chính với mức chi phí ưu đãi nhất. Đừng bỏ lỡ!
+
+      📌 Chi tiết chương trình:
+
+      Áp dụng cho sản phẩm: Gọi vốn dành cho cán bộ lực lượng vũ trang.
+      Ưu đãi: Giảm ngay 1% phí và lợi suất.
+      Thời gian: Từ 0h đến 23h59 ngày 22/12/2024.
+      📞 Nhanh tay liên hệ VNFITE để được tư vấn chi tiết và tận hưởng ưu đãi có "1-0-2" này.
+      📲 Tải app VNFITE ngay để được hỗ trợ nhanh nhất!
+      ========================
+      VNFITE – KẾT NỐI NGUỒN VỐN SIÊU TỐC
+      ---------------------------------------------
+      TẢI APP VNFITE NGAY, lợi ích liền tay: http://vnfite.com.vn/tai-ung-dung
+      Để được hỗ trợ, xin vui lòng liên hệ trực tiếp qua tin nhắn tại:
+      - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
+      📧 Email: dvkh@vnfite.com.vn
+      ☎ Hotline: 024.3367.6699`,
+    createdDate: "12/21/2024",
+    urlImage: "/images/news/happyNewYear.png",
+  },
+  {
+    id: 3,
+    banner: `bg-[url("/images/news/newDetail.png")]`,
+    mainTitle: "CHƯƠNG TRÌNH TRI ẤN NHÀ GIÁO NGÀY 20/11",
+    content: `🌟 CHƯƠNG TRÌNH TRI ÂN NHÀ GIÁO - ĐẶC BIỆT DÀNH TẶNG THẦY CÔ GIÁO! 🌟
+      Tháng 11 này, VNFITE dành riêng một chương trình tri ân dành cho Quý thầy cô trên toàn quốc 🎓💖
+
+      📅 Thời gian diễn ra:
+      Từ 15/11/2024 đến hết ngày 30/11/2024.
+
+      👩‍🏫 Đối tượng áp dụng:
+      Các Giáo viên, Giảng viên từ mầm non đến đại học đang giảng dạy trên lãnh thổ Việt Nam đều có thể tham gia chương trình này!
+
+      💼 Ưu đãi hấp dẫn khi tham gia gọi vốn:
+
+      Sản phẩm áp dụng:
+      Áp dụng cho tất cả sản phẩm gọi vốn còn hiệu lực tại VNFITE (trừ lĩnh vực không khuyến khích).
+      Số tiền gọi vốn tối thiểu: 10.000.000 VNĐ 💰
+      Kỳ hạn tối thiểu: 6 tháng ⏳
+      Ưu đãi lãi suất cực tốt:
+      Xếp hạng tín nhiệm A1, A2: Giảm ngay 1.5%/năm
+      Các nhóm xếp hạng khác: Giảm ngay 1%/năm 📉
+      Miễn phí thẩm định 💯
+      Linh hoạt tất toán trước hạn
+      (Phí trả nợ trước hạn chỉ 5% trên số tiền trả trước).
+      💫 Hãy nhanh tay tham gia ngay để hưởng ưu đãi tri ân đặc biệt từ VNFITE!
+
+      👉 Tải ứng dụng VNFITE tại Appstore hoặc CHPlay ngay hôm nay để bắt đầu gọi vốn!
+      Thay lời cảm ơn, VNFITE xin gửi những ưu đãi tuyệt vời này đến Quý thầy cô - những người đã và đang đóng góp công sức lớn lao trong sự nghiệp trồng người! 🌱📚
+
+      ======================== VNFITE – KẾT NỐI NGUỒN VỐN SIÊU TỐC
+
+      TẢI APP VNFITE NGAY, lợi ích liền tay: http://vnfite.com.vn/tai-ung-dung
+
+      Để được hỗ trợ, xin vui lòng liên hệ trực tiếp qua tin nhắn tại:
+
+      - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
+
+      📧 Email: dvkh@vnfite.com.vn
+
+      ☎ Hotline: 024.3367.6699`,
+    createdDate: "11/15/2024",
+    urlImage: "/images/news/newDetail.png",
+  }
+
+]

@@ -1,3 +1,4 @@
+"use client";
 import {
 	Carousel,
 	CarouselContent,
@@ -9,10 +10,11 @@ import {
 import { cn, simpleFetchFunction } from "@/lib/utils";
 import { Calendar } from "lucide-react";
 import Image from "next/image";
-import { detailNews } from "./data";
+import { detailNews, detailPromotion } from "./data";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { Key } from "react";
+import { Key, useEffect, useState } from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const bigNews = [
 	{
@@ -22,15 +24,38 @@ const bigNews = [
 	},
 ];
 
+interface NewsItem {
+	id: string;
+	urlImage: string;
+	createdDate: string | number | Date;
+	mainTitle: string;
+	content: string;
+}
+
 const fetchNewsData = async () => {
 	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=1`);
 	console.log(data)
-	return data.data;
+	return data.data.data;
 };
 
-const NewsPage = async () => {
-	const newsData = await fetchNewsData();
-	const newsList = [...(newsData?.data ?? []), ...detailNews];
+const NewsPage = () => {
+	const [newsList, setNewsList] = useState<NewsItem[]>([]);
+	const [visibleCount, setVisibleCount] = useState(8);
+	
+	useEffect(() => {
+		const fetchData = async () => {
+		  try {
+			const newsData = await fetchNewsData(); // Thêm await để chờ dữ liệu
+			const newsList = [...(newsData ?? []), ...detailNews];
+			setNewsList(newsList);
+		  } catch (error) {
+			console.error("Lỗi khi lấy dữ liệu:", error);
+		  }
+		};
+	
+		fetchData();
+	  }, []);
+	
 
 	const htmlToText = (html: string): string => {
 		if (!html) return "";
@@ -53,6 +78,14 @@ const NewsPage = async () => {
 		return new Date(isoString).toLocaleDateString("vi-VN");
 	};
 
+	const handleShowMore = () => {
+		setVisibleCount((prevCount) => prevCount + 4); 
+	  };
+	
+	  const handleShowLess = () => {
+		setVisibleCount(8); 
+	  };
+
 	return (
 		<div className="px-5 sm:px-[10%] xl:px-[16.7%] mx-auto">
 			<div className="mt-12 lg:mt-28 text-center text-2xl lg:text-5xl font-semibold">
@@ -62,16 +95,16 @@ const NewsPage = async () => {
 			<div className="mt-10 ">
 				<Carousel className="w-full">
 					<CarouselContent>
-						{Array.from({ length: 5 }).map((_, index) => (
+						{detailPromotion.map((_, index) => (
 							<CarouselItem key={index}>
 								<div
 									className={cn(
-										"p-1 border border-red-300 rounded-2xl h-64 md:h-80 lg:h-96 xl:h-[458px] bg-cover flex justify-center items-end pb-6 md:pb-12 lg:pb-16",
-										bigNews[0].banner
+										"p-1 border border-red-300 rounded-2xl h-64 md:h-80 lg:h-96 xl:h-[458px] bg-cover flex justify-center items-end pb-6 md:pb-12 lg:pb-16 bg-center",
+										_.banner
 									)}
 								>
 									<div className="py-5 px-6 md:px-16 border rounded-2xl border-red-500 text-white font-medium text-sm md:text-base 2xl:text-lg bg-red-800 bg-opacity-65">
-										{bigNews[0].title}
+										{_.mainTitle}
 									</div>
 								</div>
 							</CarouselItem>
@@ -160,7 +193,7 @@ const NewsPage = async () => {
 			<div className="mt-10 lg:mt-28">
 				<p className="text-center text-2xl lg:text-5xl font-semibold">Danh sách tin tức</p>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-6 mt-6 lg:mt-16">
-					{newsList?.map((news: { urlImage: string | StaticImport; createdDate: string | number | Date; mainTitle: string; id: string }, index: Key | null | undefined) => (
+					{newsList?.slice(0, visibleCount).map((news: { urlImage: string | StaticImport; createdDate: string | number | Date; mainTitle: string; id: string }, index: Key | null | undefined) => (
 						<Link
 							href={`/news/${news?.id}`}
 							key={index}
@@ -178,6 +211,12 @@ const NewsPage = async () => {
 						</Link>
 					))}
 				</div>
+
+				{visibleCount < newsList.length ? (
+					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowMore}>Xem thêm</Button>
+				) : (
+					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowLess}>Ẩn bớt</Button>
+				)}
 			</div>
 		</div>
 	);
