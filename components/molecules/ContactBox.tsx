@@ -31,18 +31,14 @@ const ContactBox = () => {
 			if (!response.ok) {
 				throw new Error("Failed to submit form");
 			}
-
-			// Clear form after successful submission
+			setShowSuccessDialog(true);
+		} catch (error) {
+			console.error("Error submitting form:", error);
 			setFormData({
 				fullName: "",
 				phoneNumber: "",
 				email: "",
 			});
-
-			// Show success dialog
-			setShowSuccessDialog(true);
-		} catch (error) {
-			console.error("Error submitting form:", error);
 		}
 	};
 	return (

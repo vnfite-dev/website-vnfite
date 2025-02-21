@@ -7,28 +7,23 @@ const Insure = () => {
 	const questionsData = [
 		{
 			question: "Bảo hiểm trong sản phẩm gọi vốn tại VNFITE là gì?",
-			answer:
-				"Bảo hiểm trong sản phẩm gọi vốn tại VNFITE là một biện pháp giúp bảo vệ nhà đầu tư khỏi rủi ro tài chính. Các gói bảo hiểm có thể bao gồm bảo hiểm khoản vay hoặc bảo hiểm rủi ro đầu tư nhằm đảm bảo quyền lợi trong trường hợp bên vay mất khả năng thanh toán.",
+			answer: "Bảo hiểm trong sản phẩm gọi vốn tại VNFITE là một biện pháp giúp bảo vệ nhà đầu tư khỏi rủi ro tài chính. Các gói bảo hiểm có thể bao gồm bảo hiểm khoản vay hoặc bảo hiểm rủi ro đầu tư nhằm đảm bảo quyền lợi trong trường hợp bên vay mất khả năng thanh toán.",
 		},
 		{
 			question: "Lợi ích khi mua bảo hiểm trong sản phẩm gọi vốn tại VNFITE là gì?",
-			answer:
-				"Khi mua bảo hiểm, nhà đầu tư sẽ được bảo vệ trước các rủi ro về tài chính, giảm nguy cơ mất vốn, tăng mức độ an toàn cho khoản đầu tư và yên tâm hơn khi tham gia vào các dự án gọi vốn.",
+			answer: "Khi mua bảo hiểm, nhà đầu tư sẽ được bảo vệ trước các rủi ro về tài chính, giảm nguy cơ mất vốn, tăng mức độ an toàn cho khoản đầu tư và yên tâm hơn khi tham gia vào các dự án gọi vốn.",
 		},
 		{
 			question: "Loại bảo hiểm nào được áp dụng cho các sản phẩm gọi vốn tại VNFITE?",
-			answer:
-				"Các loại bảo hiểm bao gồm: bảo hiểm khoản vay (bảo vệ nhà đầu tư nếu bên vay mất khả năng thanh toán), bảo hiểm rủi ro đầu tư (hạn chế tổn thất do biến động thị trường) và bảo hiểm tài sản thế chấp (bảo vệ tài sản được dùng để thế chấp).",
+			answer: "Các loại bảo hiểm bao gồm: bảo hiểm khoản vay (bảo vệ nhà đầu tư nếu bên vay mất khả năng thanh toán), bảo hiểm rủi ro đầu tư (hạn chế tổn thất do biến động thị trường) và bảo hiểm tài sản thế chấp (bảo vệ tài sản được dùng để thế chấp).",
 		},
 		{
 			question: "Làm thế nào để đăng ký bảo hiểm khi đầu tư qua VNFITE?",
-			answer:
-				"Nhà đầu tư có thể đăng ký bảo hiểm trong quá trình đầu tư bằng cách lựa chọn gói bảo hiểm phù hợp hoặc liên hệ trực tiếp với đội ngũ hỗ trợ của VNFITE để được tư vấn chi tiết.",
+			answer: "Nhà đầu tư có thể đăng ký bảo hiểm trong quá trình đầu tư bằng cách lựa chọn gói bảo hiểm phù hợp hoặc liên hệ trực tiếp với đội ngũ hỗ trợ của VNFITE để được tư vấn chi tiết.",
 		},
 		{
 			question: "Chi phí bảo hiểm có cao không?",
-			answer:
-				"Chi phí bảo hiểm phụ thuộc vào số tiền đầu tư, loại bảo hiểm và thời gian đầu tư. VNFITE cung cấp nhiều gói bảo hiểm với mức phí linh hoạt để phù hợp với nhu cầu của từng nhà đầu tư.",
+			answer: "Chi phí bảo hiểm phụ thuộc vào số tiền đầu tư, loại bảo hiểm và thời gian đầu tư. VNFITE cung cấp nhiều gói bảo hiểm với mức phí linh hoạt để phù hợp với nhu cầu của từng nhà đầu tư.",
 		},
 	];
 
@@ -138,7 +133,9 @@ const Insure = () => {
 						</div>
 
 						<div className="bg-[#FFF8F8] max-w-[405px] w-full h-[433px] rounded-3xl border border-[#F84F4F] relative group">
-							<p className="text-xl text-center font-semibold pt-28">Bảo hiểm toàn diện ngôi nhà</p>
+							<p className="text-xl text-center font-semibold pt-28">
+								Bảo hiểm toàn diện ngôi nhà
+							</p>
 							<div className="text-[#4D4D4D] px-6 space-y-4 pt-6 font-normal">
 								<p>Chi trả toàn bộ cho những thiệt hại cháy nổ, ngập lụt</p>
 								<p>Áp dụng cho chủ nhà, người thuê nhà, chung cư</p>
@@ -168,7 +165,7 @@ const Insure = () => {
 					</div>
 				</div>
 
-				<div className="mt-16 lg:mt-28 max-w-[1280px] px-2 md:px-6">
+				<div className="mt-16 lg:mt-28 max-w-[1280px] w-full px-2 md:px-6">
 					<p className="text-2xl lg:text-5xl font-semibold text-center mb-8 lg:mb-16">
 						Ưu đãi khi mua bảo hiểm tại <span className="text-gradient">VNFITE</span>
 					</p>
@@ -190,35 +187,55 @@ const Insure = () => {
 
 						<div className="w-full md:w-3/5 mt-8 md:mt-0 px-2 sm:px-10 md:px-0 space-y-9">
 							<div className="flex items-center space-x-4">
-								<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} alt="Red Check" />
+								<Image
+									src={"/icons/home/RedCheck.svg"}
+									width={24}
+									height={24}
+									alt="Red Check"
+								/>
 
 								<p style={{ color: "#4D4D4D" }}>Mua trực tiếp ngay trên ứng dụng VNFITE</p>
 							</div>
 
 							<div className="flex items-center space-x-4">
-								<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} alt="Red Check" />
+								<Image
+									src={"/icons/home/RedCheck.svg"}
+									width={24}
+									height={24}
+									alt="Red Check"
+								/>
 
 								<p style={{ color: "#4D4D4D" }}>
-									Bảo hiểm được liên kết với khoản vay VNFITE giúp bảo vệ tài chính rủi ro mất khả
-									năng trả nợ
+									Bảo hiểm được liên kết với khoản vay VNFITE giúp bảo vệ tài chính rủi ro
+									mất khả năng trả nợ
 								</p>
 							</div>
 
 							<div className="flex items-center space-x-4">
-								<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} alt="Red Check" />
+								<Image
+									src={"/icons/home/RedCheck.svg"}
+									width={24}
+									height={24}
+									alt="Red Check"
+								/>
 
 								<p style={{ color: "#4D4D4D" }}>
-									Khách hàng có thể dễ dàng yêu cầu bồi thường hoặc tra cứu trạng thái xử lý tại
-									VNFITE.
+									Khách hàng có thể dễ dàng yêu cầu bồi thường hoặc tra cứu trạng thái xử lý
+									tại VNFITE.
 								</p>
 							</div>
 
 							<div className="flex items-center space-x-4">
-								<Image src={"/icons/home/RedCheck.svg"} width={24} height={24} alt="Red Check" />
+								<Image
+									src={"/icons/home/RedCheck.svg"}
+									width={24}
+									height={24}
+									alt="Red Check"
+								/>
 
 								<p style={{ color: "#4D4D4D" }}>
-									Bảo vệ và an tâm trước rủi ro trong cuộc sống, đặc biệt khi đi kèm với các dịch vụ
-									tài chính
+									Bảo vệ và an tâm trước rủi ro trong cuộc sống, đặc biệt khi đi kèm với các
+									dịch vụ tài chính
 								</p>
 							</div>
 
@@ -236,7 +253,10 @@ const Insure = () => {
 									<ul style={{ listStyleType: "disc", marginLeft: "20px" }}>
 										<li>Giảm giá phí bảo hiểm.</li>
 										<li>Tích điểm thưởng hoặc hoàn tiền trên ứng dụng. </li>
-										<li>Các chương trình khuyến mãi dành riêng cho khách hàng sử dụng VNFITE.</li>
+										<li>
+											Các chương trình khuyến mãi dành riêng cho khách hàng sử dụng
+											VNFITE.
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -256,7 +276,9 @@ const Insure = () => {
 								<AccordionTrigger className="text-lg sm:text-xl font-medium">
 									{item.question}
 								</AccordionTrigger>
-								<AccordionContent className="pl-4 text-gray-700">{item.answer}</AccordionContent>
+								<AccordionContent className="pl-4 text-gray-700">
+									{item.answer}
+								</AccordionContent>
 							</AccordionItem>
 						))}
 					</Accordion>

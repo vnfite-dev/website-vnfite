@@ -5,7 +5,7 @@ import {
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-	CarouselDots
+	CarouselDots,
 } from "@/components/ui/carousel";
 import { cn, simpleFetchFunction } from "@/lib/utils";
 import { Calendar } from "lucide-react";
@@ -16,13 +16,13 @@ import { Key, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const bigNews = [
-	{
-		id: 1,
-		banner: `bg-[url("/images/news/outstanding.png")]`,
-		title: "THỂ LỆ CHƯƠNG TRÌNH “TẢI APP NGAY, CÓ TIỀN LIỀN TAY - NHẬN TIỀN MẶT ĐẾN 88 TRIỆU ĐỒNG”",
-	},
-];
+// const bigNews = [
+// 	{
+// 		id: 1,
+// 		banner: `bg-[url("/images/news/outstanding.png")]`,
+// 		title: "THỂ LỆ CHƯƠNG TRÌNH “TẢI APP NGAY, CÓ TIỀN LIỀN TAY - NHẬN TIỀN MẶT ĐẾN 88 TRIỆU ĐỒNG”",
+// 	},
+// ];
 
 interface NewsItem {
 	id: string;
@@ -34,28 +34,27 @@ interface NewsItem {
 
 const fetchNewsData = async () => {
 	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=1`);
-	console.log(data)
+	console.log(data);
 	return data.data.data;
 };
 
 const NewsPage = () => {
 	const [newsList, setNewsList] = useState<NewsItem[]>([]);
 	const [visibleCount, setVisibleCount] = useState(8);
-	
+
 	useEffect(() => {
 		const fetchData = async () => {
-		  try {
-			const newsData = await fetchNewsData(); // Thêm await để chờ dữ liệu
-			const newsList = [...(newsData ?? []), ...detailNews];
-			setNewsList(newsList);
-		  } catch (error) {
-			console.error("Lỗi khi lấy dữ liệu:", error);
-		  }
+			try {
+				const newsData = await fetchNewsData(); // Thêm await để chờ dữ liệu
+				const newsList = [...(newsData ?? []), ...detailNews];
+				setNewsList(newsList);
+			} catch (error) {
+				console.error("Lỗi khi lấy dữ liệu:", error);
+			}
 		};
-	
+
 		fetchData();
-	  }, []);
-	
+	}, []);
 
 	const htmlToText = (html: string): string => {
 		if (!html) return "";
@@ -68,7 +67,7 @@ const NewsPage = () => {
 			.trim(); // Xoá khoảng trắng đầu/cuối chuỗi
 	};
 
-	const textContent = htmlToText(newsList[0]?.content || '');
+	const textContent = htmlToText(newsList[0]?.content || "");
 
 	const truncateText = (text: string, length: number) => {
 		return text.length > length ? text.slice(0, length) + "..." : text;
@@ -79,12 +78,12 @@ const NewsPage = () => {
 	};
 
 	const handleShowMore = () => {
-		setVisibleCount((prevCount) => prevCount + 4); 
-	  };
-	
-	  const handleShowLess = () => {
-		setVisibleCount(8); 
-	  };
+		setVisibleCount((prevCount) => prevCount + 4);
+	};
+
+	const handleShowLess = () => {
+		setVisibleCount(8);
+	};
 
 	return (
 		<div className="px-5 sm:px-[10%] xl:px-[16.7%] mx-auto">
@@ -122,14 +121,14 @@ const NewsPage = () => {
 					<Link
 						href={`/news/${newsList[0]?.id}`}
 						className={cn(
-							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer aspect-square bg-cover rounded-4xl relative overflow-hidden group mx-auto",
+							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer aspect-square bg-cover rounded-4xl relative overflow-hidden group mx-auto"
 							// detailNews[0].banner
 						)}
 						style={{
 							backgroundImage: newsList[0]?.urlImage ? `url(${newsList[0].urlImage})` : undefined,
 							backgroundPosition: "center",
 							backgroundRepeat: "no-repeat",
-							backgroundSize: "cover"
+							backgroundSize: "cover",
 						}}
 					>
 						{/* Gradient Filter for Bottom Half */}
@@ -154,38 +153,52 @@ const NewsPage = () => {
 								</>
 							)}
 
-
 							{/* Border Animation */}
 							<div className="w-full flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
 								<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"></div>
-								<p className="w-[280px] text-center px-1 text-white text-sm sm:text-base">Xem chi tiết</p>
+								<p className="w-[280px] text-center px-1 text-white text-sm sm:text-base">
+									Xem chi tiết
+								</p>
 								<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-in-out"></div>
 							</div>
 						</div>
 					</Link>
 
 					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0">
-						{newsList?.slice(1, 5).map((_: { urlImage: string | StaticImport; mainTitle: string; createdDate: string | number | Date; id: string }, index: Key | null | undefined) => (
-							<Link key={index} className="cursor-pointer group" href={`/news/${_?.id}`}
-							// onClick={() => navigateToDetail(_.id)}
-							>
-								<div
-									className={cn("w-full relative h-[160px] rounded-2xl bg-cover overflow-hidden")}
+						{newsList?.slice(1, 5).map(
+							(
+								_: {
+									urlImage: string | StaticImport;
+									mainTitle: string;
+									createdDate: string | number | Date;
+									id: string;
+								},
+								index: Key | null | undefined
+							) => (
+								<Link
+									key={index}
+									className="cursor-pointer group"
+									href={`/news/${_?.id}`}
+									// onClick={() => navigateToDetail(_.id)}
 								>
-									<Image
-										className="group-hover:scale-110 object-cover"
-										src={_.urlImage}
-										alt="banner"
-										fill
-									/>
-								</div>
-								<div className="text-base font-semibold mt-2">{truncateText(_.mainTitle, 85)}</div>
-								<div className="flex gap-1 text-sm items-center text-gray-600">
-									<Calendar size={16} />
-									{formatDate(_.createdDate)}
-								</div>
-							</Link>
-						))}
+									<div
+										className={cn("w-full relative h-[160px] rounded-2xl bg-cover overflow-hidden")}
+									>
+										<Image
+											className="group-hover:scale-110 object-cover"
+											src={_.urlImage}
+											alt="banner"
+											fill
+										/>
+									</div>
+									<div className="text-base font-semibold mt-2">{truncateText(_.mainTitle, 85)}</div>
+									<div className="flex gap-1 text-sm items-center text-gray-600">
+										<Calendar size={16} />
+										{formatDate(_.createdDate)}
+									</div>
+								</Link>
+							)
+						)}
 					</div>
 				</div>
 			</div>
@@ -193,29 +206,48 @@ const NewsPage = () => {
 			<div className="mt-10 lg:mt-28">
 				<p className="text-center text-2xl lg:text-5xl font-semibold">Danh sách tin tức</p>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-6 mt-6 lg:mt-16">
-					{newsList?.slice(0, visibleCount).map((news: { urlImage: string | StaticImport; createdDate: string | number | Date; mainTitle: string; id: string }, index: Key | null | undefined) => (
-						<Link
-							href={`/news/${news?.id}`}
-							key={index}
-							className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
-						>
-							<div className="w-full relative h-40 sm:h-[200px] rounded-2xl bg-cover overflow-hidden">
-								<Image className="group-hover:scale-110 object-cover" src={news.urlImage} alt="banner" fill />
-								<div className="absolute top-0 py-1 px-3 bg-grad text-white rounded-b-lg left-1/2 -translate-x-1/2">
-									{formatDate(news.createdDate)}
+					{newsList?.slice(0, visibleCount).map(
+						(
+							news: {
+								urlImage: string | StaticImport;
+								createdDate: string | number | Date;
+								mainTitle: string;
+								id: string;
+							},
+							index: Key | null | undefined
+						) => (
+							<Link
+								href={`/news/${news?.id}`}
+								key={index}
+								className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
+							>
+								<div className="w-full relative h-40 sm:h-[200px] rounded-2xl bg-cover overflow-hidden">
+									<Image
+										className="group-hover:scale-110 object-cover"
+										src={news.urlImage}
+										alt="banner"
+										fill
+									/>
+									<div className="absolute top-0 py-1 px-3 bg-grad text-white rounded-b-lg left-1/2 -translate-x-1/2">
+										{formatDate(news.createdDate)}
+									</div>
 								</div>
-							</div>
-							<div className="text-base font-semibold group-hover:text-gradient min-h-16 lg:min-h-20">
-								{truncateText(news.mainTitle, 85)}
-							</div>
-						</Link>
-					))}
+								<div className="text-base font-semibold group-hover:text-gradient min-h-16 lg:min-h-20">
+									{truncateText(news.mainTitle, 85)}
+								</div>
+							</Link>
+						)
+					)}
 				</div>
 
 				{visibleCount < newsList.length ? (
-					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowMore}>Xem thêm</Button>
+					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowMore}>
+						Xem thêm
+					</Button>
 				) : (
-					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowLess}>Ẩn bớt</Button>
+					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowLess}>
+						Ẩn bớt
+					</Button>
 				)}
 			</div>
 		</div>

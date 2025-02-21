@@ -51,8 +51,10 @@ const StackItem = ({
 			}
 		};
 
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+		if (stack != 4) {
+			window.addEventListener("scroll", handleScroll);
+			return () => window.removeEventListener("scroll", handleScroll);
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -67,7 +69,7 @@ const StackItem = ({
 				}
 			)}
 			style={{
-				top: `${80 + stack * 20}px`,
+				top: stack == 4 ? `${0}px` : `${80 + stack * 20}px`,
 				zIndex: stack * 10 + 1,
 			}}
 		>
@@ -160,7 +162,12 @@ const Stack = () => {
 							/>
 						</div>
 						<div className="hidden md:block">
-							<Image src={"/images/home/banner-rightgirl.png"} width={300} height={200} alt="stack1" />
+							<Image
+								src={"/images/home/banner-rightgirl.png"}
+								width={300}
+								height={200}
+								alt="stack1"
+							/>
 						</div>
 						<div className="flex flex-col gap-8 pl-1 w-1/2 md:w-auto">
 							<Stack1Info
@@ -205,12 +212,12 @@ const Stack = () => {
 							<p className="text-gradient font-semibold green-underline">Giá trị</p>
 							<p className="text-3xl md:text-5xl text-left mt-4 ">
 								Giá trị mà{" "}
-								<span className="text-gradient font-semibold md:leading-[72px]">VNFITE</span> mang lại
-								cho khách hàng
+								<span className="text-gradient font-semibold md:leading-[72px]">VNFITE</span>{" "}
+								mang lại cho khách hàng
 							</p>
 						</div>
 
-						<div className="mt-6 md:mt-16 flex flex-col gap-6">
+						<div className="mt-6 md:mt-10 flex flex-col gap-6">
 							<CheckItem
 								title="Tiếp cận nguồn vốn dễ dàng và nhanh chóng"
 								content="Với quy trình đơn giản và công nghệ hiện đại, VNFITE giúp khách hàng dễ dàng tiếp cận các sản phẩm tài chính chỉ trong vài phút, mọi lúc, mọi nơi. Chúng tôi cam kết mang đến trải nghiệm thuận tiện và tiết kiệm thời gian nhất cho người dùng. "
@@ -289,8 +296,8 @@ const Stack = () => {
 						<div className="relative z-10">
 							<p className="text-gradient font-semibold green-underline">Quản lý tài chính</p>
 							<p className="text-3xl md:text-5xl text-left mt-4 ">
-								<span className="text-gradient font-semibold md:leading-[72px]"> VNFITE</span> có gì
-								xứng đáng để bạn sử dụng
+								<span className="text-gradient font-semibold md:leading-[72px]"> VNFITE</span>{" "}
+								có gì xứng đáng để bạn sử dụng
 							</p>
 						</div>
 
@@ -316,7 +323,12 @@ const Stack = () => {
 						<div className="absolute top-24 left-4 animation-breathing w-[100px] h-[100px] md:w-[400px] md:h-[500px]">
 							<Image className="" src={"/icons/home/dashborder.svg"} alt="Right" fill />
 							<div className="absolute -right-8 bottom-4 animation-bounce">
-								<Image src={"/images/home/rectangle.png"} width={350} height={500} alt="Right" />
+								<Image
+									src={"/images/home/rectangle.png"}
+									width={350}
+									height={500}
+									alt="Right"
+								/>
 							</div>
 						</div>
 						<div className="relative -top-36  md:-top-8 right-8 w-[620px] h-[500px]">
@@ -335,7 +347,9 @@ const Stack = () => {
 			<StackItem pinkBackground={true} stack={4}>
 				<div className=" mt-6 md:mt-10  2xl:mt-20  px-5 md:px-[12%] h-fit">
 					<div className="relative z-10">
-						<p className="text-gradient font-semibold green-underline after:w-[120%]">Tải ứng dụng</p>
+						<p className="text-gradient font-semibold green-underline after:w-[120%]">
+							Tải ứng dụng
+						</p>
 						<div className="mt-4 text-3xl  md:text-5xl">
 							Hướng dẫn cài đặt ứng dụng <span className="text-gradient font-bold">VNFITE</span>
 						</div>
@@ -351,8 +365,8 @@ const Stack = () => {
 									content="Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải ứng dụng."
 								/>
 								<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
-									Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút Tải ứng
-									dụng.
+									Tìm kiếm từ khoá “VNFITE” trên thanh tìm kiếm của ứng dụng hoặc ấn vào nút
+									Tải ứng dụng.
 								</p>
 
 								<CheckItem
@@ -368,9 +382,9 @@ const Stack = () => {
 									content="Yêu cầu bạn phải nhập số CCCD, tiếp theo xác minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui lòng đăng nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE. "
 								/>
 								<p className="sm:hidden text-gray-500 -my-6 text-start pl-7">
-									Yêu cầu bạn phải nhập số <span className="font-semibold">CCCD</span>, tiếp theo xác
-									minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước trên, vui lòng đăng
-									nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE.
+									Yêu cầu bạn phải nhập số <span className="font-semibold">CCCD</span>, tiếp
+									theo xác minh EKYC để tạo tài khoản VNFITE. Sau khi hoàn thành các bước
+									trên, vui lòng đăng nhập và trải nghiệp những dịch vụ hấp dẫn từ VNFITE.
 								</p>
 							</div>
 						)}

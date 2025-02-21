@@ -47,7 +47,9 @@ const JobItem = ({
 							{tags.map((item, index) => (
 								<div key={index} className="bg-grad p-[1px] rounded-sm">
 									<div className="bg-white rounded-sm px-2 py-1 group-hover:bg-transparent">
-										<span className="text-gradient group-hover:text-white">{keyToValue(item)}</span>
+										<span className="text-gradient group-hover:text-white">
+											{keyToValue(item)}
+										</span>
 									</div>
 								</div>
 							))}
@@ -102,7 +104,10 @@ const ListJobs = () => {
 			const res = await simpleFetchFunction(
 				`/hiring/?pageSize=&pageNumber=0&industryTyp=&name=&locationId=`
 			);
-			if (res.result.isOK) setJobs(res.data.hiringJobs);
+			if (res) setJobs(res.data.hiringJobs);
+			else {
+				setJobs([]);
+			}
 			setIsLoading(false);
 		};
 
@@ -171,11 +176,15 @@ const ListJobs = () => {
 									</SelectTrigger>
 									<SelectContent>
 										<SelectGroup>
-											<SelectItem value="65ebe5b0-3ba4-4a39-987c-da4aae70dc76">Hà Nội</SelectItem>
+											<SelectItem value="65ebe5b0-3ba4-4a39-987c-da4aae70dc76">
+												Hà Nội
+											</SelectItem>
 											<SelectItem value="4f0f6956-27dd-4076-9e6c-fbca2514a81e">
 												Hồ Chí Minh
 											</SelectItem>
-											<SelectItem value="1eafc872-465b-43f5-a938-c05c5bfc01ab">Đà Nẵng</SelectItem>
+											<SelectItem value="1eafc872-465b-43f5-a938-c05c5bfc01ab">
+												Đà Nẵng
+											</SelectItem>
 										</SelectGroup>
 									</SelectContent>
 								</Select>
@@ -195,7 +204,7 @@ const ListJobs = () => {
 					</div>
 				) : jobs.length === 0 ? (
 					<div className="text-center mt-6 font-semibold text-xl text-gradient">
-						Hiện tại chưa có công việc nào...
+						Hiện tại chưa có công việc nào
 					</div>
 				) : (
 					jobs.map((item, index) => {

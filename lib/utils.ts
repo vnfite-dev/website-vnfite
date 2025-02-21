@@ -53,7 +53,8 @@ export const simpleFetchFunction = async (url: string) => {
 	});
 
 	if (!rawData.ok) {
-		throw new Error(`HTTP error! Status: ${rawData.status}`);
+		// throw new Error(`HTTP error! Status: ${rawData.status}`);
+		return undefined;
 	}
 
 	const data = await rawData.json();

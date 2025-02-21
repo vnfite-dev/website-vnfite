@@ -136,7 +136,10 @@ const Navbar = () => {
 								<NavigationMenuItem>
 									<Link href="/about" legacyBehavior passHref>
 										<NavigationMenuLink
-											className={cn("navigation-menu-item", navigationMenuTriggerStyle())}
+											className={cn(
+												"navigation-menu-item",
+												navigationMenuTriggerStyle()
+											)}
 										>
 											Về VNFITE
 										</NavigationMenuLink>
@@ -153,19 +156,19 @@ const Navbar = () => {
 											<div className="flex flex-col min-w-[250px]">
 												<div
 													onMouseEnter={() => setProductsType(0)}
-													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold "
+													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold hover:text-white "
 												>
 													Gọi vốn cá nhân
 												</div>
 												<div
 													onMouseEnter={() => setProductsType(1)}
-													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold "
+													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold hover:text-white "
 												>
 													Gọi vốn hộ kinh doanh
 												</div>
 												<div
 													onMouseEnter={() => setProductsType(2)}
-													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold "
+													className="py-3 px-6 rounded-r-md cursor-pointer hover:bg-red-400 hover:font-semibold hover:text-white "
 												>
 													Gọi vốn doanh nghiệp
 												</div>
@@ -217,7 +220,10 @@ const Navbar = () => {
 								<NavigationMenuItem>
 									<Link href="/invest" legacyBehavior passHref>
 										<NavigationMenuLink
-											className={cn("navigation-menu-item", navigationMenuTriggerStyle())}
+											className={cn(
+												"navigation-menu-item",
+												navigationMenuTriggerStyle()
+											)}
 										>
 											Đầu tư
 										</NavigationMenuLink>
@@ -226,7 +232,10 @@ const Navbar = () => {
 								<NavigationMenuItem>
 									<Link href="/news" legacyBehavior passHref>
 										<NavigationMenuLink
-											className={cn("navigation-menu-item", navigationMenuTriggerStyle())}
+											className={cn(
+												"navigation-menu-item",
+												navigationMenuTriggerStyle()
+											)}
 										>
 											Tin tức
 										</NavigationMenuLink>
@@ -235,7 +244,10 @@ const Navbar = () => {
 								<NavigationMenuItem>
 									<Link href="/insure" legacyBehavior passHref>
 										<NavigationMenuLink
-											className={cn("navigation-menu-item", navigationMenuTriggerStyle())}
+											className={cn(
+												"navigation-menu-item",
+												navigationMenuTriggerStyle()
+											)}
 										>
 											Bảo hiểm
 										</NavigationMenuLink>
@@ -244,7 +256,10 @@ const Navbar = () => {
 								<NavigationMenuItem>
 									<Link href="/careers" legacyBehavior passHref>
 										<NavigationMenuLink
-											className={cn("navigation-menu-item", navigationMenuTriggerStyle())}
+											className={cn(
+												"navigation-menu-item",
+												navigationMenuTriggerStyle()
+											)}
 										>
 											Tuyển dụng
 										</NavigationMenuLink>
