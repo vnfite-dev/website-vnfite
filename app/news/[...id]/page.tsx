@@ -149,7 +149,7 @@ const NewsDetail = () => {
 				<div className="sticky top-40 lg:top-0 w-full h-auto">
 					<div className="text-2xl font-semibold text-center ">Tin tức liên quan</div>
 
-					<div className="mt-4 lg:mt-12 space-y-4 lg:border-l-2 lg:border-gray-300 lg:pl-12 xl:pl-16">
+					<div className="mt-4 lg:mt-12 space-y-4 lg:border-l-4 lg:border-gray-500 lg:pl-12 xl:pl-16">
 						{newList.slice(1, 5).map(
 							(
 								news: React.JSX.IntrinsicAttributes & {

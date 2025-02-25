@@ -125,7 +125,9 @@ const NewsPage = () => {
 							// detailNews[0].banner
 						)}
 						style={{
-							backgroundImage: newsList[0]?.urlImage ? `url(${newsList[0].urlImage})` : undefined,
+							backgroundImage: newsList[0]?.urlImage
+								? `url(${newsList[0].urlImage})`
+								: undefined,
 							backgroundPosition: "center",
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "cover",
@@ -182,7 +184,9 @@ const NewsPage = () => {
 									// onClick={() => navigateToDetail(_.id)}
 								>
 									<div
-										className={cn("w-full relative h-[160px] rounded-2xl bg-cover overflow-hidden")}
+										className={cn(
+											"w-full relative h-[220px] aspect-[3/4] rounded-2xl bg-cover overflow-hidden"
+										)}
 									>
 										<Image
 											className="group-hover:scale-110 object-cover"
@@ -191,7 +195,9 @@ const NewsPage = () => {
 											fill
 										/>
 									</div>
-									<div className="text-base font-semibold mt-2">{truncateText(_.mainTitle, 85)}</div>
+									<div className="text-base font-semibold mt-2">
+										{truncateText(_.mainTitle, 85)}
+									</div>
 									<div className="flex gap-1 text-sm items-center text-gray-600">
 										<Calendar size={16} />
 										{formatDate(_.createdDate)}
@@ -221,7 +227,7 @@ const NewsPage = () => {
 								key={index}
 								className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
 							>
-								<div className="w-full relative h-40 sm:h-[200px] rounded-2xl bg-cover overflow-hidden">
+								<div className="w-full relative h-40 sm:h-[200px] aspect-[3/4] rounded-2xl bg-cover overflow-hidden">
 									<Image
 										className="group-hover:scale-110 object-cover"
 										src={news.urlImage}

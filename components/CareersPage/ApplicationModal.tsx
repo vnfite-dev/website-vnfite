@@ -311,11 +311,15 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 										<SelectValue placeholder="Chọn thành phố" />
 									</SelectTrigger>
 									<SelectContent>
-										<SelectItem value="65ebe5b0-3ba4-4a39-987c-da4aae70dc76">Hà Nội</SelectItem>
+										<SelectItem value="65ebe5b0-3ba4-4a39-987c-da4aae70dc76">
+											Hà Nội
+										</SelectItem>
 										<SelectItem value="4f0f6956-27dd-4076-9e6c-fbca2514a81e">
 											Hồ Chí Minh
 										</SelectItem>
-										<SelectItem value="1eafc872-465b-43f5-a938-c05c5bfc01ab">Đà Nẵng</SelectItem>
+										<SelectItem value="1eafc872-465b-43f5-a938-c05c5bfc01ab">
+											Đà Nẵng
+										</SelectItem>
 									</SelectContent>
 								</Select>
 							</div>
@@ -330,7 +334,9 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 									setFileCv={(file) => updateFields({ fileCv: file })}
 								/>
 								{data.fileCv && (
-									<p className="text-sm text-gray-600">File bạn đã tải lên: {data.fileCv.name}</p>
+									<p className="text-sm text-gray-600">
+										File bạn đã tải lên: {data.fileCv.name}
+									</p>
 								)}
 							</div>
 
@@ -363,11 +369,16 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 				{currentStep === 2 && (
 					<div className="space-y-4">
 						<p className="flex justify-center items-center">
-							<Image src={"/images/careers/cvsuccess.gif"} alt="Success" width={160} height={160} />
+							<Image
+								src={"/images/careers/cvsuccess.gif"}
+								alt="Success"
+								width={160}
+								height={160}
+							/>
 						</p>
 						<p className="text-center px-10">
-							Cảm ơn bạn đã quan tâm và gửi thông tin ứng tuyển đến VNFITE! Chúng tôi đã nhận được hồ
-							sơ của bạn và sẽ xem xét một cách cẩn thận.
+							Cảm ơn bạn đã quan tâm và gửi thông tin ứng tuyển đến VNFITE! Chúng tôi đã nhận
+							được hồ sơ của bạn và sẽ xem xét một cách cẩn thận.
 						</p>
 						{/* <div className="flex justify-center">
 									<Button onClick={resetAndClose}>Close</Button>
