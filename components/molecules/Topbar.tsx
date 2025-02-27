@@ -23,7 +23,7 @@ const Topbar = () => {
 				</div>
 				<div className="flex items-center">
 					<Image src={"/icons/topbar/location.svg"} width={16} height={16} alt="location" />
-					<p>4A Vương Thừa Vũ, Thanh Xuân, Hà Nội</p>
+					<p>4B Vương Thừa Vũ, Thanh Xuân, Hà Nội</p>
 				</div>
 			</div>
 

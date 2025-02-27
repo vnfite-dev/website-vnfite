@@ -105,7 +105,7 @@ const Footer = () => {
 									<Image src={"icons/home/Location.svg"} width={16} height={16} alt="Location" />
 								</div>
 								<div className="text-sm leading-4 md:max-w-[273px]">
-									Số 4A Vương Thừa Vũ, phường Khương Trung, quận Thanh Xuân, Hà Nội
+									Số 4B Vương Thừa Vũ, phường Khương Trung, quận Thanh Xuân, Hà Nội
 								</div>
 							</div>
 							<div className="flex gap-2">
