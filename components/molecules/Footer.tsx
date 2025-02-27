@@ -94,7 +94,9 @@ const Footer = () => {
 				<div className="lg:w-4/5">
 					<div className="hidden sm:grid grid-cols-2 sm:grid-cols-3 lg:flex gap-6 lg:gap-12">
 						{navItemText?.map((item, index) => {
-							return <NavItem key={index} title={item.title} items={item.items} href={item.href} />;
+							return (
+								<NavItem key={index} title={item.title} items={item.items} href={item.href} />
+							);
 						})}
 					</div>
 
@@ -102,15 +104,26 @@ const Footer = () => {
 						<div className="flex flex-col gap-4">
 							<div className="flex gap-2">
 								<div className="min-w-4">
-									<Image src={"icons/home/Location.svg"} width={16} height={16} alt="Location" />
+									<Image
+										src={"icons/home/Location.svg"}
+										width={16}
+										height={16}
+										alt="Location"
+									/>
 								</div>
 								<div className="text-sm leading-4 md:max-w-[273px]">
-									Số 4B Vương Thừa Vũ, phường Khương Trung, quận Thanh Xuân, Hà Nội
+									Số nhà 4B, Phố Vương Thừa Vũ, Phường Khương Trung, Quận Thanh Xuân, TP Hà
+									Nội
 								</div>
 							</div>
 							<div className="flex gap-2">
 								<div className="">
-									<Image src={"icons/home/support.svg"} width={16} height={16} alt="Phone" />
+									<Image
+										src={"icons/home/support.svg"}
+										width={16}
+										height={16}
+										alt="Phone"
+									/>
 								</div>
 								<div className="text-sm leading-4 max-w-[273px]">Hotline: 024.3367.6699</div>
 							</div>
@@ -195,7 +208,12 @@ const Footer = () => {
 					onClick={handleClick}
 				>
 					<span className="hidden md:inline">{isOpen ? "Thu nhỏ" : "Mở rộng"}</span>
-					<div className={cn("transition-transform duration-150", isOpen ? "rotate-0" : "rotate-180")}>
+					<div
+						className={cn(
+							"transition-transform duration-150",
+							isOpen ? "rotate-0" : "rotate-180"
+						)}
+					>
 						<ChevronDown color={"#CF1313"} />
 					</div>
 				</div>
