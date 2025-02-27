@@ -73,7 +73,7 @@ const ENV_Live = {
 };
 
 class HelpersUtil {
-	envMode = ENV_Test;
+	envMode = ENV_Live;
 }
 
 export const WebUtils = new HelpersUtil();
