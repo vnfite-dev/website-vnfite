@@ -43,6 +43,23 @@ const NewsPage = () => {
 	const [visibleCount, setVisibleCount] = useState(8);
 
 	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 640) { 
+				setVisibleCount(0);
+			} else {
+				setVisibleCount(8);
+			}
+		};
+
+		handleResize();
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
+	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const newsData = await fetchNewsData(); // Thêm await để chờ dữ liệu
@@ -117,22 +134,20 @@ const NewsPage = () => {
 
 			<div className="mt-10 lg:mt-20">
 				<div className="text-center text-2xl lg:text-5xl font-semibold">Tin tức nổi bật</div>
-				<div className="mt-8 lg:mt-16 flex gap-8 xl:flex-row flex-col ">
+				<div className="mt-8 lg:mt-16 flex gap-8 xl:flex-row flex-col xl:items-start">
 					<Link
 						href={`/news/${newsList[0]?.id}`}
 						className={cn(
-							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer aspect-square bg-cover rounded-4xl relative overflow-hidden group mx-auto"
-							// detailNews[0].banner
+							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer rounded-4xl relative overflow-hidden group mx-auto aspect-square"
 						)}
-						style={{
-							backgroundImage: newsList[0]?.urlImage
-								? `url(${newsList[0].urlImage})`
-								: undefined,
-							backgroundPosition: "center",
-							backgroundRepeat: "no-repeat",
-							backgroundSize: "cover",
-						}}
 					>
+						<Image
+							src={newsList[0]?.urlImage}
+							alt="banner"
+							fill
+							className=""
+						/>
+
 						{/* Gradient Filter for Bottom Half */}
 						<div className="absolute bottom-0 left-0 w-full h-3/4 bg-gradient-to-t from-gray-800/100 to-transparent group-hover:h-full group-hover:from-red-600/65 transition-all duration-300 pointer-events-none"></div>
 
@@ -166,7 +181,8 @@ const NewsPage = () => {
 						</div>
 					</Link>
 
-					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0">
+
+					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0 mx-2">
 						{newsList?.slice(1, 5).map(
 							(
 								_: {
@@ -181,18 +197,20 @@ const NewsPage = () => {
 									key={index}
 									className="cursor-pointer group"
 									href={`/news/${_?.id}`}
-									// onClick={() => navigateToDetail(_.id)}
+								// onClick={() => navigateToDetail(_.id)}
 								>
 									<div
 										className={cn(
-											"w-full relative h-[220px] aspect-[3/4] rounded-2xl bg-cover overflow-hidden"
+											"w-full relative aspect-[4/3] rounded-2xl overflow-hidden"
 										)}
 									>
 										<Image
-											className="group-hover:scale-110 object-cover"
+											className="group-hover:scale-110 object-cover h-full w-full"
 											src={_.urlImage}
 											alt="banner"
-											fill
+											// fill
+											width={400}
+											height={300}
 										/>
 									</div>
 									<div className="text-base font-semibold mt-2">
@@ -211,7 +229,7 @@ const NewsPage = () => {
 
 			<div className="mt-10 lg:mt-28">
 				<p className="text-center text-2xl lg:text-5xl font-semibold">Danh sách tin tức</p>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-6 mt-6 lg:mt-16">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-6 mt-6 lg:mt-16 mx-2">
 					{newsList?.slice(0, visibleCount).map(
 						(
 							news: {
@@ -227,10 +245,10 @@ const NewsPage = () => {
 								key={index}
 								className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
 							>
-								<div className="w-full relative h-40 sm:h-[200px] aspect-[3/4] rounded-2xl bg-cover overflow-hidden">
+								<div className="w-full relative rounded-2xl bg-cover overflow-hidden aspect-[4/3]">
 									<Image
 										className="group-hover:scale-110 object-cover"
-										src={news.urlImage}
+										src={news?.urlImage || ""}
 										alt="banner"
 										fill
 									/>
