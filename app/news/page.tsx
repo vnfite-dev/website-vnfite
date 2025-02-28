@@ -117,22 +117,20 @@ const NewsPage = () => {
 
 			<div className="mt-10 lg:mt-20">
 				<div className="text-center text-2xl lg:text-5xl font-semibold">Tin tức nổi bật</div>
-				<div className="mt-8 lg:mt-16 flex gap-8 xl:flex-row flex-col ">
+				<div className="mt-8 lg:mt-16 flex gap-8 xl:flex-row flex-col xl:items-start">
 					<Link
 						href={`/news/${newsList[0]?.id}`}
 						className={cn(
-							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer aspect-square bg-cover rounded-4xl relative overflow-hidden group mx-auto"
-							// detailNews[0].banner
+							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer rounded-4xl relative overflow-hidden group mx-auto aspect-square"
 						)}
-						style={{
-							backgroundImage: newsList[0]?.urlImage
-								? `url(${newsList[0].urlImage})`
-								: undefined,
-							backgroundPosition: "center",
-							backgroundRepeat: "no-repeat",
-							backgroundSize: "cover",
-						}}
 					>
+						<Image
+							src={newsList[0]?.urlImage}
+							alt="banner"
+							fill
+							className=""
+						/>
+
 						{/* Gradient Filter for Bottom Half */}
 						<div className="absolute bottom-0 left-0 w-full h-3/4 bg-gradient-to-t from-gray-800/100 to-transparent group-hover:h-full group-hover:from-red-600/65 transition-all duration-300 pointer-events-none"></div>
 
@@ -166,6 +164,7 @@ const NewsPage = () => {
 						</div>
 					</Link>
 
+
 					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0">
 						{newsList?.slice(1, 5).map(
 							(
@@ -181,18 +180,20 @@ const NewsPage = () => {
 									key={index}
 									className="cursor-pointer group"
 									href={`/news/${_?.id}`}
-									// onClick={() => navigateToDetail(_.id)}
+								// onClick={() => navigateToDetail(_.id)}
 								>
 									<div
 										className={cn(
-											"w-full relative h-[220px] aspect-[3/4] rounded-2xl bg-cover overflow-hidden"
+											"w-full relative aspect-[4/3] rounded-2xl overflow-hidden"
 										)}
 									>
 										<Image
-											className="group-hover:scale-110 object-cover"
+											className="group-hover:scale-110 object-cover h-full w-full"
 											src={_.urlImage}
 											alt="banner"
-											fill
+											// fill
+											width={400}
+											height={300}
 										/>
 									</div>
 									<div className="text-base font-semibold mt-2">
@@ -230,7 +231,7 @@ const NewsPage = () => {
 								<div className="w-full relative h-40 sm:h-[200px] aspect-[3/4] rounded-2xl bg-cover overflow-hidden">
 									<Image
 										className="group-hover:scale-110 object-cover"
-										src={news.urlImage}
+										src={news?.urlImage || ""}
 										alt="banner"
 										fill
 									/>

@@ -63,7 +63,7 @@ interface NewsItem {
 }
 
 const fetchNewsData = async () => {
-	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=1`);
+	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=0`);
 	console.log(data)
 	return data.data.data;
 };
@@ -136,7 +136,7 @@ const NewsList = () => {
 								src={imageLink}
 								alt="news"
 								fill
-								className="rounded-t-[32px] lg:rounded-tr-none lg:rounded-l-[32px] object-cover "
+								className="rounded-t-[32px] lg:rounded-tr-none lg:rounded-l-[32px] object-cover"
 							/>
 						</div>
 
