@@ -58,6 +58,7 @@ export default function RootLayout({
 		<html lang="en">
 			<Head>
 				<meta httpEquiv="Content-Security-Policy" content="img-src https: data:;" />
+				<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 			</Head>
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro`}>
 				<Header />
