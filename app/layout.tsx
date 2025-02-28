@@ -4,7 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/molecules/Footer";
 import Header from "@/components/molecules/Header";
-
+import Head from "next/head";
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,10 +54,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 	modal: React.ReactNode;
 }>) {
-
-
 	return (
 		<html lang="en">
+			<Head>
+				<meta httpEquiv="Content-Security-Policy" content="img-src https: data:;" />
+			</Head>
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro`}>
 				<Header />
 				{modal}
