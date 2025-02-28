@@ -43,6 +43,23 @@ const NewsPage = () => {
 	const [visibleCount, setVisibleCount] = useState(8);
 
 	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 640) { 
+				setVisibleCount(0);
+			} else {
+				setVisibleCount(8);
+			}
+		};
+
+		handleResize();
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
+	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const newsData = await fetchNewsData(); // Thêm await để chờ dữ liệu
@@ -165,7 +182,7 @@ const NewsPage = () => {
 					</Link>
 
 
-					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0">
+					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0 mx-2">
 						{newsList?.slice(1, 5).map(
 							(
 								_: {
@@ -212,7 +229,7 @@ const NewsPage = () => {
 
 			<div className="mt-10 lg:mt-28">
 				<p className="text-center text-2xl lg:text-5xl font-semibold">Danh sách tin tức</p>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-6 mt-6 lg:mt-16">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-6 mt-6 lg:mt-16 mx-2">
 					{newsList?.slice(0, visibleCount).map(
 						(
 							news: {
@@ -228,7 +245,7 @@ const NewsPage = () => {
 								key={index}
 								className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
 							>
-								<div className="w-full relative h-40 sm:h-[200px] aspect-[3/4] rounded-2xl bg-cover overflow-hidden">
+								<div className="w-full relative rounded-2xl bg-cover overflow-hidden aspect-[4/3]">
 									<Image
 										className="group-hover:scale-110 object-cover"
 										src={news?.urlImage || ""}
