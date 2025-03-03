@@ -11,8 +11,8 @@ const dayList = [
 	{
 		title: "Hoạt động giải trí Sport",
 		describe: [
-			"Các CLB game trong công ty được phát triển mạng mẽ.",
-			"Các CLB game trong công ty được phát triển mạng mẽ.",
+			"Các câu lạc bộ game trong công ty được phát triển mạnh mẽ, tạo sân chơi hấp dẫn cho nhân viên giao lưu, thư giãn sau giờ làm việc.",
+			// "Các CLB game trong công ty được phát triển mạnh mẽ, giúp gắn kết đồng nghiệp và nâng cao tinh thần đồng đội."
 		],
 	},
 
@@ -81,12 +81,20 @@ const Benefits = () => {
 						{dayList.map((item, index) => (
 							<div key={index} className="flex flex-col gap-2">
 								<div className="text-gradient font-semibold text-xl leading-10 flex gap-3">
-									<Image src={`/icons/home/RedCheck.svg`} width={24} height={24} alt="check" />
+									<Image
+										src={`/icons/home/RedCheck.svg`}
+										width={24}
+										height={24}
+										alt="check"
+									/>
 									{item.title}
 								</div>
 								<div className="flex flex-col gap-4">
 									{item.describe.map((item, index) => (
-										<div key={index} className="text-gray-600 text-base font-medium ml-10">
+										<div
+											key={index}
+											className="text-gray-600 text-base font-medium ml-10"
+										>
 											{item}
 										</div>
 									))}
