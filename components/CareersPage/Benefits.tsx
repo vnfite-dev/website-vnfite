@@ -5,7 +5,7 @@ const dayList = [
 	{
 		title: "Giờ giải lao",
 		describe: [
-			"Nhân viên có thể tham gia các hoạt động giải trí tại VNFITE sau những giây phút làm việc căng thẳng",
+			"Nhân viên có thể tham gia các hoạt động giải trí tại VNFITE sau những phút giây làm việc căng thẳng",
 		],
 	},
 	{
