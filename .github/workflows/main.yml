@@ -16,8 +16,13 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: 22
         script: |
-          cd website-vnfite
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+          export PATH=$PATH:$(dirname $(which pm2))  # Đảm bảo PM2 có trong PATH
           nvm use 20
+          cd website-vnfite
           git pull
           npm install
           npm run build
