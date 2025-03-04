@@ -30,10 +30,17 @@ interface NewsItem {
 	createdDate: string | number | Date;
 	mainTitle: string;
 	content: string;
+	subImage: string;
 }
 
-const fetchNewsData = async () => {
-	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=1`);
+interface PromotionItem {
+	id: string;
+	banner: string;
+	mainTitle: string;
+}
+
+const fetchNewsData = async (type: number) => {
+	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=${type}`);
 	console.log(data);
 	return data.data.data;
 };
@@ -41,6 +48,7 @@ const fetchNewsData = async () => {
 const NewsPage = () => {
 	const [newsList, setNewsList] = useState<NewsItem[]>([]);
 	const [visibleCount, setVisibleCount] = useState(8);
+	const [promotionList, setPromotionList] = useState<PromotionItem[]>([]);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -62,9 +70,11 @@ const NewsPage = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const newsData = await fetchNewsData(); // Thêm await để chờ dữ liệu
+				const newsData = await fetchNewsData(1); // Thêm await để chờ dữ liệu
 				const newsList = [...(newsData ?? []), ...detailNews];
 				setNewsList(newsList);
+				const promotionData = await fetchNewsData(3);
+				setPromotionList([...(promotionData ?? []), ...detailPromotion]);
 			} catch (error) {
 				console.error("Lỗi khi lấy dữ liệu:", error);
 			}
@@ -111,7 +121,7 @@ const NewsPage = () => {
 			<div className="mt-10 ">
 				<Carousel className="w-full">
 					<CarouselContent>
-						{detailPromotion.map((_, index) => (
+						{promotionList.map((_, index) => (
 							<CarouselItem key={index}>
 								<div
 									className={cn(
@@ -142,7 +152,7 @@ const NewsPage = () => {
 						)}
 					>
 						<Image
-							src={newsList[0]?.urlImage}
+							src={newsList[0]?.urlImage ?? "/public/images/vnfite_logo.png"}
 							alt="banner"
 							fill
 							className=""
@@ -186,7 +196,7 @@ const NewsPage = () => {
 						{newsList?.slice(1, 5).map(
 							(
 								_: {
-									urlImage: string | StaticImport;
+									subImage: string | StaticImport;
 									mainTitle: string;
 									createdDate: string | number | Date;
 									id: string;
@@ -206,7 +216,7 @@ const NewsPage = () => {
 									>
 										<Image
 											className="group-hover:scale-110 object-cover h-full w-full"
-											src={_.urlImage}
+											src={_.subImage ?? "/public/images/vnfite_logo.png"}
 											alt="banner"
 											// fill
 											width={400}
@@ -233,7 +243,7 @@ const NewsPage = () => {
 					{newsList?.slice(0, visibleCount).map(
 						(
 							news: {
-								urlImage: string | StaticImport;
+								subImage: string | StaticImport;
 								createdDate: string | number | Date;
 								mainTitle: string;
 								id: string;
@@ -248,7 +258,7 @@ const NewsPage = () => {
 								<div className="w-full relative rounded-2xl bg-cover overflow-hidden aspect-[4/3]">
 									<Image
 										className="group-hover:scale-110 object-cover"
-										src={news?.urlImage || ""}
+										src={news?.subImage ?? "/public/images/vnfite_logo.png"}
 										alt="banner"
 										fill
 									/>
