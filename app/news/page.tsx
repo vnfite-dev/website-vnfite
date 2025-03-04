@@ -152,7 +152,7 @@ const NewsPage = () => {
 						)}
 					>
 						<Image
-							src={newsList[0]?.urlImage ?? "/public/images/vnfite_logo.png"}
+							src={newsList[0]?.urlImage ?? "/images/news/bigNew.jpg"}
 							alt="banner"
 							fill
 							className=""
@@ -216,7 +216,7 @@ const NewsPage = () => {
 									>
 										<Image
 											className="group-hover:scale-110 object-cover h-full w-full"
-											src={_.subImage ?? "/public/images/vnfite_logo.png"}
+											src={_.subImage || "/images/home/banner-right.JPG"}
 											alt="banner"
 											// fill
 											width={400}
@@ -258,7 +258,7 @@ const NewsPage = () => {
 								<div className="w-full relative rounded-2xl bg-cover overflow-hidden aspect-[4/3]">
 									<Image
 										className="group-hover:scale-110 object-cover"
-										src={news?.subImage ?? "/public/images/vnfite_logo.png"}
+										src={news?.subImage || "/images/home/banner-right.JPG"}
 										alt="banner"
 										fill
 									/>
