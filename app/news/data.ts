@@ -398,8 +398,7 @@ export const jobList = [
 
 export const detailPromotion = [
   {
-    id: 1,
-    banner: `bg-[url("/images/news/vnfiteNewYear.png")]`,
+    id: 'gsefsffes',
     mainTitle: "LÌ XÌ ĐÓN TẾT 2025",
     content: `Nhận ngay 68.000 VNĐ vào tài khoản VNFITE khi:
 
@@ -434,10 +433,11 @@ export const detailPromotion = [
       Nhanh tay tham gia ngay để không bỏ lỡ lì xì đầu năm hấp dẫn từ VNFITE!`,
           createdDate: "12/31/2024",
           urlImage: "/images/news/vnfiteNewYear.png",
+          subImage: "/images/news/rich.jpg"
+
       },
   {
-    id: 2,
-    banner: `bg-[url("/images/news/happyNewYear.png")]`,
+    id: 'adafweryjfgn',
     mainTitle: "CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12!",
     content: `🎉 CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12! 🎉
 
@@ -464,10 +464,11 @@ export const detailPromotion = [
       ☎ Hotline: 024.3367.6699`,
     createdDate: "12/21/2024",
     urlImage: "/images/news/happyNewYear.png",
+    subImage: "/images/news/rich.jpg"
+
   },
   {
-    id: 3,
-    banner: `bg-[url("/images/news/newDetail.png")]`,
+    id: 'nfgnffgnfgm',
     mainTitle: "CHƯƠNG TRÌNH TRI ẤN NHÀ GIÁO NGÀY 20/11",
     content: `🌟 CHƯƠNG TRÌNH TRI ÂN NHÀ GIÁO - ĐẶC BIỆT DÀNH TẶNG THẦY CÔ GIÁO! 🌟
       Tháng 11 này, VNFITE dành riêng một chương trình tri ân dành cho Quý thầy cô trên toàn quốc 🎓💖
@@ -508,6 +509,8 @@ export const detailPromotion = [
       ☎ Hotline: 024.3367.6699`,
     createdDate: "11/15/2024",
     urlImage: "/images/news/newDetail.png",
+        subImage: "/images/news/rich.jpg"
+
   }
 
 ]

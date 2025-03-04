@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { Clock, Share2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { detailNews } from "../data";
+import { detailNews, detailPromotion } from "../data";
 // import { useParams, useRouter } from "next/navigation";
 import { simpleFetchFunction } from "@/lib/utils";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-const fetchNewsData = async () => {
-	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=1`);
+const fetchNewsData = async (type: number) => {
+	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=${type}`);
 	return data.data;
 };
 
@@ -55,6 +55,7 @@ const NewsDetail = () => {
 	// Remove async
 
 	const params = useParams<{ id: string[] }>();
+	const type = useSearchParams().get("type") || 0;
 
 	console.log(params);
 	const [news, setNews] = useState<{
@@ -69,8 +70,9 @@ const NewsDetail = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const newsData = await fetchNewsData();
-			setNewList([...(newsData?.data ?? []), ...detailNews]);
+			const newsData = await fetchNewsData(type ? parseInt(type) : 0);
+			if (parseInt(type as string) === 3) setNewList([...(newsData?.data ?? []),  ...detailPromotion]);
+			else setNewList([...(newsData?.data ?? []),  ...detailNews]);
 			// setNews(newsList.find((_: { id: string }) => _.id === params.id[0]));
 		};
 

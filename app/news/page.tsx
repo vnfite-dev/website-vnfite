@@ -37,12 +37,13 @@ interface PromotionItem {
 	id: string;
 	banner: string;
 	mainTitle: string;
+	urlImage: string;
 }
 
 const fetchNewsData = async (type: number) => {
 	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=${type}`);
 	console.log(data);
-	return data.data.data;
+	return data?.data?.data;
 };
 
 const NewsPage = () => {
@@ -52,7 +53,7 @@ const NewsPage = () => {
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth < 640) { 
+			if (window.innerWidth < 640) {
 				setVisibleCount(0);
 			} else {
 				setVisibleCount(8);
@@ -70,7 +71,7 @@ const NewsPage = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const newsData = await fetchNewsData(1); // Thêm await để chờ dữ liệu
+				const newsData = await fetchNewsData(0); // Thêm await để chờ dữ liệu
 				const newsList = [...(newsData ?? []), ...detailNews];
 				setNewsList(newsList);
 				const promotionData = await fetchNewsData(3);
@@ -123,15 +124,19 @@ const NewsPage = () => {
 					<CarouselContent>
 						{promotionList.map((_, index) => (
 							<CarouselItem key={index}>
-								<div
-									className={cn(
-										"p-1 border border-red-300 rounded-2xl h-64 md:h-80 lg:h-96 xl:h-[458px] bg-cover flex justify-center items-end pb-6 md:pb-12 lg:pb-16 bg-center",
-										_.banner
-									)}
-								>
-									<div className="py-5 px-6 md:px-16 border rounded-2xl border-red-500 text-white font-medium text-sm md:text-base 2xl:text-lg bg-red-800 bg-opacity-65">
-										{_.mainTitle}
-									</div>
+								<div className="relative w-full aspect-[3/1] border border-red-300 rounded-2xl overflow-hidden">
+									<Link href={{ pathname: `/news/${_?.id}`, query: { type: 3 } }}>
+										<Image
+											src={_.urlImage} // URL ảnh
+											alt="Promotion Banner"
+											layout="fill" // Full kích thước của thẻ cha
+											objectFit="cover" // Cắt ảnh đúng tỉ lệ mà không méo
+											className="rounded-2xl"
+										/>
+										<div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center bg-red-800 bg-opacity-65 text-white py-3 px-6 md:px-16 border-t border-red-500 text-sm md:text-base 2xl:text-lg inline-block max-w-max rounded-lg">
+											{_.mainTitle}
+										</div>
+									</Link>
 								</div>
 							</CarouselItem>
 						))}
@@ -145,51 +150,56 @@ const NewsPage = () => {
 			<div className="mt-10 lg:mt-20">
 				<div className="text-center text-2xl lg:text-5xl font-semibold">Tin tức nổi bật</div>
 				<div className="mt-8 lg:mt-16 flex gap-8 xl:flex-row flex-col xl:items-start">
-					<Link
-						href={`/news/${newsList[0]?.id}`}
-						className={cn(
-							"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer rounded-4xl relative overflow-hidden group mx-auto aspect-square"
-						)}
-					>
-						<Image
-							src={newsList[0]?.urlImage ?? "/images/news/bigNew.jpg"}
-							alt="banner"
-							fill
-							className=""
-						/>
+					{
+						newsList[0] && (
 
-						{/* Gradient Filter for Bottom Half */}
-						<div className="absolute bottom-0 left-0 w-full h-3/4 bg-gradient-to-t from-gray-800/100 to-transparent group-hover:h-full group-hover:from-red-600/65 transition-all duration-300 pointer-events-none"></div>
+							<Link
+								href={`/news/${newsList[0]?.id}`}
+								className={cn(
+									"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer rounded-4xl relative overflow-hidden group mx-auto aspect-square"
+								)}
+							>
+								<Image
+									src={newsList[0]?.urlImage ?? "/images/news/bigNew.jpg"}
+									alt="banner"
+									fill
+									className=""
+								/>
 
-						{/* Content */}
-						<div className="relative z-10 flex justify-end items-center h-full px-7 pb-6 sm:pb-14 flex-col gap-4 overflow-hidden">
-							{/* Title Animation */}
-							<p className="text-white font-semibold text-lg sm:text-2xl transform translate-y-24 group-hover:-translate-y-0 transition-transform duration-500 ease-in-out">
-								{newsList[0]?.mainTitle}
-							</p>
+								{/* Gradient Filter for Bottom Half */}
+								<div className="absolute bottom-0 left-0 w-full h-3/4 bg-gradient-to-t from-gray-800/100 to-transparent group-hover:h-full group-hover:from-red-600/65 transition-all duration-300 pointer-events-none"></div>
 
-							{/* Detail Animation */}
-							{textContent && (
-								<>
-									<p className="hidden sm:flex sm:flex-col text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out whitespace-pre-line">
-										{truncateText(textContent, 300)}
+								{/* Content */}
+								<div className="relative z-10 flex justify-end items-center h-full px-7 pb-6 sm:pb-14 flex-col gap-4 overflow-hidden">
+									{/* Title Animation */}
+									<p className="text-white font-semibold text-lg sm:text-2xl transform translate-y-24 group-hover:-translate-y-0 transition-transform duration-500 ease-in-out">
+										{newsList[0]?.mainTitle}
 									</p>
-									<p className="flex flex-col sm:hidden text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out whitespace-pre-line">
-										{truncateText(textContent, 150)}
-									</p>
-								</>
-							)}
 
-							{/* Border Animation */}
-							<div className="w-full flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-								<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"></div>
-								<p className="w-[280px] text-center px-1 text-white text-sm sm:text-base">
-									Xem chi tiết
-								</p>
-								<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-in-out"></div>
-							</div>
-						</div>
-					</Link>
+									{/* Detail Animation */}
+									{textContent && (
+										<>
+											<p className="hidden sm:flex sm:flex-col text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out whitespace-pre-line">
+												{truncateText(textContent, 300)}
+											</p>
+											<p className="flex flex-col sm:hidden text-white text-sm opacity-0 group-hover:opacity-100 transform translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out whitespace-pre-line">
+												{truncateText(textContent, 150)}
+											</p>
+										</>
+									)}
+
+									{/* Border Animation */}
+									<div className="w-full flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+										<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"></div>
+										<p className="w-[280px] text-center px-1 text-white text-sm sm:text-base">
+											Xem chi tiết
+										</p>
+										<div className="w-full border-t border-white transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-in-out"></div>
+									</div>
+								</div>
+							</Link>
+						)
+					}
 
 
 					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:px-[18%] md:px-0 lg:px-[10%] xl:px-0 mx-2">
@@ -206,7 +216,7 @@ const NewsPage = () => {
 								<Link
 									key={index}
 									className="cursor-pointer group"
-									href={`/news/${_?.id}`}
+									href={{ pathname: `/news/${_?.id}`, query: { type: 0 } }}
 								// onClick={() => navigateToDetail(_.id)}
 								>
 									<div
@@ -251,7 +261,7 @@ const NewsPage = () => {
 							index: Key | null | undefined
 						) => (
 							<Link
-								href={`/news/${news?.id}`}
+								href={{ pathname: `/news/${news?.id}`, query: { type: 0 } }}
 								key={index}
 								className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
 							>
