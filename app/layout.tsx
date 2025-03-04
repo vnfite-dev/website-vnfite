@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/molecules/Footer";
 import Header from "@/components/molecules/Header";
 import Head from "next/head";
+import ZaloChatWidget from "@/components/molecules/ZaloChatWidget";
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
 
@@ -60,7 +61,9 @@ export default function RootLayout({
 				<meta httpEquiv="Content-Security-Policy" content="img-src https: data:;" />
 				<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 			</Head>
-			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro`}>
+			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro relative`}>
+				<ZaloChatWidget />
+
 				<Header />
 				{modal}
 				{children}

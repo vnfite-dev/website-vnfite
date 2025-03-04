@@ -1,3 +1,4 @@
+import { SOCIAL_MEDIA } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,9 +38,21 @@ const Topbar = () => {
 				<div className="flex items-center">
 					<p>Theo dõi chúng tôi:</p>
 					<div className="flex gap-3.5 ml-2">
-						<IconLink href="#" src="/icons/topbar/facebookWhite.svg" alt="facebook" />
-						<IconLink href="#" src="/icons/topbar/tiktokWhite.svg" alt="tiktok" />
-						<IconLink href="#" src="/icons/topbar/youtubeWhite.svg" alt="youtube" />
+						<IconLink
+							href={SOCIAL_MEDIA.facebook}
+							src="/icons/topbar/facebookWhite.svg"
+							alt="facebook"
+						/>
+						<IconLink
+							href={SOCIAL_MEDIA.tiktok}
+							src="/icons/topbar/tiktokWhite.svg"
+							alt="tiktok"
+						/>
+						<IconLink
+							href={SOCIAL_MEDIA.youtube}
+							src="/icons/topbar/youtubeWhite.svg"
+							alt="youtube"
+						/>
 					</div>
 				</div>
 			</div>

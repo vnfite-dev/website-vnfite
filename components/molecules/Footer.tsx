@@ -170,17 +170,39 @@ const Footer = () => {
 					<div className="mt-4 sm:mt-0 lg:mt-20">
 						<div className="text-center">Kết nối với VNFITE</div>
 
-						<div className="mt-6 flex gap-6 justify-center">
+						<div className="mt-6 flex gap-4 justify-center overflow-visible">
 							<Image
 								src={"/icons/home/facebook.svg"}
 								width={32}
+								className="cursor-pointer"
 								height={32}
 								alt="Facebook"
 								onClick={() => window.open(SOCIAL_MEDIA.facebook, "_blank")}
 							/>
-							<Image src={"/icons/home/youtube.svg"} width={32} height={32} alt="Facebook" />
-							<Image src={"/icons/home/tiktok.svg"} width={32} height={32} alt="Facebook" />
-							<Image src={"/icons/home/zalo.svg"} width={32} height={32} alt="Facebook" />
+							<Image
+								src={"/icons/home/youtube.svg"}
+								width={32}
+								height={32}
+								alt="Facebook"
+								className="cursor-pointer"
+								onClick={() => window.open(SOCIAL_MEDIA.youtube, "_blank")}
+							/>
+							<Image
+								src={"/icons/home/tiktok.svg"}
+								width={32}
+								height={32}
+								alt="Facebook"
+								className="cursor-pointer"
+								onClick={() => window.open(SOCIAL_MEDIA.tiktok, "_blank")}
+							/>
+							<Image
+								className="overflow-y-visible cursor-pointer"
+								src={"/icons/home/zalo.svg"}
+								width={32}
+								height={32}
+								// onClick={() => window.open(SOCIAL_MEDIA.zalo, "_blank")}
+								alt="Facebook"
+							/>
 						</div>
 					</div>
 				</div>
