@@ -431,9 +431,9 @@ export const detailPromotion = [
       - Hotline: 024.3367.6699
 
       Nhanh tay tham gia ngay để không bỏ lỡ lì xì đầu năm hấp dẫn từ VNFITE!`,
-          createdDate: "2024-12-31T04:22:19.000+00:00",
+          createdDate: "2025-01-22T04:22:19.000+00:00",
           urlImage: "/images/news/vnfiteNewYear.png",
-          subImage: "/images/news/rich.jpg"
+          subImage: "/images/news/vnfiteNewYear.png"
 
       },
   {
@@ -462,9 +462,9 @@ export const detailPromotion = [
       - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
       📧 Email: dvkh@vnfite.com.vn
       ☎ Hotline: 024.3367.6699`,
-    createdDate: "2024-12-21T04:22:19.000+00:00",
+    createdDate: "2025-01-21T04:22:19.000+00:00",
     urlImage: "/images/news/happyNewYear.png",
-    subImage: "/images/news/rich.jpg"
+    subImage: "/images/news/happyNewYear.png"
 
   },
   {
@@ -509,7 +509,7 @@ export const detailPromotion = [
       ☎ Hotline: 024.3367.6699`,
     createdDate: "2024-12-15T04:22:19.000+00:00",
     urlImage: "/images/news/newDetail.png",
-        subImage: "/images/news/rich.jpg"
+        subImage: "/images/news/newDetail.png"
 
   }
 

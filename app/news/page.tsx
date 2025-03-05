@@ -15,7 +15,6 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Key, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import dayjs from "dayjs";
 
 
 // const bigNews = [
@@ -35,14 +34,6 @@ interface NewsItem {
 	subImage: string;
 }
 
-interface PromotionItem {
-	id: string;
-	banner: string;
-	mainTitle: string;
-	urlImage: string;
-	
-}
-
 const fetchNewsData = async (type: number) => {
 	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=${type}`);
 	console.log(data);
@@ -52,7 +43,10 @@ const fetchNewsData = async (type: number) => {
 const NewsPage = () => {
 	const [newsList, setNewsList] = useState<NewsItem[]>([]);
 	const [visibleCount, setVisibleCount] = useState(8);
-	const [promotionList, setPromotionList] = useState<PromotionItem[]>([]);
+	const [promotionList, setPromotionList] = useState<NewsItem[]>([]);
+	const [list, setList] = useState<NewsItem[]>([]);
+	const timeAllowed = new Date();
+	timeAllowed.setDate(timeAllowed.getDate() - 45);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -87,8 +81,18 @@ const NewsPage = () => {
 		fetchData();
 	}, []);
 
-	const filterPromotionList = promotionList.filter((item: PromotionItem) => {
-		const createdDateItem = dayjs(item.createdDate)
+	useEffect(() => {
+		setList([...newsList, ...promotionList]);
+	}, [newsList, promotionList]);
+
+	const filterSortList = list.sort((a: NewsItem, b: NewsItem) =>
+		new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime()
+	)
+	console.log('adada', filterSortList.length);
+
+	const filterPromotionList = promotionList.filter((item: NewsItem) => {
+		const createdDateItem = new Date(item.createdDate);
+		return createdDateItem >= timeAllowed;
 	})
 
 	const htmlToText = (html: string): string => {
@@ -129,7 +133,7 @@ const NewsPage = () => {
 			<div className="mt-10 ">
 				<Carousel className="w-full">
 					<CarouselContent>
-						{promotionList.map((_, index) => (
+						{filterPromotionList.map((_, index) => (
 							<CarouselItem key={index}>
 								<div className="relative w-full aspect-[3/1] border border-red-300 rounded-2xl overflow-hidden">
 									<Link href={{ pathname: `/news/${_?.id}`, query: { type: 3 } }}>
@@ -257,7 +261,7 @@ const NewsPage = () => {
 			<div className="mt-10 lg:mt-28">
 				<p className="text-center text-2xl lg:text-5xl font-semibold">Danh sách tin tức</p>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-6 mt-6 lg:mt-16 mx-2">
-					{newsList?.slice(0, visibleCount).map(
+					{filterSortList?.slice(0, visibleCount).map(
 						(
 							news: {
 								subImage: string | StaticImport;
@@ -291,7 +295,7 @@ const NewsPage = () => {
 					)}
 				</div>
 
-				{visibleCount < newsList.length ? (
+				{visibleCount < list?.length ? (
 					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowMore}>
 						Xem thêm
 					</Button>
