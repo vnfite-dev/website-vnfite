@@ -6,6 +6,7 @@ export const detailNews = [
       "Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại. Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại.Công ty chứng khoán của bà Nguyễn Thanh Phượng thanh toán thay nhà đầu tư ngoại.",
     createdDate: "12/17/2024",
     urlImage: "/images/news/bigNew.jpg",
+    subImage: "/images/news/bigNew.jpg"
   },
   {
     id: '2',
@@ -37,6 +38,7 @@ export const detailNews = [
             Báo cáo của UBS cũng chỉ ra rằng khối tài sản mà các tỷ phú để lại cho con cháu cũng ngày càng lớn. Trong thập kỷ qua, các tỷ phú đa thế hệ đã để lại 1.300 tỷ USD cho thế hệ kế tiếp. Con số này dự kiến tăng lên 6.300 tỷ USD trong 15 năm tới, khi ngày càng nhiều tỷ phú bước qua tuổi 70 và giá trị tài sản của họ tiếp tục tăng.`,
     createdDate: "01/11/2025",
     urlImage: "/images/news/rich.jpg",
+    subImage: "/images/news/rich.jpg"
   },
   {
     id: '3',
@@ -112,6 +114,7 @@ export const detailNews = [
             Theo, Thảo Thu, báo Dân trí`,
     createdDate: "01/10/2025",
     urlImage: "/images/news/dantri.png",
+    subImage: "/images/news/dantri.png"
   },
   {
     id: '4',
@@ -150,6 +153,7 @@ export const detailNews = [
             Nhanh tay tham gia ngay để không bỏ lỡ lì xì đầu năm hấp dẫn từ VNFITE!`,
     createdDate: "12/31/2024",
     urlImage: "/images/news/vnfiteNewYear.png",
+    subImage: "/images/news/vnfiteNewYear.png"
   },
   {
     id: '5',
@@ -174,6 +178,7 @@ export const detailNews = [
             ☎ Hotline: 024.3367.6699`,
     createdDate: "12/31/2024",
     urlImage: "/images/news/happyNewYear.png",
+    subImage: "/images/news/happyNewYear.png"
   },
   {
     id: '6',
@@ -197,6 +202,7 @@ export const detailNews = [
             ☎ Hotline: 024.3367.6699`,
     createdDate: "12/24/2024",
     urlImage: "/images/news/vnfiteNewYear.png",
+    subImage: "/images/news/vnfiteNewYear.png"
   },
   {
     id: '7',
@@ -234,6 +240,7 @@ export const detailNews = [
             Tuy vậy, trong tuần này sẽ có nhiều số liệu kinh tế quan trọng của Mỹ được công bố, gồm số liệu niềm tin tiêu dùng, số đơn đặt mua hàng hóa lâu bền, doanh số bán nhà, và báo cáo thất nghiệp hàng tuần. Những dữ liệu này đều có thể ảnh hưởng đến triển vọng lãi suất Fed, từ đó tác động đến giá vàng.`,
     createdDate: "12/23/2024",
     urlImage: "/images/news/newDetail.png",
+    subImage: "/images/news/newDetail.png"
   },
   {
     id: '8',
@@ -264,6 +271,7 @@ export const detailNews = [
             ☎ Hotline: 024.3367.6699`,
     createdDate: "12/21/2024",
     urlImage: "/images/news/suggestedNew.jpg",
+    subImage: "/images/news/suggestedNew.jpg"
   },
 ];
 
@@ -390,8 +398,7 @@ export const jobList = [
 
 export const detailPromotion = [
   {
-    id: 1,
-    banner: `bg-[url("/images/news/vnfiteNewYear.png")]`,
+    id: 'gsefsffes',
     mainTitle: "LÌ XÌ ĐÓN TẾT 2025",
     content: `Nhận ngay 68.000 VNĐ vào tài khoản VNFITE khi:
 
@@ -424,12 +431,13 @@ export const detailPromotion = [
       - Hotline: 024.3367.6699
 
       Nhanh tay tham gia ngay để không bỏ lỡ lì xì đầu năm hấp dẫn từ VNFITE!`,
-          createdDate: "12/31/2024",
+          createdDate: "2025-01-22T04:22:19.000+00:00",
           urlImage: "/images/news/vnfiteNewYear.png",
+          subImage: "/images/news/vnfiteNewYear.png"
+
       },
   {
-    id: 2,
-    banner: `bg-[url("/images/news/happyNewYear.png")]`,
+    id: 'adafweryjfgn',
     mainTitle: "CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12!",
     content: `🎉 CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT TẠI VNFITE – MỪNG NGÀY 22/12! 🎉
 
@@ -454,12 +462,13 @@ export const detailPromotion = [
       - Fanpage VnFite Việt Nam: https://www.facebook.com/vnfitevietnam
       📧 Email: dvkh@vnfite.com.vn
       ☎ Hotline: 024.3367.6699`,
-    createdDate: "12/21/2024",
+    createdDate: "2025-01-21T04:22:19.000+00:00",
     urlImage: "/images/news/happyNewYear.png",
+    subImage: "/images/news/happyNewYear.png"
+
   },
   {
-    id: 3,
-    banner: `bg-[url("/images/news/newDetail.png")]`,
+    id: 'nfgnffgnfgm',
     mainTitle: "CHƯƠNG TRÌNH TRI ẤN NHÀ GIÁO NGÀY 20/11",
     content: `🌟 CHƯƠNG TRÌNH TRI ÂN NHÀ GIÁO - ĐẶC BIỆT DÀNH TẶNG THẦY CÔ GIÁO! 🌟
       Tháng 11 này, VNFITE dành riêng một chương trình tri ân dành cho Quý thầy cô trên toàn quốc 🎓💖
@@ -498,8 +507,10 @@ export const detailPromotion = [
       📧 Email: dvkh@vnfite.com.vn
 
       ☎ Hotline: 024.3367.6699`,
-    createdDate: "11/15/2024",
+    createdDate: "2024-12-15T04:22:19.000+00:00",
     urlImage: "/images/news/newDetail.png",
+        subImage: "/images/news/newDetail.png"
+
   }
 
 ]
