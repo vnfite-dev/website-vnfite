@@ -15,6 +15,8 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Key, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import dayjs from "dayjs";
+
 
 // const bigNews = [
 // 	{
@@ -38,6 +40,7 @@ interface PromotionItem {
 	banner: string;
 	mainTitle: string;
 	urlImage: string;
+	
 }
 
 const fetchNewsData = async (type: number) => {
@@ -83,6 +86,10 @@ const NewsPage = () => {
 
 		fetchData();
 	}, []);
+
+	const filterPromotionList = promotionList.filter((item: PromotionItem) => {
+		const createdDateItem = dayjs(item.createdDate)
+	})
 
 	const htmlToText = (html: string): string => {
 		if (!html) return "";
