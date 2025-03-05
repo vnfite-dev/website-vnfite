@@ -136,7 +136,7 @@ const NewsPage = () => {
 						{filterPromotionList.map((_, index) => (
 							<CarouselItem key={index}>
 								<div className="relative w-full aspect-[3/1] border border-red-300 rounded-2xl overflow-hidden">
-									<Link href={{ pathname: `/news/${_?.id}`, query: { type: 3 } }}>
+									<Link href={{ pathname: `/news/${_?.id}` }}>
 										<Image
 											src={_.urlImage} // URL ảnh
 											alt="Promotion Banner"
@@ -227,7 +227,7 @@ const NewsPage = () => {
 								<Link
 									key={index}
 									className="cursor-pointer group"
-									href={{ pathname: `/news/${_?.id}`, query: { type: 0 } }}
+									href={{ pathname: `/news/${_?.id}`}}
 								// onClick={() => navigateToDetail(_.id)}
 								>
 									<div
@@ -272,7 +272,7 @@ const NewsPage = () => {
 							index: Key | null | undefined
 						) => (
 							<Link
-								href={{ pathname: `/news/${news?.id}`, query: { type: 0 } }}
+								href={{ pathname: `/news/${news?.id}` }}
 								key={index}
 								className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
 							>
