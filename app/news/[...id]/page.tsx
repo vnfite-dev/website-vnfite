@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import { detailNews, detailPromotion } from "../data";
 // import { useParams, useRouter } from "next/navigation";
 import { simpleFetchFunction } from "@/lib/utils";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 
 const fetchNewsData = async (type: number) => {
@@ -55,7 +55,6 @@ const NewsDetail = () => {
 	// Remove async
 
 	const params = useParams<{ id: string[] }>();
-	const type = useSearchParams().get("type") || 0;
 
 	console.log(params);
 	const [news, setNews] = useState<{
@@ -70,9 +69,9 @@ const NewsDetail = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const newsData = await fetchNewsData(type ? parseInt(type) : 0);
-			if (parseInt(type as string) === 3) setNewList([...(newsData?.data ?? []),  ...detailPromotion]);
-			else setNewList([...(newsData?.data ?? []),  ...detailNews]);
+			const newsData = await fetchNewsData(3);
+			const promotionData = await fetchNewsData(0);
+			setNewList([...(newsData?.data ?? []), ...(promotionData?.data ?? []), ...detailNews, ...detailPromotion]);
 			// setNews(newsList.find((_: { id: string }) => _.id === params.id[0]));
 		};
 
