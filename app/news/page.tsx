@@ -135,7 +135,7 @@ const NewsPage = () => {
 					<CarouselContent>
 						{filterPromotionList.map((_, index) => (
 							<CarouselItem key={index}>
-								<div className="relative w-full aspect-[3/1] border border-red-300 rounded-2xl overflow-hidden">
+								<div className="relative w-full aspect-[5/2] border border-red-300 rounded-2xl overflow-hidden">
 									<Link href={{ pathname: `/news/${_?.id}` }}>
 										<Image
 											src={_.urlImage} // URL ảnh
