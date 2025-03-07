@@ -56,6 +56,13 @@ html body[data-scroll-locked] {
 	-webkit-box-orient: vertical;
 }
 
+.two-line-truncate {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
 .bg-responsive-banner {
 	background-repeat: no-repeat;
 }
