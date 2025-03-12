@@ -1,21 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	// Lấy danh sách sản phẩm từ API hoặc cơ sở dữ liệu
-	// Giả định rằng bạn có một API endpoint để lấy danh sách sản phẩm
-	const productsResponse = await fetch("https://vnfite.com.vn/api/products");
-	const products = await productsResponse.json();
-
-	// Tạo entries cho từng sản phẩm
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const productEntries = products.map((product: any) => ({
-		url: `https://vnfite.com.vn/products/${product.slug}`,
-		lastModified: new Date(product.updatedAt || new Date()),
-		changeFrequency: "weekly" as const,
-		priority: 0.8,
-	}));
-
-	// Các trang tĩnh chính của website theo cấu trúc mới
+	// Các trang tĩnh chính của website
 	const staticPages = [
 		{
 			url: "https://vnfite.com.vn",
@@ -49,6 +35,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		},
 	];
 
+	
+
 	// Kết hợp tất cả các entries
-	return [...staticPages, ...productEntries];
+	return [...staticPages];
 }
