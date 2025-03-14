@@ -125,101 +125,6 @@ const About = () => {
 						</SelectContent>
 					</Select>
 				</div>
-				{/* <div className="relative w-80 h-14 cursor-pointer" onClick={() => setShow(0)}>
-					<div
-						className={
-							"w-80 h-14 skew-x-12 " +
-							(show === 0 ? "bg-grad" : "bg-gray-500 flex justify-center items-center")
-						}
-						style={{
-							clipPath: "polygon(2% 0, 88% 0, 99.5% 60%, 98% 100%, 12% 100%, 0.5% 40%)",
-						}}
-					>
-						<div
-							className="skew-x-12 relative"
-							style={{
-								backgroundColor: "white",
-								width: "98%",
-								height: "98%",
-								clipPath: "polygon(3.4% 2%, 90% 2%, 99.35% 62%, 96.7% 98%, 10% 98%, 0.65% 38%)",
-							}}
-						></div>
-					</div>
-					<div
-						className={
-							"absolute left-14 top-3 font-semibold text-xl " +
-							(show === 0 ? "text-gradient" : "text-gray-500")
-						}
-					>
-						Thông tin về VNFITE
-					</div>
-				</div>
-
-				<div className="relative w-80 h-14 cursor-pointer " onClick={() => setShow(1)}>
-					<div
-						className={
-							"w-80 h-14 skew-x-12 " +
-							(show === 1 ? "bg-grad" : "bg-gray-500 flex justify-center items-center")
-						}
-						style={{
-							clipPath: "polygon(2% 0, 88% 0, 99.5% 60%, 98% 100%, 12% 100%, 0.5% 40%)",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
-					>
-						<div
-							className="skew-x-12 relative"
-							style={{
-								backgroundColor: "white",
-								width: "98%",
-								height: "98%",
-								clipPath: "polygon(3.4% 2%, 90% 2%, 99.35% 62%, 96.7% 98%, 10% 98%, 0.65% 38%)",
-							}}
-						></div>
-					</div>
-					<div
-						className={
-							"absolute left-24 top-3 font-semibold text-xl " +
-							(show === 1 ? "text-gradient" : "text-gray-500")
-						}
-					>
-						Ban lãnh đạo
-					</div>
-				</div>
-
-				<div className="relative w-80 h-14 cursor-pointer" onClick={() => setShow(2)}>
-					<div
-						className={
-							"w-80 h-14 skew-x-12 " +
-							(show === 2 ? "bg-grad" : "bg-gray-500 flex justify-center items-center")
-						}
-						style={{
-							clipPath: "polygon(2% 0, 88% 0, 99.5% 60%, 98% 100%, 12% 100%, 0.5% 40%)",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-						}}
-					>
-						<div
-							className="skew-x-12 relative"
-							style={{
-								backgroundColor: "white",
-								width: "98%",
-								height: "98%",
-								clipPath: "polygon(3.4% 2%, 90% 2%, 99.35% 62%, 96.7% 98%, 10% 98%, 0.65% 38%)",
-							}}
-						></div>
-					</div>
-					<div
-						className={
-							"absolute left-28 top-3 font-semibold text-xl " +
-							(show === 2 ? "text-gradient" : "text-gray-500")
-						}
-					>
-						Cổ đông
-					</div>
-				</div> */}
 			</div>
 
 			<div className="mt-8 lg:mt-28">
@@ -234,7 +139,7 @@ const About = () => {
 
 							<div className="max-w-[1280px] w-[90%] my-6 mx-auto">
 								<Image
-									src="/images/about/AboutIntro.png"
+									src="/images/about/AboutIntro2.jpg"
 									alt="About Intro"
 									layout="responsive"
 									width={1280}
