@@ -88,6 +88,11 @@ export interface IJob {
 	locations: string[];
 }
 
+interface IJob2 {
+	id: string;
+	status: number;
+	// các field khác...
+}
 const ListJobs = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState({
@@ -105,7 +110,7 @@ const ListJobs = () => {
 			const res = await simpleFetchFunction(
 				`/hiring/?pageSize=&pageNumber=0&industryTyp=&name=&locationId=`
 			);
-			if (res) setJobs(res.data.hiringJobs.filter((job) => job.status == 0));
+			if (res) setJobs(res.data.hiringJobs.filter((job: IJob2) => job?.status == 0));
 			else {
 				setJobs([]);
 			}
