@@ -85,6 +85,7 @@ export interface IJob {
 	workModel: string;
 	degree: string;
 	description: string;
+	locations: string[];
 }
 
 const ListJobs = () => {
@@ -104,7 +105,7 @@ const ListJobs = () => {
 			const res = await simpleFetchFunction(
 				`/hiring/?pageSize=&pageNumber=0&industryTyp=&name=&locationId=`
 			);
-			if (res) setJobs(res.data.hiringJobs);
+			if (res) setJobs(res.data.hiringJobs.filter((job) => job.status == 0));
 			else {
 				setJobs([]);
 			}

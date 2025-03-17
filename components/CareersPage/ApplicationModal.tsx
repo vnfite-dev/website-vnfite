@@ -31,6 +31,13 @@ import { WebUtils } from "@/lib/utils";
 // import { useRouter } from "next/navigation";
 
 import { IJob } from "./ListJobs";
+
+const allLocations = [
+	{ id: "65ebe5b0-3ba4-4a39-987c-da4aae70dc76", name: "Hà Nội" },
+	{ id: "4f0f6956-27dd-4076-9e6c-fbca2514a81e", name: "Hồ Chí Minh" },
+	{ id: "1eafc872-465b-43f5-a938-c05c5bfc01ab", name: "Đà Nẵng" },
+];
+
 type ApplicationData = {
 	name: string;
 	phoneNumber: string;
@@ -311,15 +318,13 @@ export function ApplicationModal({ jobId }: { jobId: string }) {
 										<SelectValue placeholder="Chọn thành phố" />
 									</SelectTrigger>
 									<SelectContent>
-										<SelectItem value="65ebe5b0-3ba4-4a39-987c-da4aae70dc76">
-											Hà Nội
-										</SelectItem>
-										<SelectItem value="4f0f6956-27dd-4076-9e6c-fbca2514a81e">
-											Hồ Chí Minh
-										</SelectItem>
-										<SelectItem value="1eafc872-465b-43f5-a938-c05c5bfc01ab">
-											Đà Nẵng
-										</SelectItem>
+										{allLocations
+											.filter((location) => jobDetail?.locations.includes(location.id))
+											.map((location) => (
+												<SelectItem key={location.id} value={location.id}>
+													{location.name}
+												</SelectItem>
+											))}
 									</SelectContent>
 								</Select>
 							</div>

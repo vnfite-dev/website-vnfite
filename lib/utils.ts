@@ -63,7 +63,7 @@ export const simpleFetchFunction = async (url: string) => {
 
 const ENV_Test = {
 	// baseURL: "http://42.113.122.119:2993",
-	baseURL: "http://192.168.1.24:2993",
+	baseURL: "http://192.168.1.95:2993",
 	imageServer: "http://42.113.122.119:70",
 };
 // eslint-disable-next-line no-unused-vars

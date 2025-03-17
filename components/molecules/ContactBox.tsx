@@ -78,7 +78,9 @@ const ContactBox = () => {
 										placeholder="Họ và tên"
 										className="pl-14 h-12 rounded-xl border-0 bg-white shadow-sm"
 										value={formData.fullName}
-										onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+										onChange={(e) =>
+											setFormData({ ...formData, fullName: e.target.value })
+										}
 									/>
 								</div>
 								<div className="relative">
@@ -90,7 +92,9 @@ const ContactBox = () => {
 										placeholder="Số điện thoại"
 										className="pl-14 h-12 rounded-xl border-0 bg-white shadow-sm"
 										value={formData.phoneNumber}
-										onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+										onChange={(e) =>
+											setFormData({ ...formData, phoneNumber: e.target.value })
+										}
 									/>
 								</div>
 								<div className="relative">
