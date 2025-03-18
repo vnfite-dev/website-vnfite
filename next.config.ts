@@ -27,7 +27,13 @@ if (!Reflect.has(globalThis, "__customLoggerSet")) {
 
 const nextConfig: NextConfig = {
 	images: {
-		remotePatterns: [{ hostname: "42.113.122.118" }],
+		remotePatterns: [{ hostname: "42.113.122.118" }, 
+			{
+			protocol: "http",
+			hostname: "42.113.122.118",
+			port: "70",
+		},],
+		
 	},
 };
 
