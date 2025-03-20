@@ -15,6 +15,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Key, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Loading from "../loading";
 
 // const bigNews = [
 // 	{
@@ -44,6 +45,7 @@ const NewsPage = () => {
 	const [visibleCount, setVisibleCount] = useState(8);
 	const [promotionList, setPromotionList] = useState<NewsItem[]>([]);
 	const [list, setList] = useState<NewsItem[]>([]);
+	const [loading, setLoading] = useState(true);
 	const timeAllowed = new Date();
 	timeAllowed.setDate(timeAllowed.getDate() - 45);
 
@@ -75,6 +77,7 @@ const NewsPage = () => {
 			} catch (error) {
 				console.error("Lỗi khi lấy dữ liệu:", error);
 			}
+			setLoading(false);
 		};
 
 		fetchData();
@@ -121,6 +124,8 @@ const NewsPage = () => {
 	const handleShowLess = () => {
 		setVisibleCount(8);
 	};
+
+	if (loading) return <Loading />;
 
 	return (
 		<div className="px-5 sm:px-[10%] xl:px-[16.7%] mx-auto">
@@ -289,15 +294,9 @@ const NewsPage = () => {
 					)}
 				</div>
 
-				{visibleCount < list?.length ? (
-					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowMore}>
-						Xem thêm
-					</Button>
-				) : (
-					<Button className="bg-grad mx-auto mt-6 text-lg" onClick={handleShowLess}>
-						Ẩn bớt
-					</Button>
-				)}
+				<Button className="bg-grad mx-auto mt-6 text-lg" onClick={visibleCount < list?.length ? handleShowMore : handleShowLess}>
+                    {list?.length ? (visibleCount < list?.length ? 'Xem thêm' : 'Ẩn bớt') : 'Không có bài viết nào'}
+                </Button>
 			</div>
 		</div>
 	);

@@ -6,6 +6,8 @@ import Footer from "@/components/molecules/Footer";
 import Header from "@/components/molecules/Header";
 import Head from "next/head";
 import ZaloChatWidget from "@/components/molecules/ZaloChatWidget";
+import { Suspense } from "react";
+import Loading from "./loading";
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
 
@@ -66,7 +68,9 @@ export default function RootLayout({
 
 				<Header />
 				{modal}
-				{children}
+				<Suspense fallback={<Loading />}>
+					{children}
+				</Suspense>
 
 				<footer className="mt-32 font-sfpro">
 					<Footer />
