@@ -1,17 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-"use client";
 import Image from "next/image";
 import { Clock, Share2 } from "lucide-react";
-import React, { useEffect, useState } from "react";
 import { detailNews, detailPromotion } from "../data";
 // import { useParams, useRouter } from "next/navigation";
 import { simpleFetchFunction } from "@/lib/utils";
-import { useParams } from "next/navigation";
 import Link from "next/link";
+
+interface NewsItem {
+	id: string;
+	urlImage: string;
+	createdDate: string | number | Date;
+	mainTitle: string;
+	content: string;
+	subImage: string;
+}
 
 const fetchNewsData = async (type: number) => {
 	const data = await simpleFetchFunction(`/get-news?pageSize=10&pageNumber=0&type=${type}`);
-	return data.data;
+	return data.data.data;
 };
 
 const formatDate = (isoString: string | number | Date) => {
@@ -51,38 +57,21 @@ const SuggestedNew = ({
 	);
 };
 
-const NewsDetail = () => {
-	// Remove async
+const getNewsData = async (id: string) => {
+	const newsData = await fetchNewsData(3);
+	const promotionData = await fetchNewsData(0);
 
-	const params = useParams<{ id: string[] }>();
+	const allNews = [...(newsData || []), ...(promotionData || []), ...detailNews, ...detailPromotion];
+	const news = allNews.find((item: NewsItem) => item.id === id);
 
-	console.log(params);
-	const [news, setNews] = useState<{
-		mainTitle: string;
-		createdDate: string;
-		id: string;
-		urlImage: string;
-		content: string;
-	}>();
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const [newList, setNewList] = useState<any>([]);
+	return {
+		news,
+		relatedNews: allNews.filter((item: NewsItem) => item.id !== id).slice(0, 5) || [],
+	};
+};
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const newsData = await fetchNewsData(3);
-			const promotionData = await fetchNewsData(0);
-			setNewList([...(newsData?.data ?? []), ...(promotionData?.data ?? []), ...detailNews, ...detailPromotion]);
-			// setNews(newsList.find((_: { id: string }) => _.id === params.id[0]));
-		};
-
-		fetchData();
-	}, []);
-
-	useEffect(() => {
-		if (newList.length > 0) {
-			setNews(newList.find((_: { id: string }) => _.id === params.id[0]));
-		}
-	}, [newList]);
+const NewsDetail = async ({ params }: { params: { id: string[] } }) => {
+	const { news, relatedNews } = await getNewsData(params.id[0]);
 
 	const formattedDetail = (detail: string | undefined) => {
 		if (!detail) return null;
@@ -151,7 +140,7 @@ const NewsDetail = () => {
 					<div className="text-2xl font-semibold text-center ">Tin tức liên quan</div>
 
 					<div className="mt-4 lg:mt-12 space-y-4 lg:border-l-4 lg:border-gray-500 lg:pl-12 xl:pl-16">
-						{newList.slice(1, 5).map(
+						{relatedNews.slice(1, 5).map(
 							(
 								news: React.JSX.IntrinsicAttributes & {
 									urlImage?: string;
