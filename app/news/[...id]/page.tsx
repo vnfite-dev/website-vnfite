@@ -5,7 +5,6 @@ import { detailNews, detailPromotion } from "../data";
 // import { useParams, useRouter } from "next/navigation";
 import { simpleFetchFunction } from "@/lib/utils";
 import Link from "next/link";
-
 interface NewsItem {
 	id: string;
 	urlImage: string;
@@ -69,9 +68,9 @@ const getNewsData = async (id: string) => {
 		relatedNews: allNews.filter((item: NewsItem) => item.id !== id).slice(0, 5) || [],
 	};
 };
-
-const NewsDetail = async ({ params }: { params: { id: string[] } }) => {
-	const { news, relatedNews } = await getNewsData(params.id[0]);
+const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
+	const { id } = await params;
+	const { news, relatedNews } = await getNewsData(id);
 
 	const formattedDetail = (detail: string | undefined) => {
 		if (!detail) return null;
