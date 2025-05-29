@@ -275,7 +275,7 @@ const About = () => {
 						</div>
 
 						{/* 1.2. Lịch sử phát triển */}
-						<div className="w-full md:w-auto">
+						<div className="w-full md:w-auto ">
 							<p className="text-2xl lg:text-5xl font-semibold text-center">
 								Lịch sử phát triển
 							</p>
