@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Image from "next/image";
 import ButtonArrow from "@/components/molecules/ButtonArrow";
 import "./style.css";
 import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Clock } from "lucide-react";
 import {
 	Select,
 	SelectContent,
@@ -16,12 +16,48 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 
+const youtubeLinkList = [
+	{ link: "rMHIYr0ZAZs", title: "MÔ HÌNH P2P LENDING LÀ GÌ?", createdAt: "22/05/2025" },
+	{ link: "UimIynuenP0", title: "Lễ ký kết chiến lược toàn diện giữa VNFITE và CTCP XNK Nông sản thực phẩm An Giang", createdAt: "08/02/2025" },
+	{ link: "MrobLW0HA-I", title: "Bạn sở hữu xe nhưng cần một giải pháp tài chính tiện lợi?", createdAt: "07/02/2025" },
+	{ link: "kkJ0PROupf4", title: "Gọi vốn siêu tốc đến từ VNFITE!", createdAt: "17/02/2025" }, 
+]
+
 const About = () => {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [show, setShow] = useState(0);
 	const [isShowIntro, setIsShowIntro] = useState(false);
 	const [api, setApi] = useState<CarouselApi>();
 	const [colorClick, setColorClick] = useState(4);
+	const [showVideo, setShowVideo] = useState(false);
+
+	const [visibleCount, setVisibleCount] = useState(4);
+
+	const handleResize = () => {
+		const width = window.innerWidth;
+		if (width >= 1024) {
+			setVisibleCount(4);
+		} else if (width >= 768) {
+			setVisibleCount(3);
+		} else if (width >= 480) {
+			setVisibleCount(2);
+		} else {
+			setVisibleCount(1);
+		}
+	};
+
+	useEffect(() => {
+		handleResize();
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+		window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
+	const truncateText = (text: string, length: number) => {
+		return text.length > length ? text.slice(0, length) + "..." : text;
+	};
 
 	// Cập nhật carousel khi timeline được chọn
 	const handleTimelineClick = (index: number) => {
@@ -137,17 +173,43 @@ const About = () => {
 								Giới thiệu về <span className="text-gradient">VNFITE</span>
 							</p>
 
-							<div className="max-w-[1280px] w-[90%] my-6 mx-auto">
-								<Image
-									src="/images/about/AboutIntro2.jpg"
-									alt="About Intro"
-									layout="responsive"
-									width={1280}
-									height={720}
-									priority
-								/>
-							</div>
-
+							{
+								showVideo ? (
+									<div className="relative w-[90%] my-6 mx-auto h-0 pb-[56.25%]">
+										<iframe
+											className="absolute top-0 left-0 w-full h-full rounded-xl"
+											src="https://www.youtube.com/embed/SO5TY8MuUac?autoplay=1&cc_load_policy=0"
+											title="YouTube VNFITE"
+											frameBorder="0"
+											allow="autoplay; encrypted-media"
+											allowFullScreen
+										/>
+									</div>
+								) : (
+									<div className="max-w-[1280px] w-[90%] my-6 mx-auto relative">
+										<Image
+											src="/images/about/AboutIntro2.jpg"
+											alt="About Intro"
+											layout="responsive"
+											width={1280}
+											height={720}
+											priority
+										/>
+										<Image
+											src="/icons/about/play.svg"
+											alt="Play Icon"
+											className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+											width={64}
+											height={64}
+											onClick={() => setShowVideo(true)}
+											loading="eager"
+											priority
+											aria-label="Play Video"
+										/>
+									</div>
+								)
+							}
+							
 							<p className="sm:p-4 font-normal text-base mt-0 lg:mt-14 flex flex-col space-y-7 max-w-screen-xl w-[90%] mx-auto">
 								<span>
 									VNFITE là một trong những nền tảng cho vay ngang hàng (P2P Lending) lớn
@@ -408,6 +470,44 @@ const About = () => {
 									</div>
 									<p>An sinh xã hội hướng tới lợi ích cộng đồng</p>
 								</div>
+							</div>
+						</div>
+
+						{/* 1.4. Khám phá */}
+						<div className="bg-red w-full">
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
+								Khám phá
+							</p>
+							<div className="flex justify-end">
+								<button
+									onClick={() => window.open("https://www.youtube.com/@vnfitevietnam9932/shorts", "_blank")}
+									className="py-2 mx-2 sm:mx-5 text-gradient rounded-lg mt-4 sm:mt-8 lg:mt-12"
+								>
+									Xem thêm video {'>'}
+								</button>
+							</div>
+							<div className="flex items-start justify-center flex-row w-full px-6 gap-6">
+								{
+									youtubeLinkList.slice(0, visibleCount).map((item, index) => (
+										<div className="w-[80%] sm:w-[46%] lg:w-[21%] mx-auto relative" key={index}>
+											<iframe
+												className="w-full aspect-[1/2] rounded-xl"
+												src={"https://www.youtube.com/embed/" + item.link}
+												title="YouTube VNFITE"
+												frameBorder="0"
+												allow="autoplay; encrypted-media"
+												allowFullScreen
+											/>
+											<div className="absolute bottom-0 left-0 right-0 text-white p-4 rounded-b-xl bg-gradient-to-t from-[#FF4848] to-transparent">
+												<p className="font-semibold">{truncateText(item.title, 60)}</p>
+												<div className="flex items-center gap-3 text-sm mt-2">
+													<Clock width={20} height={20}/>
+													<p>{item.createdAt}</p>
+												</div>
+											</div>
+										</div>
+									))
+								}
 							</div>
 						</div>
 					</div>
