@@ -498,7 +498,7 @@ const About = () => {
 												allow="autoplay; encrypted-media"
 												allowFullScreen
 											/>
-											<div className="absolute bottom-0 left-0 right-0 text-white p-4 rounded-b-xl bg-gradient-to-t from-[#FF4848] to-transparent">
+											<div className="absolute bottom-0 left-0 right-0 text-white p-4 rounded-b-xl bg-gradient-to-t from-[#FF4848] to-transparent pointer-events-none">
 												<p className="font-semibold">{truncateText(item.title, 60)}</p>
 												<div className="flex items-center gap-3 text-sm mt-2">
 													<Clock width={20} height={20}/>
