@@ -34,6 +34,8 @@ const SuggestedNew = ({
 	createdDate?: string;
 	id?: string;
 }) => {
+
+
 	return (
 		<Link className="flex gap-4 border-b border-b-[#E6E6E6] pb-4 cursor-pointer" href={`/news/${id}`}>
 			<div className="w-20 h-20 min-w-20 min-h-20 overflow-hidden relative rounded-lg">
@@ -82,6 +84,16 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 			</span>
 		));
 	};
+
+	const modifiedContent = news.content.replace(/<img\b[^>]*>/gi, (imgTag) => {
+			if (imgTag.includes('style=')) {
+			return imgTag.replace(/style=["']([^"']*)["']/i, `style="$1;max-width:700px;max-height:500px;"`);
+			} else {
+			return imgTag.replace(/<img/gi, `<img style="max-width:700px;max-height:500px;"`);
+			}
+		});
+
+		
 	return (
 		<div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28 flex flex-col lg:flex-row">
 			<div className="font-semibold text-2xl lg:pr-10 xl:pr-14 w-full lg:w-[70%] 2xl:w-[65%]">
@@ -105,11 +117,11 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 						height={573}
 					/>
 				</div>
-				{news?.content.includes("<p>") ? (
+				{modifiedContent.includes("<p>") ? (
 					<div
 						className="mt-4 text-base font-medium text-gray-700"
 						dangerouslySetInnerHTML={{
-							__html: news?.content || `Không tìm thấy nội dung cho tin tức này`,
+							__html: modifiedContent || `Không tìm thấy nội dung cho tin tức này`,
 						}}
 					/>
 				) : (
