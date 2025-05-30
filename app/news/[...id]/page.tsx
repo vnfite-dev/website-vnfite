@@ -85,13 +85,10 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 		));
 	};
 
-	const modifiedContent = news.content.replace(/<img\b[^>]*>/gi, (imgTag: string) => {
-			if (imgTag.includes('style=')) {
-			return imgTag.replace(/style=["']([^"']*)["']/i, `style="$1;max-width:700px;max-height:500px;"`);
-			} else {
-			return imgTag.replace(/<img/gi, `<img style="max-width:700px;max-height:500px;"`);
-			}
-		});
+	const fixFigureWidth = news?.content.replace(
+		/<figure([^>]*?)style="[^"]*?width:\s*[\d.]+%[^"]*?"([^>]*?)>/g,
+		'<figure$1style="width:100%;"$2>'
+	);
 
 		
 	return (
@@ -117,11 +114,11 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 						height={573}
 					/>
 				</div>
-				{modifiedContent.includes("<p>") ? (
+				{fixFigureWidth?.includes("<p>") ? (
 					<div
 						className="mt-4 text-base font-medium text-gray-700"
 						dangerouslySetInnerHTML={{
-							__html: modifiedContent || `Không tìm thấy nội dung cho tin tức này`,
+							__html: fixFigureWidth || `Không tìm thấy nội dung cho tin tức này`,
 						}}
 					/>
 				) : (
