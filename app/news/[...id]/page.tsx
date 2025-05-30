@@ -85,10 +85,10 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 		));
 	};
 
-	const fixFigureWidth = news?.content.replace(
+	const fixFigureWidth = news?.content.replaceAll(
 		/<figure([^>]*?)style="[^"]*?width:\s*[\d.]+%[^"]*?"([^>]*?)>/g,
 		'<figure$1style="width:100%;"$2>'
-	).replace(
+	).replaceAll(
 		"http://42.113.122.118:70/",
 		"https://vnfite.com.vn/static/upload/"
 	)
