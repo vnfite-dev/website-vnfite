@@ -85,7 +85,7 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 		));
 	};
 
-	const modifiedContent = news.content.replace(/<img\b[^>]*>/gi, (imgTag) => {
+	const modifiedContent = news.content.replace(/<img\b[^>]*>/gi, (imgTag: string) => {
 			if (imgTag.includes('style=')) {
 			return imgTag.replace(/style=["']([^"']*)["']/i, `style="$1;max-width:700px;max-height:500px;"`);
 			} else {
