@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image";
-import { Clock, Share2 } from "lucide-react";
+// import { Clock, Share2 } from "lucide-react";
 import { detailNews, detailPromotion } from "../data";
 // import { useParams, useRouter } from "next/navigation";
 import { simpleFetchFunction } from "@/lib/utils";
-import Link from "next/link";
+// import Link from "next/link";
 interface NewsItem {
 	id: string;
 	urlImage: string;
@@ -19,9 +19,9 @@ const fetchNewsData = async (type: number) => {
 	return data.data.data;
 };
 
-const formatDate = (isoString: string | number | Date) => {
-	return new Date(isoString).toLocaleDateString("vi-VN");
-};
+// const formatDate = (isoString: string | number | Date) => {
+// 	return new Date(isoString).toLocaleDateString("vi-VN");
+// };
 
 import Head from 'next/head';
 
@@ -38,7 +38,7 @@ const BlogPost = ({ post } : { post: NewsItem }) => {
       </Head>
       <article>
         <h1>{post.mainTitle}</h1>
-        <img src={post.urlImage} alt={post.urlImage} />
+        {/* <img src={post.urlImage} alt={post.urlImage} /> */}
         {/* <p>{post.content}</p> */}
 		<div>space</div>
 		<Image
@@ -58,39 +58,39 @@ const BlogPost = ({ post } : { post: NewsItem }) => {
   );
 }
 
-const SuggestedNew = ({
-	urlImage = "/images/news/suggestedNew.jpg",
-	mainTitle,
-	createdDate,
-	id,
-}: {
-	urlImage?: string;
-	mainTitle?: string;
-	createdDate?: string;
-	id?: string;
-}) => {
+// const SuggestedNew = ({
+// 	urlImage = "/images/news/suggestedNew.jpg",
+// 	mainTitle,
+// 	createdDate,
+// 	id,
+// }: {
+// 	urlImage?: string;
+// 	mainTitle?: string;
+// 	createdDate?: string;
+// 	id?: string;
+// }) => {
 
-	return (
-		<Link className="flex gap-4 border-b border-b-[#E6E6E6] pb-4 cursor-pointer" href={`/news/${id}`}>
-			<div className="w-20 h-20 min-w-20 min-h-20 overflow-hidden relative rounded-lg">
-				<Image
-					src={urlImage || "/images/news/suggestedNew.jpg"}
-					alt="Ảnh tin tức"
-					objectFit="cover"
-					layout="fill"
-					className=""
-				/>
-			</div>
-			<div className="">
-				<div className="font-medium text-base">{mainTitle}</div>
-				<div className="flex justify-start items-center gap-2 text-[12px] mt-1">
-					<Clock size={14} />
-					{formatDate(createdDate || "")}
-				</div>
-			</div>
-		</Link>
-	);
-};
+// 	return (
+// 		<Link className="flex gap-4 border-b border-b-[#E6E6E6] pb-4 cursor-pointer" href={`/news/${id}`}>
+// 			<div className="w-20 h-20 min-w-20 min-h-20 overflow-hidden relative rounded-lg">
+// 				<Image
+// 					src={urlImage || "/images/news/suggestedNew.jpg"}
+// 					alt="Ảnh tin tức"
+// 					objectFit="cover"
+// 					layout="fill"
+// 					className=""
+// 				/>
+// 			</div>
+// 			<div className="">
+// 				<div className="font-medium text-base">{mainTitle}</div>
+// 				<div className="flex justify-start items-center gap-2 text-[12px] mt-1">
+// 					<Clock size={14} />
+// 					{formatDate(createdDate || "")}
+// 				</div>
+// 			</div>
+// 		</Link>
+// 	);
+// };
 
 const getNewsData = async (id: string) => {
 	const newsData = await fetchNewsData(3);
@@ -107,25 +107,25 @@ const getNewsData = async (id: string) => {
 const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 	const { id } = await params;
 
-	const { news, relatedNews } = await getNewsData(id[0]);
+	const { news } = await getNewsData(id[0]);
 
-	const formattedDetail = (detail: string | undefined) => {
-		if (!detail) return null;
-		return detail.split("\n").map((line, index) => (
-			<span key={index}>
-				{line}
-				<br />
-			</span>
-		));
-	};
+	// const formattedDetail = (detail: string | undefined) => {
+	// 	if (!detail) return null;
+	// 	return detail.split("\n").map((line, index) => (
+	// 		<span key={index}>
+	// 			{line}
+	// 			<br />
+	// 		</span>
+	// 	));
+	// };
 
-	const fixFigureWidth = news?.content.replaceAll(
-		/<figure([^>]*?)style="[^"]*?width:\s*[\d.]+%[^"]*?"([^>]*?)>/g,
-		'<figure$1style="width:100%;"$2>'
-	).replaceAll(
-		"http://42.113.122.118:70/",
-		"https://vnfite.com.vn/static/upload/"
-	)
+	// const fixFigureWidth = news?.content.replaceAll(
+	// 	/<figure([^>]*?)style="[^"]*?width:\s*[\d.]+%[^"]*?"([^>]*?)>/g,
+	// 	'<figure$1style="width:100%;"$2>'
+	// ).replaceAll(
+	// 	"http://42.113.122.118:70/",
+	// 	"https://vnfite.com.vn/static/upload/"
+	// )
 		
 	return (
 		// <div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28 flex flex-col lg:flex-row">
