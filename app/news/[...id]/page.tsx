@@ -5,8 +5,7 @@ import { detailNews, detailPromotion } from "../data";
 // import { useParams, useRouter } from "next/navigation";
 import { simpleFetchFunction } from "@/lib/utils";
 import Link from "next/link";
-import Head from "next/head";
-
+import { Metadata } from "next";
 interface NewsItem {
 	id: string;
 	urlImage: string;
@@ -60,6 +59,29 @@ const SuggestedNew = ({
 	);
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+	const { id } = await params;
+	// console.log('idadad', id[0]);
+	const { news } = await getNewsData(id[0].split('_')[1]);
+
+	const urlImage = news?.urlImage?.replaceAll(
+			"http://42.113.122.118:70/",
+			"https://vnfite.com.vn/static/upload/"
+	);
+
+	return {
+		title: news?.mainTitle || "Tin tức VNFiTE",
+		description: "Thông tin chi tiết từ VNFiTE",
+		openGraph: {
+			title: news?.mainTitle || "Tin tức VNFiTE",
+			description: "Thông tin chi tiết từ VNFiTE",
+			images: urlImage,
+			url: `https://vnfite.com.vn/news/${id[0]}`,
+			type: "article",
+		},
+	};
+}
+
 const getNewsData = async (id: string) => {
 	const newsData = await fetchNewsData(3);
 	const promotionData = await fetchNewsData(0);
@@ -72,6 +94,7 @@ const getNewsData = async (id: string) => {
 		relatedNews: allNews.filter((item: NewsItem) => item.id !== id).slice(0, 5) || [],
 	};
 };
+
 const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 	const { id } = await params;
 
@@ -95,28 +118,16 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 		"https://vnfite.com.vn/static/upload/"
 	)
 
-	const slugify = (str: string) =>
-		str
-			.toLowerCase()
-			.normalize("NFD")                     
-			.replace(/[\u0300-\u036f]/g, "")     
-			.replace(/[^a-z0-9]+/g, "-")        
-			.replace(/^-+|-+$/g, "");   
+	// const slugify = (str: string) =>
+	// 	str
+	// 		.toLowerCase()
+	// 		.normalize("NFD")                     
+	// 		.replace(/[\u0300-\u036f]/g, "")     
+	// 		.replace(/[^a-z0-9]+/g, "-")        
+	// 		.replace(/^-+|-+$/g, "");   
 		
 	return (
-		<>
-			<Head>
-				<title>{news?.mainTitle}</title>
-				<meta property="og:title" content={news?.mainTitle || "VNFiTE - Tin tức"} />
-				<meta
-					property="og:description"
-					content={news?.content?.slice(0, 160).replace(/(<([^>]+)>)/gi, "") || "Thông tin chi tiết từ VNFiTE"}
-				/>
-				<meta property="og:image" content={news?.urlImage || "https://vnfite.com.vn/static/upload/images/news/h1.JPG"} />
-				<meta property="og:url" content={`https://vnfite.com.vn/news/${slugify(news.mainTitle || "")}_${news?.id}`} />
-				<meta property="og:type" content="article" />
-			</Head>
-
+		
 			<div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28 flex flex-col lg:flex-row">
 				<div className="font-semibold text-2xl lg:pr-10 xl:pr-14 w-full lg:w-[70%] 2xl:w-[65%]">
 					{news?.mainTitle}
@@ -191,7 +202,6 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 					</div>
 				</div>
 			</div>
-		</>
 	);
 };
 
