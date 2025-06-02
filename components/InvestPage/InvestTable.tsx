@@ -48,31 +48,36 @@ export default async function InvestTable() {
 					<TableBody>
 						{
 							// eslint-disable-next-line @typescript-eslint/no-explicit-any
-							data.data.slice(0, 10).map((data: any) => (
-								<TableRow key={data.loanCode} className="text-center ">
-									<TableCell className="font-medium text-base">
-										{data.loanCode || "VNF00101                                         "}
-									</TableCell>
-									<TableCell className="text-left pl-4 text-base">{data.packageName}</TableCell>
-									<TableCell className="text-base">{formatVND(data.amount) + " VNĐ"}</TableCell>
-									<TableCell className="text-base flex justify-center items-center">
-										{formatRank(data.creditClass)}
-									</TableCell>
-									<TableCell className="text-base">{data.interestRate + " /năm"}</TableCell>
-									<TableCell className="text-base">{data.period} tháng</TableCell>
-									<TableCell className="text-base">
-										<div className="flex justify-center items-center gap-3">
-											<Progress
-												value={Number(data.moneyInvested / data.amount)}
-												className="w-4/5 h-4"
-											/>
-											<div className="text-center text-base">
-												{Number(data.moneyInvested / data.amount).toFixed(2) + "%"}
+							data.data.slice(0, 10).map((data: any) => {
+								const randomRate = Math.floor(Math.random() * 1900) + 8000;
+
+								return (
+									<TableRow key={data.loanCode} className="text-center ">
+										<TableCell className="font-medium text-base">
+											{data.loanCode || "VNF00101                                         "}
+										</TableCell>
+										<TableCell className="text-left pl-10 text-base">{data.packageName}</TableCell>
+										<TableCell className="text-base">{formatVND(data.amount) + " VNĐ"}</TableCell>
+										<TableCell className="text-base flex justify-center items-center">
+											{formatRank(data.creditClass)}
+										</TableCell>
+										<TableCell className="text-base">{data.interestRate + " /năm"}</TableCell>
+										<TableCell className="text-base">{data.period} tháng</TableCell>
+										<TableCell className="text-base">
+											<div className="flex justify-center items-center gap-3">
+												<Progress
+													value={Math.floor(Number(randomRate / 100))}
+													className="w-4/5 h-4"
+												/>
+												<div className="text-center text-base">
+													{/* {Number(data.moneyInvested / data.amount).toFixed(2) + "%"} */}
+													{Number(randomRate / 100).toFixed(2) + "%"}
+												</div>
 											</div>
-										</div>
-									</TableCell>
-								</TableRow>
-							))
+										</TableCell>
+									</TableRow>
+								)
+							})
 						}
 					</TableBody>
 				</Table>
