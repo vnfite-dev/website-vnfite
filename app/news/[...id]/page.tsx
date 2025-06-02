@@ -33,7 +33,7 @@ const BlogPost = ({ post } : { post: NewsItem }) => {
         <meta property="og:title" content={post.mainTitle} />
         <meta property="og:description" content={post.content} />
         <meta property="og:image" content={post.urlImage} />
-        <meta property="og:url" content={`https://vnfite.com.vn/static/upload/images/news/h1.JPG`} />
+        <meta property="og:url" content={`http://42.113.122.118:70/images/news/300-400.png`} />
         <meta property="og:type" content="article" />
       </Head>
       <article>
