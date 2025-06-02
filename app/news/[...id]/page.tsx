@@ -29,10 +29,10 @@ const BlogPost = ({ post } : { post: NewsItem }) => {
   return (
     <>
       <Head>
-        <title>{post?.mainTitle}</title>
-        <meta property="og:title" content={post.mainTitle} />
-        <meta property="og:description" content={post.content} />
-        <meta property="og:image" content={post.urlImage} />
+        <title>{"titlte test thuwr nao"}</title>
+        <meta property="og:title" content={"Title test"} />
+        <meta property="og:description" content={"description"} />
+        <meta property="og:image" content={"http://42.113.122.118:70/images/news/300-400.png"} />
         <meta property="og:url" content={`http://42.113.122.118:70/images/news/300-400.png`} />
         <meta property="og:type" content="article" />
       </Head>
