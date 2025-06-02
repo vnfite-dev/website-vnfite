@@ -68,7 +68,7 @@ const ENV_Test = {
 };
 // eslint-disable-next-line no-unused-vars
 const ENV_Live = {
-	baseURL: "https://service-vnfite.com.vn/cms/v2",
+	baseURL: "https://service.vnfite.com.vn/cms/v2",
 	imageServer: "http://42.113.122.118:70",
 };
 
