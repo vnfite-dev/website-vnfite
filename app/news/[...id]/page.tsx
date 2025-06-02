@@ -23,6 +23,35 @@ const formatDate = (isoString: string | number | Date) => {
 	return new Date(isoString).toLocaleDateString("vi-VN");
 };
 
+import Head from 'next/head';
+
+const BlogPost = ({ post } : { post: NewsItem }) => {
+
+  return (
+    <>
+      <Head>
+        <title>{post.mainTitle}</title>
+        <meta property="og:title" content={post.mainTitle} />
+        <meta property="og:description" content={post.content} />
+        <meta property="og:image" content={post.urlImage} />
+        <meta property="og:url" content={`https://vnfite.com.vn/static/upload/images/news/h1.JPG`} />
+        <meta property="og:type" content="article" />
+      </Head>
+      <article>
+        <h1>{post.mainTitle}</h1>
+        <img src={post.urlImage} alt={post.urlImage} />
+        {/* <p>{post.content}</p> */}
+		<div
+			className="mt-4 text-base font-medium text-gray-700"
+			dangerouslySetInnerHTML={{
+				__html: post?.content || `Không tìm thấy nội dung cho tin tức này`,
+			}}
+		/>
+      </article>
+    </>
+  );
+}
+
 const SuggestedNew = ({
 	urlImage = "/images/news/suggestedNew.jpg",
 	mainTitle,
@@ -34,7 +63,6 @@ const SuggestedNew = ({
 	createdDate?: string;
 	id?: string;
 }) => {
-
 
 	return (
 		<Link className="flex gap-4 border-b border-b-[#E6E6E6] pb-4 cursor-pointer" href={`/news/${id}`}>
@@ -143,6 +171,7 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 						alt="news"
 					/>
 				</div>
+				<BlogPost post={news} />
 			</div>
 
 			{/* LEFT BAR */}
