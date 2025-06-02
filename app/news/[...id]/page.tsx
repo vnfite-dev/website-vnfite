@@ -73,7 +73,7 @@ const getNewsData = async (id: string) => {
 const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 	const { id } = await params;
 
-	const { news, relatedNews } = await getNewsData(id[0]);
+	const { news, relatedNews } = await getNewsData(id[0].split('_')[1]);
 
 	const formattedDetail = (detail: string | undefined) => {
 		if (!detail) return null;

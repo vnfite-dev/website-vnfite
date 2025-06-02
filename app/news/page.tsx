@@ -49,6 +49,15 @@ const NewsPage = () => {
 	const timeAllowed = new Date();
 	timeAllowed.setDate(timeAllowed.getDate() - 45);
 
+	const slugify = (str: string) =>
+		str
+			.toLowerCase()
+			.normalize("NFD")                     
+			.replace(/[\u0300-\u036f]/g, "")     
+			.replace(/[^a-z0-9]+/g, "-")        
+			.replace(/^-+|-+$/g, "");      
+
+
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 640) {
@@ -139,7 +148,7 @@ const NewsPage = () => {
 						{filterPromotionList.map((_, index) => (
 							<CarouselItem key={index}>
 								<div className="relative w-full aspect-[5/2] border border-red-300 rounded-2xl overflow-hidden">
-									<Link href={{ pathname: `/news/${_?.id}` }}>
+									<Link href={{ pathname: `/news/${slugify(_?.mainTitle || '')}_${_?.id}` }}>
 										<Image
 											src={_.urlImage} // URL ảnh
 											alt="Promotion Banner"
@@ -166,7 +175,7 @@ const NewsPage = () => {
 				<div className="mt-8 lg:mt-16 flex gap-8 xl:flex-row flex-col xl:items-start">
 					{newsList[0] && (
 						<Link
-							href={`/news/${newsList[0]?.id}`}
+							href={`/news/${slugify(newsList[0]?.mainTitle || '')}_${newsList[0]?.id}`}
 							className={cn(
 								"hidden sm:flex w-full md:w-[80%] lg:w-[55%] xl:w-full cursor-pointer rounded-4xl relative overflow-hidden group mx-auto aspect-square"
 							)}
@@ -226,7 +235,7 @@ const NewsPage = () => {
 								<Link
 									key={index}
 									className="cursor-pointer group"
-									href={{ pathname: `/news/${_?.id}` }}
+									href={{ pathname: `/news/${slugify(_?.mainTitle || '')}_${_?.id}` }}
 									// onClick={() => navigateToDetail(_.id)}
 								>
 									<div
@@ -271,7 +280,7 @@ const NewsPage = () => {
 							index: Key | null | undefined
 						) => (
 							<Link
-								href={{ pathname: `/news/${news?.id}` }}
+								href={{ pathname: `/news/${slugify(news?.mainTitle || '')}_${news?.id}` }}
 								key={index}
 								className="flex flex-col gap-3 lg:gap-6 p-2 pb-4 lg:pb-6 border-2 rounded-3xl group hover:shadow-2xl cursor-pointer"
 							>
