@@ -68,6 +68,16 @@ const fetchNewsData = async () => {
 	return data.data.data;
 };
 
+const slugify = (str: string) =>
+	str
+		.toLowerCase()
+		.replaceAll(/đ/g, "d")
+		.replaceAll(/Đ/g, "d") 
+		.normalize("NFD")                    
+		.replace(/[\u0300-\u036f]/g, "")     
+		.replace(/[^a-z0-9]+/g, "-")        
+		.replace(/^-+|-+$/g, "");
+
 const NewsList = () => {
 	const [api, setApi] = useState<CarouselApi>();
 	const [imageLink, setImageLink] = useState("/images/home/new-1.png");
@@ -168,7 +178,7 @@ const NewsList = () => {
 
 												<p className="mt-2 text-sm text-gray-600">{formatDate(_.createdDate)}</p>
 
-												<Link href={`/news/${_.id}`} className="flex gap-2 mt-4">
+												<Link href={`/news/${slugify(_?.mainTitle || '')}_${_?.id}`} className="flex gap-2 mt-4">
 													<p className="text-2xl leading-9">Xem chi tiết </p>
 													<ArrowRight
 														className="relative top-1 -rotate-45 text-gray-600"
