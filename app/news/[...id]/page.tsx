@@ -150,7 +150,7 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 							height={573}
 						/>
 					</div>
-					{fixFigureWidth?.includes("<p>") ? (
+					{fixFigureWidth?.includes("</p>") ? (
 						<div
 							className="mt-4 text-base font-medium text-gray-700"
 							dangerouslySetInnerHTML={{
