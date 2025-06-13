@@ -24,6 +24,16 @@ const formatDate = (isoString: string | number | Date) => {
 	return new Date(isoString).toLocaleDateString("vi-VN");
 };
 
+const slugify = (str: string) =>
+		str
+			.toLowerCase()
+			.replaceAll(/đ/g, "d")
+			.replaceAll(/Đ/g, "d") 
+			.normalize("NFD")                     
+			.replace(/[\u0300-\u036f]/g, "")     
+			.replace(/[^a-z0-9]+/g, "-")        
+			.replace(/^-+|-+$/g, "");   
+
 const SuggestedNew = ({
 	urlImage = "/images/news/suggestedNew.jpg",
 	mainTitle,
@@ -38,7 +48,7 @@ const SuggestedNew = ({
 
 
 	return (
-		<Link className="flex gap-4 border-b border-b-[#E6E6E6] pb-4 cursor-pointer" href={`/news/${id}`}>
+		<Link className="flex gap-4 border-b border-b-[#E6E6E6] pb-4 cursor-pointer" href={`/news/${slugify(mainTitle || "")}_${id}`}>
 			<div className="w-20 h-20 min-w-20 min-h-20 overflow-hidden relative rounded-lg">
 				<Image
 					src={urlImage || "/images/news/suggestedNew.jpg"}
@@ -91,7 +101,9 @@ const getNewsData = async (id: string) => {
 
 	return {
 		news,
-		relatedNews: allNews.filter((item: NewsItem) => item.id !== id).slice(0, 5) || [],
+		relatedNews: allNews
+			.filter((item: NewsItem) => item.id !== id)
+			.slice(0, 5) || [],
 	};
 };
 
@@ -117,6 +129,15 @@ const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
 		"http://42.113.122.118:70/",
 		"https://vnfite.com.vn/static/upload/"
 	)
+
+	if (!news) {
+		return (
+			<div className="px-[8%] lg:px-[6%] xl:px-[10%] 2xl:px-[16.7%] my-28">
+				<h1 className="text-2xl font-semibold">Không tìm thấy tin tức</h1>
+				<p className="mt-4 text-gray-600">Tin tức bạn đang tìm kiếm không tồn tại hoặc đã bị xóa.</p>
+			</div>
+		);
+	}
 
 	// const slugify = (str: string) =>
 	// 	str
