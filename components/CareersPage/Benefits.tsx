@@ -38,13 +38,13 @@ const benefitTitle = [
 const Item = ({ index, title }: { index: number; title: string }) => {
 	return (
 		<div className="max-h-60 md:max-h-none aspect-square flex justify-center items-center rounded-3xl shadow-benefit py-6 px-4 flex-col gap-3 md:gap-10 min-w-[240px]">
-			<div>
+			<div className="w-full">
 				<Image
-					src={`icons/careers/b${index}.svg`}
+					src={`/icons/careers/b${index}.jpg`}
 					alt="benefit"
-					width={100}
-					height={100}
-					className="h-14 w-14 md:h-20 md:w-20 lg:w-28 lg:h-28"
+					width={1200}
+					height={1200}
+					className="w-full h-32 object-cover"
 				/>
 			</div>
 			<div className="text-gray-600 text-xl font-semibold text-center">{title}</div>
