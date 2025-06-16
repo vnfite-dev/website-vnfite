@@ -74,7 +74,7 @@ const Benefits = () => {
 				<div className="w-1/2 relative md:pb-[56.25%]">
 					{" "}
 					{/* 16:9 = 9 / 16 = 56.25% */}
-					<Image src="/images/careers/lifeInDay.png" alt="lid" fill className="object-contain" />
+					<Image src="/images/careers/lifeInDay1.png" alt="lid" fill className="object-contain" />
 				</div>
 				<div className="w-full md:w-1/2 flex justify-end md:pt-16 md:pl-16 px-2">
 					<div className="flex flex-col gap-10">
