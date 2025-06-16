@@ -45,9 +45,9 @@ const PartnersList = () => {
 			<div className="relative flex mt-16 w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
 				<Marquee pauseOnHover className="[--duration:80s]">
 					<PartnerItem partner="vnpt" />
-					<PartnerItem partner="tnex" />
+					{/* <PartnerItem partner="tnex" /> */}
 					<PartnerItem partner="mbbank" />
-					<PartnerItem partner="finy" />
+					{/* <PartnerItem partner="finy" /> */}
 					<PartnerItem partner="f88" />
 					<PartnerItem partner="pvcombank" />
 					<PartnerItem partner="baominh" />
@@ -64,9 +64,9 @@ const PartnersList = () => {
 					<PartnerItem partner="vnpt" /> */}
 
 					<PartnerItem partner="vnpt" />
-					<PartnerItem partner="tnex" />
+					{/* <PartnerItem partner="tnex" /> */}
 					<PartnerItem partner="mbbank" />
-					<PartnerItem partner="finy" />
+					{/* <PartnerItem partner="finy" /> */}
 					<PartnerItem partner="f88" />
 					<PartnerItem partner="pvcombank" />
 					<PartnerItem partner="baominh" />

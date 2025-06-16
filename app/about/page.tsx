@@ -517,27 +517,39 @@ const About = () => {
 				{show === 1 && (
 					<div className="flex justify-center items-center flex-col space-y-14">
 						<div>
-							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom">
+							<div className="flex justify-center items-center flex-col p-3 rounded-2xl shadow-custom">
 								<Image
-									src="/images/about/Logo.png"
+									src="/images/about/BoardOfDirector.jpg"
 									alt="About History VNFITE"
 									width={264}
 									height={264}
 								/>
-								<p className="font-semibold text-xl text-gradient">Trần Quốc Hưng</p>
+								<p className="font-semibold text-xl text-gradient mt-3">Trần Quốc Hưng</p>
 								<p className="font-medium text-base pt-3">Tổng Giám đốc</p>
 							</div>
 						</div>
+						<div>
+							<div className="flex justify-center items-center flex-col p-3 rounded-2xl shadow-custom mx-auto">
+								<Image
+									src="/images/about/BoardOfDirector2.jpg"
+									alt="About History VNFITE"
+									width={264}
+									height={264}
+								/>
+								<p className="font-semibold text-xl text-gradient mt-3">Nguyễn Văn Lam</p>
+								<p className="font-medium text-base pt-3">Phó Tổng Giám Đốc Thường Trực</p>
+							</div>
+						</div>
 						<div className="flex justify-center items-center space-x-0 md:space-x-10 space-y-14 md:space-y-0 flex-col md:flex-row">
-							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom mx-auto">
+							<div className="flex justify-center items-center flex-col p-3 rounded-2xl shadow-custom mx-auto">
 								<Image
 									src="/images/about/Logo.png"
 									alt="About History VNFITE"
 									width={264}
 									height={264}
 								/>
-								<p className="font-semibold text-xl text-gradient">Nguyễn Văn Lam</p>
-								<p className="font-medium text-base pt-3">Phó Tổng Giám đốc</p>
+								<p className="font-semibold text-xl text-gradient mt-3">Đỗ Văn Dân</p>
+								<p className="font-medium text-base pt-3">Giám Đốc Trung Tâm Kinh Doanh</p>
 							</div>
 
 							<div className="flex justify-center items-center flex-col px-3 py-2 rounded-2xl shadow-custom mx-auto">
@@ -547,8 +559,8 @@ const About = () => {
 									width={264}
 									height={264}
 								/>
-								<p className="font-semibold text-xl text-gradient">Nguyễn Mạnh Cường</p>
-								<p className="font-medium text-base pt-3">Phó Tổng Giám đốc</p>
+								<p className="font-semibold text-xl text-gradient">Nghiêm Khắc Lâm</p>
+								<p className="font-medium text-base pt-3">Trưởng bộ phận công nghệ</p>
 							</div>
 						</div>
 					</div>

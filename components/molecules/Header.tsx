@@ -5,7 +5,6 @@ import Banner from "./Banner";
 import { usePathname } from "next/navigation";
 const Header = () => {
 	const pathname = usePathname();
-
 	// Define background classes based on the route
 	const bannerBackground = (() => {
 		if (pathname === "/") {
@@ -33,7 +32,7 @@ const Header = () => {
 	return (
 		<header
 			suppressHydrationWarning={true}
-			className={`${bannerBackground} bg-responsive-banner min-h-[300px] md:min-h-[720px] md:max-h-fit `}
+			className={`${bannerBackground} bg-responsive-banner min-h-[200px] md:min-h-[550px] md:max-h-fit `}
 		>
 			<Topbar />
 			<Navbar />

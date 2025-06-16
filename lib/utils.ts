@@ -81,7 +81,7 @@ export const WebUtils = new HelpersUtil();
 // 0 cas nhaa 1 doanh nghiep
 
 export const SOCIAL_MEDIA = {
-	facebook: "https://www.facebook.com/vnfitevietnam?locale=vi_VN",
+	facebook: "https://www.facebook.com/profile.php?id=61576800328618",
 	youtube: "https://www.youtube.com/@vnfitevietnam9932",
-	tiktok: "https://www.tiktok.com/@vnfite.vn.fintech?lang=vi-VN",
+	tiktok: "https://www.tiktok.com/@vnfite.vietnam?is_from_webapp=1&sender_device=pc",
 };
