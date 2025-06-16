@@ -3,9 +3,10 @@
 import { cn } from "@/lib/utils";
 import { ChevronDown, Dot } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { SOCIAL_MEDIA } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { useFooter } from "./FooterProvider";
 
 const NavItem = ({ href, title, items }: { href: string; title: string; items: string[] }) => {
 	const router = useRouter();
@@ -58,14 +59,13 @@ const navItemText = [
 ];
 
 const Footer = () => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [isDisabled, setIsDisabled] = useState(false);
+	const { isOpenFooter, setIsOpenFooter, isDisabled, setIsDisabled,  } = useFooter();
 
 	const handleClick = () => {
 		if (isDisabled) return;
 
 		setIsDisabled(true);
-		setIsOpen(!isOpen);
+		setIsOpenFooter(!isOpenFooter);
 
 		// Kích hoạt lại sau 300ms
 		setTimeout(() => {
@@ -74,7 +74,7 @@ const Footer = () => {
 	};
 
 	useEffect(() => {
-		if (isOpen == true) {
+		if (isOpenFooter == true ) {
 			setTimeout(() => {
 				window.scrollTo({
 					top: document.body.scrollHeight, // Đến cuối trang
@@ -82,13 +82,13 @@ const Footer = () => {
 				});
 			}, 400);
 		}
-	}, [isOpen]);
+	}, [isOpenFooter]);
 	return (
 		<div id="footer" className="px-10 md:px-10 xl:px-[16%] font-sfpro bg-footer relative">
 			<div
 				className={cn(
 					"transition-all duration-500 overflow-hidden flex w-full flex-col lg:flex-row",
-					isOpen ? "opacity-100 max-h-[1000px] pt-12 pb-10" : "max-h-0 opacity-0"
+					isOpenFooter ? "opacity-100 max-h-[1000px] pt-12 pb-10" : "max-h-0 opacity-0"
 				)}
 			>
 				<div className="lg:w-4/5">
@@ -229,11 +229,11 @@ const Footer = () => {
 					)}
 					onClick={handleClick}
 				>
-					<span className="hidden md:inline">{isOpen ? "Thu nhỏ" : "Mở rộng"}</span>
+					<span className="hidden md:inline">{isOpenFooter ? "Thu nhỏ" : "Mở rộng"}</span>
 					<div
 						className={cn(
 							"transition-transform duration-150",
-							isOpen ? "rotate-0" : "rotate-180"
+							isOpenFooter ? "rotate-0" : "rotate-180"
 						)}
 					>
 						<ChevronDown color={"#CF1313"} />

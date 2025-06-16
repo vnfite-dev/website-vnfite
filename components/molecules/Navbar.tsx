@@ -14,10 +14,11 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useAppLink } from "@/hooks/helper";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { Briefcase, ChevronDown, Download, UserRound, UsersRound } from "lucide-react";
 import { usePathname } from "next/navigation";
 import itemProduct from "@/app/products/data";
+import { useFooter } from "./FooterProvider";
 
 const ProductNavItem = ({ image, title, id }: { image: string; title: string; id: number }) => {
 	return (
@@ -39,6 +40,18 @@ const Navbar = () => {
 	const pathname = usePathname();
 	const [productsType, setProductsType] = useState(0);
 	const appLink = useAppLink();
+
+	// Bấm tải xuống cuộn xuống cuối trang và tự động mở rộng footer
+	const { setIsOpenFooter, isDisabled, setIsDisabled } = useFooter();
+	const handleDownloadClick = useCallback(() => {
+			if (isDisabled) return;
+			console.log("Download click: Open Footer");
+			setIsOpenFooter(true);
+			setIsDisabled(true);
+			setTimeout(() => {
+				setIsDisabled(false);
+			}, 500);
+		}, [isDisabled, setIsOpenFooter, setIsDisabled]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -391,7 +404,7 @@ const Navbar = () => {
 					<div className="hidden lg:block">
 						{/* <Button className="btn-primary">{isFixed == false ? "Tải ứng dụng" : <Download />}</Button> */}
 						<Link href={"#footer"} target="_self">
-							<Button className="btn-primary">Tải ứng dụng</Button>
+							<Button className="btn-primary" onClick={handleDownloadClick}>Tải ứng dụng</Button>
 						</Link>
 					</div>
 				</div>

@@ -52,6 +52,8 @@ const PartnersList = () => {
 					<PartnerItem partner="pvcombank" />
 					<PartnerItem partner="baominh" />
 					<PartnerItem partner="chubb" />
+					<PartnerItem partner="aseanclb" />
+					<PartnerItem partner="dainamuni" />
 				</Marquee>
 				<Marquee reverse pauseOnHover className="[--duration:80s]">
 					{/* <PartnerItem partner="chubb" />
@@ -71,6 +73,8 @@ const PartnersList = () => {
 					<PartnerItem partner="pvcombank" />
 					<PartnerItem partner="baominh" />
 					<PartnerItem partner="chubb" />
+					<PartnerItem partner="aseanclb" />
+					<PartnerItem partner="dainamuni" />
 				</Marquee>
 			</div>
 		</div>
