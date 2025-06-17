@@ -36,7 +36,7 @@ const CardBoardOfDirector = ({
 }) => {
 	const [show, setShow] = useState(false);
 	return (
-		<div className="w-full sm:w-[calc(50%-15px)] lg:w-[calc(33.333%-20px)] flex justify-center">
+		<div className="sm:w-[calc(50%-15px)] lg:w-[calc(33.333%-20px)] flex justify-center">
 			<div className="flex flex-col items-center p-3 rounded-2xl shadow-custom">
 				<Image src={`/images/about/${image}.jpg`}alt="About History VNFITE" width={264} height={264} />
 				<p className="font-semibold text-xl text-gradient mt-3">{name}</p>
@@ -552,38 +552,42 @@ const About = () => {
 
 				{/* 2. Ban lãnh đạo */}
 				{show === 1 && (
-					<div className="flex flex-wrap justify-start gap-x-[30px] gap-y-10 max-w-[1000px] m-auto">
-						{/* Item 1 */}
-						<CardBoardOfDirector
-							name="Trần Quốc Hưng"
-							title="Tổng Giám đốc"
-							image="BoardOfDirector"
-							description="Ông Trần Quốc Hưng từng giữ vị trí giám đốc phòng giao dịch tại VietABank và có hơn 11 năm kinh nghiệm trong lĩnh vực tài chính ngân hàng."
-						/>
+					<div className="flex flex-col justify-center item-center gap-x-[30px] gap-y-10 max-w-[1000px] m-auto">
+						<div className="w-full flex flex-row justify-center items-center flex-wrap gap-x-6 gap-y-10 m-auto">
+							{/* Item 1 */}
+							<CardBoardOfDirector
+								name="Trần Quốc Hưng"
+								title="Tổng Giám đốc"
+								image="BoardOfDirector"
+								description="Ông Trần Quốc Hưng từng giữ vị trí giám đốc phòng giao dịch tại VietABank và có hơn 11 năm kinh nghiệm trong lĩnh vực tài chính ngân hàng."
+							/>
 
-						{/* Item 2 */}
-						<CardBoardOfDirector
-							name="Nguyễn Văn Lam"
-							title="Phó Tổng Giám Đốc Thường Trực"
-							image="BoardOfDirector2"
-							description="Tốt nghiệp Thạc sĩ MBA tại Đại học Nam Columbia, Hoa Kỳ, ông Nguyễn Văn Lam từng giữ vị trí Giám đốc Kinh doanh tại công ty Fintech Lendbiz và Giám đốc Đầu tư tại công ty đầu tư 3Gang. Với kinh nghiệm phong phú trong lĩnh vực tài chính và đầu tư, ông hiện đang đảm nhiệm vai trò Phó Giám đốc Thường trực tại VNFITE."
-						/>
+							{/* Item 2 */}
+							<CardBoardOfDirector
+								name="Nguyễn Văn Lam"
+								title="Phó Tổng Giám Đốc Thường Trực"
+								image="BoardOfDirector2"
+								description="Tốt nghiệp Thạc sĩ MBA tại Đại học Nam Columbia, Hoa Kỳ, ông Nguyễn Văn Lam từng giữ vị trí Giám đốc Kinh doanh tại công ty Fintech Lendbiz và Giám đốc Đầu tư tại công ty đầu tư 3Gang. Với kinh nghiệm phong phú trong lĩnh vực tài chính và đầu tư, ông hiện đang đảm nhiệm vai trò Phó Giám đốc Thường trực tại VNFITE."
+							/>
+						</div>
 
-						{/* Item 3 */}
-						<CardBoardOfDirector
-							name="Đỗ Văn Dân"
-							title="Giám Đốc Trung Tâm Kinh Doanh"
-							image="BoardOfDirector3"
-							description="Tốt nghiệp Học viện Ngân hàng, ông Đỗ Văn Dân có hơn 12 năm kinh nghiệm trong lĩnh vực tài chính, từng đảm nhiệm nhiều vị trí quan trọng trong hoạt động kinh doanh và phát triển khách hàng. Hiện ông đang giữ vai trò Giám đốc Trung tâm Kinh doanh tại VNFITE."
-						/>
+						<div className="w-full flex flex-row justify-center items-center flex-wrap gap-x-6 gap-y-10 m-auto">
+							{/* Item 3 */}
+							<CardBoardOfDirector
+								name="Đỗ Văn Dân"
+								title="Giám Đốc Trung Tâm Kinh Doanh"
+								image="BoardOfDirector3"
+								description="Tốt nghiệp Học viện Ngân hàng, ông Đỗ Văn Dân có hơn 12 năm kinh nghiệm trong lĩnh vực tài chính, từng đảm nhiệm nhiều vị trí quan trọng trong hoạt động kinh doanh và phát triển khách hàng. Hiện ông đang giữ vai trò Giám đốc Trung tâm Kinh doanh tại VNFITE."
+							/>
 
-						{/* Item 4 */}
-						<CardBoardOfDirector
-							name="Nghiêm Khắc Lâm"
-							title="Trưởng Bộ Phận Công Nghệ"
-							image="Logo"
-							description="Ông Nghiêm Khắc Lâm là một chuyên gia công nghệ với hơn 5 năm kinh nghiệm trong lĩnh vực phát triển phần mềm và quản lý dự án công nghệ. Ông từng giữ vị trí Trưởng phòng Công nghệ tại một công ty Fintech hàng đầu và hiện đang đảm nhiệm vai trò Trưởng Bộ phận Công Nghệ tại VNFITE, nơi ông dẫn dắt đội ngũ kỹ thuật phát triển các giải pháp công nghệ tiên tiến."
-						/>
+							{/* Item 4 */}
+							<CardBoardOfDirector
+								name="Nghiêm Khắc Lâm"
+								title="Trưởng Bộ Phận Công Nghệ"
+								image="Logo"
+								description="Ông Nghiêm Khắc Lâm là một chuyên gia công nghệ với hơn 5 năm kinh nghiệm trong lĩnh vực phát triển phần mềm và quản lý dự án công nghệ. Ông từng giữ vị trí Trưởng phòng Công nghệ tại một công ty Fintech hàng đầu và hiện đang đảm nhiệm vai trò Trưởng Bộ phận Công Nghệ tại VNFITE, nơi ông dẫn dắt đội ngũ kỹ thuật phát triển các giải pháp công nghệ tiên tiến."
+							/>
+						</div>
 					</div>
 				)}
 
