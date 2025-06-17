@@ -576,7 +576,7 @@ const About = () => {
 							<CardBoardOfDirector
 								name="Đỗ Văn Dân"
 								title="Giám Đốc Trung Tâm Kinh Doanh"
-								image="BoardOfDirector3"
+								image="BoardOfDirector5"
 								description="Tốt nghiệp Học viện Ngân hàng, ông Đỗ Văn Dân có hơn 12 năm kinh nghiệm trong lĩnh vực tài chính, từng đảm nhiệm nhiều vị trí quan trọng trong hoạt động kinh doanh và phát triển khách hàng. Hiện ông đang giữ vai trò Giám đốc Trung tâm Kinh doanh tại VNFITE."
 							/>
 
