@@ -584,7 +584,7 @@ const About = () => {
 							<CardBoardOfDirector
 								name="Nghiêm Khắc Lâm"
 								title="Trưởng Bộ Phận Công Nghệ"
-								image="Logo"
+								image="BoardOfDirector4"
 								description="Ông Nghiêm Khắc Lâm là một chuyên gia công nghệ với hơn 5 năm kinh nghiệm trong lĩnh vực phát triển phần mềm và quản lý dự án công nghệ. Ông từng giữ vị trí Trưởng phòng Công nghệ tại một công ty Fintech hàng đầu và hiện đang đảm nhiệm vai trò Trưởng Bộ phận Công Nghệ tại VNFITE, nơi ông dẫn dắt đội ngũ kỹ thuật phát triển các giải pháp công nghệ tiên tiến."
 							/>
 						</div>
