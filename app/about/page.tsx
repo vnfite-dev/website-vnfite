@@ -17,10 +17,10 @@ import {
 } from "@/components/ui/select";
 
 const youtubeLinkList = [
+	{ link: "t73Es9jjd2w", title: "Có nên đầu tư vào P2P Lending? Khách hàng nói gì về mô hình cho vay ngang hàng?", createdAt: "13/06/2025" }, 
 	{ link: "rMHIYr0ZAZs", title: "MÔ HÌNH P2P LENDING LÀ GÌ?", createdAt: "22/05/2025" },
 	{ link: "UimIynuenP0", title: "Lễ ký kết chiến lược toàn diện giữa VNFITE và CTCP XNK Nông sản thực phẩm An Giang", createdAt: "08/02/2025" },
 	{ link: "MrobLW0HA-I", title: "Bạn sở hữu xe nhưng cần một giải pháp tài chính tiện lợi?", createdAt: "07/02/2025" },
-	{ link: "kkJ0PROupf4", title: "Gọi vốn siêu tốc đến từ VNFITE!", createdAt: "17/02/2025" }, 
 ]
 
 const CardBoardOfDirector = ({
