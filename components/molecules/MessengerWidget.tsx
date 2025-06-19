@@ -1,45 +1,38 @@
 "use client";
-// import { useEffect } from "react";
 
-// declare global {
-//   interface Window {
-//     fbAsyncInit: () => void;
-//     FB: any;
-//   }
-// }
+import Image from "next/image";
+import { Button } from "../ui/button";
 
-const MessengerChatWidget = () => {
-  // useEffect(() => {
-  //   // Add the Facebook SDK script
-  //   window.fbAsyncInit = function () {
-  //     FB.init({
-  //       xfbml: true,
-  //       version: "v17.0",
-  //     });
-  //   };
-
-  //   const script = document.createElement("script");
-  //   script.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-  //   script.async = true;
-  //   script.defer = true;
-  //   document.body.appendChild(script);
-
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
+const MessengerChatButton = () => {
+  const openMessenger = () => {
+    window.open("https://m.me/657239490807682", "_blank");
+  };
 
   return (
-    <div
-      className="fb-customerchat"
-      data-attribution="setup_tool"
-      data-page_id="615522551653766"
-      data-theme_color="#0084FF"
-      data-logged_in_greeting="Chào bạn! TIKLUY có thể giúp gì cho bạn?"
-      data-logged_out_greeting="Chào bạn! Hãy đăng nhập để chat với TIKLUY nha 😄"
-      style={{ position: "fixed", bottom: "20px", right: "20px", width: "250px", height: "400px" }}
-    />
+    <Button
+      onClick={openMessenger}
+      style={{
+        position: "fixed",
+        bottom: "100px",
+        right: "16px",
+        // color: "white",
+        padding: "14px",
+        borderRadius: "50px",
+        border: "none",
+        // boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+        zIndex: 9999,
+        cursor: "pointer",
+        backgroundColor: "rgba(255, 255, 255, 0.3)", // Facebook Messenger color
+      }}
+    >
+      <Image
+        src="/icons/facebook-messenger-icon.svg"
+        alt="Messenger Icon"
+        width={40}
+        height={40}
+      />
+    </Button>
   );
 };
 
-export default MessengerChatWidget;
+export default MessengerChatButton;

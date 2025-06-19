@@ -9,6 +9,7 @@ import ZaloChatWidget from "@/components/molecules/ZaloChatWidget";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { FooterProvider } from "@/components/molecules/FooterProvider";
+import MessengerChatButton from "@/components/molecules/MessengerWidget";
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
 
@@ -66,7 +67,10 @@ export default function RootLayout({
 			</Head>
 			<body className={`${sfpro.variable} ${inter.className} ${ambrose.variable} font-sfpro relative`}>
 				<FooterProvider>
-					<ZaloChatWidget />
+					<div className="fixed bottom-0 right-0 z-50">
+						<MessengerChatButton />
+						<ZaloChatWidget />
+					</div>
 
 					<Header />
 					{modal}
