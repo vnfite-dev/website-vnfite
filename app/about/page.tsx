@@ -23,6 +23,37 @@ const youtubeLinkList = [
 	{ link: "MrobLW0HA-I", title: "Bạn sở hữu xe nhưng cần một giải pháp tài chính tiện lợi?", createdAt: "07/02/2025" },
 ]
 
+const newspaperLinkList = [
+	{
+		title: "VNFITE: Áp dụng minh bạch mô hình cho vay ngang hàng theo Nghị định 94/2025",
+		link: "https://baodautu.vn/vnfite-ap-dung-minh-bach-mo-hinh-cho-vay-ngang-hang-theo-nghi-dinh-942025-d306479.html?gidzl=AUNj3HxScpeZ-Ea86CAREI7zwGa1pfqwDgBf25oUd6asz-nQ29pEQp-dwLO6ovqsQVNe16KE2aC55TcMEW&gidzl=s6JJ24UuDM7TUze7GwOzPjnzrWzPysqun7-4K0wYQ3MMV8C5NA0yOSTzq0ODg6fZdts52sAhxTvHGBezRW",
+		des: "Ngày 1/7/2025, Nghị định 94/2025/NĐ-CP về cơ chế thử nghiệm có kiểm soát trong lĩnh vực ngân hàng chính thức có hiệu lực. Đây là cơ hội để VNFITE minh bạch hóa mô hình cho vay ngang hàng trong hệ sinh thái tài chính số.",
+		dateAndSource: "1/7/2025 | Báo Đầu Tư"
+	},
+	{
+		title: "Công ty CP Công nghệ VNFITE Việt Nam tặng quà trung thu cho bệnh nhi tại Bệnh viện Đa khoa tỉnh Phú Thọ",
+		link: "https://benhviendakhoatinhphutho.vn/cong-ty-cp-cong-nghe-vnfite-viet-nam-tang-qua-trung-thu-cho-benh-nhi-kho-khan-tai-benh-vien-da-khoa-tinh-phu-tho/",
+		des: "Với mong muốn mang đến cho các bệnh nhi một mùa Trung thu ý nghĩa và  tràn ngập tình yêu thương, sáng ngày 14/09/2024, đại diện Công ty Cổ phần Công nghệ Tài chính VNFITE Việt Nam phối hợp Tổ Công tác xã hội đã trao tặng những món quà thiết thực cho các em nhỏ đang điều trị tại Khoa Huyết học lâm sàng – Bệnh viện Đa khoa tỉnh Phú Thọ.",
+		dateAndSource: "14/09/2024 | Bệnh viện Đa khoa tỉnh Phú Thọ"
+	},
+	{
+		title: "VNFITE: Sợi dây kết nối nguồn vốn hiệu quả",
+		link: "https://thegioitieudungonline.com/vnfite-soi-day-ket-noi-nguon-von-hieu-qua/",
+		des: "Với đội ngũ lãnh đạo dày dạn kinh nghiệm cùng hệ thống quản trị rủi ro hiệu quả, VNFITE đang dần khẳng định vị thế của mình trên thị trường tài chính nói chung và thị trường Fintech (Công nghệ tài chính) nói riêng. Hướng tới mục tiêu kết nối nhanh chóng và an toàn, VNFITE đã và đang dần chứng minh là một trong những kênh kết nối vốn hiệu quả cho các cá nhân, hộ kinh doanh và các doanh nghiệp vừa và nhỏ SMEs.",
+		dateAndSource: "15/08/2024 | Thế Giới Tiêu Dùng Online"
+	},
+	{
+		title: "Công ty Cổ phần Công nghệ Tài chính VNFITE Khai trương văn phòng trụ sở mới",
+		link: "https://kinhdoanhtre.com/cong-ty-co-phan-cong-nghe-tai-chinh-vnfite-khai-truong-van-phong-tru-so-moi/",
+		des: "Sáng 09/03/2024 đánh dấu bước ngoặt của VNFITE bằng việc tổ chức buổi lễ khai trương trụ sở văn phòng mới nhằm hiện thực hóa mục tiêu chiến lược phát triển trong năm 2024.",
+		dateAndSource: "09/03/2024 | Kinh Doanh Trẻ"
+	}
+]
+
+const truncateText = (text: string, length: number) => {
+		return text.length > length ? text.slice(0, length) + "..." : text;
+};
+
 const CardBoardOfDirector = ({
   name,
   title,
@@ -497,7 +528,7 @@ const About = () => {
 									<p>Tin cậy và trách nhiệm</p>
 								</div>
 								<div className="bg-grad-about text-xl font-medium p-4 space-x-4 w-full sm:w-[405px] min-h-24 rounded-lg">
-									<div style={{ width: "56px", height: "64px" }}>
+									<div style={{ width: "56px", height: "auto" }}>
 										<Image
 											src="/images/about/View5.png"
 											alt="Tầm nhìn và sứ mệnh 5"
@@ -507,6 +538,35 @@ const About = () => {
 									</div>
 									<p>An sinh xã hội hướng tới lợi ích cộng đồng</p>
 								</div>
+							</div>
+						</div>
+
+						<div>
+							<p className="text-2xl lg:text-5xl font-semibold text-center px-4">
+								Báo chí nói về <span className="text-gradient">VNFITE</span>
+							</p>
+
+							<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-0 sm:px-4 m-10">
+								{newspaperLinkList.map((item, index) => (
+								<a
+									key={index}
+									href={item.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="border border-gray-200 rounded-2xl p-4 hover:shadow-lg transition-all bg-white"
+								>
+									<Image
+										src={`/images/about/newspaper${index + 1}.jpg`}
+										alt={`Newspaper ${index + 1}`}
+										width={300}
+										height={200}
+										className="w-full h-56 object-cover rounded-lg mb-4"
+									/>
+									<p className="text-sm text-gray-400 mb-1">{item.dateAndSource}</p>
+									<h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+									<p className="text-sm text-gray-600">{truncateText(item.des, 150)}</p>
+								</a>
+								))}
 							</div>
 						</div>
 
