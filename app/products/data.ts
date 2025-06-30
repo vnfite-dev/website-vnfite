@@ -37,12 +37,12 @@ const itemProduct = [
     image: "/icons/packages/worker.svg",
     title: "Gọi vốn cho công nhân",
     detail:
-      "Sản phẩm gọi vốn dành cho khách hàng là công nhân đáp ứng nhanh nhu cầu sử dụng vốn của khách hàng với thủ tục nhanh chóng- đơn giản, không yêu cầu tài sản đảm bảo với số tiền gọi vốn tối đa lên tới 20,000,000 VND.",
-    info: `Số tiền vay tối đa: 20,000,000 VND (Hai mươi triệu đồng).
+      "Sản phẩm gọi vốn dành cho khách hàng là công nhân đáp ứng nhanh nhu cầu sử dụng vốn của khách hàng với thủ tục nhanh chóng- đơn giản, không yêu cầu tài sản đảm bảo với số tiền gọi vốn tối đa lên tới 30,000,000 VND.",
+    info: `Số tiền vay tối đa: 30,000,000 VND (Hai mươi triệu đồng).
       Đăng ký: Cung cấp CMND/CCCD, số điện thoại cá nhân, số tham chiếu (3 người thân, 1 bạn bè/đồng nghiệp), và chứng từ chứng minh thu nhập (hợp đồng lao động, sao kê lương 3 tháng gần nhất).
       Trả gốc: Phân kỳ hàng tháng.
-      Trả lãi: Hàng tháng theo dư nợ thực tế`,
-    time: `Thời hạn gọi vốn: Từ 1 - 6 tháng.`,
+      Trả lãi: Hàng tháng theo dư nợ gốc`,
+    time: `Thời hạn gọi vốn: Từ 3 - 12 tháng.`,
     condition: `Công dân Việt Nam từ 18 - 60 tuổi, là công nhân có hợp đồng lao động, cư trú tại khu vực VNFITE quy định.
       Điểm tín nhiệm tối thiểu 450.
       Thu nhập trung bình 3 tháng gần nhất từ 4 triệu đồng/tháng, nguồn trả nợ tính 40% thu nhập chứng minh được.`,
