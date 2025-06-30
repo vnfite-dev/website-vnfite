@@ -38,7 +38,7 @@ const itemProduct = [
     title: "Gọi vốn cho công nhân",
     detail:
       "Sản phẩm gọi vốn dành cho khách hàng là công nhân đáp ứng nhanh nhu cầu sử dụng vốn của khách hàng với thủ tục nhanh chóng- đơn giản, không yêu cầu tài sản đảm bảo với số tiền gọi vốn tối đa lên tới 30,000,000 VND.",
-    info: `Số tiền vay tối đa: 30,000,000 VND (Hai mươi triệu đồng).
+    info: `Số tiền vay tối đa: 30,000,000 VND (Ba mươi triệu đồng).
       Đăng ký: Cung cấp CMND/CCCD, số điện thoại cá nhân, số tham chiếu (3 người thân, 1 bạn bè/đồng nghiệp), và chứng từ chứng minh thu nhập (hợp đồng lao động, sao kê lương 3 tháng gần nhất).
       Trả gốc: Phân kỳ hàng tháng.
       Trả lãi: Hàng tháng theo dư nợ gốc`,
