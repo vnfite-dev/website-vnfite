@@ -91,6 +91,24 @@ const itemProduct = [
     condition: `Các gian hàng kinh doanh trên các trang web thương mại điện tử tối thiểu từ 06 tháng trở lên.
       Đại diện kinh doanh chưa từng phát sinh nợ nhóm 2 trở lên trong vòng 12 tháng tính đến thời điểm xét duyệt gọi vốn và có đầy đủ năng lực pháp lý.`,
   },
+  {
+    id: 7,
+    productsType: 0,
+    image: "/icons/packages/grab-bike.svg",
+    title: "Gọi vốn cho tài xế xe công nghệ",
+    detail:
+      "Là phương thức gọi vốn (vay vốn/nhận nợ) dảnh riêng cho đối tượng khách hàng là tài xế xe công nghệ mà không cần tài sản đảm bảo.",
+    info: `Số tiền vay tối đa: Tối đa 15,000,000 VND đối với tài xế xe máy và 30,000,000 VND đối với tài xế ô tô.
+      Phương thức giải ngân: chuyển khoản.
+      Trả gốc: Phân kỳ trả nợ gốc hàng tháng.
+      Trả lãi: Hàng tháng theo dư nợ thực tế`,
+    time: `Thời hạn gọi vốn: 1 tháng - 6 tháng`,
+    condition: `Đang là tài xế cho các hãng xe công nghệ có liên kết với VNFTTE.
+      Địa chỉ cư trú tai các tỉnh thành do VNFITE quy định trong từng thời kỳ.
+      Điểm tín nhiệm tối thiểu 450.
+      Khách hàng có nguồn thu nhập để trả nợ tối thiểu bình quân 03 tháng gần nhất >= 5 triệu đồng/tháng.
+      Nguồn trả nợ được tính bằng 40% nguồn thu nhập chứng mình được.`,
+  }
 ];
 
 export default itemProduct;
