@@ -112,8 +112,7 @@ const Footer = () => {
 									/>
 								</div>
 								<div className="text-sm leading-4 md:max-w-[273px]">
-									Số nhà 4B, Phố Vương Thừa Vũ, Phường Khương Trung, Quận Thanh Xuân, TP Hà
-									Nội
+									Số nhà 4B, Vương Thừa Vũ, Phường Khương Đình, Hà Nội
 								</div>
 							</div>
 							<div className="flex gap-2">

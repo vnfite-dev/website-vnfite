@@ -623,7 +623,7 @@ const About = () => {
 								name="Nguyễn Văn Lam"
 								title="Phó Tổng Giám Đốc Thường Trực"
 								image="BoardOfDirector2"
-								description="Tốt nghiệp Thạc sĩ MBA tại Đại học Nam Columbia, Hoa Kỳ, ông Nguyễn Văn Lam từng giữ vị trí Giám đốc Kinh doanh tại công ty Fintech Lendbiz và Giám đốc Đầu tư tại công ty đầu tư 3Gang. Với kinh nghiệm phong phú trong lĩnh vực tài chính và đầu tư, ông hiện đang đảm nhiệm vai trò Phó Giám đốc Thường trực tại VNFITE."
+								description="Ông Nguyễn Văn Lam từng giữ vị trí Giám đốc Kinh doanh tại công ty Fintech Lendbiz và Giám đốc Đầu tư tại công ty đầu tư 3Gang. Với kinh nghiệm phong phú trong lĩnh vực tài chính và đầu tư, ông hiện đang đảm nhiệm vai trò Phó Tổng Giám đốc tại VNFITE."
 							/>
 						</div>
 
