@@ -621,7 +621,7 @@ const About = () => {
 							{/* Item 2 */}
 							<CardBoardOfDirector
 								name="Nguyễn Văn Lam"
-								title="Phó Tổng Giám Đốc Thường Trực"
+								title="Phó Tổng Giám Đốc"
 								image="BoardOfDirector2"
 								description="Ông Nguyễn Văn Lam từng giữ vị trí Giám đốc Kinh doanh tại công ty Fintech Lendbiz và Giám đốc Đầu tư tại công ty đầu tư 3Gang. Với kinh nghiệm phong phú trong lĩnh vực tài chính và đầu tư, ông hiện đang đảm nhiệm vai trò Phó Tổng Giám đốc tại VNFITE."
 							/>
