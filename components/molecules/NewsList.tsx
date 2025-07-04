@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { simpleFetchFunction } from "@/lib/utils";
-import { detailNews } from "../../app/news/data";
+import { detailNews } from "../../app/(main)/news/data";
 
 // const formatDate = (date: Date) => {
 // const options = {
