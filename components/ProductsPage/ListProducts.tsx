@@ -9,7 +9,7 @@ import {
 	Carousel,
 	CarouselDots,
 } from "../ui/carousel";
-import itemProduct from "@/app/products/data";
+import itemProduct from "@/app/(main)/products/data";
 
 import { useRouter, useParams } from "next/navigation";
 

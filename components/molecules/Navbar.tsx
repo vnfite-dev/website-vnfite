@@ -17,7 +17,7 @@ import { useAppLink } from "@/hooks/helper";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { Briefcase, ChevronDown, Download, UserRound, UsersRound } from "lucide-react";
 import { usePathname } from "next/navigation";
-import itemProduct from "@/app/products/data";
+import itemProduct from "@/app/(main)/products/data";
 import { useFooter } from "./FooterProvider";
 
 const ProductNavItem = ({ image, title, id }: { image: string; title: string; id: number }) => {

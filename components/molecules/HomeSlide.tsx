@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import NumberTicker from "../ui/number-ticker";
-import itemProduct from "@/app/products/data";
+import itemProduct from "@/app/(main)/products/data";
 
 const SlideItem = ({
 	image = "/images/home/slide-student.png",
