@@ -313,7 +313,7 @@ const About = () => {
 										<span>
 											Dưới sự dẫn dắt của Hội Đồng Quản Trị, tuy mới thành lập nhưng
 											VNFITE đang dần khẳng định vị thế của mình trên thị trường Fintech
-											nói chung và thị trường tài chính nói chung. Với mục tiêu kết nối
+											nói riêng và thị trường tài chính nói chung. Với mục tiêu kết nối
 											nhanh chóng và an toàn, VNFITE đã và đang ứng dụng một cách triệt
 											để công nghệ 4.0, kết nối trực tiếp các nhà đầu tư và người kêu
 											gọi vốn, dần chứng minh mình là một trong những kênh dẫn vốn hiệu
