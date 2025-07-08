@@ -66,6 +66,7 @@ const rowColors = [
 ];
 
 import "./Wheel.css";
+import Image from "next/image";
 
 function LuckyWheel() {
   const wheelRef = useRef<HTMLDivElement>(null);
@@ -209,6 +210,7 @@ function LuckyWheel() {
                 }}
               >
                 {leader.lead}
+                {/* Tên đội trưởng */}
               </span>
             </div>
 
@@ -243,6 +245,15 @@ const Pickerball = () => {
   return (
     <div>
       {/* <p>Pickerball</p> */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginLeft: 30}}>
+        <Image
+          src="/images/vnfite_logo.png"
+          alt="VNFITE Logo"
+          width={200}
+          height={50}
+        />
+        
+      </div>
       <LuckyTitle />
       <LuckyWheel />
     </div>
