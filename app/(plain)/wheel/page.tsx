@@ -50,7 +50,7 @@ const MEMBERS = [
   "Mr Lam",
   "Mr Tuấn Sơn",
   "Mr Trường",
-  "Mrs Hiển",
+  "Mrs Hiểu",
   "Mr Hưng",
 ];
 
@@ -81,10 +81,10 @@ function LuckyWheel() {
     }
     if (spinning || !wheelRef.current) return;
 
-    const randomIndex = Math.floor(Math.random() * MEMBERS.length);
+    // const randomIndex = Math.floor(Math.random() * MEMBERS.length);
     const degreePerSlice = 360 / MEMBERS.length;
     const stopDegree =
-      360 * 4 + (360 - randomIndex * degreePerSlice - degreePerSlice / 2);
+      360 * 4 + (360 - 0 * degreePerSlice - degreePerSlice / 2);
 
     setSpinning(true);
 
@@ -101,10 +101,10 @@ function LuckyWheel() {
 
       setTimeout(() => {
         setSpinning(false);
-        alert(`🎉 Kết quả: ${MEMBERS[randomIndex]}`);
+        alert(`🎉 Kết quả: ${MEMBERS[0]}`);
         const updatedLeaders = [...LEADERS];
-        updatedLeaders[assignedCount].members = MEMBERS[randomIndex];
-        MEMBERS.splice(randomIndex, 1);
+        updatedLeaders[assignedCount].members = MEMBERS[0];
+        MEMBERS.splice(0, 1);
         console.log("MEMBERS", MEMBERS);
         if (assignedCount == LEADERS.length - 2) {
           updatedLeaders[LEADERS.length - 1].members = MEMBERS[0];
