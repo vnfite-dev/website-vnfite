@@ -1,56 +1,56 @@
-'use client';
+"use client";
 
 import { useRef, useState } from "react";
 const LEADERS = [
   {
     lead: "Mr Đoàn",
-    members: '',
+    members: "",
     id: 0,
   },
   {
     lead: "Mr Thịnh",
-    members: '',
+    members: "",
     id: 1,
   },
   {
     lead: "Mr Đạt",
-    members: '',
+    members: "",
     id: 2,
   },
   {
     lead: "Mr Huy",
-    members: '',
+    members: "",
     id: 3,
   },
   {
     lead: "Mr Cường",
-    members: '',
+    members: "",
     id: 4,
   },
   {
     lead: "Mr Tây",
-    members: '',
+    members: "",
     id: 5,
   },
   {
     lead: "Mr Toàn",
-    members: '',
+    members: "",
     id: 6,
   },
   {
     lead: "Mrs Trang",
-    members: '',
+    members: "",
     id: 7,
   },
 ];
 const MEMBERS = [
   "Mr Hùng",
+  "Mrs Lam",
+  "Mrs Ly",
+  "Mr Lam",
   "Mr Tuấn Sơn",
   "Mr Trường",
-  "Mrs Lam",
-  "Mr Lam",
-  "Mr Phong",
-  "Mr Ly",
+  "Mrs Hiển",
   "Mr Hưng",
 ];
 
@@ -71,7 +71,7 @@ import Image from "next/image";
 function LuckyWheel() {
   const wheelRef = useRef<HTMLDivElement>(null);
   const [spinning, setSpinning] = useState(false);
-//   const [rotation, setRotation] = useState(0);
+  //   const [rotation, setRotation] = useState(0);
   const [assignedCount, setAssignedCount] = useState(0);
 
   const handleSpin = () => {
@@ -97,7 +97,7 @@ function LuckyWheel() {
         wheelRef.current.style.transform = `rotate(${stopDegree}deg)`;
       }
 
-    //   setRotation(stopDegree);
+      //   setRotation(stopDegree);
 
       setTimeout(() => {
         setSpinning(false);
@@ -105,7 +105,7 @@ function LuckyWheel() {
         const updatedLeaders = [...LEADERS];
         updatedLeaders[assignedCount].members = MEMBERS[randomIndex];
         MEMBERS.splice(randomIndex, 1);
-        console.log('MEMBERS', MEMBERS);
+        console.log("MEMBERS", MEMBERS);
         if (assignedCount == LEADERS.length - 2) {
           updatedLeaders[LEADERS.length - 1].members = MEMBERS[0];
         }
@@ -121,7 +121,7 @@ function LuckyWheel() {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        marginLeft: 150
+        marginLeft: 150,
       }}
     >
       <div style={{ width: "55%", display: "flex", justifyContent: "center" }}>
@@ -240,19 +240,25 @@ function LuckyWheel() {
 }
 
 const Pickerball = () => {
-//   const [leaders, setLeaders] = useState(LEADERS);
-//   const [members, setMembers] = useState(MEMBERS);
+  //   const [leaders, setLeaders] = useState(LEADERS);
+  //   const [members, setMembers] = useState(MEMBERS);
   return (
     <div>
       {/* <p>Pickerball</p> */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginLeft: 30}}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginLeft: 30,
+        }}
+      >
         <Image
           src="/images/vnfite_logo.png"
           alt="VNFITE Logo"
           width={200}
           height={50}
         />
-        
       </div>
       <LuckyTitle />
       <LuckyWheel />
@@ -264,7 +270,7 @@ function generateWheelGradient(sliceCount: number) {
   const colors = ["#FFCC00", "#ff4e50", "#339933"];
   const degreePerSlice = 360 / sliceCount;
   let currentDeg = 0;
-  let gradientStr = "conic-gradient(";  
+  let gradientStr = "conic-gradient(";
 
   for (let i = 0; i < sliceCount; i++) {
     let color = colors[i % colors.length];
@@ -284,14 +290,31 @@ function generateWheelGradient(sliceCount: number) {
 
 const colorfulText = "Vòng quay may mắn";
 const colors = [
-  "#FF4142", "#F59E0B", "#10B981", "#3B82F6", "#8B5CF6", "#EC4899",
-  "#F43F5E", "#F97316", "#84CC16", "#0EA5E9", "#A855F7", "#14B8A6"
+  "#FF4142",
+  "#F59E0B",
+  "#10B981",
+  "#3B82F6",
+  "#8B5CF6",
+  "#EC4899",
+  "#F43F5E",
+  "#F97316",
+  "#84CC16",
+  "#0EA5E9",
+  "#A855F7",
+  "#14B8A6",
 ];
 
 function LuckyTitle() {
   return (
-    <h1 style={{ fontSize: '40px', fontWeight: 'bold', textAlign: 'center', marginBottom: 50 }}>
-      {colorfulText.split('').map((char, i) => (
+    <h1
+      style={{
+        fontSize: "40px",
+        fontWeight: "bold",
+        textAlign: "center",
+        marginBottom: 50,
+      }}
+    >
+      {colorfulText.split("").map((char, i) => (
         <span key={i} style={{ color: colors[i % colors.length] }}>
           {char}
         </span>
