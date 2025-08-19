@@ -98,6 +98,7 @@ html body[data-scroll-locked] {
 .bg-careers-banner {
 	background: url("/images/careers/banner.jpg");
 	background-size: cover;
+	aspect-ratio: 8/3;
 }
 
 .bg-news-banner {
