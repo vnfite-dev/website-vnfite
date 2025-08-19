@@ -74,21 +74,25 @@ html body[data-scroll-locked] {
 .bg-invest-banner {
 	background: url("/images/invest/banner.png");
 	background-size: cover;
+	aspect-ratio: 8/3;
 }
 
 .bg-products-banner {
 	background: url("/images/products/banner.png");
 	background-size: cover;
+	aspect-ratio: 8/3;
 }
 
 .bg-about-banner {
 	background: url("/images/about/banner.png");
 	background-size: cover;
+	aspect-ratio: 8/3;
 }
 
 .bg-insure-banner {
 	background: url("/images/insure/banner.png");
 	background-size: cover;
+	aspect-ratio: 8/3;
 }
 
 .bg-careers-banner {
@@ -100,6 +104,7 @@ html body[data-scroll-locked] {
 	background: url("/images/news/banner.png");
 	background-size: cover;
 	background-position: center;
+	aspect-ratio: 8/3;
 }
 
 @media (min-width: 320px) and (max-width: 720px) {
