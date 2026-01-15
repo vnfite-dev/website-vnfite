@@ -1,15 +1,15 @@
 const itemProduct = [
-	{
-		id: 1,
-		productsType: 0,
-		image: "/icons/packages/flash.svg",
-		title: "Gọi vốn siêu tốc",
-		detail:
-			"Sản phẩm gọi vốn siêu tốc dành cho mọi khách hàng đáp ứng nhanh nhu cầu sử dụng vốn của khách hàng với thủ tục nhanh chóng và đơn giản, không yêu cầu tài sản đảm bảo với số tiền gọi vốn tối đa lên tới 15,000,000 VND.",
-		info: `Số tiền vay tối đa: 15,000,000 VND.
+  {
+    id: 1,
+    productsType: 0,
+    image: "/icons/packages/flash.svg",
+    title: "Gọi vốn siêu tốc",
+    detail:
+      "Sản phẩm gọi vốn siêu tốc dành cho mọi khách hàng đáp ứng nhanh nhu cầu sử dụng vốn của khách hàng với thủ tục nhanh chóng và đơn giản, không yêu cầu tài sản đảm bảo với số tiền gọi vốn tối đa lên tới 15,000,000 VND.",
+    info: `Số tiền vay tối đa: 15,000,000 VND.
       Trả gốc: Từng lần/Gốc trả cuối kỳ. Tiền lãi được trừ ngay vào vốn gốc sau khi nhận nợ.
       Trả lãi: Lãi trả 01 lần vào ngày nhận nợ, tiền lãi được trừ ngay vào vốn gốc sau khi nhận nợ.
-      Đăng ký trực tuyến: Cung cấp CMND/CCCD, số điện thoại cá nhân và số tham chiếu (3 người thân, 1 bạn bè/đồng nghiệp)`,
+      Đăng ký trực tuyến: Người liên hệ tham chiếu tối đa __ người. Người đăng ký xác nhận đã được sự đồng ý của người tham chiếu khi cung cấp thông tin (theo NĐ 13/2023)`,
     time: `Thời hạn gọi vốn: 7 ngày, 9 ngày hoặc 15 ngày.
       Duyệt hồ sơ nhanh: Phê duyệt trong 15 phút.`,
     condition: `Công dân Việt Nam từ 20 - 60 tuổi.
@@ -57,7 +57,7 @@ const itemProduct = [
     info: `Số tiền vay tối đa: 1 tỷ đồng.
       Trả gốc: Phân kỳ hàng tháng.
       Trả lãi: Hàng tháng theo dư nợ thực tế`,
-    time: `Thời hạn gọi vốn: Từ 1 năm - 3 năm`,
+    time: `Thời hạn gọi vốn: Từ 6 tháng - 24 tháng.`,
     condition: `Đăng ký KD.
       Cccd của chủ doanh nghiệp và các cổ đông >20%.
       Báo cáo tài chính thuế, nội bộ 2023,2024.
@@ -108,7 +108,7 @@ const itemProduct = [
       Điểm tín nhiệm tối thiểu 450.
       Khách hàng có nguồn thu nhập để trả nợ tối thiểu bình quân 03 tháng gần nhất >= 5 triệu đồng/tháng.
       Nguồn trả nợ được tính bằng 40% nguồn thu nhập chứng mình được.`,
-  }
+  },
 ];
 
 export default itemProduct;
