@@ -51,7 +51,6 @@ const PartnersList = () => {
 					<PartnerItem partner="f88" />
 					<PartnerItem partner="pvcombank" />
 					<PartnerItem partner="baominh" />
-					<PartnerItem partner="chubb" />
 					<PartnerItem partner="aseanclb" />
 					<PartnerItem partner="dainamuni" />
 				</Marquee>
@@ -72,7 +71,6 @@ const PartnersList = () => {
 					<PartnerItem partner="f88" />
 					<PartnerItem partner="pvcombank" />
 					<PartnerItem partner="baominh" />
-					<PartnerItem partner="chubb" />
 					<PartnerItem partner="aseanclb" />
 					<PartnerItem partner="dainamuni" />
 				</Marquee>
