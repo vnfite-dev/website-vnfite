@@ -53,7 +53,7 @@ const Insure = () => {
 						/>
 					</div>
 
-					<div>
+					{/* <div>
 						<Image
 							src={"/icons/home/pn_chubb.svg"}
 							alt="logo"
@@ -62,7 +62,7 @@ const Insure = () => {
 							className="object-contain w-auto  filter brightness-0 invert"
 							sizes="(max-width: 768px) 50px, 64px"
 						/>
-					</div>
+					</div> */}
 				</div>
 				<div className="mt-12 lg:mt-28">
 					<p className="text-2xl lg:text-5xl font-semibold text-center">
